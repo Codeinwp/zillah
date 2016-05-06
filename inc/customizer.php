@@ -53,7 +53,7 @@ function zillah_customize_register( $wp_customize ) {
 		'sanitize_callback'	=>	'zillah_sanitize_repeater'
 	) );	
 
-    $wp_customize->add_control( new Themotion_General_Repeater( $wp_customize, 'zillah_social_icons', array(
+    $wp_customize->add_control( new Zillah_General_Repeater( $wp_customize, 'zillah_social_icons', array(
 		'label'	=>	esc_html__('Add new social icon','zillah'),
 		'section'	=>	'zillah_social_media',
 		'priority'	=>	1,

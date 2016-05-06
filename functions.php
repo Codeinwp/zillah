@@ -111,26 +111,17 @@ add_action( 'after_setup_theme', 'zillah_content_width', 0 );
 function zillah_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'zillah' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'zillah-sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'zillah' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-/*	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widget Area', 'zillah' ),
-		'id'            => 'footer-widget-area',
-		'description'   => esc_html__( 'Add widgets here.', 'zillah' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );*/
 
 	register_sidebars( 3, array(
 		'name'          => esc_html__('Footer Widget Area %d', 'zillah'),
-	    'id'            => 'footer-widget-area',
+	    'id'            => 'zillah-footer-widget-area',
 	    'class'         => 'col-sm-4',
 	    'description'   => esc_html__( 'Add widgets here.', 'zillah' ),    
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -181,7 +172,7 @@ function zillah_fonts_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
 	return $fonts_url;
@@ -199,7 +190,7 @@ function zillah_scripts() {
 
 	wp_enqueue_style( 'zillah-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), 'v4.5.0', false );
 
-	wp_enqueue_script( 'zillah-functions-js', get_template_directory_uri() . '/js/functions.js', array(), '20151216', true );
+	wp_enqueue_script( 'zillah-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20151216', true );
 
 	wp_localize_script( 'zillah-functions-js', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'zillah' ) . '</span>',
@@ -255,11 +246,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-function new_excerpt_more($more) {
+function zillah_excerpt_more($more) {
 	global $post;
 	return '<span class="clearfix"></span><a href="'. esc_url( get_permalink($post->ID) ) . '" class="more-link">' . __('Read more ', 'zillah' ) . the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span></a>';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'zillah_excerpt_more');
 
 
 /**

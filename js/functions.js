@@ -85,7 +85,7 @@
 /**
  * Those two functions are global because they need to be accesible from customizer.js
  */
-function theMotion_header_social_icons_width() {
+function zillah_header_social_icons_width() {
 	var totalWidth = 0;
 	jQuery( '.header-social-icons li' ).each( function() {
 		totalWidth += jQuery( this ).outerWidth();
@@ -93,7 +93,7 @@ function theMotion_header_social_icons_width() {
 	jQuery( '.header-social-icons' ).css( 'width', totalWidth+10 );
 }
 
-function theMotion_menu_toggle_height() {
+function zillah_menu_toggle_height() {
 	var menuToggleBtn = jQuery( 'button.menu-toggle' );
 	var siteHeader = jQuery( '.site-header' );
 	if( ! menuToggleBtn ) {
@@ -106,13 +106,13 @@ function theMotion_menu_toggle_height() {
 ( function($) {
 
 	$( document ).ready( function() {
-		theMotion_header_social_icons_width();
-		theMotion_menu_toggle_height();
+		zillah_header_social_icons_width();
+		zillah_menu_toggle_height();
 	} );
 
 	$( window ).resize( function() {
-		theMotion_header_social_icons_width();
-		theMotion_menu_toggle_height();
+		zillah_header_social_icons_width();
+		zillah_menu_toggle_height();
 	} );
 
 

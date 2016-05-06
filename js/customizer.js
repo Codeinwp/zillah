@@ -59,12 +59,12 @@
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '.header-search' ).parent().removeClass('zillah-only-customizer');
-				theMotion_header_social_icons_width();
-				theMotion_menu_toggle_height();
+				zillah_header_social_icons_width();
+				zillah_menu_toggle_height();
 			} else {
 				$( '.header-search' ).parent().addClass('zillah-only-customizer');
-				theMotion_header_social_icons_width();
-				theMotion_menu_toggle_height();
+				zillah_header_social_icons_width();
+				zillah_menu_toggle_height();
 			}
 		} );
 	} );
@@ -88,8 +88,8 @@
 				result+= '<li class="zillah-only-customizer"><button type="button" class="search-opt search-toggle"><i class="fa fa-search"></i></button><div class="header-search"></div></li>';
 			}
 			$( '.social-media-icons' ).html( result );
-			theMotion_header_social_icons_width();
-			theMotion_menu_toggle_height();
+			zillah_header_social_icons_width();
+			zillah_menu_toggle_height();
 		} );
 	} );
 
