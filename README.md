@@ -1,2 +1,0 @@
-# zillah
-Zillah free theme
