@@ -1,0 +1,335 @@
+/*
+Theme Name: zillah
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	text-align: right;
+}
+
+
+/* Header */
+.menu-toggle-button-wrap {
+    text-align: left;
+    float: left;
+}
+
+.main-navigation ul {
+	text-align: right;
+}
+
+.dropdown-toggle {
+    right: initial;
+    left: 0;
+    margin: 0 0 0 5px;
+}
+
+.main-navigation ul {
+	padding-right: 0;
+}
+
+.main-navigation ul ul {
+    float: right;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.menu-toggle {
+    border-right: solid 1px #dfdfdf;
+    border-left: none;
+    margin-right: 0;
+    margin-left: -15px;
+}
+
+.site-branding {
+    float: right;
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+.header-search form {
+    float: left;
+}
+
+.header-search label:before {
+    content: "\f002";
+    padding-right: 0;
+    padding-left: 20px;
+    left: 0px;
+    right: initial;
+}
+
+.header-search input {
+	padding-left: 50px;
+}
+
+.header-search input[type="submit"] {
+    right: initial;
+    left: 0;
+}
+
+/* Footer */
+.site-footer {
+    text-align: right;
+}
+
+.quick-contact .fa {
+    margin: 0px 0 15px 20px;
+}
+
+/* Ribbon itnro [Homepage two] */
+.homepage-two .site-main {
+    padding-left: 0;
+}
+
+/* Recently posted [homepage two] */
+.recently-item .entry-header {
+    float: right;
+    width: 100%;
+}
+
+.recently-item h2.entry-title a {
+	float: none;
+}
+
+.recently-content-wrap .entry-content {
+	width: 100%;
+}
+
+/* Page */
+.taxonomy-description {
+	text-align: right;
+	padding-right: 0;
+	padding-left: 315px;
+}
+
+blockquote {
+	border-left: none;
+    border-right: 5px solid #7fcaad;
+    margin-right: 0;
+    padding: 0 20px;
+}
+
+/* Single page */
+.comment-navigation .nav-next, 
+.posts-navigation .nav-next, 
+.post-navigation .nav-next {
+	text-align: left;
+	margin-left: 0;
+	margin-right: -1px;
+	float: left;
+}
+
+.comment-body {
+	padding: 30px 124px 30px 15px;
+}
+
+.comment-author {
+    left: initial;
+    right: 0;
+}
+
+.comment-list .children {
+    padding: 0 30px 0 0;
+}
+
+@media screen and (min-width: 480px) {
+
+}
+
+@media screen and (min-width: 600px) {
+
+	/* Sidebar */
+	.widget_search input[type="submit"] {
+		left: 0;
+		right: initial;
+	}
+
+	.widget_search label:before {
+	    content: "\f002";
+	    padding-left: 20px;
+	    padding-right: 0;
+	    right: initial;
+	    left: 0;
+	}
+
+	.widget_search input {
+		padding-left: 50px;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+
+	/* Header */
+	.menu-toggle {
+	    margin-left: 20px;
+	    margin-right: 0;
+		border-left: solid 1px #dfdfdf;
+	}
+	.main-navigation ul ul {
+		padding: 0;
+	}
+
+	/* Footer */
+	.footer-content-bottom, 
+	.quick-contact {
+		text-align: right;
+	}
+
+	.quick-contact, 
+	.footer-widget-wrap {
+		float: right;
+	}
+
+	.footer-content-bottom-btn {
+	    padding-right: 25px;
+	    padding-left: 0;
+	}
+
+	/* About us */
+	.about-us-page .recently-posted-title {
+		float: right;
+	}
+
+	.see-all-posts {
+	    float: left;
+	}
+
+	.recently-posted-wrap .recently-posted-about {
+		float: right;
+	}
+
+	.recently-posted-wrap .recently-posted-about:nth-child(3n+1) {
+	    padding-right: 0;
+	    padding-left: 16.6px;
+	    clear: right;
+	}
+
+	.recently-posted-wrap .recently-posted-about:nth-child(3n+3) {
+	    padding-right: 16.6px;
+	    padding-left: 0;
+	}
+
+}
+
+@media screen and (min-width: 992px) {
+
+	.site-main {
+		padding: 0 0 0 60px;
+	}
+
+	/* header */
+	.main-navigation ul {
+	    text-align: left;
+	}
+
+	.main-navigation ul ul li:hover > ul, 
+	.main-navigation ul ul li.focus > ul {
+    	right: 100%;
+    	left: initial;
+	}
+
+	/* Footer */
+	.footer-video-wrap {
+	    margin-right: 0;
+	    margin-left: 60px;
+	}
+
+	/* Ribbon [Homepage One] */
+	.home-ribbon-text {
+	    margin-right: 0;
+	    margin-left: 20px;
+	    text-align: right;
+	}
+
+	/* Tree videos [Homepage Two] */
+	.home-three-videos-item {
+    	float: right;
+	}
+
+	/* Ribbon intro [Homepage Two] */
+	.home-ribbon-intro-inner {
+	    text-align: right;
+	    float: right;
+	}
+
+	/* Recently posted [homepage two] */
+	.recently-image-wrap {
+		margin-right: 0;
+		margin-left: 50px;
+	}
+
+	/* Contact */
+	.search-page .site-main, 
+	.contact-page .site-main {
+		padding-left: 0;
+	}
+
+	.contact-block-item-wrap .contact-block-item {
+		float: right;
+	}
+
+	.contact-block-content-wrap .contact-block-content:nth-child(even) {
+		padding-right: 15px;
+		padding-left: 0;
+	}
+
+	.contact-block-content-wrap .contact-block-content:nth-child(odd) {
+	    padding-left: 15px;
+		padding-right: 0;
+	}
+
+	.contact-block {
+	    text-align: right;
+	}
+
+	.contact-link .fa {
+	    text-align: right;
+	}
+
+	/* About us */
+	.info-block {
+		text-align: right;
+	}
+
+}
+
+
+@media screen and (min-width: 1200px) {
+
+	/* Recently posted */
+	.recently-posted-wrap .recently-posted-item:nth-child(2n+1) {
+	    clear: right;
+	}
+
+	.recently-posted-item {
+	    float: right;
+	}
+
+	.recently-posted-wrap .recently-posted-item:nth-child(odd) {
+	    padding-left: 10px;
+	    padding-right: 0;
+	}
+	.recently-posted-wrap .recently-posted-item:nth-child(even) {
+	    padding-right: 10px;
+	    padding-left: 0;
+	}
+
+}
