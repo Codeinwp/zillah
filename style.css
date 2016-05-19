@@ -316,7 +316,7 @@ textarea {
 	color: #6f6e6b;
 	font-family: 'Merriweather', Georgia, serif;
 	font-size: 16px;
-	line-height: 27px;
+	line-height: 1.75;
 	text-align: left;
 }
 
@@ -714,7 +714,7 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-	color: #373735;	
+	color: #7fcaad;
 }
 
 .main-navigation ul li:hover > ul,
@@ -989,6 +989,7 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+/**
 .site {
 	border-left: solid 1px #dfdfdf;
     border-right: solid 1px #dfdfdf;
@@ -996,7 +997,7 @@ a:active {
     margin: 0 auto;
     overflow: hidden;
 }
-
+*/
 .content-wrap {
 	display: -webkit-box;
     display: -webkit-flex;
@@ -1471,77 +1472,146 @@ object {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.site-header {
-	background: none;
-	background-color: #fff;
-	padding: 13px 0px;
-	border-bottom: solid 1px #dfdfdf;
+.site-header,
+.header-inner-top{
 	position: relative;
 }
 
 .site-title {
-	font-family: 'Cabin', Helvetica, sans-serif;
-    font-size: 24px;
-    line-height: 28px;
+	font-family: 'Lato', Helvetica, sans-serif;
+    font-size: 56px;
+    line-height: 1;
     color: #373735;
-    letter-spacing: 2.5px;
+    letter-spacing: 10px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 900;
     margin: 25px 0;
     display: inline-block;
     margin: 0;
     padding: 0;
 }
 
-.header-inner-site-branding {
-    width: 250px;
-    overflow: initial;
-    display: table-cell;
-    vertical-align: middle;
+.site-title a {
+	color: #6ca790;
 }
 
-.site-branding-wrap, 
+.site-title a:hover {
+	color: #7fcaad;
+}
+
+.header-inner-site-branding {
+	width: 100%;
+	padding: 115px 0;
+	text-align: center;
+}
+
 .main-navigation-wrap {
     display: table-cell;
     vertical-align: middle;
 }
 
+.header-inner-top {
+	background: #373735;
+}
+
 .header-inner {
 	display: table;
 	width: 100%;
-}
-
-.site-branding {
-    float: left;
-    padding-right: 20px;
-    min-width: 300px;
-    text-align: center;
+	padding: 15px 0;
 }
 
 .menu-toggle-button-wrap {
     display: table-cell;
     vertical-align: middle;
-    text-align: right;
-    float: right;
+    text-align: left;
 }
 
 .site-description {
 	margin-bottom: 0;
+	margin-top: 40px;
+	color: #aaaaaa;
 }
 
 .header-social-icons {
 	display: none;
 }
 
+.header-search {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+	width: 200px;
+}
+
+.header-search .search-form {
+	position: relative;
+}
+
+.header-search input[type="search"] {
+	background: none;
+	border: none;
+	padding: 5px;
+	width: 100%;
+}
+
+.header-search label {
+	width: 100%;
+	padding-left: 20px;
+}
+
+.header-search label:before {
+	content: "\f002";
+	font-family: 'FontAwesome';
+	font-size: 14px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 0;
+	line-height: 29px;
+	text-align: left;
+}
+
+.header-search input[type="submit"] {
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-indent: -99999px;
+	padding: 10px;
+	background: none;
+	height: 29px;
+}
+
+.header-search ::-webkit-input-placeholder {
+	color: #636363 !important;
+	text-transform: uppercase;
+}
+
+.header-search :-moz-placeholder {
+	color: #636363 !important;
+	opacity:  1;
+	text-transform: uppercase;
+}
+
+.header-search ::-moz-placeholder {
+	color: #636363 !important;
+	opacity:  1;
+	text-transform: uppercase;
+}
+
+.header-search :-ms-input-placeholder {
+	color: #636363 !important;
+	text-transform: uppercase;
+}
+
 .menu-toggle {
 	font-size: 20px;
     padding: 27px 34px;
-    border-left: solid 1px #dfdfdf;
     background: none;
     color: #6f6e6b;
-    margin-top: -25px;
-    margin-bottom: -25px;
-    margin-right: -15px;
+	float: none;
+	text-align: center;
+	display: inline-block;
 }
 
 .menu-toggle:hover,
@@ -1555,7 +1625,7 @@ object {
     display: table;
     width: 100%;
 }
-
+/**
 .header-search {
     position: absolute;
     right: 0;
@@ -1623,21 +1693,21 @@ object {
     padding: 0;
 }
 
-.header-search ::-webkit-input-placeholder { /* WebKit browsers */
+.header-search ::-webkit-input-placeholder {
     color: #FFF !important;
 }
 
-.header-search :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #FFF !important;
-    opacity:  1;
-}
-
-.header-search ::-moz-placeholder { /* Mozilla Firefox 19+ */
+.header-search :-moz-placeholder {
     color: #FFF !important;
     opacity:  1;
 }
 
-.header-search :-ms-input-placeholder { /* Internet Explorer 10+ */
+.header-search ::-moz-placeholder {
+    color: #FFF !important;
+    opacity:  1;
+}
+
+.header-search :-ms-input-placeholder {
     color: #FFF !important;
 }
 
@@ -1665,6 +1735,78 @@ object {
 	color: #628d7c;
 	background: transparent;
 	border: none;
+}
+**/
+
+.social-navigation a {
+	display: block;
+	color: #636363;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	text-align: center;
+	margin-right: 10px;
+}
+
+.social-navigation a:hover {
+	color: #7fcaad;
+}
+
+.social-navigation a::before {
+	content: "\f1e0";
+	font-family: 'FontAwesome';
+	font-size: 18px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+}
+
+.social-navigation a[href*="twitter.com"]::before {
+	content: '\f099';
+}
+
+.social-navigation a[href*="facebook.com"]::before {
+	content: '\f09a';
+}
+
+.social-navigation a[href*="plus.google.com"]::before {
+	content: '\f0d5';
+}
+
+.social-navigation a[href*="dribbble.com"]::before {
+	content: '\f17d';
+}
+
+.social-navigation a[href*="pinterest.com"]::before {
+	content: '\f0d2';
+}
+
+.social-navigation a[href*="youtube.com"]::before {
+	content: '\f167';
+}
+
+.social-navigation a[href*="flickr.com"]::before {
+	content: '\f16e';
+}
+
+.social-navigation a[href*="vimeo.com"]::before {
+	content: '\f194';
+}
+
+.social-navigation a[href*="instagram.com"]::before {
+	content: '\f16d';
+}
+
+.social-navigation a[href*="linkedin.com"]::before {
+	content: '\f0e1';
+}
+
+.social-navigation a[href*="foursquare.com"]::before {
+	content: '\f180';
+}
+
+.social-navigation a[href*="tumblr.com"]::before {
+	content: '\f173';
 }
 
 /*--------------------------------------------------------------
@@ -1807,14 +1949,16 @@ object {
 /*--------------------------------------------------------------
 ## Featured videos
 --------------------------------------------------------------*/
+/*
 .featured-videos {
 	padding: 90px 0px;
 	background: #373735;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Ribbon
 --------------------------------------------------------------*/
+/*
 .home-ribbon {
 	background: #7fcaad;
     color: #fff;
@@ -1842,11 +1986,11 @@ object {
 	background: none;
 	color: #628d7c;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Recently Posted
 --------------------------------------------------------------*/
-
+/*
 h3.recently-posted-title {
     font-family: 'Cabin', sans-serif !important;
     letter-spacing: 2.5px;
@@ -1894,10 +2038,11 @@ h3.recently-posted-title {
 .recently-posted-wrap .recently-posted-item:nth-child(even) {
 	padding: 0;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Top area
 --------------------------------------------------------------*/
+/*
 .home-top-area {
     background-size: cover;
     background-position: center;
@@ -1936,17 +2081,19 @@ h3.recently-posted-title {
     color: #fff;
     font-size: 16px;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Three videos
 --------------------------------------------------------------*/
+/*
 .home-three-videos {
 	display: none;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Ribbon intro
 --------------------------------------------------------------*/
+/*
 .home-ribbon-intro {
 	text-align: center;
 	margin-top: 70px;
@@ -1973,10 +2120,11 @@ h3.recently-posted-title {
 	color: #7fcaad;
 	border-color: #7fcaad;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Home latest news
 --------------------------------------------------------------*/
+/*
 .content-area.homepage-two {
 	padding: 0;
 }
@@ -2075,10 +2223,11 @@ h3.recently-posted-title {
 .recently-content-wrap .entry-title {
 	margin-bottom: 0;
 }
-
+*/
 /*--------------------------------------------------------------
 ## About us top
 --------------------------------------------------------------*/
+/*
 .about-top-area {
 	position: relative;
     background-size: cover;
@@ -2094,11 +2243,11 @@ h3.recently-posted-title {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: red; /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(rgba(55, 55, 53, 0.7), rgba(55, 55, 53, 0.9)); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(rgba(55, 55, 53, 0.7), rgba(55, 55, 53, 0.9)); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(rgba(55, 55, 53, 0.7), rgba(55, 55, 53, 0.9)); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(rgba(55, 55, 53, 0.7), rgba(55, 55, 53, 0.9)); /* Standard syntax */
+	background: red;
+	background: -webkit-linear-gradient(rgba(55, 55, 53, 0.7), rgba(55, 55, 53, 0.9));
+	background: -o-linear-gradient(rgba(55, 55, 53, 0.7), rgba(55, 55, 53, 0.9));
+	background: -moz-linear-gradient(rgba(55, 55, 53, 0.7), rgba(55, 55, 53, 0.9));
+	background: linear-gradient(rgba(55, 55, 53, 0.7), rgba(55, 55, 53, 0.9));
 }
 
 .about-top-area-inner {
@@ -2121,10 +2270,11 @@ h3.recently-posted-title {
     font-size: 16px;
     line-height: 24px;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Info block
 --------------------------------------------------------------*/
+/*
 .info-block {
 	padding: 70px 0px;
 	text-align: center;
@@ -2157,10 +2307,11 @@ h3.recently-posted-title {
 .info-block-content {
 	color: #575756;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Stats
 --------------------------------------------------------------*/
+/*
 .stats {
 	text-align: center;
     border-top: solid 1px #dfdfdf;
@@ -2202,10 +2353,11 @@ h3.recently-posted-title {
     display: block;
     margin-top: 25px;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Testimonial
 --------------------------------------------------------------*/
+/*
 .testimonial-area {
 	background: #7fcaad;
     color: #fff;
@@ -2240,18 +2392,19 @@ h3.recently-posted-title {
     background-position: center;
     margin-bottom: 40px;
 }
-
-
+*/
 /*--------------------------------------------------------------
 ## Recently posted Abaout us
 --------------------------------------------------------------*/
+/*
 .content-wrap.content-wrap-about-us {
 	display: none;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Contact block
 --------------------------------------------------------------*/
+/*
 .social-media-icons {
 	margin: 0;
 	padding: 0;
@@ -2349,10 +2502,11 @@ h3.recently-posted-title {
 .content-wrap-contact .content-wrap {
 	padding: 0;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Search page
 --------------------------------------------------------------*/
+/*
 .page-header-search {
     background: #7fcaad;
     color: #fff;
@@ -2398,7 +2552,7 @@ h3.recently-posted-title {
     margin-left: auto;
     margin-right: auto;
 }
-
+*/
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -2429,24 +2583,40 @@ h3.recently-posted-title {
 	text-align: center;
 }
 
-{
-	font-size: 14px;
-    line-height: 18px;
-}
-
-
 /*--------------------------------------------------------------
 ## Responsive
 --------------------------------------------------------------*/
 
-@media screen and (min-width: 480px) {
-
-
-	
-}
-
 @media screen and (min-width: 600px) {
 
+	/*-----------
+	 * Header
+	 -----------*/
+	.header-social-icons {
+		display: table-cell;
+		vertical-align: middle;
+		min-width: 220px;
+		text-align: left;
+	}
+
+	.header-social-icons ul {
+		padding: 0;
+		margin: 0;
+		float: right;
+	}
+
+	.header-social-icons li {
+		list-style: none;
+		float: left;
+	}
+
+	.header-social-icons li .fa {
+		margin: 0px 8px;
+	}
+
+	.menu-toggle-button-wrap {
+		text-align: center;
+	}
 
 	/*--------------------------------------------------------------
 	# Widgets
@@ -2646,7 +2816,6 @@ h3.recently-posted-title {
 	    padding: 0;
 	}
 
-	
 }
 
 @media screen and (min-width: 768px) {
@@ -2658,34 +2827,6 @@ h3.recently-posted-title {
 
 	.post-navigation {
 		display: block;
-	}
-
-	/*-----------
-	 * Header
-	 -----------*/
-	.header-social-icons {
-	    display: table-cell;
-	    vertical-align: middle;
-	}
-
-	.header-social-icons ul {
-		padding: 0;
-		margin: 0;
-		float: right;
-	}
-
-	.header-social-icons li {
-		list-style: none;
-		float: left;
-	}
-
-	.header-social-icons li .fa {
-	    margin: 0px 8px;
-	}
-
-	.menu-toggle {
-	    border-right: solid 1px #dfdfdf;
-	    margin-right: 20px;
 	}
 
 	/*-----------
@@ -2760,7 +2901,7 @@ h3.recently-posted-title {
 	/*-----------
 	 * Top area
 	 -----------*/
-	.home-top-area {
+/*	.home-top-area {
 	    padding: 140px 0px 140px 0px;
 	}
 
@@ -2768,7 +2909,7 @@ h3.recently-posted-title {
     	font-size: 40px;
 	    line-height: 50px;    
 	}
-
+*/
 	/*-----------
 	 * Content
 	 -----------*/
@@ -2793,7 +2934,7 @@ h3.recently-posted-title {
 	/*-----------
 	 * Stats
 	 -----------*/
-	.stat-item {
+/*	.stat-item {
 	    display: -webkit-flex;
 	    display: -moz-flex;
 	    display: -ms-flex;
@@ -2816,11 +2957,11 @@ h3.recently-posted-title {
 	.about-section.stats > .container {
 		padding: 0 15px;
 	}
-
+*/
 	/*-----------
 	 * Recently posted Abaout us
 	 -----------*/
-	.content-wrap.content-wrap-about-us {
+/*	.content-wrap.content-wrap-about-us {
 		display: block;
 		float: left;
 	}
@@ -2874,11 +3015,11 @@ h3.recently-posted-title {
 	.recently-posted-wrap .recently-posted-about:hover {
 		opacity: 0.8;
 	}
-
+*/
 	/*-----------
 	 * Contact blog
 	 -----------*/
-	.contact-block-content-wrap {
+/*	.contact-block-content-wrap {
 		display: -webkit-flex;
 	    display: -moz-flex;
 	    display: -ms-flex;
@@ -2886,11 +3027,11 @@ h3.recently-posted-title {
 	    justify-content: space-between;
 	    align-items: flex-start;
 	}
-
+*/
 	/*-----------
 	 * About us top area
 	 -----------*/
-	.about-top-area {
+/*	.about-top-area {
 	    padding: 180px 0px;
 	}
 
@@ -2898,17 +3039,14 @@ h3.recently-posted-title {
 		font-size: 40px;
     	line-height: 50px;
 	}
-
-
+*/
 	/*-----------
 	 * Search page
 	 -----------*/
-	.page-header-search {
+/*	.page-header-search {
 	    padding: 180px 0px;
 	}
-
-
-
+*/
 }
 
 
@@ -2933,8 +3071,12 @@ h3.recently-posted-title {
 		width: auto;
 	}
 
+	.main-navigation li.menu-item-has-children {
+		padding-right: 10px;
+	}
+
 	.main-navigation ul {
-		text-align: right;
+		text-align: center;
 	}
 
 	.main-navigation ul ul {
@@ -2943,9 +3085,8 @@ h3.recently-posted-title {
 		left: -999em;
 		z-index: 99999;
 		padding-left: 0;
-		background: #FFFFFF;
+		background: #373735;
 		width: 250px;
-		border: 1px solid #DFDFDF;
 	}
 
 	.main-navigation ul ul ul {
@@ -2956,7 +3097,7 @@ h3.recently-posted-title {
 	.main-navigation li a {
 	    font-size: 15px;
 	    color: #aaaaaa;
-	    padding: 5px 20px;
+	    padding: 5px 10px;
 	}
 
 	.main-navigation ul ul a {
@@ -2964,7 +3105,7 @@ h3.recently-posted-title {
 	}
 
 	.main-navigation ul ul li {
-		border-bottom: 1px solid #dfdfdf;
+		border-bottom: 1px solid rgba(255,255,255,0.25);
 		width: 100%;
 	}
 
@@ -3046,14 +3187,14 @@ h3.recently-posted-title {
 	/*-----------
 	 * About us Top area
 	 -----------*/
-	.home-top-area {
+/*	.home-top-area {
 	    padding: 210px 0px 340px 0px;
 	}
-
+*/
 	/*-----------
 	 * Tree videos
 	 -----------*/
-	.home-three-videos {
+/*	.home-three-videos {
 		display: block;
 		position: relative;
 		z-index: 9;
@@ -3063,11 +3204,11 @@ h3.recently-posted-title {
 	.home-three-videos-item {
 		padding: 0;
 	}
-
+*/
 	/*-----------
 	 * Recently Posted
 	 -----------*/
-	.content-area {
+/*	.content-area {
 		float: left;
 		padding-top: 0;
 	    width: 100%;
@@ -3083,11 +3224,11 @@ h3.recently-posted-title {
 		padding: 0;
 		margin: 0;
 	}
-
+*/
 	/*-----------
 	 * Ribbon intro
 	 -----------*/
-	 .home-ribbon-intro-inner {
+/*	 .home-ribbon-intro-inner {
 	 	width: 90%;
 	 	text-align: left;
 	 	float: left;
@@ -3115,11 +3256,11 @@ h3.recently-posted-title {
 	.home-ribbon-intro {
 	    margin-top: 70px;
 	}
-
+*/
 	/*-----------
 	 * Home latest news
 	 -----------*/
-	.recently-item {
+/*	.recently-item {
 	    display: -webkit-flex;
 	    display: -moz-flex;
 	    display: -ms-flex;
@@ -3133,11 +3274,11 @@ h3.recently-posted-title {
 	    margin-right: 50px;
 	    margin-bottom: 0;
 	}
-
+*/
 	/*-----------
 	 * Info block
 	 -----------*/
-	.info-block {
+/*	.info-block {
 		padding: 140px 0px;
 		text-align: left;
 	}
@@ -3153,11 +3294,11 @@ h3.recently-posted-title {
 	.info-block-item-wrap .info-block-item:nth-child(even) {
 		padding-left: 25px;
 	}
-
+*/
 	/*-----------
 	 * Contact block
 	 -----------*/
-	.contact-block-content-wrap .contact-block-content {
+/*	.contact-block-content-wrap .contact-block-content {
 		margin-bottom: 30px;
 	}
 
@@ -3179,11 +3320,11 @@ h3.recently-posted-title {
 	.content-wrap-contact {
 		padding: 140px 0;
 	}
-
+*/
 	/*-----------
 	 * Testimonial
 	 -----------*/
-	.testimonial-area {
+/*	.testimonial-area {
 		padding: 140px 0;
 	}
 
@@ -3204,8 +3345,7 @@ h3.recently-posted-title {
 		display: table-cell;
 		vertical-align: middle;
 	}
-
-
+*/
 }
 
 @media screen and (min-width: 1200px) {
@@ -3213,7 +3353,7 @@ h3.recently-posted-title {
 	/*-----------
 	 * Recently Posted
 	 -----------*/
-	.recently-posted-wrap .recently-posted-item:nth-child(odd) {
+/*	.recently-posted-wrap .recently-posted-item:nth-child(odd) {
 		padding-left: 0;
 		padding-right: 10px;
 	}
@@ -3226,14 +3366,12 @@ h3.recently-posted-title {
 	.recently-posted-wrap .recently-posted-item:nth-child(2n+1) {
 		clear: left;
 	}
-
+*/
 	/*-----------
 	 * Home latest news
 	 -----------*/
-	.homepage-two .recently-item {
+/*	.homepage-two .recently-item {
 		padding: 60px;
 	}
-
+*/
 }
-
-

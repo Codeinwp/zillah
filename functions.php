@@ -48,7 +48,8 @@ function zillah_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'zillah' ),
+		'primary'   => esc_html__( 'Primary', 'zillah' ),
+		'social'    => esc_html__( 'Social Links Menu', 'zillah' ),
 	) );
 
 	/*
@@ -148,26 +149,35 @@ function zillah_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	 * supported by Source Sans Pro, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$source_sans_pro = _x( 'on', 'Merriweather font: on or off', 'zillah' );
-
-	/* Translators: If there are characters in your language that are not
 	 * supported by Bitter, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
 	$bitter = _x( 'on', 'Cabin font: on or off', 'zillah' );
 
-	if ( 'off' !== $source_sans_pro || 'off' !== $bitter ) {
+	/* Translators: If there are characters in your language that are not
+	 * supported by Bitter, translate this to 'off'. Do not translate into your
+	 * own language.
+	 */
+	$lato = _x( 'on', 'Lato font: on or off', 'zillah' );
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Bitter, translate this to 'off'. Do not translate into your
+	 * own language.
+	 */
+	$merriweather = _x( 'on', 'Merriweather font: on or off', 'zillah' );
+
+	if ( 'off' !== $bitter || 'off' !== $lato || 'off' !== $merriweather ) {
 		$font_families = array();
 
-		if ( 'off' !== $source_sans_pro )
+		if ( 'off' !== $merriweather )
 			$font_families[] = 'Merriweather:400';
 
 		if ( 'off' !== $bitter )
 			$font_families[] = 'Cabin:400,500,600,700';
 
+		if ( 'off' !== $lato )
+			$font_families[] = 'Lato:400,900,700';
+		
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -327,6 +337,7 @@ function zillah_brand(){
  *
  * @since Zillah 1.0
  */
+/**
 function zillah_search_icon(){ 
 	$zillah_show_search = get_theme_mod('zillah_show_search'); ?>
 	<li <?php echo ( ( !isset( $zillah_show_search ) || $zillah_show_search == 1 ) && is_customize_preview() ? 'class="zillah-only-customizer"' : '' ) ?>>
@@ -345,13 +356,14 @@ function zillah_search_icon(){
 	</li>
 <?php
 }
-
+**/
 
 /**
  * Display social icons
  *
  * @since Zillah 1.0
  */
+/**
 function zillah_social_icons(){
 	$zillah_social_icons = get_theme_mod( 'zillah_social_icons', json_encode( array(
 		array('icon_value'	=>	'fa-facebook-official' , 'link' => '#', 'id' => 'zillah_5702771a213bb'),
@@ -372,3 +384,4 @@ function zillah_social_icons(){
 		}
 	} 
 }
+ **/

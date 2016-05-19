@@ -25,43 +25,64 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'zillah' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="container container-header">
-			<div class="header-inner">
-				<div class="header-inner-site-branding">
-					
-					<div class="site-branding-wrap">
-						<div class="site-branding">
-							<?php zillah_brand(); ?>
-						</div><!-- .site-branding -->
-					</div>
 
+		<div class="header-inner-top">
+			<div class="container container-header">
+				<div class="header-inner">
 
+					<div class="main-navigation-wrap">
+						<div class="main-navigation-wrap-inner">
 
-				</div>
-				<div class="main-navigation-wrap">
-					<div class="main-navigation-wrap-inner">
-						<nav id="site-navigation" class="main-navigation" role="navigation">
-							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-						</nav><!-- #site-navigation -->
-
-
-						<div class="menu-toggle-button-wrap">
-							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
-						</div>
-
-						
-						<div class="header-social-icons">
-							<ul class="social-media-icons">
+							<div class="header-social-icons">
 								<?php
-								zillah_social_icons();
-								zillah_search_icon(); ?>
-							</ul>
-						</div>
+								wp_nav_menu(
+									array(
+										'theme_location' => 'social',
+										'menu_id' => 'social-icons-menu',
+										'menu_class' => 'social-navigation',
+										'link_before' => '<span class="screen-reader-text">',
+										'link_after' => '</span>',
+										'fallback_cb' => false
+									)
+								);
+								?>
+							</div>
 
+							<nav id="site-navigation" class="main-navigation" role="navigation">
+								<?php
+									wp_nav_menu(
+										array(
+											'theme_location' => 'primary',
+											'menu_id' => 'primary-menu'
+										)
+									);
+								?>
+							</nav><!-- #site-navigation -->
+
+							<div class="menu-toggle-button-wrap">
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
+							</div>
+
+							<div class="header-search">
+								<?php get_search_form(); ?>
+							</div>
+
+						</div>
 					</div>
-				</div>
+				</div><!-- .container-header -->
 			</div>
-		</div><!-- .container-header -->
+		</div>
+
+		<div class="header-inner-site-branding">
+			<div class="container container-header-logo">
+						<div class="site-branding-wrap">
+					<div class="site-branding">
+						<?php zillah_brand(); ?>
+					</div><!-- .site-branding -->
+				</div>
+			</div><!-- .container-header-logo -->
+		</div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
