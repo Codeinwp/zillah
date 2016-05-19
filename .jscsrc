@@ -1,1 +1,7 @@
-js/bootstrap.min.js
+{
+    "preset": "wordpress",
+    "fileExtensions": [ ".js" ],
+    "excludeFiles": [
+    	"js/bootstrap.min.js"
+    ]
+}
