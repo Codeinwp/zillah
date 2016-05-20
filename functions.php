@@ -42,9 +42,7 @@ function zillah_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size ( 'post-thumbnail', 770, 500, true );
-
-	add_image_size ( 'post-thumbnail-blog', 770, 350, true );
+	add_image_size ( 'post-thumbnail', 1140, 530, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -258,7 +256,7 @@ require get_template_directory() . '/inc/jetpack.php';
 
 function zillah_excerpt_more($more) {
 	global $post;
-	return '<span class="clearfix"></span><a href="'. esc_url( get_permalink($post->ID) ) . '" class="more-link">' . __('Read more ', 'zillah' ) . the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span></a>';
+	return '<span class="clearfix clearfix-post"></span><a href="'. esc_url( get_permalink($post->ID) ) . '" class="more-link">' . __('Continue Reading ', 'zillah' ) . the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span></a>';
 }
 add_filter('excerpt_more', 'zillah_excerpt_more');
 

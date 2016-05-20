@@ -120,3 +120,47 @@ function zillah_category_transient_flusher() {
 }
 add_action( 'edit_category', 'zillah_category_transient_flusher' );
 add_action( 'save_post',     'zillah_category_transient_flusher' );
+
+
+
+if ( ! function_exists( 'zillah_posted_date' ) ) :
+	/**
+	 * Prints HTML with meta information for the current post-date.
+	 */
+	function zillah_posted_date() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		$posted_on = sprintf( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
+
+		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+
+	}
+endif;
+
+
+
+if ( ! function_exists( 'zillah_category' ) ) :
+	/**
+	 * Prints HTML with meta information for the category.
+	 */
+	function zillah_category() {
+
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'zillah' ) );
+		if ( $categories_list ) {
+			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				_x( 'Categories', 'Used before category names.', 'zillah' ),
+				$categories_list
+			);
+		}
+	}
+endif;

@@ -810,35 +810,17 @@ a:active {
 	overflow: hidden;
 }
 
-.post-navigation .nav-links {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;	
+.posts-navigation .nav-links {
+	text-align: center;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	border: solid 1px #aaa;
-    position: relative;
-	z-index: 1;
-	display: inline-block;
-	width: 50%;
-}
-
+.post-navigation .nav-previous,
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	border: solid 1px #aaa;
-	text-align: right;
-    margin-left: -1px;
-    position: relative;
-	z-index: 1;
 	display: inline-block;
-	width: 50%;
 }
 
 .posts-navigation .nav-previous a,
@@ -850,11 +832,24 @@ a:active {
     letter-spacing: 2.5px;
     color: #aaa;
     font-size: 14px;
+	background: #7fcaad;
+	color: #fFf;
+}
+
+.posts-navigation .nav-previous a {
+	float: right;
+	margin-left: 10px;
+}
+
+.posts-navigation .nav-next a {
+	float: left;
+	margin-left: 10px;
 }
 
 .posts-navigation .nav-previous a:hover,
 .posts-navigation .nav-next a:hover {
-	    color: #7fcaad;
+	    color: #fff;
+		background: #628d7c;
 }
 
 .post-navigation .nav-links a {
@@ -864,20 +859,6 @@ a:active {
     color: #aaaaaa;
     width: 100%;
     line-height: 20px;
-}
-
-.comment-navigation .nav-next:hover,
-.posts-navigation .nav-next:hover,
-.post-navigation .nav-next:hover {
-	border: solid 1px #7fcaad;
-	z-index: 2;
-}
-
-.comment-navigation .nav-previous:hover,
-.posts-navigation .nav-previous:hover,
-.post-navigation .nav-previous:hover {
-	border: solid 1px #7fcaad;
-	z-index: 2;
 }
 
 .post-navigation .nav-links a:hover {
@@ -1048,6 +1029,10 @@ a:active {
 	width: 100%;
 }
 
+.content-inner-wrap {
+	padding: 0 30px;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1189,19 +1174,9 @@ a:active {
 ## Blog
 --------------------------------------------------------------*/
 
-.blog-post .entry-content {
-    color: #aaaaaa;
-    font-size: 16px;
-    line-height: 27px;
-}
-
-.blog-post .entry-content p {
-	margin-bottom: 0;
-}
-
 .post-thumbnail {	
 	display: block;
-	margin-bottom: 60px;
+	margin-bottom: 75px;
 }
 
 .entry-title-blog {
@@ -1221,9 +1196,9 @@ a:active {
 
 .blog-post {
 	border: 0px;
-    padding: 0px 0px 60px 0px;
-    margin-bottom: 60px;
-    border-bottom: solid 1px #dfdfdf;
+	padding: 45px 0 70px 0;
+	margin-bottom: 60px;
+	background: #fff;
 }
 
 .categories-links a {
@@ -1239,11 +1214,46 @@ a:active {
 }
 
 .entry-header {
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 }
 
-.entry-content {
-/*	padding-top: 40px; */
+.entry-header .content-inner-wrap {
+	text-align: center;
+}
+
+.entry-header .posted-on {
+	color: #aaaaaa;
+	font-size: 15px;
+	padding-bottom: 10px;
+	display: block;
+}
+
+.entry-header .posted-on a {
+	color: #aaaaaa;
+}
+
+.entry-header .posted-on a:hover {
+	color: #575756;
+}
+
+.entry-header .cat-links {
+	font-family: 'Cabin', Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	color: #7fcaad;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding-top: 10px;
+	display: block;
+}
+
+.more-link {
+	margin-top: 50px;
+	float: left;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 15px;
+	font-family: 'Cabin', Helvetica, sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -2598,6 +2608,49 @@ h3.recently-posted-title {
 }
 
 /*--------------------------------------------------------------
+## Jetpack
+--------------------------------------------------------------*/
+.blog-post div.sharedaddy,
+.blog-post #content div.sharedaddy,
+.blog-post #main div.sharedaddy  {
+	clear: none !important;
+	float: right;
+	padding-top: 7px;
+	margin-top: 5px;
+}
+
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-tumblr a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-pocket a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-google-plus-1 a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button{
+	color: #aaaaaa !important;
+	background: none !important;
+	padding: 5px;
+}
+
+.blog-post div.sharedaddy h3.sd-title {
+	float: left;
+	padding-top: 10px;
+	padding-right: 15px;
+	color: #aaaaaa;
+}
+
+.blog-post .sd-content {
+	float: right;
+}
+
+div.sharedaddy h3.sd-title:before {
+	display: none !important;
+}
+
+/*--------------------------------------------------------------
 ## Responsive
 --------------------------------------------------------------*/
 
@@ -3189,9 +3242,6 @@ h3.recently-posted-title {
 	/*-----------
 	 * Content
 	 -----------*/
-	.site-main {
-		padding: 0 60px 0 0;
-	}
 
 	.search-page .site-main,
 	.contact-page .site-main {
@@ -3205,6 +3255,11 @@ h3.recently-posted-title {
 
 	.contact-block-item-wrap .contact-block-item {
 		margin-top: 0;
+	}
+
+	.content-inner-wrap {
+		max-width: 840px;
+		margin: 0 auto;
 	}
 
 	/*-----------
