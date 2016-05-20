@@ -405,7 +405,7 @@ html {
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #f6f6f6; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -1503,6 +1503,7 @@ object {
 	width: 100%;
 	padding: 115px 0;
 	text-align: center;
+	background: #FFF;
 }
 
 .main-navigation-wrap {
@@ -1815,9 +1816,7 @@ object {
 
 .site-footer {
     background: #575756;
-    padding: 50px 0px;
     font-size: 15px;
-    line-height: 19px;
     color: #aaaaaa;
     text-align: left;
 }
@@ -1837,7 +1836,6 @@ object {
 	color: #7fcaad;
 }
 
-
 .site-footer h3,
 .site-footer .widget-title {
     color: #dfdfdf;
@@ -1848,19 +1846,31 @@ object {
 }
 
 .site-info {
-    text-align: center;
-    font-size: 11px;
-    letter-spacing: 1px;
-    padding-top: 20px;
-    border-top: solid 1px #6f6e6b;
-    margin-bottom: -40px;
-    margin-top: 50px;
+	text-align: center;
+	font-size: 15px;
+	letter-spacing: 1px;
+	padding: 22px 0;
+	background: #373735;
 }
 
 .site-info a {
     letter-spacing: 0;
     text-transform: none;
     letter-spacing: 1px;
+	font-family: 'Merriweather', Georgia, serif;
+}
+
+.footer-copyright {
+	float: left;
+	text-align: center;
+	width: 100%;
+}
+
+.footer-back-top {
+	float: right;
+	text-align: center;
+	width: 100%;
+	margin-top: 15px;
 }
 
 .footer-video-wrap {
@@ -1940,6 +1950,10 @@ object {
 	font-size: 20px;
     line-height: 30px;
 	margin: 0 8px;
+}
+
+.footer-inner {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -2666,7 +2680,6 @@ h3.recently-posted-title {
 
 	.widget_categories li a {
 	    text-transform: uppercase;
-	    color: #6f6e6b;
 	    margin-right: 20px;
 	    font-size: 14px;
 	    letter-spacing: 2px;
@@ -2816,24 +2829,24 @@ h3.recently-posted-title {
 	    padding: 0;
 	}
 
-}
-
-@media screen and (min-width: 768px) {
-
-	h2 {
-    	font-size: 28px;
-    	line-height: 40px;
-	}
-
-	.post-navigation {
-		display: block;
-	}
-
 	/*-----------
 	 * Footer
 	 -----------*/
+	.footer-inner {
+		display: block;
+	}
+
+	.site-info {
+		margin-top: 50px;
+	}
+
 	.site-footer {
-		padding: 80px 0px;
+		padding: 50px 0 0;
+	}
+
+	/*
+	.site-footer {
+		padding: 80px 0 0;
     }
 
 	.quick-contact,
@@ -2847,7 +2860,7 @@ h3.recently-posted-title {
 	.quick-contact {
 		text-align: left;
 	}
-
+*/
 	.site-footer .widget_nav_menu .widget-title {
 		margin-bottom: 15px;
 	}
@@ -2870,25 +2883,47 @@ h3.recently-posted-title {
 	}
 
 	.footer-content-bottom {
-	    display: table-cell;
-	    vertical-align: middle;
+		display: table-cell;
+		vertical-align: middle;
 	}
 
 	.footer-content-bottom-left {
-	    display: table-cell;
-	    vertical-align: middle;
-	    width: 100%;
-	    line-height: 27px;
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		line-height: 27px;
 	}
 
 	.footer-content-bottom-btn {
-	    display: table-cell;
-	    vertical-align: middle;
-	    padding-left: 25px;
+		display: table-cell;
+		vertical-align: middle;
+		padding-left: 25px;
 	}
 
-	.site-info {
-	    margin-bottom: -70px;
+}
+
+@media screen and (min-width: 768px) {
+
+	h2 {
+    	font-size: 28px;
+    	line-height: 40px;
+	}
+
+	.post-navigation {
+		display: block;
+	}
+
+	/*-----------
+	 * Footer
+	 -----------*/
+
+	.footer-copyright {
+		width: auto;
+	}
+
+	.footer-back-top {
+		width: auto;
+		margin-top: 0;
 	}
 
 	/*-----------

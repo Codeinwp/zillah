@@ -93,48 +93,26 @@ function zillah_header_social_icons_width() {
 	jQuery( '.header-social-icons' ).css( 'width', totalWidth+10 );
 }
 
-/**
-function zillah_menu_toggle_height() {
-	var menuToggleBtn = jQuery( 'button.menu-toggle' );
-	var siteHeader = jQuery( '.site-header' );
-	if( ! menuToggleBtn ) {
-		return false;
-	}
-	menuToggleBtn.css( 'min-height', '1px' );
-	menuToggleBtn.css( 'min-height', siteHeader.outerHeight() );
-}
-*/
-
 ( function($) {
 
 	$( document ).ready( function() {
 		zillah_header_social_icons_width();
-		zillah_menu_toggle_height();
+
+		// Scroll to top
+		$( '#to-top' ).click(function(){
+			$( 'html, body' ).animate( {
+				scrollTop : 0
+			}, 800 );
+			return false;
+		});
+
 	} );
 
 	$( window ).resize( function() {
 		zillah_header_social_icons_width();
-		zillah_menu_toggle_height();
-	} );
-/**
-	$( '.search-toggle' ).click( function( event ) {
-		if( $( this ).hasClass( 'search-toggle' ) ) {
-			$( '.search-opt' ).removeClass( 'search-toggle' );
-			$( '.header-search' ).addClass( 'search-toggle-open' );
-		} else {
-			$( '.search-toggle-open' ).removeClass( 'search-toggle-open' );
-			$( '.search-opt' ).addClass( 'search-toggle' );
-		}
-		event.stopPropagation();
 	} );
 
-	$( 'html' ).click( function() {
-		$( '.search-toggle-open' ).removeClass( 'search-toggle-open' );
-		$( '.search-opt' ).addClass( 'search-toggle' );
-	} );
- **/
 } )(jQuery);
-
 
 
 
@@ -164,11 +142,11 @@ function zillah_menu_toggle_height() {
     
     initMainNavigation( $( '.main-navigation' ) );
     
-    masthead = $( '#masthead' );
-	menuToggle       = masthead.find( '#menu-toggle' );
-	siteHeaderMenu   = masthead.find( '#site-header-menu' );
-	siteNavigation   = masthead.find( '#site-navigation' ); 
-    
+    var masthead = $( '#masthead' ),
+	    menuToggle       = masthead.find( '#menu-toggle' ),
+	    siteHeaderMenu   = masthead.find( '#site-header-menu' ),
+	    siteNavigation   = masthead.find( '#site-navigation' );
+
     // Enable menuToggle.
 	( function() {
 		// Return early if menuToggle is missing.

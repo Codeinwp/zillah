@@ -78,14 +78,14 @@ function zillah_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'zillah_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'f6f6f6',
 		'default-image' => '',
 	) ) );
 
 	// Add theme support for custom logo
 	add_theme_support( 'custom-logo', array(
-	   'height'      => 55,
-	   'width'       => 280,
+	   'height'      => 175,
+	   'width'       => 378,
 	   'flex-width' => true,
 	) );
 }

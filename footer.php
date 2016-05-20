@@ -41,26 +41,29 @@
 					</div>
 				</div>
 			</div>
+		</div> <!-- .container-footer -->
 
-			<div class="site-info">
-			
-				<?php printf(
-					__( 'Proudly powered by %1$s', 'zillah' ),
-					sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'zillah' ) )
-				); ?>
-				<span class="sep"> | </span>
-				<?php printf(
-					__( 'Theme %1$s by %2$s', 'zillah' ),
-					sprintf( '<a href="http://themeisle.com/themes/zillah/" rel="nofollow">%s</a>', esc_html__( 'Zillah', 'zillah' ) ),
-					sprintf( '<a href="http://themeisle.com/" rel="nofollow">%s</a>', esc_html__( 'Themeisle', 'zillah' ) )
-				); ?>
-				
-				
-			</div><!-- .site-info -->
+		<div class="site-info">
+			<div class="container container-footer-info"">
 
+				<div class="footer-copyright">
+					<?php printf(
+						__( 'Proudly powered by %1$s', 'zillah' ),
+						sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'zillah' ) )
+					); ?>
+					<span class="sep"> | </span>
+					<?php printf(
+						__( 'Theme %1$s by %2$s', 'zillah' ),
+						sprintf( '<a href="http://themeisle.com/themes/zillah/" rel="nofollow">%s</a>', esc_html__( 'Zillah', 'zillah' ) ),
+						sprintf( '<a href="http://themeisle.com/" rel="nofollow">%s</a>', esc_html__( 'Themeisle', 'zillah' ) )
+					); ?>
+				</div>
+				<div class="footer-back-top"">
+					<a href="#" id="to-top" class="to-top">Back to top <i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div><!-- .site-info -->
 
-
-		</div><!-- .container-footer -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
