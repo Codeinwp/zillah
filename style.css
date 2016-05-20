@@ -1183,18 +1183,21 @@ a:active {
     margin-bottom: 0;
 }
 
-.entry-title-blog a {
+.entry-title-blog a,
+.entry-title {
     font-size: 24px;
     line-height: 30px;
     color: #575756;
     font-weight: 400;
+	margin-bottom: 0;
 }
 
 .entry-title-blog a:hover {
 	color: #628d7c;
 }
 
-.blog-post {
+.blog-post,
+.site-main article{
 	border: 0px;
 	padding: 45px 0 70px 0;
 	margin-bottom: 60px;
@@ -2612,7 +2615,10 @@ h3.recently-posted-title {
 --------------------------------------------------------------*/
 .blog-post div.sharedaddy,
 .blog-post #content div.sharedaddy,
-.blog-post #main div.sharedaddy  {
+.blog-post #main div.sharedaddy,
+article.post div.sharedaddy,
+article.post #content div.sharedaddy,
+article.post #main div.sharedaddy {
 	clear: none !important;
 	float: right;
 	padding-top: 7px;
@@ -2623,18 +2629,31 @@ h3.recently-posted-title {
 .blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
 .blog-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
 .blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-tumblr a.sd-button,
+.blog-post .sd-social-icon §.sd-content ul li[class*='share-'].share-tumblr a.sd-button,
 .blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-pocket a.sd-button,
 .blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-google-plus-1 a.sd-button,
 .blog-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
 .blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
 .blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button{
+.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button,
+
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-tumblr a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-pocket a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-google-plus-1 a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
+article.post .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button {
 	color: #aaaaaa !important;
 	background: none !important;
 	padding: 5px;
 }
 
+.blog-post div.sharedaddy h3.sd-title,
 .blog-post div.sharedaddy h3.sd-title {
 	float: left;
 	padding-top: 10px;
