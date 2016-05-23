@@ -10,16 +10,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'search-post' ); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	<div class="content-inner-wrap">
 
-		<?php 
-		 	echo '<div class="categories-links">' . get_the_category_list( ', ', 'zillah') . '</div>';
-		 ?>
-	</header><!-- .entry-header -->
+		<header class="entry-header">
+			<div class="content-inner-wrap">
+				<?php
+				zillah_posted_date();
+				the_title( '<h2 class="entry-title entry-title-blog"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				zillah_category();
+				?>
+			</div>
+		</header><!-- .entry-header -->
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-summary -->
 
+	</div>
 </article><!-- #post-## -->

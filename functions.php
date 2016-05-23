@@ -261,22 +261,6 @@ function zillah_excerpt_more($more) {
 add_filter('excerpt_more', 'zillah_excerpt_more');
 
 
-/**
- * Adds inline style from customizer
- *
- * @since Zillah 1.0
- */
-function zillah_inline_style() {
-	$zillah_page_header = get_theme_mod('zillah_page_header', get_stylesheet_directory_uri().'/images/header-top.jpg');
-    $custom_css = " .page-main-header{
-                		background-image: url(".$zillah_page_header.");
-                	}";
-    
-    wp_add_inline_style( 'zillah-style', $custom_css );
-}
-add_action( 'wp_enqueue_scripts', 'zillah_inline_style' );
-
-
 
 /**
  * Return the site brand 
