@@ -1,9 +1,3 @@
-/**
- * File navigation.js.
- *
- * Handles toggling the navigation menu for small screens and enables TAB key
- * navigation support for dropdown menus.
- */
 ( function() {
 	var container, button, menu, links, subMenus, i, len;
 
@@ -83,22 +77,12 @@
 
 
 /**
- * Those two functions are global because they need to be accesible from customizer.js
+ * Scroll to top
  */
-function zillah_header_social_icons_width() {
-	var totalWidth = 0;
-	jQuery( '.header-social-icons li' ).each( function() {
-		totalWidth += jQuery( this ).outerWidth();
-	} );
-	jQuery( '.header-social-icons' ).css( 'width', totalWidth+10 );
-}
-
 ( function($) {
 
 	$( document ).ready( function() {
-		zillah_header_social_icons_width();
 
-		// Scroll to top
 		$( '#to-top' ).click(function(){
 			$( 'html, body' ).animate( {
 				scrollTop : 0
@@ -106,10 +90,6 @@ function zillah_header_social_icons_width() {
 			return false;
 		});
 
-	} );
-
-	$( window ).resize( function() {
-		zillah_header_social_icons_width();
 	} );
 
 } )(jQuery);
