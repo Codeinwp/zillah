@@ -882,6 +882,7 @@ a:active {
 
 .site-main .post-navigation {
 	padding: 20px 0 80px;
+	margin-bottom: 0;
 }
 
 .post-navigation {
@@ -2028,6 +2029,76 @@ object {
 }
 
 /*--------------------------------------------------------------
+# Slider
+--------------------------------------------------------------*/
+
+.home-carousel .item-inner-half {
+	width: 50%;
+	float: left;
+	position: relative;
+}
+
+.home-carousel .carousel-indicators {
+	margin-bottom: 0;
+	bottom: -40px;
+}
+
+.home-carousel .carousel-indicators li {
+	background-color: #dbd9d9;
+	border: none;
+	width: 11px;
+	height: 11px;
+	margin: 0 5px;
+	padding: 0;
+}
+
+.home-carousel .carousel-indicators .active {
+	background-color: #aaa;
+	border: none;
+	width: 11px;
+	height: 11px;
+	margin: 0 5px;
+	padding: 0;
+}
+
+.carousel-caption {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	bottom: auto;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+	left: auto;
+	right: auto;
+	text-shadow: none;
+}
+
+.carousel-caption-title {
+	font-family: 'Cabin', Helvetica, sans-serif;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: #373735;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel-caption-category {
+	color: #aaaaaa;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel-caption-inner {
+	background: #fff;
+	padding: 30px 40px;
+	max-width: 80%;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
 # Homepage
 --------------------------------------------------------------*/
 
@@ -2671,6 +2742,7 @@ h3.recently-posted-title {
 /*--------------------------------------------------------------
 ## Jetpack
 --------------------------------------------------------------*/
+
 .blog-post div.sharedaddy,
 .blog-post #content div.sharedaddy,
 .blog-post #main div.sharedaddy,
@@ -2684,49 +2756,23 @@ h3.recently-posted-title {
 	margin-top: 5px;
 }
 
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
-.blog-post .sd-social-icon §.sd-content ul li[class*='share-'].share-tumblr a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-pocket a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-google-plus-1 a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
-.blog-post .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button,
-
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-tumblr a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-pocket a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-google-plus-1 a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
-article.post .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button,
-
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-tumblr a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-pocket a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-google-plus-1 a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
-.search-post .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button {
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-tumblr a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-pocket a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-google-plus-1 a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button {
 	color: #aaaaaa !important;
 	background: none !important;
 	padding: 5px;
 }
 
-.blog-post div.sharedaddy h3.sd-title,
-article.post div.sharedaddy h3.sd-title,
-.search-post div.sharedaddy h3.sd-title{
+.entry-content-wrap div.sharedaddy h3.sd-title {
 	float: left;
 	padding-top: 8px;
 	padding-right: 15px;
@@ -2871,11 +2917,12 @@ div.sharedaddy h3.sd-title:before {
 	}
 
 	.widget-area .widget {
-		background: #f6f6f6;
+		background: #fff;
 	    padding: 30px;
 	    margin: 0px;
-	    border-bottom: solid 1px #dfdfdf;
+		margin-bottom: 5px;
 	    width: 330px;
+
 	}
 
 	.widget_recent_entries .post-date {
@@ -3080,7 +3127,7 @@ div.sharedaddy h3.sd-title:before {
 	 * Posts and pages
 	 -----------*/
 	.page-main-header {
-		padding: 100px 0 0;
+		padding: 90px 0 0;
 	}
 
 	/*-----------
@@ -3358,6 +3405,19 @@ div.sharedaddy h3.sd-title:before {
 	.comments-area-wrap .comments-area {
 		max-width: 840px;
 		margin: 0 auto;
+	}
+
+	.content-area-with-sidebar {
+		float: left;
+		padding-top: 0;
+		width: 100%;
+		max-width: 100%;
+		margin-left: -370px;
+		padding-left: 370px;
+	}
+
+	.content-area-with-sidebar .site-main {
+		padding: 0 60px 0 0;
 	}
 
 	/*-----------
