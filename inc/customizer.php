@@ -16,6 +16,7 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
     require_once ( 'class/zillah-general-control.php');
+	require_once ( 'class/zillah_category-selector-control.php');
 
 	/* Control for hiding search icon*/
 	$wp_customize->add_setting( 'zillah_show_search', array(
@@ -62,23 +63,36 @@ function zillah_customize_register( $wp_customize ) {
     ) ) );
 
 
-    /* Single page header image */
-    $wp_customize->add_section( 'zillah_page', array(
-		 'title'	=> esc_html__( 'Page settings', 'zillah' ),
-		 'priority'	=> 45
+	/* Home slider */
+	$wp_customize->add_section( 'zillah_home_slider_section', array(
+		'title'	=> esc_html__( 'Home slider', 'zillah' ),
+		'priority'	=> 80,
 	) );
 
-	$wp_customize->add_setting( 'zillah_page_header', array(
-		'default'	=>	get_stylesheet_directory_uri().'/images/header-top.jpg',
-		'sanitize_callback'	=>	'esc_url',
-		'transport'	=>	'postMessage'
-	) );
+	$wp_customize->add_setting('zillah_home_slider_show', array(
+		'default' => 0,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zillah_page_header', array(
-		'label'	=>	esc_html__( 'Page header', 'zillah' ),
-		'section'	=>	'zillah_page',
-		'priority'	=>	1
-	) ) );
+	$wp_customize->add_control('zillah_home_slider_show', array(
+		'label' => esc_html__('Show slider', 'zillah'),
+		'description' => esc_html__('If you check this box, the slider area will appear on the homepage.', 'zillah'),
+		'section' => 'zillah_home_slider_section',
+		'priority' => 1,
+		'type'	=> 'checkbox',
+	));
+
+	$wp_customize->add_setting('zillah_home_slider_category', array(
+		'default' => 0,
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+	
+	$wp_customize->add_control( new Zillah_Category_Control( $wp_customize, 'zillah_home_slider_category', array(
+		'label'    => 'Category',
+		'section'  => 'zillah_home_slider_section',
+		'priority' => 2,
+	)));
 
 
 }

@@ -86,92 +86,85 @@
 	</header><!-- #masthead -->
 
 
+
+
+
+
+
 	<?php
 
-	if ( ! is_paged() && is_front_page() ): ?>
+	$zillah_home_slider_show  = get_theme_mod( 'zillah_home_slider_show', false );
 
-		<div id="home-carousel" class="carousel slide home-carousel" data-ride="carousel">
+	if ( ! is_paged() && is_front_page() && ( $zillah_home_slider_show === true || $zillah_home_slider_show === false && is_customize_preview() ) ):
 
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#home-carousel" data-slide-to="0" class="active"></li>
-				<li data-target="#home-carousel" data-slide-to="1"></li>
-				<li data-target="#home-carousel" data-slide-to="2"></li>
-			</ol>
+		$zillah_home_slider_category = get_theme_mod( 'zillah_home_slider_category', 0 );
 
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
+		$args = array(
+			'posts_per_page'   => 6,
+			'post_type'        => 'post',
+			'category'         =>  $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
+			'meta_query' => array(
+				array('key' => '_thumbnail_id')
+			)
+		);
 
-				<div class="item active">
-					<div class="item-inner-half">
-						<img src="<?php echo get_bloginfo( "template_directory" ); ?>/images/uuu1.jpg" alt="">
-						<div class="carousel-caption">
-							<div class="carousel-caption-inner">
-								<p class="carousel-caption-title">Building tour branding is simple</p>
-								<p class="carousel-caption-category">business, lifestyle</p>
-							</div>
-						</div>
-					</div>
-					<div class="item-inner-half">
-						<img src="<?php echo get_bloginfo( "template_directory" ); ?>/images/uuu2.jpg" alt="">
-						<div class="carousel-caption">
-							<div class="carousel-caption-inner">
-								<p class="carousel-caption-title">Building tour branding is simple</p>
-								<p class="carousel-caption-category">business, lifestyle</p>
-							</div>
-						</div>
-					</div>
-				</div>
+		$slider_posts = get_posts( $args );
 
-				<div class="item">
-					<div class="item-inner-half">
-						<img src="<?php echo get_bloginfo( "template_directory" ); ?>/images/uuu2.jpg" alt="">
-						<div class="carousel-caption">
-							<div class="carousel-caption-inner">
-								<p class="carousel-caption-title">Building tour branding is simple</p>
-								<p class="carousel-caption-category">business, lifestyle</p>
-							</div>
-						</div>
-					</div>
-					<div class="item-inner-half">
-						<img src="<?php echo get_bloginfo( "template_directory" ); ?>/images/uuu1.jpg" alt="">
-						<div class="carousel-caption">
-							<div class="carousel-caption-inner">
-								<p class="carousel-caption-title">Building tour branding is simple</p>
-								<p class="carousel-caption-category">business, lifestyle</p>
-							</div>
-						</div>
-					</div>
-				</div>
+		$size = round( sizeof( $slider_posts ) / 2, 0, PHP_ROUND_HALF_UP);
 
-				<div class="item">
-					<div class="item-inner-half">
-						<img src="<?php echo get_bloginfo( "template_directory" ); ?>/images/uuu2.jpg" alt="">
-						<div class="carousel-caption">
+		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . ( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) . "\" data-ride=\"carousel\">";
+
+		if( $size ) :
+
+			echo "<ol class=\"carousel-indicators\">";
+				for( $i=0; $i<$size; $i++ ){
+					echo "<li data-target=\"#home-carousel\" data-slide-to=\"". $i . "\"" . ( $i===0 ? " class=\"active\"" : "" ) . "></li>";
+				}
+			echo "</ol>";
+
+			echo "<div class=\"carousel-inner\" role=\"listbox\">";
+
+				$index = 0;
+				foreach ( $slider_posts as $post ) : setup_postdata( $slider_posts );
+
+					$index++;
+					?>
+
+					<?php if( $index%2 === 1 ): ?>
+						<div class="item<?php echo $index===1 ? " active" : "" ?>">
+					<?php endif; ?>
+
+						<div class="item-inner-half">
+							<a href="<?php the_permalink(); ?>"" class="item-inner-link"></a>
+							<?php the_post_thumbnail( 'slider-thumbnail' ); ?>
 							<div class="carousel-caption">
 								<div class="carousel-caption-inner">
-									<p class="carousel-caption-title">Building tour branding is simple</p>
-									<p class="carousel-caption-category">business, lifestyle</p>
+									<p class="carousel-caption-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+									<p class="carousel-caption-category"><?php echo get_the_category_list( ',' ); ?></p>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="item-inner-half">
-						<img src="<?php echo get_bloginfo( "template_directory" ); ?>/images/uuu1.jpg" alt="">
-						<div class="carousel-caption">
-							<div class="carousel-caption">
-								<div class="carousel-caption-inner">
-									<p class="carousel-caption-title">Building tour branding is simple</p>
-									<p class="carousel-caption-category">business, lifestyle</p>
-								</div>
-							</div>
+
+					<?php if( $index%2 === 0 ): ?>
 						</div>
-					</div>
-				</div>
+					<?php endif; ?>
 
-			</div>
+					<?php
+				endforeach;
 
-		</div>
+				if( $index%2 !== 0 ):
+					echo "</div>";
+				endif;
+
+			echo "</div>";
+
+		endif;
+
+		wp_reset_postdata();
+
+		echo "</div>";
+
+		?>
 
 	<?php endif; ?>
 

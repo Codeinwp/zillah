@@ -889,12 +889,12 @@ a:active {
 	display: none;
 }
 
-.zillah-only-customizer{
+.zillah-only-customizer {
 	display: none !important;
 }
 
 .author-details-wrap {
-	margin-top: -59px;
+	margin-top: 1px;
 	background: #FFF;
 	padding: 80px 0;
 	margin-bottom: 59px;
@@ -2524,6 +2524,10 @@ div.sharedaddy h3.sd-title:before {
 		position: relative;
 	}
 
+	.home-carousel .item-inner-half img {
+		width: 100%;
+	}
+
 	.home-carousel .carousel-indicators {
 		margin-bottom: 0;
 		bottom: -40px;
@@ -2560,7 +2564,8 @@ div.sharedaddy h3.sd-title:before {
 		text-shadow: none;
 	}
 
-	.carousel-caption-title {
+	.carousel-caption-title,
+	.carousel-caption-title a {
 		font-family: 'Cabin', Helvetica, sans-serif;
 		text-transform: uppercase;
 		font-size: 18px;
@@ -2569,11 +2574,20 @@ div.sharedaddy h3.sd-title:before {
 		padding: 0;
 	}
 
-	.carousel-caption-category {
+	.carousel-caption-title a:hover {
+		color: #628d7c;
+	}
+
+	.carousel-caption-category,
+	.carousel-caption-category a {
 		color: #aaaaaa;
 		font-size: 14px;
 		margin: 0;
 		padding: 0;
+	}
+
+	.carousel-caption-category a:hover {
+		color: #628d7c;
 	}
 
 	.carousel-caption-inner {
@@ -2582,6 +2596,16 @@ div.sharedaddy h3.sd-title:before {
 		max-width: 80%;
 		margin: 0 auto;
 		display: inline-block;
+	}
+
+	.item-inner-link {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 }

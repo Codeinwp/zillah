@@ -44,6 +44,8 @@ function zillah_setup() {
 
 	add_image_size ( 'post-thumbnail', 1140, 530, true );
 
+	add_image_size ( 'slider-thumbnail', 900, 500, true );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary'   => esc_html__( 'Primary', 'zillah' ),
