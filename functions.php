@@ -263,6 +263,24 @@ function zillah_excerpt_more($more) {
 add_filter('excerpt_more', 'zillah_excerpt_more');
 
 
+/**
+ * Adds inline style from customizer
+ *
+ * @since Zillah 1.0
+ */
+function zillah_inline_style() {
+	$header_image = get_header_image();
+	$custom_css = "";
+	if(!empty($header_image)){
+		$custom_css .= "
+	            .header-inner-site-branding {
+	                    background-image: url(".esc_url($header_image).");
+	            }";
+	}
+	wp_add_inline_style( 'zillah-style', $custom_css );
+}
+add_action( 'wp_enqueue_scripts', 'zillah_inline_style' );
+
 
 /**
  * Return the site brand 
@@ -347,25 +365,85 @@ function zillah_search_icon(){
  *
  * @since Zillah 1.0
  */
-/**
-function zillah_social_icons(){
-	$zillah_social_icons = get_theme_mod( 'zillah_social_icons', json_encode( array(
-		array('icon_value'	=>	'fa-facebook-official' , 'link' => '#', 'id' => 'zillah_5702771a213bb'),
-		array('icon_value'	=>	'fa-google' , 'link' => '#', 'id' => 'zillah_57027720213bc'),
-		array('icon_value'	=>	'fa-instagram' , 'link' => '#', 'id' => 'zillah_57027722213bd')
-	) ) );
-	if( !empty($zillah_social_icons) ){
-		$zillah_social_icons_decoded = json_decode($zillah_social_icons, true);
-		foreach ( $zillah_social_icons_decoded as $social_icon ) { 
-			if( !empty( $social_icon['link'] ) ){?>
-				<li>
-					<a target="_blank" href="<?php echo esc_url( $social_icon['link'] ); ?>">
-						<i class="fa <?php echo esc_html( $social_icon['icon_value'] ); ?>"></i>
-					</a>
-				</li>
-		<?php
-			} 
-		}
-	} 
+
+function zillah_slider(){
+
+	global $post;
+
+	$zillah_home_slider_show  = get_theme_mod( 'zillah_home_slider_show', false );
+
+	if ( ! is_paged() && is_front_page() && ( $zillah_home_slider_show === true || $zillah_home_slider_show === false && is_customize_preview() ) ):
+
+		$zillah_home_slider_category = get_theme_mod( 'zillah_home_slider_category', 0 );
+
+		$args = array(
+			'posts_per_page'   => 6,
+			'post_type'        => 'post',
+			'category'         =>  $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
+			'meta_query' => array(
+				array('key' => '_thumbnail_id')
+			)
+		);
+
+		$slider_posts = get_posts( $args );
+
+		$size = round( sizeof( $slider_posts ) / 2, 0, PHP_ROUND_HALF_UP);
+
+		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . ( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) . "\" data-ride=\"carousel\">";
+
+		if( $size ) :
+
+			echo "<ol class=\"carousel-indicators\">";
+			for( $i=0; $i<$size; $i++ ){
+				echo "<li data-target=\"#home-carousel\" data-slide-to=\"". $i . "\"" . ( $i===0 ? " class=\"active\"" : "" ) . "></li>";
+			}
+			echo "</ol>";
+
+			echo "<div class=\"carousel-inner\" role=\"listbox\">";
+
+			$index = 0;
+			foreach ( $slider_posts as $post ) : setup_postdata( $slider_posts );
+
+				$index++;
+				?>
+
+				<?php if( $index%2 === 1 ): ?>
+					<div class="item<?php echo $index===1 ? " active" : "" ?>">
+				<?php endif; ?>
+
+				<div class="item-inner-half">
+					<a href="<?php the_permalink(); ?>"" class="item-inner-link"></a>
+					<?php the_post_thumbnail(); ?>
+					<div class="carousel-caption">
+						<div class="carousel-caption-inner">
+							<p class="carousel-caption-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+							<p class="carousel-caption-category"><?php echo get_the_category_list( ',' ); ?></p>
+						</div>
+					</div>
+				</div>
+
+				<?php if( $index%2 === 0 ): ?>
+					</div>
+				<?php endif; ?>
+
+				<?php
+			endforeach;
+
+			if( $index%2 !== 0 ):
+				echo "</div>";
+			endif;
+
+			echo "</div>";
+
+		endif;
+
+		wp_reset_postdata();
+
+		echo "</div>";
+
+
+
+	endif;
+
 }
- **/
+

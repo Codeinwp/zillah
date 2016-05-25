@@ -894,10 +894,10 @@ a:active {
 }
 
 .author-details-wrap {
-	margin-top: 1px;
+	margin-top: -59px;
 	background: #FFF;
 	padding: 80px 0;
-	margin-bottom: 59px;
+	margin-bottom: 60px;
 	float: left;
 	width: 100%;;
 }
@@ -1076,6 +1076,7 @@ a:active {
 .not-found .page-header,
 .not-found .page-title {
 	margin-top: 0;
+	text-align: center;
 }
 
 .not-found .page-content {
@@ -1084,6 +1085,23 @@ a:active {
 
 .not-found input[type="submit"], .btn {
 	padding: 22px 50px;
+}
+
+.not-found {
+	border: 0px;
+	padding: 45px 0 45px 0;
+	background: #fff;
+	float: left;
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.not-found .page-title,
+.search-nothing-found {
+	font-size: 24px;
+	line-height: 30px;
+	color: #575756;
+	font-weight: 400;
 }
 
 /*--------------------------------------------------------------
@@ -1234,7 +1252,7 @@ a:active {
 .site-main > article {
 	border: 0px;
 	padding: 45px 0 45px 0;
-	margin-bottom: 0;
+	margin-bottom: 60px;
 	background: #fff;
 	float: left;
 	width: 100%;
@@ -1411,7 +1429,6 @@ h2.comments-title {
 	min-height: 195px;
 }
 
-
 .comment-metadata a:hover,
 .comment-author .fn a:hover {
 	color: #628d7c;
@@ -1583,6 +1600,8 @@ object {
 	padding: 115px 0;
 	text-align: center;
 	background: #FFF;
+	background-size: cover;
+	background-position: center;
 }
 
 .main-navigation-wrap {
@@ -2037,7 +2056,7 @@ div.sharedaddy h3.sd-title:before {
 	.header-social-icons {
 		display: table-cell;
 		vertical-align: middle;
-		min-width: 220px;
+		width: 220px;
 		text-align: left;
 	}
 

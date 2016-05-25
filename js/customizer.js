@@ -29,11 +29,11 @@
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
 					'clip': 'auto',
 					'position': 'relative'
 				} );
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
 					'color': to
 				} );
 			}
@@ -57,9 +57,6 @@
 	// Slider
 	wp.customize( 'zillah_home_slider_show', function( value ) {
 		value.bind( function( to ) {
-
-			alert( to );
-
 			if( to != '' ) {
 				$( '#home-carousel' ).removeClass( 'zillah-only-customizer' );
 			}
