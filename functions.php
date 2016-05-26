@@ -334,32 +334,6 @@ function zillah_brand(){
 
 
 /**
- * Display the search icon
- *
- * @since Zillah 1.0
- */
-/**
-function zillah_search_icon(){ 
-	$zillah_show_search = get_theme_mod('zillah_show_search'); ?>
-	<li <?php echo ( ( !isset( $zillah_show_search ) || $zillah_show_search == 1 ) && is_customize_preview() ? 'class="zillah-only-customizer"' : '' ) ?>>
-		<?php 
-		if( ( isset($zillah_show_search) && $zillah_show_search != 1 ) || is_customize_preview() ){ ?>
-			<button type="button" class="search-opt search-toggle">
-				<i class="fa fa-search"></i>
-			</button>
-			<div class="header-search">
-				<div class="container container-header-search">
-					<?php get_search_form(); ?>
-				</div>
-			</div>
-		<?php
-		} ?>
-	</li>
-<?php
-}
-**/
-
-/**
  * Display social icons
  *
  * @since Zillah 1.0

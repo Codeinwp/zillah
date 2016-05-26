@@ -294,15 +294,22 @@ optgroup {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	border: 1px solid #d1d1d1;
 }
 
 td,
 th {
 	padding: 0;
+	border: 1px solid #d1d1d1;
+	padding: 0.4375em;
 }
 
 *:focus {
 	outline: none;
+}
+
+.highlight {
+	background: #fff198;
 }
 
 /*--------------------------------------------------------------
@@ -389,6 +396,11 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+dd,
+dt {
+	line-height: 1.8;
 }
 
 /*--------------------------------------------------------------
@@ -1038,11 +1050,13 @@ a:active {
 	text-align: center;
 	color: #575756;
 	border: none;
-	margin: 60px 0 0;
+	margin: 90px 0 0;
+	padding-bottom: 0;
 }
 
 .page-header h1.page-title {
 	color: #575756;
+	margin: 0;
 }
 
 .taxonomy-description {
@@ -1104,6 +1118,16 @@ a:active {
 	line-height: 30px;
 	color: #575756;
 	font-weight: 400;
+}
+
+.entry-content > p:first-child:first-letter {
+	float: left;
+	color: #628d7c;
+	font-size: 50px;
+	line-height: 50px;
+	padding-top: 4px;
+	padding-right: 8px;
+	padding-left: 3px;
 }
 
 /*--------------------------------------------------------------
@@ -1455,7 +1479,7 @@ h2.comments-title {
 
 .comment-list .children {
 	margin-left: 0px;
-	padding: 0 0 0 30px;
+	padding: 0 0 0 60px;
 }
 
 /*--------------------------------------------------------------
@@ -1997,17 +2021,16 @@ object {
 	margin-top: 5px;
 }
 
-.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button,
-.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-tumblr a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-pocket a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-google-plus-1 a.sd-button,
-.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
-.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button {
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button {
 	color: #aaaaaa !important;
 	background: none !important;
 	padding: 5px;
@@ -2051,6 +2074,20 @@ div.sharedaddy h3.sd-title:before {
 --------------------------------------------------------------*/
 
 @media screen and (min-width: 600px) {
+
+	.entry-content blockquote.alignleft,
+	.entry-content blockquote.alignright {
+		width: -webkit-calc(50% - 0.736842105em);
+		width: calc(50% - 0.736842105em);
+	}
+
+	.entry-content blockquote.alignleft {
+		margin: 10px 30px 30px 0;
+	}
+
+	.entry-content blockquote.alignright {
+		margin: 10px 0 30px 30px;
+	}
 
 	/*-----------
 	 * Header
