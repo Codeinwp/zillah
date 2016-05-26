@@ -97,4 +97,19 @@
 		} );
 	} );
 
+
+	// Sidebar
+	wp.customize( 'zillah_sidebar_show', function( value ) {
+		value.bind( function( to ) {
+			if( to != '' ) {
+				$( '#secondary' ).removeClass( 'zillah-only-customizer' );
+				$( '.content-area' ).addClass( 'content-area-with-sidebar' );
+			}
+			else {
+				$( '#secondary' ).addClass( 'zillah-only-customizer' );
+				$( '.content-area' ).removeClass( 'content-area-with-sidebar' );
+			}
+		} );
+	} );
+
 } )( jQuery );

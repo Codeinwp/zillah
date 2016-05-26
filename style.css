@@ -804,6 +804,8 @@ a:active {
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
+	float: left;
+	width: 100%;
 }
 
 .posts-navigation .nav-links {
@@ -881,7 +883,7 @@ a:active {
 }
 
 .site-main .post-navigation {
-	padding: 20px 0 80px;
+	padding: 20px 0 60px;
 	margin-bottom: 0;
 }
 
@@ -2132,10 +2134,6 @@ div.sharedaddy h3.sd-title:before {
 	    font-family: 'Cabin', Helvetica, sans-serif;
 	}
 
-	.widget_categories li a:hover {
-		color: #2d2d2b;
-	}
-
 	.widget ul {
 	    list-style-type: none;
 	    margin: 0;
@@ -2284,7 +2282,7 @@ div.sharedaddy h3.sd-title:before {
 	}
 
 	.container-footer {
-		padding-top: 50px;
+		padding-top: 80px;
 		padding-bottom: 50px;
 	}
 

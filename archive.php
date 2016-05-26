@@ -7,6 +7,9 @@
  * @package zillah
  */
 
+global $wp_customize;
+$zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
+
 get_header(); ?>
 
 	</div><!-- .container -->
@@ -22,7 +25,7 @@ get_header(); ?>
 
 		<div class="content-wrap">
 
-			<div id="primary" class="content-area">
+			<div id="primary" class="content-area<?php echo $zillah_sidebar_show!==false ? " content-area-with-sidebar" : ""; ?>">
 				<main id="main" class="site-main" role="main">
 
 				<?php
@@ -51,6 +54,12 @@ get_header(); ?>
 
 				</main><!-- #main -->
 			</div><!-- #primary -->
+
+			<?php
+				if ( $zillah_sidebar_show !== false ) {
+					get_sidebar();
+				}
+			?>
 
 		</div><!-- .content-wrap -->
 

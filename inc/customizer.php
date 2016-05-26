@@ -23,14 +23,35 @@ function zillah_customize_register( $wp_customize ) {
     $wp_customize->get_control( 'display_header_text' )->priority = 2;
     $wp_customize->get_control( 'blogname' )->priority = 3;
     $wp_customize->get_control( 'blogdescription' )->priority = 4;
-    $wp_customize->get_control( 'custom_logo' )->priority = 5;
 
-	/* Home slider */
+	$custom_logo = $wp_customize->get_control( 'custom_logo' );
+	if( !empty( $custom_logo ) ) {
+		$wp_customize->get_control( 'custom_logo' )->priority = 5;
+	}
+
+	/* Advanced options */
 	$wp_customize->add_section( 'zillah_home_slider_section', array(
-		'title'	=> esc_html__( 'Home slider', 'zillah' ),
+		'title'	=> esc_html__( 'Advanced options', 'zillah' ),
 		'priority'	=> 80,
 	) );
 
+	/* Show sidebar */
+	$wp_customize->add_setting('zillah_sidebar_show', array(
+		'default' => 0,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_sidebar_show', array(
+		'label' => esc_html__('Show sidebar', 'zillah'),
+		'description' => esc_html__('If you check this box, the sidebar will appear.', 'zillah'),
+		'section' => 'zillah_home_slider_section',
+		'priority' => 1,
+		'type'	=> 'checkbox',
+	));
+
+
+	/* Home slider */
 	$wp_customize->add_setting('zillah_home_slider_show', array(
 		'default' => 0,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',

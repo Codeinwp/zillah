@@ -224,8 +224,7 @@ add_action( 'wp_enqueue_scripts', 'zillah_scripts' );
  */
 function zillah_customizer_script() {
 	wp_enqueue_style( 'zillah-font-awesome-admin', get_template_directory_uri() . '/css/font-awesome.min.css', array(), 'v4.5.0', false );
-	wp_register_script( 'zillah-ddslick', get_template_directory_uri() .'/js/jquery.ddslick.js', array("jquery"), '1.0.0');
-	wp_enqueue_script( 'zillah-customizer-script', get_template_directory_uri() .'/js/zillah_customizer.js', array( 'jquery', 'jquery-ui-draggable','zillah-ddslick' ), '1.0.1', true );
+	wp_enqueue_script( 'zillah-customizer-script', get_template_directory_uri() .'/js/zillah_customizer.js', array( 'jquery', 'jquery-ui-draggable' ), '1.0.1', true );
 	wp_enqueue_style( 'zillah-admin-stylesheet', get_stylesheet_directory_uri().'/css/admin-style.css','1.0.0' );
 }
 add_action(  'customize_controls_enqueue_scripts', 'zillah_customizer_script'  );
