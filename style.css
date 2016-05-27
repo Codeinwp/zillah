@@ -2132,6 +2132,7 @@ div.sharedaddy h3.sd-title:before {
 
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
 	padding: 10px 10px 20px 10px;
+	margin-bottom: 0;
 }
 
 .entry-content #jp-relatedposts h3.jp-relatedposts-headline em:before {
