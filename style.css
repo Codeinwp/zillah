@@ -702,9 +702,9 @@ a:active {
 	font-family: 'Cabin', Helvetica, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
-    padding: 30px;
-    color: #fff;
-    font-size: 18px;
+	padding: 15px 30px;
+	color: #fff;
+	font-size: 16px;
 	line-height: 20px;
 }
 
@@ -717,7 +717,8 @@ a:active {
 }
 
 .main-navigation ul ul a {
-	padding: 18px 20px;
+	padding: 12px 20px;
+	width: 100%;
 }
 
 .main-navigation li:hover > a,
@@ -765,7 +766,7 @@ a:active {
     position: absolute;
     z-index: 9;
     right: 0;
-    top: 27px;
+    top: 13px;
     width: 25px;
     height: 25px;
     margin: 0 5px 0 0;
@@ -1120,7 +1121,7 @@ a:active {
 	font-weight: 400;
 }
 
-.entry-content > p:first-child:first-letter {
+p.dropcap:first-letter {
 	float: left;
 	color: #628d7c;
 	font-size: 50px;
@@ -1601,7 +1602,7 @@ object {
 
 .site-title {
 	font-family: 'Lato', Helvetica, sans-serif;
-    font-size: 56px;
+    font-size: 46px;
     line-height: 1;
     color: #373735;
     letter-spacing: 10px;
@@ -1623,7 +1624,7 @@ object {
 
 .header-inner-site-branding {
 	width: 100%;
-	padding: 115px 0;
+	padding: 60px 0;
 	text-align: center;
 	background: #FFF;
 	background-size: cover;
@@ -1642,7 +1643,7 @@ object {
 .header-inner {
 	display: table;
 	width: 100%;
-	padding: 15px 0;
+	padding: 12px 0;
 }
 
 .menu-toggle-button-wrap {
@@ -1653,7 +1654,7 @@ object {
 
 .site-description {
 	margin-bottom: 0;
-	margin-top: 40px;
+	margin-top: 15px;
 	color: #aaaaaa;
 }
 
@@ -1665,7 +1666,7 @@ object {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: right;
-	width: 200px;
+	width: 160px;
 }
 
 .header-search .search-form {
@@ -1677,6 +1678,8 @@ object {
 	border: none;
 	padding: 5px;
 	width: 100%;
+	font-family: 'Cabin', Helvetica, sans-serif;
+	font-size: 13px;
 }
 
 .header-search label {
@@ -1731,7 +1734,7 @@ object {
 
 .menu-toggle {
 	font-size: 20px;
-    padding: 27px 34px;
+    padding: 10px 15px;
     background: none;
     color: #6f6e6b;
 	float: none;
@@ -1757,7 +1760,7 @@ object {
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 	text-align: center;
-	margin-right: 10px;
+	margin-right: 8px;
 }
 
 .social-navigation a:hover {
@@ -1767,7 +1770,7 @@ object {
 .social-navigation a::before {
 	content: "\f1e0";
 	font-family: 'FontAwesome';
-	font-size: 18px;
+	font-size: 16px;
 	display: block;
 	width: 20px;
 	height: 20px;
@@ -1829,6 +1832,7 @@ object {
 .site-footer {
     background: #575756;
     font-size: 15px;
+	font-weight: 300;
     color: #aaaaaa;
     text-align: left;
 }
@@ -1859,9 +1863,9 @@ object {
 
 .site-info {
 	text-align: center;
-	font-size: 15px;
+	font-size: 12px;
 	letter-spacing: 1px;
-	padding: 22px 0;
+	padding: 15px 0;
 	background: #373735;
 }
 
@@ -2095,7 +2099,7 @@ div.sharedaddy h3.sd-title:before {
 	.header-social-icons {
 		display: table-cell;
 		vertical-align: middle;
-		width: 220px;
+		width: 160px;
 		text-align: left;
 	}
 
@@ -2123,6 +2127,10 @@ div.sharedaddy h3.sd-title:before {
 	--------------------------------------------------------------*/
 	.widget {
 		margin: 0 0 1.5em;
+	}
+
+	.site-footer .widget {
+		padding-bottom: 50px;
 	}
 
 	.widget select {
@@ -2320,7 +2328,6 @@ div.sharedaddy h3.sd-title:before {
 
 	.container-footer {
 		padding-top: 80px;
-		padding-bottom: 50px;
 	}
 
 	.site-footer .widget_nav_menu .widget-title {
@@ -2418,7 +2425,6 @@ div.sharedaddy h3.sd-title:before {
 
 }
 
-
 @media screen and (min-width: 992px) {
 
 	/*-----------
@@ -2464,7 +2470,7 @@ div.sharedaddy h3.sd-title:before {
 	}
 
 	.main-navigation li a {
-	    font-size: 15px;
+	    font-size: 13px;
 	    color: #aaaaaa;
 	    padding: 5px 10px;
 	}
@@ -2664,3 +2670,10 @@ div.sharedaddy h3.sd-title:before {
 
 }
 
+@media screen and (min-width: 1200px) {
+
+	.container {
+		width: 970px;
+	}
+
+}

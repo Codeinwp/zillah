@@ -84,8 +84,8 @@ function zillah_setup() {
 
 	// Add theme support for custom logo
 	add_theme_support( 'custom-logo', array(
-	   'height'      => 175,
-	   'width'       => 378,
+	   'height' => 145,
+	   'width' => 315,
 	   'flex-width' => true,
 	) );
 }
@@ -170,7 +170,7 @@ function zillah_fonts_url() {
 		$font_families = array();
 
 		if ( 'off' !== $merriweather )
-			$font_families[] = 'Merriweather:400';
+			$font_families[] = 'Merriweather:400,300';
 
 		if ( 'off' !== $bitter )
 			$font_families[] = 'Cabin:400,500,600,700';
