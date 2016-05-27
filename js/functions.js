@@ -197,33 +197,45 @@
 
 
 /* scroll down sticky header */
-(function($) {
+(function($,window) {
 
-	var headerHeight,
-		lastScrollTop     = 0,
-		changeDirection   = false,
-		lastDirectionDown = false;
-	var $headerToHide     = $( '.header-inner-top' );
+    var headerHeight,
+        isAdminBar,
+        lastScrollTop       = 0,
+        initTop             = 0;
+        changeDirection     = false,
+        lastDirectionDown   = false;
+    var $headerToHide       = $( '.header-inner-top' ),
+        $headerWrap         = $( '.header-inner-site-branding' );
 
-	$( document ).ready( function() {
-		headerHeight = $headerToHide.height();
-	} );
+    if( window.innerWidth >= 992 ) {
 
-	$( window ).resize( function(){
-		headerHeight = $headerToHide.height();
-	});
+        $(document).ready(function () {
+            headerHeight    = $headerToHide.height();
+            isAdminBar      = $( '#wpadminbar' ).length > 0 ? true : false;
+            initTop         = isAdminBar ? 32 : 0;
+            $headerWrap.css( 'padding-top', headerHeight + 60 );
+        });
 
-	$( window ).scroll(function( event ) {
-		var thisScrollTop = $(this).scrollTop();
-		changeDirection = ( (thisScrollTop>lastScrollTop && lastDirectionDown===false) || (thisScrollTop<lastScrollTop && lastDirectionDown===true) ? true : false );
-		if( changeDirection === true ) {
-			$headerToHide.toggleClass( 'hide-header' );
-			lastDirectionDown = ( lastDirectionDown === false ? true : false );
-		}
-		$headerToHide.css({
-			'top': $headerToHide.hasClass( 'hide-header' ) ? (-1) * headerHeight : 0
-		} );
-		lastScrollTop = thisScrollTop;
-	} );
+        $(window).resize(function () {
+            headerHeight    = $headerToHide.height();
+            initTop         = isAdminBar ? 32 : 0;
+            $headerWrap.css( 'padding-top', headerHeight + 60 );
+        });
+
+        $(window).scroll(function (event) {
+            var thisScrollTop = $(this).scrollTop();
+            changeDirection = ( (thisScrollTop > lastScrollTop && lastDirectionDown === false) || (thisScrollTop < lastScrollTop && lastDirectionDown === true) ? true : false );
+            if (changeDirection === true) {
+                $headerToHide.toggleClass('hide-header');
+                lastDirectionDown = ( lastDirectionDown === false ? true : false );
+            }
+            $headerToHide.css( {
+                'top': $headerToHide.hasClass('hide-header') ? (-1) * headerHeight : initTop
+            } );
+            lastScrollTop = thisScrollTop;
+        });
+
+    }
 
 } )(jQuery,window);

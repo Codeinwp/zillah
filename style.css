@@ -2434,12 +2434,16 @@ div.sharedaddy h3.sd-title:before {
 	.header-inner-top {
 		position: fixed;
 		width: 100%;
-		z-index: 999999;
+		z-index: 9999;
 		top: 0;
 		-webkit-transition: all 0.3s;
 		-moz-transition: all 0.3s;
 		-o-transition: all 0.3s;
 		transition: all 0.3s;
+	}
+
+	.admin-bar .header-inner-top {
+		top: 32px;
 	}
 
 	.header-inner-site-branding {
@@ -2693,6 +2697,14 @@ div.sharedaddy h3.sd-title:before {
 
 	.container {
 		width: 970px;
+	}
+
+}
+
+@media screen and (max-width: 992px) {
+
+	.header-inner-top {
+		top: auto !important;
 	}
 
 }
