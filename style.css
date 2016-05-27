@@ -2081,7 +2081,7 @@ div.sharedaddy h3.sd-title:before {
 }
 
 /* Related posts */
-#jp-relatedposts h3.jp-relatedposts-headline {
+.entry-content #jp-relatedposts h3.jp-relatedposts-headline {
 	font-family: 'Merriweather', Georgia, serif;
 	font-size: 20px;
 	font-weight: 400;
@@ -2091,22 +2091,19 @@ div.sharedaddy h3.sd-title:before {
 	text-transform: none;
 }
 
-#jp-relatedposts h3.jp-relatedposts-headline em {
+.entry-content #jp-relatedposts h3.jp-relatedposts-headline em {
 	font-family: 'Merriweather', Georgia, serif;
 	font-weight: 400;
 }
 
-#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+.entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
 	background: #f6f6f6;
 	padding-bottom: 20px;
 }
 
-#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+.entry-content #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
 	text-align: center;
-	margin-top: 16px;
-	font-size: 16px;
-	font-family: 'Cabin', Helvetica, sans-serif;
-	text-transform: uppercase;
+    padding-top: 16px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -2114,13 +2111,19 @@ div.sharedaddy h3.sd-title:before {
 	margin: 20px auto 0;
 }
 
-#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
+.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+    font-size: 16px;
+    font-family: 'Cabin', Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
 	max-width: 80%;
 	text-align: center;
 	margin: 0 auto;
 }
 
-#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+.entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
 	padding: 10px;
 }
 
