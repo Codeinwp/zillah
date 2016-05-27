@@ -357,6 +357,11 @@ blockquote {
     margin: 50px 0;
 }
 
+.entry-content blockquote.alignleft,
+.entry-content blockquote.alignright {
+	margin: 50px 0;
+}
+
 address {
 	margin: 0 0 1.5em;
 }
@@ -2013,6 +2018,7 @@ object {
 ## Jetpack
 --------------------------------------------------------------*/
 
+/* Sharing */
 .blog-post div.sharedaddy,
 .blog-post #content div.sharedaddy,
 .blog-post #main div.sharedaddy,
@@ -2072,6 +2078,50 @@ div.sharedaddy h3.sd-title:before {
 	.search-post #main div.sharedaddy {
 		float: right;
 	}
+}
+
+/* Related posts */
+#jp-relatedposts h3.jp-relatedposts-headline {
+	font-family: 'Merriweather', Georgia, serif;
+	font-size: 20px;
+	font-weight: 400;
+	text-align: center;
+	width: 100%;
+	color: #373735;
+	text-transform: none;
+}
+
+#jp-relatedposts h3.jp-relatedposts-headline em {
+	font-family: 'Merriweather', Georgia, serif;
+	font-weight: 400;
+}
+
+#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+	background: #f6f6f6;
+	padding-bottom: 20px;
+}
+
+#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+	text-align: center;
+	margin-top: 16px;
+	font-size: 16px;
+	font-family: 'Cabin', Helvetica, sans-serif;
+	text-transform: uppercase;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 80%;
+	margin: 20px auto 0;
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
+	max-width: 80%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+	padding: 10px;
 }
 
 /*--------------------------------------------------------------
