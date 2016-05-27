@@ -2082,13 +2082,14 @@ div.sharedaddy h3.sd-title:before {
 
 /* Related posts */
 .entry-content #jp-relatedposts h3.jp-relatedposts-headline {
-	font-family: 'Merriweather', Georgia, serif;
-	font-size: 20px;
-	font-weight: 400;
-	text-align: center;
-	width: 100%;
-	color: #373735;
-	text-transform: none;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    color: #373735;
+    text-transform: none;
+    margin-top: 60px;
 }
 
 .entry-content #jp-relatedposts h3.jp-relatedposts-headline em {
@@ -2103,7 +2104,7 @@ div.sharedaddy h3.sd-title:before {
 
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
 	text-align: center;
-    padding-top: 16px;
+    padding-top: 0;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -2115,6 +2116,12 @@ div.sharedaddy h3.sd-title:before {
     font-size: 16px;
     font-family: 'Cabin', Helvetica, sans-serif;
     text-transform: uppercase;
+    color: #575756;
+}
+
+.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:hover {
+    text-decoration: none;
+    color: #628d7c;
 }
 
 .entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
@@ -2124,7 +2131,12 @@ div.sharedaddy h3.sd-title:before {
 }
 
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
-	padding: 10px;
+	padding: 10px 10px 20px 10px;
+}
+
+.entry-content #jp-relatedposts h3.jp-relatedposts-headline em:before {
+    content: "";
+    border-top: 1px solid rgb(246, 246, 246);
 }
 
 /*--------------------------------------------------------------
