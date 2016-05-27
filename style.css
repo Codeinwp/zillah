@@ -2034,7 +2034,8 @@ object {
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-facebook a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-pinterest a.sd-button,
-.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button {
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-linkedin a.sd-button,
+.entry-content-wrap .sd-social-icon .sd-content ul li[class*=share-].share-press-this a.sd-button {
 	color: #aaaaaa !important;
 	background: none !important;
 	padding: 5px;
@@ -2426,6 +2427,24 @@ div.sharedaddy h3.sd-title:before {
 }
 
 @media screen and (min-width: 992px) {
+
+	/*-----------
+	 * Header
+	 -----------*/
+	.header-inner-top {
+		position: fixed;
+		width: 100%;
+		z-index: 999999;
+		top: 0;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
+	}
+
+	.header-inner-site-branding {
+		padding-top: 110px;
+	}
 
 	/*-----------
 	 * Menus

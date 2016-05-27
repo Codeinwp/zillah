@@ -193,3 +193,37 @@
     
     
 } )( jQuery );
+
+
+
+/* scroll down sticky header */
+(function($) {
+
+	var headerHeight,
+		lastScrollTop     = 0,
+		changeDirection   = false,
+		lastDirectionDown = false;
+	var $headerToHide     = $( '.header-inner-top' );
+
+	$( document ).ready( function() {
+		headerHeight = $headerToHide.height();
+	} );
+
+	$( window ).resize( function(){
+		headerHeight = $headerToHide.height();
+	});
+
+	$( window ).scroll(function( event ) {
+		var thisScrollTop = $(this).scrollTop();
+		changeDirection = ( (thisScrollTop>lastScrollTop && lastDirectionDown===false) || (thisScrollTop<lastScrollTop && lastDirectionDown===true) ? true : false );
+		if( changeDirection === true ) {
+			$headerToHide.toggleClass( 'hide-header' );
+			lastDirectionDown = ( lastDirectionDown === false ? true : false );
+		}
+		$headerToHide.css({
+			'top': $headerToHide.hasClass( 'hide-header' ) ? (-1) * headerHeight : 0
+		} );
+		lastScrollTop = thisScrollTop;
+	} );
+
+} )(jQuery,window);
