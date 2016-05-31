@@ -31,7 +31,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Advanced options */
 	$wp_customize->add_section( 'zillah_home_slider_section', array(
-		'title'	=> esc_html__( 'Advanced options', 'zillah' ),
+		'title'	=> esc_html__( 'Theme options', 'zillah' ),
 		'priority'	=> 80,
 	) );
 
@@ -50,8 +50,12 @@ function zillah_customize_register( $wp_customize ) {
 		'type'	=> 'checkbox',
 	));
 
+	/* Featured Content Slider */
+	$wp_customize->add_section( 'zillah_featured_content_slider_section', array(
+		'title'	=> esc_html__( 'Featured contet slider', 'zillah' ),
+		'priority'	=> 90,
+	) );
 
-	/* Home slider */
 	$wp_customize->add_setting('zillah_home_slider_show', array(
 		'default' => 0,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
@@ -61,7 +65,7 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->add_control('zillah_home_slider_show', array(
 		'label' => esc_html__('Show slider', 'zillah'),
 		'description' => esc_html__('If you check this box, the slider area will appear on the homepage.', 'zillah'),
-		'section' => 'zillah_home_slider_section',
+		'section' => 'zillah_featured_content_slider_section',
 		'priority' => 1,
 		'type'	=> 'checkbox',
 	));
@@ -73,7 +77,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new Zillah_Category_Control( $wp_customize, 'zillah_home_slider_category', array(
 		'label'    => 'Category',
-		'section'  => 'zillah_home_slider_section',
+		'section'  => 'zillah_featured_content_slider_section',
 		'priority' => 2,
 	)));
 
