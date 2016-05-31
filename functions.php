@@ -131,9 +131,18 @@ function zillah_widgets_init() {
 		'after_title'   => '</h2>'
 	) );
 
+
+	/*
+	 * Custom widgets
+	 */
+	register_widget( 'Zillah_About_Me' );
 }
 add_action( 'widgets_init', 'zillah_widgets_init' );
 
+/*
+ * Custom widgets
+ */
+require get_template_directory() . "/inc/widgets/about-me.php";
 
 /**
  * Return the Google font stylesheet URL, if available.
