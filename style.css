@@ -1260,7 +1260,7 @@ p.dropcap:first-letter {
 --------------------------------------------------------------*/
 .post-thumbnail {	
 	display: block;
-	margin-bottom: 75px;
+	margin-bottom: 50px;
 }
 
 .entry-title-blog {
@@ -2205,7 +2205,7 @@ div.sharedaddy h3.sd-title:before {
 	}
 
 	.widget-area {
-		max-width: 370px;
+		max-width: 300px;
 	}
 
 	.widget-area .widget:last-child {
@@ -2277,11 +2277,10 @@ div.sharedaddy h3.sd-title:before {
 	}
 
 	.widget-area .widget {
-		background: #fff;
-	    padding: 30px;
+	    padding: 30px 0 30px 30px;
 	    margin: 0px;
 		margin-bottom: 5px;
-	    width: 330px;
+	    width: 300px;
 
 	}
 
@@ -2613,7 +2612,11 @@ div.sharedaddy h3.sd-title:before {
 	}
 
 	.widget-area .widget {
-	   width: 370px;
+	   width: 300px;
+	}
+
+	.widget-area .widget:first-child {
+		padding-top: 0;
 	}
 
 	/*-----------
@@ -2644,12 +2647,12 @@ div.sharedaddy h3.sd-title:before {
 		padding-top: 0;
 		width: 100%;
 		max-width: 100%;
-		margin-left: -370px;
-		padding-left: 370px;
+		margin-left: -300px;
+		padding-left: 300px;
 	}
 
 	.content-area-with-sidebar .site-main {
-		padding: 0 60px 0 0;
+		padding: 0 15px 0 0;
 	}
 
 	/*-----------
