@@ -214,13 +214,13 @@
             headerHeight    = $headerToHide.height();
             isAdminBar      = $( '#wpadminbar' ).length > 0 ? true : false;
             initTop         = isAdminBar ? 32 : 0;
-            $headerWrap.css( 'padding-top', headerHeight + 60 );
+            $headerWrap.css( 'padding-top', headerHeight + 84 );
         });
 
         $(window).resize(function () {
             headerHeight    = $headerToHide.height();
             initTop         = isAdminBar ? 32 : 0;
-            $headerWrap.css( 'padding-top', headerHeight + 60 );
+            $headerWrap.css( 'padding-top', headerHeight + 84 );
         });
 
         $(window).scroll(function (event) {

@@ -8,87 +8,87 @@
  */
 
 if ( ! function_exists( 'zillah_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function zillah_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on zillah, use a find and replace
-	 * to change 'zillah' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'zillah', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
+	function zillah_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on zillah, use a find and replace
+		 * to change 'zillah' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'zillah', get_template_directory() . '/languages' );
 
-	add_image_size ( 'post-thumbnail', 1140, 530, true );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	add_image_size ( 'slider-thumbnail', 900, 500, true );
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary'   => esc_html__( 'Primary', 'zillah' ),
-		'social'    => esc_html__( 'Social Links Menu', 'zillah' ),
-	) );
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+		add_image_size ( 'post-thumbnail', 1140, 530, true );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	) );
+		add_image_size ( 'slider-thumbnail', 900, 500, true );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'zillah_custom_background_args', array(
-		'default-color' => 'f6f6f6',
-		'default-image' => '',
-	) ) );
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'primary'   => esc_html__( 'Primary', 'zillah' ),
+			'social'    => esc_html__( 'Social Links Menu', 'zillah' ),
+		) );
 
-	// Add theme support for custom logo
-	add_theme_support( 'custom-logo', array(
-	   'height' => 145,
-	   'width' => 315,
-	   'flex-width' => true,
-	) );
-}
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
+
+		/*
+		 * Enable support for Post Formats.
+		 * See https://developer.wordpress.org/themes/functionality/post-formats/
+		 */
+		add_theme_support( 'post-formats', array(
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+		) );
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'zillah_custom_background_args', array(
+			'default-color' => 'f6f6f6',
+			'default-image' => '',
+		) ) );
+
+		// Add theme support for custom logo
+		add_theme_support( 'custom-logo', array(
+			'height' => 145,
+			'width' => 315,
+			'flex-width' => true,
+		) );
+	}
 endif;
 add_action( 'after_setup_theme', 'zillah_setup' );
 
@@ -122,9 +122,9 @@ function zillah_widgets_init() {
 
 	register_sidebars( 3, array(
 		'name'          => esc_html__('Footer Widget Area %d', 'zillah'),
-	    'id'            => 'zillah-footer-widget-area',
-	    'class'         => 'col-sm-4',
-	    'description'   => esc_html__( 'Add widgets here.', 'zillah' ),    
+		'id'            => 'zillah-footer-widget-area',
+		'class'         => 'col-sm-4',
+		'description'   => esc_html__( 'Add widgets here.', 'zillah' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -186,7 +186,7 @@ function zillah_fonts_url() {
 
 		if ( 'off' !== $lato )
 			$font_families[] = 'Lato:400,900,700';
-		
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -291,10 +291,60 @@ add_action( 'wp_enqueue_scripts', 'zillah_inline_style' );
 
 
 /**
- * Return the site brand 
+ * Return the site brand
  *
  * @since Zillah 1.0
  */
+function zillah_brand(){
+	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+		?>
+		<div class="header-logo-wrap">
+		<?php
+		the_custom_logo();
+		echo '<div class="header-wrap-logo zillah-only-customizer">';
+		if ( is_front_page() && is_home() ) : ?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<?php else : ?>
+			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php
+		endif;
+		echo '</div>';
+
+		$description = get_bloginfo( 'description', 'display' );
+		if ( $description || is_customize_preview() ) : ?>
+			<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<?php
+			endif; ?>
+		</div>
+		<?php
+	} else {
+		echo '<div class="header-logo-wrap">';
+		if( is_customize_preview() ){ ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link zillah-only-customizer" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
+				<img src="">
+			</a>
+			<?php
+		} ?>
+			<?php
+			if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
+
+			$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) : ?>
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<?php
+			endif; ?>
+		</div>
+		<?php
+	}
+}
+
+
+/*
 function zillah_brand(){
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 		the_custom_logo(); ?>
@@ -304,22 +354,22 @@ function zillah_brand(){
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
+				<?php
 			endif;
 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ /*?></p>
+				<?php
 			endif; ?>
 		</div>
-	<?php
+		<?php
 	} else {
 		if( is_customize_preview() ){ ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link zillah-only-customizer" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
 				<img src="">
 			</a>
-		<?php
+			<?php
 		} ?>
 
 		<div class="header-logo-wrap">
@@ -328,19 +378,19 @@ function zillah_brand(){
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
+				<?php
 			endif;
 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ /*?></p>
+				<?php
 			endif; ?>
 		</div>
-	<?php		
+		<?php
 	}
 }
-
+*/
 
 /**
  * Display social icons
@@ -428,4 +478,3 @@ function zillah_slider(){
 	endif;
 
 }
-

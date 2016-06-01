@@ -37,7 +37,6 @@ class Zillah_About_Me extends WP_Widget {
 			$instance['text'] =  $new_instance['text'];
 		else
 			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['text']) ) ); // wp_filter_post_kses() expects slashed
-		$instance['filter'] = isset($new_instance['filter']);
 		return $instance;
 	}
 
@@ -55,8 +54,6 @@ class Zillah_About_Me extends WP_Widget {
 
 		<p><label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Add your text:', 'zillah'); ?></label>
 			<textarea class="widefat" rows="10" cols="16" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
-
-		<p><input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked(isset($instance['filter']) ? $instance['filter'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e('Automatically add paragraphs', 'zillah'); ?></label></p>
 		<?php
 	}
 }

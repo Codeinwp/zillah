@@ -20,7 +20,7 @@ function zillah_customize_register( $wp_customize ) {
     require_once ( 'class/zillah-general-control.php');
 	require_once ( 'class/zillah_category-selector-control.php');
 	
-    $wp_customize->get_control( 'display_header_text' )->priority = 2;
+	$wp_customize->remove_control( 'display_header_text' );
     $wp_customize->get_control( 'blogname' )->priority = 3;
     $wp_customize->get_control( 'blogdescription' )->priority = 4;
 
