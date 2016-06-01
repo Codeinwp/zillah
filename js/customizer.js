@@ -45,11 +45,11 @@
   		value.bind( function( to ) {
 			if( to != '' ) {
 				$( '.custom-logo-link' ).removeClass( 'zillah-only-customizer' );
-				$( '.header-wrap-logo' ).addClass( 'zillah-only-customizer' );
+				$( '.header-title-wrap' ).addClass( 'zillah-only-customizer' );
 			}
 			else {
 				$( '.custom-logo-link' ).addClass( 'zillah-only-customizer' );
-				$( '.header-wrap-logo' ).removeClass( 'zillah-only-customizer' );
+				$( '.header-title-wrap' ).removeClass( 'zillah-only-customizer' );
 			}
   		} );
 	} );

@@ -296,101 +296,46 @@ add_action( 'wp_enqueue_scripts', 'zillah_inline_style' );
  * @since Zillah 1.0
  */
 function zillah_brand(){
+
+	echo '<div class="header-logo-wrap">';
+
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-		?>
-		<div class="header-logo-wrap">
-		<?php
 		the_custom_logo();
-		echo '<div class="header-wrap-logo zillah-only-customizer">';
-		if ( is_front_page() && is_home() ) : ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php else : ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-		endif;
+		echo '<div class="header-title-wrap zillah-only-customizer">';
+			if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
 		echo '</div>';
 
-		$description = get_bloginfo( 'description', 'display' );
-		if ( $description || is_customize_preview() ) : ?>
-			<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-			endif; ?>
-		</div>
-		<?php
-	} else {
-		echo '<div class="header-logo-wrap">';
-		if( is_customize_preview() ){ ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link zillah-only-customizer" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
-				<img src="">
-			</a>
-			<?php
-		} ?>
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-			endif; ?>
-		</div>
-		<?php
-	}
-}
-
-
-/*
-function zillah_brand(){
-	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-		the_custom_logo(); ?>
-		<div class="header-logo-wrap zillah-only-customizer">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ /*?></p>
-				<?php
-			endif; ?>
-		</div>
-		<?php
 	} else {
 		if( is_customize_preview() ){ ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link zillah-only-customizer" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
 				<img src="">
 			</a>
 			<?php
-		} ?>
-
-		<div class="header-logo-wrap">
-			<?php
+		}
+		echo '<div class="header-title-wrap">';
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ /*?></p>
-				<?php
-			endif; ?>
-		</div>
-		<?php
+		echo '</div>';
 	}
+
+	$description = get_bloginfo( 'description', 'display' );
+	if ( $description || is_customize_preview() ) : ?>
+		<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+		<?php
+	endif;
+
+	echo '</div>';
 }
-*/
+
 
 /**
  * Display social icons
