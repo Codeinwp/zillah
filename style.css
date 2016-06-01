@@ -1836,7 +1836,7 @@ object {
 
 .site-footer {
     background: #575756;
-    font-size: 15px;
+    font-size: 14px;
 	font-weight: 300;
     color: #aaaaaa;
     text-align: left;
@@ -2110,6 +2110,10 @@ div.sharedaddy h3.sd-title:before {
 	text-overflow: ellipsis;
 	max-width: 80%;
 	margin: 20px auto 0;
+}
+
+.entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post a:hover {
+	text-decoration: none;
 }
 
 .entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
@@ -2768,8 +2772,8 @@ div.sharedaddy h3.sd-title:before {
 		text-align: center;
 		float: right;
 		margin-top: -40px;
-		padding-left: 15px;
-		margin-bottom: 10px;
+		padding-left: 30px;
+		margin-bottom: 20px;
 	}
 
 	.about-photo {

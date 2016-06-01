@@ -69,11 +69,11 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
 		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
+//			'aside',
+//			'image',
+//			'video',
+//			'quote',
+//			'link',
 		) );
 
 		// Set up the WordPress core custom background feature.
