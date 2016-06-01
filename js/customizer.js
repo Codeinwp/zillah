@@ -29,11 +29,11 @@
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
 					'clip': 'auto',
 					'position': 'relative'
 				} );
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
 					'color': to
 				} );
 			}
@@ -41,34 +41,30 @@
 	} );
 
 	// Logo
-	wp.customize( "custom_logo", function( value ) {
+	wp.customize( 'custom_logo', function( value ) {
   		value.bind( function( to ) {
 			if( to != '' ) {
 				$( '.custom-logo-link' ).removeClass( 'zillah-only-customizer' );
-				$( '.header-logo-wrap' ).addClass( 'zillah-only-customizer' );
+				$( '.header-title-wrap' ).addClass( 'zillah-only-customizer' );
 			}
 			else {
 				$( '.custom-logo-link' ).addClass( 'zillah-only-customizer' );
-				$( '.header-logo-wrap' ).removeClass( 'zillah-only-customizer' );
+				$( '.header-title-wrap' ).removeClass( 'zillah-only-customizer' );
 			}
   		} );
 	} );
 
-	// Search icon.
-	wp.customize( 'zillah_show_search', function( value ) {
+	// Slider
+	wp.customize( 'zillah_home_slider_show', function( value ) {
 		value.bind( function( to ) {
-			if ( '1' != to ) {
-				$( '.header-search' ).parent().removeClass('zillah-only-customizer');
-				zillah_header_social_icons_width();
-				zillah_menu_toggle_height();
-			} else {
-				$( '.header-search' ).parent().addClass('zillah-only-customizer');
-				zillah_header_social_icons_width();
-				zillah_menu_toggle_height();
+			if( to != '' ) {
+				$( '#home-carousel' ).removeClass( 'zillah-only-customizer' );
+			}
+			else {
+				$( '#home-carousel' ).addClass( 'zillah-only-customizer' );
 			}
 		} );
 	} );
-
 
 	// Social repeater
 	wp.customize( "zillah_social_icons", function( value ) {
@@ -98,6 +94,21 @@
 	wp.customize( "zillah_page_header", function( value ) {
 		value.bind( function( to ) {
 			$('.page-main-header').css('background-image','url("'+ to +'")');
+		} );
+	} );
+
+
+	// Sidebar
+	wp.customize( 'zillah_sidebar_show', function( value ) {
+		value.bind( function( to ) {
+			if( to != '' ) {
+				$( '#secondary' ).removeClass( 'zillah-only-customizer' );
+				$( '.content-area' ).addClass( 'content-area-with-sidebar' );
+			}
+			else {
+				$( '#secondary' ).addClass( 'zillah-only-customizer' );
+				$( '.content-area' ).removeClass( 'content-area-with-sidebar' );
+			}
 		} );
 	} );
 

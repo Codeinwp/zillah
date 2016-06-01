@@ -1,9 +1,3 @@
-/**
- * File navigation.js.
- *
- * Handles toggling the navigation menu for small screens and enables TAB key
- * navigation support for dropdown menus.
- */
 ( function() {
 	var container, button, menu, links, subMenus, i, len;
 
@@ -83,58 +77,22 @@
 
 
 /**
- * Those two functions are global because they need to be accesible from customizer.js
+ * Scroll to top
  */
-function zillah_header_social_icons_width() {
-	var totalWidth = 0;
-	jQuery( '.header-social-icons li' ).each( function() {
-		totalWidth += jQuery( this ).outerWidth();
-	} );
-	jQuery( '.header-social-icons' ).css( 'width', totalWidth+10 );
-}
-
-function zillah_menu_toggle_height() {
-	var menuToggleBtn = jQuery( 'button.menu-toggle' );
-	var siteHeader = jQuery( '.site-header' );
-	if( ! menuToggleBtn ) {
-		return false;
-	}
-	menuToggleBtn.css( 'min-height', '1px' );
-	menuToggleBtn.css( 'min-height', siteHeader.outerHeight() );
-}
-
 ( function($) {
 
 	$( document ).ready( function() {
-		zillah_header_social_icons_width();
-		zillah_menu_toggle_height();
-	} );
 
-	$( window ).resize( function() {
-		zillah_header_social_icons_width();
-		zillah_menu_toggle_height();
-	} );
+		$( '#to-top' ).click(function(){
+			$( 'html, body' ).animate( {
+				scrollTop : 0
+			}, 800 );
+			return false;
+		});
 
-
-
-	$( '.search-toggle' ).click( function( event ) {
-		if( $( this ).hasClass( 'search-toggle' ) ) {
-			$( '.search-opt' ).removeClass( 'search-toggle' );
-			$( '.header-search' ).addClass( 'search-toggle-open' );
-		} else {
-			$( '.search-toggle-open' ).removeClass( 'search-toggle-open' );
-			$( '.search-opt' ).addClass( 'search-toggle' );
-		}
-		event.stopPropagation();
-	} );
-
-	$( 'html' ).click( function() {
-		$( '.search-toggle-open' ).removeClass( 'search-toggle-open' );
-		$( '.search-opt' ).addClass( 'search-toggle' );
 	} );
 
 } )(jQuery);
-
 
 
 
@@ -164,11 +122,11 @@ function zillah_menu_toggle_height() {
     
     initMainNavigation( $( '.main-navigation' ) );
     
-    masthead = $( '#masthead' );
-	menuToggle       = masthead.find( '#menu-toggle' );
-	siteHeaderMenu   = masthead.find( '#site-header-menu' );
-	siteNavigation   = masthead.find( '#site-navigation' ); 
-    
+    var masthead = $( '#masthead' ),
+	    menuToggle       = masthead.find( '#menu-toggle' ),
+	    siteHeaderMenu   = masthead.find( '#site-header-menu' ),
+	    siteNavigation   = masthead.find( '#site-navigation' );
+
     // Enable menuToggle.
 	( function() {
 		// Return early if menuToggle is missing.
@@ -235,3 +193,49 @@ function zillah_menu_toggle_height() {
     
     
 } )( jQuery );
+
+
+
+/* scroll down sticky header */
+(function($,window) {
+
+    var headerHeight,
+        isAdminBar,
+        lastScrollTop       = 0,
+        initTop             = 0;
+        changeDirection     = false,
+        lastDirectionDown   = false;
+    var $headerToHide       = $( '.header-inner-top' ),
+        $headerWrap         = $( '.header-inner-site-branding' );
+
+    if( window.innerWidth >= 992 ) {
+
+        $(document).ready(function () {
+            headerHeight    = $headerToHide.height();
+            isAdminBar      = $( '#wpadminbar' ).length > 0 ? true : false;
+            initTop         = isAdminBar ? 32 : 0;
+            $headerWrap.css( 'padding-top', headerHeight + 84 );
+        });
+
+        $(window).resize(function () {
+            headerHeight    = $headerToHide.height();
+            initTop         = isAdminBar ? 32 : 0;
+            $headerWrap.css( 'padding-top', headerHeight + 84 );
+        });
+
+        $(window).scroll(function (event) {
+            var thisScrollTop = $(this).scrollTop();
+            changeDirection = ( (thisScrollTop > lastScrollTop && lastDirectionDown === false) || (thisScrollTop < lastScrollTop && lastDirectionDown === true) ? true : false );
+            if (changeDirection === true) {
+                $headerToHide.toggleClass('hide-header');
+                lastDirectionDown = ( lastDirectionDown === false ? true : false );
+            }
+            $headerToHide.css( {
+                'top': $headerToHide.hasClass('hide-header') ? (-1) * headerHeight : initTop
+            } );
+            lastScrollTop = thisScrollTop;
+        });
+
+    }
+
+} )(jQuery,window);

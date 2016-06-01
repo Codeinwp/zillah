@@ -9,44 +9,47 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post' ); ?>>
-
-	<?php 
-		if ( ! is_single() ) {
-			if ( has_post_thumbnail() ) {
-				echo '<a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
-				the_post_thumbnail( 'post-thumbnail-blog' );
-				echo '</a>';
-			}
-		}
-	?> 
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post entry-content-wrap' ); ?>>
 
 	<header class="entry-header">
-		<?php
+		<div class="content-inner-wrap">
+			<?php
+			zillah_posted_date();
 			the_title( '<h2 class="entry-title entry-title-blog"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		 ?>
+			zillah_category();
+			?>
+		</div>
 	</header><!-- .entry-header -->
 
+	<?php
+		if ( has_post_thumbnail() ) {
+			echo '<a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+			the_post_thumbnail( 'post-thumbnail' );
+			echo '</a>';
+		}
+	?>
+
 	<div class="entry-content">
-		<?php
-			
-			$pos = strpos( $post->post_content, '<!--more-->' );
-			if ( $pos <= 0 ) {
-				the_excerpt();
-			} else {
-				the_content( sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Read more %s <span class="meta-nav">&rarr;</span>', 'zillah' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		<div class="content-inner-wrap">
+			<?php
+
+				$pos = strpos( $post->post_content, '<!--more-->' );
+				if ( $pos <= 0 ) {
+					the_excerpt();
+				} else {
+					the_content( sprintf(
+						/* translators: %s: Name of current post. */
+						wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zillah' ), array( 'span' => array( 'class' => array() ) ) ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					) );
+				}
+
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
+					'after'  => '</div>',
 				) );
-			}
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
-				'after'  => '</div>',
-			) );
-		?>
-
+			?>
+		</div>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

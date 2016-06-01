@@ -15,70 +15,71 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+	$wp_customize->get_setting( 'header_textcolor' )->default = '#7fcaad';
+
     require_once ( 'class/zillah-general-control.php');
-
-	/* Control for hiding search icon*/
-	$wp_customize->add_setting( 'zillah_show_search', array(
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'zillah_sanitize_checkbox'
-	) );
-
-	$wp_customize->add_control( 'zillah_show_search', array(
-		'type' => 'checkbox',
-		'label' => __( 'Hide search icon?','zillah' ),
-		'description' => __( 'If you check this box, the search icon will disappear from header.','zillah' ),
-		'section' => 'title_tagline',
-		'priority' => 1,
-	) );
-
-    $wp_customize->get_control( 'display_header_text' )->priority = 2;
+	require_once ( 'class/zillah_category-selector-control.php');
+	
+	$wp_customize->remove_control( 'display_header_text' );
     $wp_customize->get_control( 'blogname' )->priority = 3;
     $wp_customize->get_control( 'blogdescription' )->priority = 4;
-    $wp_customize->get_control( 'custom_logo' )->priority = 5;
 
+	$custom_logo = $wp_customize->get_control( 'custom_logo' );
+	if( !empty( $custom_logo ) ) {
+		$wp_customize->get_control( 'custom_logo' )->priority = 5;
+	}
 
-	/* Control for social icons */
-	$wp_customize->add_section( 'zillah_social_media', array(
-		 'title'	=> esc_html__( 'Social Media Icons', 'zillah' ),
-		 'priority'	=> 40,
-	 ) );
-
-	$wp_customize->add_setting( 'zillah_social_icons', array(
-		'default'	=>	json_encode( array(
-			array('icon_value'	=>	'fa-facebook-official' , 'link' => '#', 'id' => 'zillah_5702771a213bb'),
-			array('icon_value'	=>	'fa-google' , 'link' => '#', 'id' => 'zillah_57027720213bc'),
-			array('icon_value'	=>	'fa-instagram' , 'link' => '#', 'id' => 'zillah_57027722213bd')
-		) ),
-		'transport'	=>	'postMessage',
-		'sanitize_callback'	=>	'zillah_sanitize_repeater'
-	) );	
-
-    $wp_customize->add_control( new Zillah_General_Repeater( $wp_customize, 'zillah_social_icons', array(
-		'label'	=>	esc_html__('Add new social icon','zillah'),
-		'section'	=>	'zillah_social_media',
-		'priority'	=>	1,
-		'zillah_icon_control'	=>	true,
-		'zillah_link_control'	=>	true
-    ) ) );
-
-
-    /* Single page header image */
-    $wp_customize->add_section( 'zillah_page', array(
-		 'title'	=> esc_html__( 'Page settings', 'zillah' ),
-		 'priority'	=> 45
+	/* Advanced options */
+	$wp_customize->add_section( 'zillah_home_slider_section', array(
+		'title'	=> esc_html__( 'Theme options', 'zillah' ),
+		'priority'	=> 80,
 	) );
 
-	$wp_customize->add_setting( 'zillah_page_header', array(
-		'default'	=>	get_stylesheet_directory_uri().'/images/header-top.jpg',
-		'sanitize_callback'	=>	'esc_url',
-		'transport'	=>	'postMessage'
+	/* Show sidebar */
+	$wp_customize->add_setting('zillah_sidebar_show', array(
+		'default' => 0,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_sidebar_show', array(
+		'label' => esc_html__('Show sidebar', 'zillah'),
+		'description' => esc_html__('If you check this box, the sidebar will appear.', 'zillah'),
+		'section' => 'zillah_home_slider_section',
+		'priority' => 1,
+		'type'	=> 'checkbox',
+	));
+
+	/* Featured Content Slider */
+	$wp_customize->add_section( 'zillah_featured_content_slider_section', array(
+		'title'	=> esc_html__( 'Featured contet slider', 'zillah' ),
+		'priority'	=> 90,
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zillah_page_header', array(
-		'label'	=>	esc_html__( 'Page header', 'zillah' ),
-		'section'	=>	'zillah_page',
-		'priority'	=>	1
-	) ) );
+	$wp_customize->add_setting('zillah_home_slider_show', array(
+		'default' => 0,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_home_slider_show', array(
+		'label' => esc_html__('Show slider', 'zillah'),
+		'description' => esc_html__('If you check this box, the slider area will appear on the homepage.', 'zillah'),
+		'section' => 'zillah_featured_content_slider_section',
+		'priority' => 1,
+		'type'	=> 'checkbox',
+	));
+
+	$wp_customize->add_setting('zillah_home_slider_category', array(
+		'default' => 0,
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control( new Zillah_Category_Control( $wp_customize, 'zillah_home_slider_category', array(
+		'label'    => 'Category',
+		'section'  => 'zillah_featured_content_slider_section',
+		'priority' => 2,
+	)));
 
 
 }

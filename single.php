@@ -23,7 +23,9 @@ get_header(); ?>
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
+					echo '<div class="comments-area-wrap">';
 					comments_template();
+					echo '</div>';
 				endif;
 
 			endwhile; // End of the loop.
@@ -31,10 +33,6 @@ get_header(); ?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
-
-		<?php
-			get_sidebar();
-		?>
 
 	</div><!-- .content-wrap -->
 
