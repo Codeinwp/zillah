@@ -874,10 +874,12 @@ a:active {
 	float: left;
 }
 
+.post-navigation .nav-previous,
 .post-navigation .nav-previous a {
 	float: left;	
 }
 
+.post-navigation .nav-next,
 .post-navigation .nav-next a{
 	float: right;
 }
@@ -898,6 +900,14 @@ a:active {
 .post-navigation .nav-links a:hover {
 	color: #fff;
 	background: #628d7c;
+}
+
+.post-navigation .nav-links .nav-previous a {
+	float: left;
+}
+
+.post-navigation .nav-links .nav-next a {
+	float: right;
 }
 
 .site-main .post-navigation {
@@ -1621,10 +1631,12 @@ object {
 
 .site-title a {
 	color: #6ca790;
+	opacity: 1;
 }
 
 .site-title a:hover {
-	color: #7fcaad;
+	color: #6ca790;
+	opacity: 0.8;
 }
 
 .header-inner-site-branding {

@@ -233,7 +233,7 @@ add_action( 'wp_enqueue_scripts', 'zillah_scripts' );
  */
 function zillah_customizer_script() {
 	wp_enqueue_style( 'zillah-font-awesome-admin', get_template_directory_uri() . '/css/font-awesome.min.css', array(), 'v4.5.0', false );
-	wp_enqueue_script( 'zillah-customizer-script', get_template_directory_uri() .'/js/zillah_customizer.js', array( 'jquery', 'jquery-ui-draggable' ), '1.0.1', true );
+	wp_enqueue_script( 'zillah-customizer-script', get_template_directory_uri() .'/js/zillah-customizer.js', array( 'jquery' ), '1.0.1', true );
 	wp_enqueue_style( 'zillah-admin-stylesheet', get_stylesheet_directory_uri().'/css/admin-style.css','1.0.0' );
 }
 add_action(  'customize_controls_enqueue_scripts', 'zillah_customizer_script'  );
@@ -422,4 +422,181 @@ function zillah_slider(){
 
 	endif;
 
+}
+
+
+add_action('wp_head','zillah_php_style');
+function zillah_php_style() {
+	$zillah_palette_picker = get_theme_mod('zillah_palette_picker');
+	if(!empty($zillah_palette_picker)){
+
+		$zillah_picker = json_decode($zillah_palette_picker);
+		$zillah_c1 = $zillah_picker->color1;
+		$zillah_c2 = $zillah_picker->color2;
+		$zillah_c3 = $zillah_picker->color3;
+		$zillah_c4 = $zillah_picker->color4;
+		$zillah_c5 = $zillah_picker->color5;
+	}
+
+	$rgb = zillah_get_rgb( $zillah_c5 );
+
+	echo '<style id="zillah_customizr_pallete" type="text/css">';
+	if(!empty($zillah_palette_picker)){
+		/*Color 1*/
+		echo '
+			.site-title a,
+			a,
+			a:visited {
+				color:'.$zillah_c1.';
+			}
+			.site-title a:hover,
+			a:hover {
+				color:'.$zillah_c1.';
+				opacity: 0.6;
+			}
+			
+			.post-navigation .nav-links a {
+				background: '.$zillah_c1.';
+				opacity: 1;
+			}
+			
+			.post-navigation .nav-links a:hover {
+				background: '.$zillah_c1.';
+				opacity: 0.8;
+			}
+			
+		';
+		/*Color 2*/
+		echo '
+			.entry-title-blog a, 
+			.entry-title,
+			.widget-title {
+				color:'.$zillah_c2.'
+			}
+			
+			.entry-title-blog a:hover {
+				color:'.$zillah_c2.';
+				opacity: 0.8;
+			}
+			
+		';
+		/* Color 3 */
+		echo '
+			body,
+			.site-description {
+				color: '.$zillah_c3.'
+			}
+			.entry-header .posted-on a {
+				color: '.$zillah_c3.';
+				opacity: 0.75;
+			}
+			.entry-header .posted-on a:hover {
+				color: '.$zillah_c3.';
+				opacity: 1;
+			}
+		';
+		/* Color 4 */
+		echo '
+			body {
+				background:'.$zillah_c4.'
+			}
+		';
+		/* Color 5 */
+		echo '
+			.header-inner-top,
+			.site-info,
+			 button, input[type="button"], 
+			 input[type="reset"], 
+			 input[type="submit"], 
+			 .btn,
+			 .main-navigation ul ul li {
+				background:'.$zillah_c5.';
+				opacity: 1;
+			 }
+			 }
+			
+			button:hover, input[type="button"]:hover, 
+			input[type="reset"]:hover, 
+			input[type="submit"]:hover, .btn:hover {
+				background:'.$zillah_c5.';
+				opacity: 0.8;
+			}
+			
+			.site-footer {
+				background: rgba('.$rgb['red'].','.$rgb[green].','.$rgb['blue'].',0.9);
+			}
+		
+		';
+
+
+		echo '
+			.main-navigation li a,
+			.site-footer .fa,
+			.social-navigation a,
+			.dropdown-toggle,
+			.site-info a,
+			.main-navigation li:hover > a, 
+			.main-navigation li.focus > a {
+				color: rgba(255,255,255,0.75);
+			}
+			.main-navigation li a:hover,
+			.header-search input[type="search"],
+			.header-search label:before,
+			.site-footer .fa:hover,
+			.social-navigation a:hover,
+			.site-info a:hover {
+				color: rgba(255,255,255,1);
+				opacity: 1;
+			}
+			
+			.site-info {
+				color: #FFF;
+			}
+
+			header-search ::-webkit-input-placeholder {
+				color: #FFF !important;
+			}
+			
+			.header-search :-moz-placeholder {
+				color: #FFF !important;
+			}
+			
+			.header-search ::-moz-placeholder {
+				color: #FFF !important;
+			}
+			
+			.header-search :-ms-input-placeholder {
+				color: #FFF !important;
+			}
+
+			.site-footer,
+			.site-footer .widget li,
+			.site-footer a,
+			.site-footer caption {
+			    color: rgba(255,255,255,0.75);
+			}
+			
+			.site-footer h3, .site-footer .widget-title {
+				color: rgba(255,255,255,1);
+			}
+
+			.site-footer a:hover {
+			    color: rgba(255,255,255,1);
+			    opacity: 1;
+			}
+			
+		';
+
+	}
+	echo '</style>';
+}
+
+/**
+ * Converts a HEX value to RGB.
+ */
+function zillah_get_rgb( $color ) {
+
+	preg_match_all('!\d+!', $color, $matches);
+
+	return array( 'red' => $matches[0][0], 'green' => $matches[0][1], 'blue' => $matches[0][2] );
 }

@@ -21,8 +21,12 @@ function zillah_customize_register( $wp_customize ) {
 	require_once ( 'class/zillah_category-selector-control.php');
 	
 	$wp_customize->remove_control( 'display_header_text' );
+
     $wp_customize->get_control( 'blogname' )->priority = 3;
     $wp_customize->get_control( 'blogdescription' )->priority = 4;
+
+	$wp_customize->remove_control( 'background_color' );
+	$wp_customize->remove_control( 'header_textcolor' );
 
 	$custom_logo = $wp_customize->get_control( 'custom_logo' );
 	if( !empty( $custom_logo ) ) {
@@ -81,6 +85,18 @@ function zillah_customize_register( $wp_customize ) {
 		'priority' => 2,
 	)));
 
+	/* Colors */
+	require_once ( 'class/zillah-palette-picker.php');
+	$wp_customize->add_setting( 'zillah_palette_picker');
+	$wp_customize->add_control( new Zillah_Palette( $wp_customize, 'zillah_palette_picker', array(
+		'label'   => esc_html__('Change the color scheme','zillah'),
+		'section' => 'colors',
+		'priority' => 1,
+		'metro_customizr_image_control' => true,
+		'metro_customizr_icon_control' => true,
+		'metro_customizr_text_control' => false,
+		'metro_customizr_link_control' => true
+	) ) );
 
 }
 add_action( 'customize_register', 'zillah_customize_register' );
