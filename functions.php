@@ -44,7 +44,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		add_image_size ( 'post-thumbnail', 1140, 530, true );
 
-		add_image_size ( 'slider-thumbnail', 900, 500, true );
+		add_image_size ( 'slider-thumbnail', 900, 515, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -394,7 +394,7 @@ function zillah_slider(){
 					<div class="carousel-caption">
 						<div class="carousel-caption-inner">
 							<p class="carousel-caption-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-							<p class="carousel-caption-category"><?php echo get_the_category_list( ',' ); ?></p>
+							<p class="carousel-caption-category"><?php echo get_the_category_list( ', ' ); ?></p>
 						</div>
 					</div>
 				</div>
@@ -445,8 +445,7 @@ function zillah_php_style() {
 		/*Color 1*/
 		echo '
 			.site-title a,
-			a,
-			a:visited {
+			a {
 				color:'.$zillah_c1.';
 			}
 			.site-title a:hover,
@@ -455,12 +454,14 @@ function zillah_php_style() {
 				opacity: 0.6;
 			}
 			
-			.post-navigation .nav-links a {
+			.post-navigation .nav-links a,
+			.posts-navigation .nav-previous a{
 				background: '.$zillah_c1.';
 				opacity: 1;
 			}
 			
-			.post-navigation .nav-links a:hover {
+			.post-navigation .nav-links a:hover,
+			.posts-navigation .nav-previous a {
 				background: '.$zillah_c1.';
 				opacity: 0.8;
 			}
@@ -470,11 +471,16 @@ function zillah_php_style() {
 		echo '
 			.entry-title-blog a, 
 			.entry-title,
-			.widget-title {
+			.widget-title,
+			.carousel-caption-title, 
+			.carousel-caption-title a,
+			.carousel-caption-title a:visited,
+			.author-details-title {
 				color:'.$zillah_c2.'
 			}
 			
-			.entry-title-blog a:hover {
+			.entry-title-blog a:hover,
+			 .carousel-caption-title a:hover {
 				color:'.$zillah_c2.';
 				opacity: 0.8;
 			}
@@ -483,14 +489,18 @@ function zillah_php_style() {
 		/* Color 3 */
 		echo '
 			body,
-			.site-description {
+			.site-description,
+			.carousel-caption-category {
 				color: '.$zillah_c3.'
 			}
-			.entry-header .posted-on a {
+			.entry-header .posted-on a,
+			 .carousel-caption-category a,
+			 .carousel-caption-category a:visited {
 				color: '.$zillah_c3.';
 				opacity: 0.75;
 			}
-			.entry-header .posted-on a:hover {
+			.entry-header .posted-on a:hover,
+			.carousel-caption-category a:hover {
 				color: '.$zillah_c3.';
 				opacity: 1;
 			}

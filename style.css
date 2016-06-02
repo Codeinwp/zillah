@@ -115,7 +115,7 @@ dfn {
 
 h1, h2, h3 {
 	font-family: 'Cabin', Helvetica, sans-serif;
-    letter-spacing: 2.5px;
+	letter-spacing: 1.25px;
     text-transform: uppercase;
     font-weight: 400;
 	margin: 25px 0;
@@ -894,7 +894,7 @@ a:active {
 	color: #fff;
 	text-align: center;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 }
 
 .post-navigation .nav-links a:hover {
@@ -911,7 +911,7 @@ a:active {
 }
 
 .site-main .post-navigation {
-	padding: 20px 0 60px;
+	padding: 0 0 60px;
 	margin-bottom: 0;
 }
 
@@ -1343,7 +1343,7 @@ p.dropcap:first-letter {
 .entry-header .cat-links {
 	font-family: 'Cabin', Helvetica, sans-serif;
 	font-size: 15px;
-	font-weight: 600;
+	font-weight: 400;
 	color: #7fcaad;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -1443,7 +1443,7 @@ h2.comments-title {
 	font-family: 'Cabin', Helvetica, sans-serif;
 	font-size: 14px;
 	line-height: 16px;
-	font-weight: 600;
+	font-weight: 400;
 	color: #aaaaaa;
 	letter-spacing: 1px;
 	display: inline-block;
@@ -1487,6 +1487,10 @@ h2.comments-title {
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: 1.75px;
+}
+
+.reply a:hover{
+	color:#373735;
 }
 
 .comment-reply-link {
@@ -2111,7 +2115,8 @@ div.sharedaddy h3.sd-title:before {
 
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
 	background: #f6f6f6;
-	padding-bottom: 20px;
+	padding: 0 0 20px 0;
+	margin: 5px;
 }
 
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
@@ -2133,6 +2138,8 @@ div.sharedaddy h3.sd-title:before {
     font-family: 'Cabin', Helvetica, sans-serif;
     text-transform: uppercase;
     color: #575756;
+	letter-spacing: 1px;
+	font-size: 15px;
 }
 
 .entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:hover {
@@ -2149,11 +2156,17 @@ div.sharedaddy h3.sd-title:before {
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
 	padding: 10px 10px 20px 10px;
 	margin-bottom: 0;
+	opacity: 1;
 }
 
 .entry-content #jp-relatedposts h3.jp-relatedposts-headline em:before {
     content: "";
     border-top: 1px solid rgb(246, 246, 246);
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+	text-decoration: none;
+	color: #7fcaad;
 }
 
 /*--------------------------------------------------------------
@@ -2379,9 +2392,9 @@ div.sharedaddy h3.sd-title:before {
 	    z-index: 5;
 	    right: 0px;
 	    top: -4px;
-	    height: 50px;
+	    height: 64px;
 	    width: 35px;
-	    line-height: 50px;
+	    line-height: 64px;
 	    padding-top: 5px;
 	    text-align: center;
 	}
@@ -2391,7 +2404,7 @@ div.sharedaddy h3.sd-title:before {
 	    right: 0;
 	    top: 0;
 	    width: 50px;
-	    height: 50px;
+	    height: 64px;
 	    border: none;
 	    box-shadow: none;
 	    background: none;
@@ -2738,6 +2751,7 @@ div.sharedaddy h3.sd-title:before {
 		font-family: 'Cabin', Helvetica, sans-serif;
 		text-transform: uppercase;
 		font-size: 18px;
+		letter-spacing: 2px;
 		color: #373735;
 		margin: 0;
 		padding: 0;
@@ -2751,6 +2765,7 @@ div.sharedaddy h3.sd-title:before {
 	.carousel-caption-category a {
 		color: #aaaaaa;
 		font-size: 14px;
+		letter-spacing: .5px;
 		margin: 0;
 		padding: 0;
 	}
@@ -2790,6 +2805,7 @@ div.sharedaddy h3.sd-title:before {
 
 	.about-photo {
 		max-width: 110px;
+		border-radius: 100%;
 		border: 5px solid #fff;
 	}
 
@@ -2799,6 +2815,14 @@ div.sharedaddy h3.sd-title:before {
 
 	.container {
 		width: 970px;
+	}
+
+}
+
+@media screen and (min-width: 1600px) {
+
+	.container {
+		width: 1200px;
 	}
 
 }
