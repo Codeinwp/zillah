@@ -1110,7 +1110,7 @@ a:active {
 }
 
 .content-inner-wrap {
-	padding: 0 30px;
+	padding: 0 15px;
 }
 
 .not-found .page-header,
@@ -1278,7 +1278,12 @@ p.dropcap:first-letter {
 --------------------------------------------------------------*/
 .post-thumbnail {	
 	display: block;
-	margin-bottom: 50px;
+}
+
+.post-thumbnail-wrap {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 .entry-title-blog {
@@ -1366,6 +1371,10 @@ p.dropcap:first-letter {
 	letter-spacing: 2px;
 	font-size: 15px;
 	font-family: 'Cabin', Helvetica, sans-serif;
+}
+
+.post-edit-link {
+    font-style: italic;
 }
 
 /*--------------------------------------------------------------

@@ -66,6 +66,18 @@
 		} );
 	} );
 
+	// Slider
+	wp.customize( 'zillah_tags_show', function( value ) {
+		value.bind( function( to ) {
+			if( to != '' ) {
+				$( '.tags-links' ).removeClass( 'zillah-only-customizer' );
+			}
+			else {
+				$( '.tags-links' ).addClass( 'zillah-only-customizer' );
+			}
+		} );
+	} );
+
 	// Social repeater
 	wp.customize( "zillah_social_icons", function( value ) {
 		value.bind( function( to ) {

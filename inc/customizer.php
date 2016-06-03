@@ -34,7 +34,7 @@ function zillah_customize_register( $wp_customize ) {
 	}
 
 	/* Advanced options */
-	$wp_customize->add_section( 'zillah_home_slider_section', array(
+	$wp_customize->add_section( 'zillah_home_theme_option_section', array(
 		'title'	=> esc_html__( 'Theme options', 'zillah' ),
 		'priority'	=> 80,
 	) );
@@ -49,8 +49,23 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->add_control('zillah_sidebar_show', array(
 		'label' => esc_html__('Show sidebar', 'zillah'),
 		'description' => esc_html__('If you check this box, the sidebar will appear.', 'zillah'),
-		'section' => 'zillah_home_slider_section',
+		'section' => 'zillah_home_theme_option_section',
 		'priority' => 1,
+		'type'	=> 'checkbox',
+	));
+
+	/* Show Tags */
+	$wp_customize->add_setting('zillah_tags_show', array(
+		'default' => 1,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_tags_show', array(
+		'label' => esc_html__('Show tags', 'zillah'),
+		'description' => esc_html__('If you check this box, the tags will appear in posts.', 'zillah'),
+		'section' => 'zillah_home_theme_option_section',
+		'priority' => 2,
 		'type'	=> 'checkbox',
 	));
 

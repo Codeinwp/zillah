@@ -23,9 +23,9 @@
 
 	<?php
 	if ( has_post_thumbnail() ) {
-		echo '<a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+		echo '<div class="post-thumbnail-wrap">';
 		the_post_thumbnail( 'post-thumbnail' );
-		echo '</a>';
+		echo '</div>';
 	}
 	?>
 
@@ -47,6 +47,12 @@
 			?>
 		</div>
 	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<div class="content-inner-wrap">
+			<?php zillah_entry_footer(); ?>
+		</div>
+	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
 
