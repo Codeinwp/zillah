@@ -56,7 +56,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Show Tags */
 	$wp_customize->add_setting('zillah_tags_show', array(
-		'default' => 1,
+		'default' => 0,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
 		'transport' => 'postMessage',
 	));
