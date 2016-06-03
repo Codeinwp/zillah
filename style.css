@@ -906,6 +906,14 @@ a:active {
 	float: left;
 }
 
+.post-navigation .nav-links .nav-previous a:before {
+	content: "< ";
+}
+
+.post-navigation .nav-links .nav-next a:after {
+	content: " >";
+}
+
 .post-navigation .nav-links .nav-next a {
 	float: right;
 }
@@ -2756,6 +2764,12 @@ div.sharedaddy h3.sd-title:before {
 		margin: 0;
 		padding: 0;
 	}
+
+    .carousel-caption-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
 	.carousel-caption-title a:hover {
 		color: #628d7c;

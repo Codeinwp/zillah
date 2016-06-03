@@ -272,6 +272,12 @@ add_filter('excerpt_more', 'zillah_excerpt_more');
 
 
 /**
+ * Load plugin enhancement file to display admin notices.
+ */
+require get_template_directory() . '/inc/plugin-enhancements.php';
+
+
+/**
  * Adds inline style from customizer
  *
  * @since Zillah 1.0

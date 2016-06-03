@@ -23,6 +23,13 @@ function zillah_jetpack_setup() {
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
+
+	add_theme_support( 'jetpack-related-posts' );
+
+	add_theme_support( 'social-links', array(
+		'facebook', 'twitter', 'linkedin', 'google_plus', 'tumblr',
+	) );
+
 }
 add_action( 'after_setup_theme', 'zillah_jetpack_setup' );
 
@@ -39,3 +46,11 @@ function zillah_infinite_scroll_render() {
 		endif;
 	}
 }
+
+
+function zillah_theme_setup() {
+
+	add_theme_support( 'pirate-forms' );
+
+}
+add_action( 'after_setup_theme', 'zillah_theme_setup' );
