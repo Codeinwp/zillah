@@ -100,7 +100,7 @@ add_action( 'after_setup_theme', 'zillah_setup' );
  * @global int $content_width
  */
 function zillah_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'zillah_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'zillah_content_width', 810 );
 }
 add_action( 'after_setup_theme', 'zillah_content_width', 0 );
 
