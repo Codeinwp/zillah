@@ -17,7 +17,6 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'header_textcolor' )->default = '#7fcaad';
 
-    require_once ( 'class/zillah-general-control.php');
 	require_once ( 'class/zillah_category-selector-control.php');
 	
 	$wp_customize->remove_control( 'display_header_text' );
@@ -142,6 +141,18 @@ function zillah_sanitize_repeater( $input ) {
         return $result;
     }
     return $input;
+}
+
+function zillah_sanitize_select( $input, $setting ) {
+
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
 /**
