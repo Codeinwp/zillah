@@ -1486,6 +1486,15 @@ h2.comments-title {
 	min-height: 195px;
 }
 
+.pingback {
+    list-style: none;
+}
+
+.pingback .comment-body {
+    padding: 20px 20px 20px 10px;
+    min-height: 0;
+}
+
 .comment-metadata a:hover,
 .comment-author .fn a:hover {
 	color: #628d7c;
@@ -1646,7 +1655,6 @@ object {
 .gallery-columns-9 .gallery-caption {
     display: none;
 }
-
 
 /*--------------------------------------------------------------
 ## Header
