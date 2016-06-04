@@ -444,7 +444,9 @@ function zillah_php_style() {
 		$zillah_c5 = $zillah_picker->color5;
 	}
 
-	$rgb = zillah_get_rgb( $zillah_c5 );
+	if( isset( $zillah_c5 ) ) {
+		$rgb = zillah_get_rgb( $zillah_c5 );
+	}
 
 	echo '<style id="zillah_customizr_pallete" type="text/css">';
 	if(!empty($zillah_palette_picker)){

@@ -58,8 +58,7 @@
 					); ?>
 					<span class="sep"> | </span>
 					<?php printf(
-						__( 'Theme %1$s by %2$s', 'zillah' ),
-						sprintf( '<a href="http://themeisle.com/themes/zillah/" rel="nofollow">%s</a>', esc_html__( 'Zillah', 'zillah' ) ),
+						__( 'Theme Zillah by %1$s', 'zillah' ),
 						sprintf( '<a href="http://themeisle.com/" rel="nofollow">%s</a>', esc_html__( 'Themeisle', 'zillah' ) )
 					); ?>
 				</div>
