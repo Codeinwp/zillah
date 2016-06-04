@@ -20,7 +20,7 @@ class Zillah_About_Me extends WP_Widget {
 		}
 
 		if ( $image_url ) {
-			echo '<div class="photo-wrapper"><img class="about-photo" src="' . $image_url . '"/></div>';
+			echo '<div class="photo-wrapper"><img class="about-photo" src="' . $image_url . '" alt="' . $title . '"/></div>';
 		}
 
 		?>
