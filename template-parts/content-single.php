@@ -59,7 +59,7 @@
 <div class="author-details-wrap">
 	<div class="content-inner-wrap">
 		<div class="author-details-img-wrap">
-			<?php echo get_avatar( get_the_author_meta( 'user_email', '100' ) ); ?>
+			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ) ); ?>
 		</div>
 		<div class="author-details-title">
 			<?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?>
