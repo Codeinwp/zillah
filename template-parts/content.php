@@ -24,7 +24,7 @@
 	<?php
 		if ( has_post_thumbnail() ) {
 			echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
-			the_post_thumbnail( 'post-thumbnail' );
+			the_post_thumbnail();
 			echo '</div></a>';
 		}
 	?>

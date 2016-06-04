@@ -42,7 +42,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size ( 'post-thumbnail', 1140, 530, true );
+		set_post_thumbnail_size( 1140, 530, true );
 
 		add_image_size ( 'slider-thumbnail', 900, 515, true );
 
