@@ -44,7 +44,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		set_post_thumbnail_size( 1140, 530, true );
 
-		add_image_size ( 'slider-thumbnail', 900, 600, true );
+		add_image_size ( 'slider-thumbnail', 900, 515, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -396,7 +396,7 @@ function zillah_slider(){
 
 				<div class="item-inner-half">
 					<a href="<?php the_permalink(); ?>"" class="item-inner-link"></a>
-					<?php the_post_thumbnail(); ?>
+					<?php the_post_thumbnail( 'slider-thumbnail' ); ?>
 					<div class="carousel-caption">
 						<div class="carousel-caption-inner">
 							<p class="carousel-caption-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
