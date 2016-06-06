@@ -17,27 +17,27 @@ class Zillah_Palette extends WP_Customize_Control {
 		$zillah_pallete = array(
 			array(
 				'pallete_name'=>'p1',
-				'color1'=>'#FF9F8C',
-				'color2'=>'#495356',
-				'color3'=>'#B1AFA9',
-				'color4'=>'#F6F6F6',
-				'color5'=>'#189AC4'
+				'color1'=>'#be624d',
+				'color2'=>'#f5876e',
+				'color3'=>'#be624d',
+				'color4'=>'#f6f6f6',
+				'color5'=>'#6f6e6b'
 			),
 			array(
 				'pallete_name'=>'p1',
-				'color1'=>'#7fcaad',
-				'color2'=>'#575756',
-				'color3'=>'#6f6e6b',
-				'color4'=>'#F6F6F6',
-				'color5'=>'#373735'
+				'color1'=>'#b0606d',
+				'color2'=>'#f59f4c',
+				'color3'=>'#ffc154',
+				'color4'=>'#fafafa',
+				'color5'=>'#ababab'
 			),
 			array(
 				'pallete_name'=>'p1',
-				'color1'=>'#7fcaad',
-				'color2'=>'#575756',
-				'color3'=>'#6f6e6b',
-				'color4'=>'#F6F6F6',
-				'color5'=>'#373735'
+				'color1'=>'#333331',
+				'color2'=>'#c2a26f',
+				'color3'=>'#E2C9A1',
+				'color4'=>'#f6f6f6',
+				'color5'=>'#6f6e6b'
 			),
 		);
 		?>

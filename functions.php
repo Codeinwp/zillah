@@ -441,7 +441,7 @@ function zillah_php_style() {
 		$zillah_c2 = $zillah_picker->color2;
 		$zillah_c3 = $zillah_picker->color3;
 		$zillah_c4 = $zillah_picker->color4;
-		$zillah_c5 = $zillah_picker->color5;
+//		$zillah_c5 = $zillah_picker->color5;
 	}
 
 	if( isset( $zillah_c5 ) ) {
@@ -450,159 +450,100 @@ function zillah_php_style() {
 
 	echo '<style id="zillah_customizr_pallete" type="text/css">';
 	if(!empty($zillah_palette_picker)){
-		/*Color 1*/
+
+		/* Color 1 */
 		echo '
-			.site-title a,
-			a {
-				color:'.$zillah_c1.';
-			}
-			.site-title a:hover,
-			a:hover {
-				color:'.$zillah_c1.';
-				opacity: 0.6;
-			}
-			
 			.post-navigation .nav-links a,
-			.posts-navigation .nav-previous a{
+			.posts-navigation .nav-previous a,
+			.posts-navigation .nav-previous a, 
+			.posts-navigation .nav-next a {
 				background: '.$zillah_c1.';
 				opacity: 1;
 			}
-			
 			.post-navigation .nav-links a:hover,
-			.posts-navigation .nav-previous a {
+			.posts-navigation .nav-previous a:hover,
+			.posts-navigation .nav-previous a:hover, 
+			.posts-navigation .nav-next a:hover {
 				background: '.$zillah_c1.';
 				opacity: 0.8;
 			}
 			
 		';
-		/*Color 2*/
+
+		/* Color 2 */
 		echo '
-			.entry-title-blog a, 
-			.entry-title,
-			.widget-title,
-			.carousel-caption-title, 
-			.carousel-caption-title a,
-			.carousel-caption-title a:visited,
-			.author-details-title {
-				color:'.$zillah_c2.'
+			a:visited {
+				color: inherit;
 			}
-			
-			.entry-title-blog a:hover,
-			 .carousel-caption-title a:hover {
+			.widget-title {
+				color: '.$zillah_c2.';
+			}
+			a,
+			.site-title a, .site-title a:visited,
+			.cat-links, .entry-header .cat-links, .cat-links a,
+			p.dropcap:first-letter,
+			.site-footer .fa {
 				color:'.$zillah_c2.';
-				opacity: 0.8;
+			}
+			button, input[type="button"], input[type="reset"], input[type="submit"], .btn {
+				background: '.$zillah_c2.';
+			}
+			blockquote {
+                border-left: solid 5px '.$zillah_c2.';
+            }
+			a.more-link,
+			a.more-link:visited {
+				color: '.$zillah_c2.';
 			}
 			
 		';
+
 		/* Color 3 */
 		echo '
-			body,
-			.site-description,
-			.carousel-caption-category {
-				color: '.$zillah_c3.'
-			}
-			.entry-header .posted-on a,
-			 .carousel-caption-category a,
-			 .carousel-caption-category a:visited {
+			.main-navigation li:hover > a:hover, 
+			.main-navigation li.focus > a:hover,
+			.widget li a:hover,
+			.main-navigation li:hover > a, 
+			.main-navigation li.focus > a{
 				color: '.$zillah_c3.';
-				opacity: 0.75;
 			}
-			.entry-header .posted-on a:hover,
-			.carousel-caption-category a:hover {
-				color: '.$zillah_c3.';
-				opacity: 1;
+			a.more-link:hover,
+			a:hover,
+			.site-title a:hover,
+			.cat-links a:hover,
+			.entry-title-blog a:hover,
+			.carousel-caption-title a:hover,
+			.carousel-caption-category a:hover,
+			.social-navigation a:hover,
+			.widget-area .widget li a:hover,
+			.site-footer a:hover {
+				color:'.$zillah_c3.';
 			}
 		';
+
 		/* Color 4 */
 		echo '
 			body {
-				background:'.$zillah_c4.'
+				background: '.$zillah_c4.'; 
 			}
 		';
+
 		/* Color 5 */
 		echo '
-			.header-inner-top,
-			.site-info,
-			 button, input[type="button"], 
-			 input[type="reset"], 
-			 input[type="submit"], 
-			 .btn,
-			 .main-navigation ul ul li {
-				background:'.$zillah_c5.';
-				opacity: 1;
-			 }
-			 }
-			
-			button:hover, input[type="button"]:hover, 
-			input[type="reset"]:hover, 
-			input[type="submit"]:hover, .btn:hover {
-				background:'.$zillah_c5.';
-				opacity: 0.8;
+			body {
+				color: '.$zillah_c5.'; 
 			}
-			
-			.site-footer {
-				background: rgba('.$rgb['red'].','.$rgb[green].','.$rgb['blue'].',0.9);
-			}
-		
 		';
 
-
 		echo '
-			.main-navigation li a,
-			.site-footer .fa,
-			.social-navigation a,
-			.dropdown-toggle,
-			.site-info a,
-			.main-navigation li:hover > a, 
-			.main-navigation li.focus > a {
-				color: rgba(255,255,255,0.75);
-			}
-			.main-navigation li a:hover,
-			.header-search input[type="search"],
-			.header-search label:before,
-			.site-footer .fa:hover,
-			.social-navigation a:hover,
-			.site-info a:hover {
-				color: rgba(255,255,255,1);
-				opacity: 1;
+			.carousel-caption-title, 
+			.carousel-caption-title a {
+				color: #373735;
 			}
 			
-			.site-info {
-				color: #FFF;
+			.widget-area .widget li a {
+				color: #6f6e6b;
 			}
-
-			header-search ::-webkit-input-placeholder {
-				color: #FFF !important;
-			}
-			
-			.header-search :-moz-placeholder {
-				color: #FFF !important;
-			}
-			
-			.header-search ::-moz-placeholder {
-				color: #FFF !important;
-			}
-			
-			.header-search :-ms-input-placeholder {
-				color: #FFF !important;
-			}
-
-			.site-footer,
-			.site-footer .widget li,
-			.site-footer a,
-			.site-footer caption {
-			    color: rgba(255,255,255,0.75);
-			}
-			
-			.site-footer h3, .site-footer .widget-title {
-				color: rgba(255,255,255,1);
-			}
-
-			.site-footer a:hover {
-			    color: rgba(255,255,255,1);
-			    opacity: 1;
-			}
-			
 		';
 
 	}
