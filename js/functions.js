@@ -206,7 +206,7 @@
         changeDirection     = false,
         lastDirectionDown   = false;
     var $headerToHide       = $( '.header-inner-top' ),
-        $headerWrap         = $( '.header-inner-site-branding' );
+        $body               = $( 'body' );
 
     if( window.innerWidth >= 992 ) {
 
@@ -214,13 +214,14 @@
             headerHeight    = $headerToHide.height();
             isAdminBar      = $( '#wpadminbar' ).length > 0 ? true : false;
             initTop         = isAdminBar ? 32 : 0;
-            $headerWrap.css( 'padding-top', headerHeight + 84 );
+            $body.css( 'padding-top', headerHeight );
+
         });
 
         $(window).resize(function () {
             headerHeight    = $headerToHide.height();
             initTop         = isAdminBar ? 32 : 0;
-            $headerWrap.css( 'padding-top', headerHeight + 84 );
+            $body.css( 'padding-top', headerHeight );
         });
 
         $(window).scroll(function (event) {
@@ -236,6 +237,8 @@
             lastScrollTop = thisScrollTop;
         });
 
+    } else {
+        $body.css( 'padding-top', '0' );
     }
 
 } )(jQuery,window);

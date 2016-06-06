@@ -1111,7 +1111,8 @@ a:active {
 	width: 100%;
 }
 
-.content-inner-wrap {
+.content-inner-wrap,
+.content-area-with-sidebar .content-inner-wrap {
 	padding: 0 15px;
 }
 
@@ -1154,6 +1155,10 @@ p.dropcap:first-letter {
 	padding-top: 4px;
 	padding-right: 8px;
 	padding-left: 3px;
+}
+
+.entry-content {
+    font-size: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -1690,7 +1695,7 @@ object {
 
 .header-inner-site-branding {
 	width: 100%;
-	padding: 84px 0;
+	padding: 94px 0;
 	text-align: center;
 	background: #FFF;
 	background-size: cover;
@@ -1906,7 +1911,7 @@ object {
 .site-footer a {
     color: #aaaaaa;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 1.5px;
     font-family: 'Cabin', Helvetica, sans-serif;
 }
 
@@ -2038,6 +2043,10 @@ object {
 	display: none;
 }
 
+.widget.Zillah_About_Me {
+	letter-spacing: 0.25px;
+}
+
 /*--------------------------------------------------------------
 # Slider
 --------------------------------------------------------------*/
@@ -2092,6 +2101,15 @@ object {
 	margin-top: 5px;
 }
 
+.blog-post .sd-social-icon .sd-button span.share-count,
+.blog-post .sd-social-icon .sd-button span.share-count,
+.blog-post .sd-social-icon .sd-button span.share-count,
+.search-post .sd-social-icon .sd-button span.share-count,
+.search-post .sd-social-icon .sd-button span.share-count,
+.search-post .sd-social-icon .sd-button span.share-count {
+    display: none;
+}
+
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button,
 .entry-content-wrap .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button,
@@ -2119,6 +2137,29 @@ object {
 
 .blog-post .sd-content {
 	float: right;
+}
+
+.entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post{
+    padding:0px 0px 20px 0px;
+    margin:5px;
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post{
+    width: 32%;
+}
+
+#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post{
+    opacity: 1;
+}
+
+.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a{
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a{
+    text-decoration: none;
+    color: #7fcaad;
 }
 
 div.sharedaddy h3.sd-title:before {
@@ -2234,6 +2275,10 @@ div.sharedaddy h3.sd-title:before {
 		margin: 10px 0 30px 30px;
 	}
 
+    .content-area-with-sidebar .content-inner-wrap {
+        padding: 0 45px;
+    }
+
 	/*-----------
 	 * Header
 	 -----------*/
@@ -2247,7 +2292,7 @@ div.sharedaddy h3.sd-title:before {
 	.header-social-icons ul {
 		padding: 0;
 		margin: 0;
-		float: right;
+		float: left;
 	}
 
 	.header-social-icons li {
@@ -2576,6 +2621,10 @@ div.sharedaddy h3.sd-title:before {
 
 @media screen and (min-width: 992px) {
 
+    body {
+        padding-top: 58px;
+    }
+
 	/*-----------
 	 * Header
 	 -----------*/
@@ -2828,6 +2877,7 @@ div.sharedaddy h3.sd-title:before {
 		letter-spacing: .5px;
 		margin: 0;
 		padding: 0;
+        text-transform: lowercase;
 	}
 
 	.carousel-caption-category a:hover {
@@ -2885,12 +2935,20 @@ div.sharedaddy h3.sd-title:before {
 		width: 1200px;
 	}
 
-}
+    .entry-content {
+        font-size: 16px;
+    }
 
-@media screen and (max-width: 992px) {
+    .main-navigation li a {
+        padding: 5px 17px;
+    }
 
-	.header-inner-top {
-		top: auto !important;
-	}
+    .social-navigation a {
+        margin-right: 20px;
+    }
+
+    .header-inner-site-branding {
+        padding: 124px 0;
+    }
 
 }

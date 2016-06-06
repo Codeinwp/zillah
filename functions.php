@@ -42,7 +42,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		set_post_thumbnail_size( 1140, 530, true );
+		set_post_thumbnail_size( 1170, 545, true );
 
 		add_image_size ( 'slider-thumbnail', 900, 515, true );
 
@@ -559,3 +559,16 @@ function zillah_get_rgb( $color ) {
 
 	return array( 'red' => $matches[0][0], 'green' => $matches[0][1], 'blue' => $matches[0][2] );
 }
+
+
+function custom_excerpt_length( $length ) {
+	global $wp_customize;
+	$zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
+
+	if( $zillah_sidebar_show ) {
+		return 55;
+	} else {
+		return 85;
+	}
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
