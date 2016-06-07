@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zillah\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-07 12:02+0200\n"
-"PO-Revision-Date: 2016-06-07 12:03+0200\n"
+"POT-Creation-Date: 2016-06-07 12:29+0200\n"
+"PO-Revision-Date: 2016-06-07 12:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: Themeisle <friends@themeisle.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,8 +12,8 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;esc_attr_x;esc_attr__\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: template-parts\n"
-"X-Poedit-SearchPath-2: inc\n"
+"X-Poedit-SearchPath-1: inc\n"
+"X-Poedit-SearchPath-2: template-parts\n"
 
 #: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
@@ -58,6 +58,10 @@ msgstr ""
 
 #: footer.php:62
 msgid "Themeisle"
+msgstr ""
+
+#: footer.php:66
+msgid "Back to top"
 msgstr ""
 
 #: functions.php:51
