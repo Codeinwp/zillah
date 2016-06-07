@@ -62,15 +62,15 @@
 			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ); ?>
 		</div>
 		<?php
-			$author_first_name = sanitize_text_field( get_the_author_meta( 'first_name' ) );
-			$author_last_name = sanitize_text_field( get_the_author_meta( 'last_name' ) );
+			$author_first_name =  get_the_author_meta( 'first_name' );
+			$author_last_name = get_the_author_meta( 'last_name' );
 			if( !empty( $author_first_name ) || !empty( $author_last_name ) ) {
 				echo '<div class="author-details-title">';
 					if( !empty($author_first_name) ) {
-						echo $author_first_name . ' ';
+						echo sanitize_text_field($author_first_name) . ' ';
 					}
 					if( !empty($author_last_name) ) {
-						echo $author_last_name;
+						echo sanitize_text_field($author_last_name);
 					}
 				echo '</div>';
 			}
