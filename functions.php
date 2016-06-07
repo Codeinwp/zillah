@@ -266,7 +266,8 @@ require get_template_directory() . '/inc/jetpack.php';
 
 function zillah_excerpt_more($more) {
 	global $post;
-	return '<span class="clearfix clearfix-post"></span><a href="'. esc_url( get_permalink($post->ID) ) . '" class="more-link">' . __('Continue Reading ', 'zillah' ) . the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span></a>';
+
+	return '<span class="clearfix clearfix-post"></span><a href="'. esc_url( get_permalink($post->ID) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 add_filter('excerpt_more', 'zillah_excerpt_more');
 
