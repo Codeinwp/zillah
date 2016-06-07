@@ -201,7 +201,7 @@ function zillah_fonts_url() {
  * Enqueue scripts and styles.
  */
 function zillah_scripts() {
-	wp_enqueue_style( 'zillah-style', get_stylesheet_uri(), array( 'zillah-boostrap-css' ) );
+	wp_enqueue_style( 'zillah-style', get_stylesheet_uri(), array( 'boostrap-css' ) );
 
 	wp_enqueue_style ( 'boostrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v3.3.6', 'all' );
 
