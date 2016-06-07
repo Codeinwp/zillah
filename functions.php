@@ -371,7 +371,7 @@ function zillah_slider(){
 
 		$slider_posts = get_posts( $args );
 
-		$size = round( sizeof( $slider_posts ) / 2, 0, PHP_ROUND_HALF_UP);
+		$size = intval( round( sizeof( $slider_posts ) / 2, 0, PHP_ROUND_HALF_DOWN) );
 
 		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . ( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) . "\" data-ride=\"carousel\">";
 
@@ -411,6 +411,12 @@ function zillah_slider(){
 				<?php endif; ?>
 
 				<?php
+					if( $index === $size*2 ) {
+						break;
+					}
+				?>
+
+				<?php
 			endforeach;
 
 			if( $index%2 !== 0 ):
@@ -424,9 +430,7 @@ function zillah_slider(){
 		wp_reset_postdata();
 
 		echo "</div>";
-
-
-
+	
 	endif;
 
 }
