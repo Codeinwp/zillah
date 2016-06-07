@@ -265,7 +265,9 @@ class zillah_Theme_Plugin_Enhancements {
 			// Custom message provided by the theme.
 			if ( isset( $plugin['message'] ) ) {
 				$notice .= $plugin['message'];
-				$notice .= esc_html( $plugin['modules'] );
+				if( !empty($plugin['modules']) ) {
+					$notice .= esc_html( $plugin['modules'] );
+				}
 			}
 
 			// Activation message.
