@@ -430,7 +430,7 @@ function zillah_slider(){
 		wp_reset_postdata();
 
 		echo "</div>";
-	
+
 	endif;
 
 }
@@ -483,7 +483,7 @@ function zillah_php_style() {
 			.widget-title {
 				color: '.$zillah_c2.';
 			}
-			a,
+			a, .entry-content a:visited, .comment-content a:visited,
 			.site-title a, .site-title a:visited,
 			.cat-links, .entry-header .cat-links, .cat-links a,
 			p.dropcap:first-letter,
@@ -497,8 +497,14 @@ function zillah_php_style() {
                 border-left: solid 5px '.$zillah_c2.';
             }
 			a.more-link,
-			a.more-link:visited {
+			a.more-link:visited,
+			.reply a {
 				color: '.$zillah_c2.';
+			}
+			@media screen and (max-width: 992px) {
+				.main-navigation {
+					background: '.$zillah_c2.';
+				}
 			}
 			
 		';
@@ -521,9 +527,32 @@ function zillah_php_style() {
 			.carousel-caption-category a:hover,
 			.social-navigation a:hover,
 			.widget-area .widget li a:hover,
-			.site-footer a:hover {
+			.site-footer a:hover,
+			.menu-toggle:hover, .menu-toggle:focus,
+			.comment-metadata a:hover, .comment-author .fn a:hover,
+			.reply a:hover,
+			.entry-content a:hover,
+			.comment-content a:hover {
 				color:'.$zillah_c3.';
 			}
+			@media screen and (max-width: 992px) {
+				.main-navigation ul ul {
+					background:'.$zillah_c3.';
+				}
+			}
+			
+			button:focus,
+			input[type="button"]:focus,
+			input[type="reset"]:focus,
+			input[type="submit"]:focus,
+			button:active,
+			input[type="button"]:active,
+			input[type="reset"]:active,
+			input[type="submit"]:active {
+				background:'.$zillah_c3.';
+			}
+			
+			
 		';
 
 		/* Color 4 */
@@ -548,6 +577,14 @@ function zillah_php_style() {
 			
 			.widget-area .widget li a {
 				color: #6f6e6b;
+			}
+			@media screen and (max-width: 992px) {
+				.main-navigation ul ul li:hover > a:hover, 
+				.main-navigation ul ul li.focus > a:hover, 
+				.main-navigation ul ul li:hover > a, 
+				.main-navigation ul ul li.focus > a {
+					color: #FFF; 
+				}
 			}
 		';
 

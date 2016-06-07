@@ -755,6 +755,10 @@ a:active {
 	background-color: #6f6e6b;
 }
 
+.no-social-menu .main-navigation ul {
+	text-align: left;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -2043,10 +2047,6 @@ object {
 	display: none;
 }
 
-.widget.Zillah_About_Me {
-	letter-spacing: 0.25px;
-}
-
 /*--------------------------------------------------------------
 # Slider
 --------------------------------------------------------------*/
@@ -2312,6 +2312,10 @@ div.sharedaddy h3.sd-title:before {
 		text-align: center;
 	}
 
+    .no-social-menu .menu-toggle-button-wrap {
+        text-align: left;
+    }
+
 	/*--------------------------------------------------------------
 	# Widgets
 	--------------------------------------------------------------*/
@@ -2329,6 +2333,7 @@ div.sharedaddy h3.sd-title:before {
 
 	.widget-area {
 		max-width: 300px;
+        letter-spacing: 0.25px;
 	}
 
 	.widget-area .widget:last-child {
@@ -2513,6 +2518,7 @@ div.sharedaddy h3.sd-title:before {
 	 -----------*/
 	.footer-inner {
 		display: block;
+        letter-spacing: 0.25px;
 	}
 
 	.container-footer {
