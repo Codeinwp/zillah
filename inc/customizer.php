@@ -101,7 +101,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Colors */
 	require_once ( 'class/zillah-palette-picker.php');
-	$wp_customize->add_setting( 'zillah_palette_picker');
+	$wp_customize->add_setting( 'zillah_palette_picker',array('sanitize_callback' => 'sanitize_text_field'));
 	$wp_customize->add_control( new Zillah_Palette( $wp_customize, 'zillah_palette_picker', array(
 		'label'   => esc_html__('Change the color scheme','zillah'),
 		'section' => 'colors',

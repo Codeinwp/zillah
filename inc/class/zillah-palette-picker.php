@@ -29,7 +29,7 @@ class Zillah_Palette extends WP_Customize_Control {
 				'color2'=>'#f59f4c',
 				'color3'=>'#ffc154',
 				'color4'=>'#fafafa',
-				'color5'=>'#ababab'
+				'color5'=>'#6f6e6b'
 			),
 			array(
 				'pallete_name'=>'p1',
