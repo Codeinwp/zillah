@@ -61,9 +61,19 @@
 		<div class="author-details-img-wrap">
 			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ); ?>
 		</div>
-		<div class="author-details-title">
-			<?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?>
-		</div>
-		<div class="author-details-content"><?php echo nl2br(get_the_author_meta('description')); ?></div>
+		<?php
+			$author_first_name = get_the_author_meta( 'first_name' );
+			$author_last_name = get_the_author_meta( 'last_name' );
+			if( $author_first_name!=='' || $author_last_name!=='' ) {
+				echo '<div class="author-details-title">';
+				echo $author_first_name . ' ' . $author_last_name;
+				echo '</div>';
+			}
+	
+			$author_description = nl2br( get_the_author_meta('description') );
+			if( $author_description!=='' ){
+				echo '<div class="author-details-content">' . $author_description . '</div>';
+			}
+		?>
 	</div>
 </div>

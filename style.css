@@ -2162,6 +2162,10 @@ object {
     color: #7fcaad;
 }
 
+.sd-social-icon .sd-button span.share-count {
+	display: none !important;
+}
+
 div.sharedaddy h3.sd-title:before {
 	display: none !important;
 }

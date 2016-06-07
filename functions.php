@@ -441,7 +441,7 @@ function zillah_php_style() {
 		$zillah_c2 = $zillah_picker->color2;
 		$zillah_c3 = $zillah_picker->color3;
 		$zillah_c4 = $zillah_picker->color4;
-//		$zillah_c5 = $zillah_picker->color5;
+		$zillah_c5 = $zillah_picker->color5;
 	}
 
 	if( isset( $zillah_c5 ) ) {
