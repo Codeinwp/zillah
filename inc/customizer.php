@@ -70,7 +70,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Featured Content Slider */
 	$wp_customize->add_section( 'zillah_featured_content_slider_section', array(
-		'title'	=> esc_html__( 'Featured contet slider', 'zillah' ),
+		'title'	=> esc_html__( 'Featured content slider', 'zillah' ),
 		'priority'	=> 90,
 	) );
 
