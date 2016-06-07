@@ -64,14 +64,19 @@
 		<?php
 			$author_first_name = get_the_author_meta( 'first_name' );
 			$author_last_name = get_the_author_meta( 'last_name' );
-			if( $author_first_name!=='' || $author_last_name!=='' ) {
+			if( !empty( $author_first_name ) || !empty( $author_last_name ) ) {
 				echo '<div class="author-details-title">';
-				echo $author_first_name . ' ' . $author_last_name;
+					if( !empty($author_first_name) ) {
+						echo $author_first_name . ' ';
+					}
+					if( !empty($author_last_name) ) {
+						echo $author_last_name;
+					}
 				echo '</div>';
 			}
 	
 			$author_description = nl2br( get_the_author_meta('description') );
-			if( $author_description!=='' ){
+			if( !empty( $author_description ) ){
 				echo '<div class="author-details-content">' . $author_description . '</div>';
 			}
 		?>
