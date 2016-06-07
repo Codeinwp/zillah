@@ -23,9 +23,9 @@
 
 	<?php
 	if ( has_post_thumbnail() ) {
-		echo '<a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
-		the_post_thumbnail( 'post-thumbnail' );
-		echo '</a>';
+		echo '<div class="post-thumbnail-wrap">';
+		the_post_thumbnail();
+		echo '</div>';
 	}
 	?>
 
@@ -48,16 +48,37 @@
 		</div>
 	</div><!-- .entry-content -->
 
+	<footer class="entry-footer">
+		<div class="content-inner-wrap">
+			<?php zillah_entry_footer(); ?>
+		</div>
+	</footer><!-- .entry-footer -->
+
 </article><!-- #post-## -->
 
 <div class="author-details-wrap">
 	<div class="content-inner-wrap">
 		<div class="author-details-img-wrap">
-			<?php echo get_avatar( get_the_author_meta( 'user_email', '100' ) ); ?>
+			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ); ?>
 		</div>
-		<div class="author-details-title">
-			<?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?>
-		</div>
-		<div class="author-details-content"><?php echo nl2br(get_the_author_meta('description')); ?></div>
+		<?php
+			$author_first_name =  get_the_author_meta( 'first_name' );
+			$author_last_name = get_the_author_meta( 'last_name' );
+			if( !empty( $author_first_name ) || !empty( $author_last_name ) ) {
+				echo '<div class="author-details-title">';
+					if( !empty($author_first_name) ) {
+						echo sanitize_text_field($author_first_name) . ' ';
+					}
+					if( !empty($author_last_name) ) {
+						echo sanitize_text_field($author_last_name);
+					}
+				echo '</div>';
+			}
+	
+			$author_description = wp_kses_post( nl2br( get_the_author_meta('description') ) );
+			if( !empty( $author_description ) ){
+				echo '<div class="author-details-content">' . $author_description . '</div>';
+			}
+		?>
 	</div>
 </div>

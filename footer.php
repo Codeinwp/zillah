@@ -58,13 +58,12 @@
 					); ?>
 					<span class="sep"> | </span>
 					<?php printf(
-						__( 'Theme %1$s by %2$s', 'zillah' ),
-						sprintf( '<a href="http://themeisle.com/themes/zillah/" rel="nofollow">%s</a>', esc_html__( 'Zillah', 'zillah' ) ),
+						__( 'Theme Zillah by %1$s', 'zillah' ),
 						sprintf( '<a href="http://themeisle.com/" rel="nofollow">%s</a>', esc_html__( 'Themeisle', 'zillah' ) )
 					); ?>
 				</div>
 				<div class="footer-back-top"">
-					<a href="#" id="to-top" class="to-top">Back to top <i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+					<a href="#" id="to-top" class="to-top"><?php _e( 'Back to top','zillah' ); ?> <i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div><!-- .site-info -->

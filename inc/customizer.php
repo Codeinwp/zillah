@@ -17,12 +17,15 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'header_textcolor' )->default = '#7fcaad';
 
-    require_once ( 'class/zillah-general-control.php');
 	require_once ( 'class/zillah_category-selector-control.php');
 	
 	$wp_customize->remove_control( 'display_header_text' );
+
     $wp_customize->get_control( 'blogname' )->priority = 3;
     $wp_customize->get_control( 'blogdescription' )->priority = 4;
+
+	$wp_customize->remove_control( 'background_color' );
+	$wp_customize->remove_control( 'header_textcolor' );
 
 	$custom_logo = $wp_customize->get_control( 'custom_logo' );
 	if( !empty( $custom_logo ) ) {
@@ -30,9 +33,9 @@ function zillah_customize_register( $wp_customize ) {
 	}
 
 	/* Advanced options */
-	$wp_customize->add_section( 'zillah_home_slider_section', array(
+	$wp_customize->add_section( 'zillah_home_theme_option_section', array(
 		'title'	=> esc_html__( 'Theme options', 'zillah' ),
-		'priority'	=> 80,
+		'priority'	=> 20,
 	) );
 
 	/* Show sidebar */
@@ -45,15 +48,30 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->add_control('zillah_sidebar_show', array(
 		'label' => esc_html__('Show sidebar', 'zillah'),
 		'description' => esc_html__('If you check this box, the sidebar will appear.', 'zillah'),
-		'section' => 'zillah_home_slider_section',
+		'section' => 'zillah_home_theme_option_section',
 		'priority' => 1,
+		'type'	=> 'checkbox',
+	));
+
+	/* Show Tags */
+	$wp_customize->add_setting('zillah_tags_show', array(
+		'default' => 0,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_tags_show', array(
+		'label' => esc_html__('Show tags', 'zillah'),
+		'description' => esc_html__('If you check this box, the tags will appear in posts.', 'zillah'),
+		'section' => 'zillah_home_theme_option_section',
+		'priority' => 2,
 		'type'	=> 'checkbox',
 	));
 
 	/* Featured Content Slider */
 	$wp_customize->add_section( 'zillah_featured_content_slider_section', array(
-		'title'	=> esc_html__( 'Featured contet slider', 'zillah' ),
-		'priority'	=> 90,
+		'title'	=> esc_html__( 'Featured content slider', 'zillah' ),
+		'priority'	=> 25,
 	) );
 
 	$wp_customize->add_setting('zillah_home_slider_show', array(
@@ -81,6 +99,18 @@ function zillah_customize_register( $wp_customize ) {
 		'priority' => 2,
 	)));
 
+	/* Colors */
+	require_once ( 'class/zillah-palette-picker.php');
+	$wp_customize->add_setting( 'zillah_palette_picker',array('sanitize_callback' => 'sanitize_text_field'));
+	$wp_customize->add_control( new Zillah_Palette( $wp_customize, 'zillah_palette_picker', array(
+		'label'   => esc_html__('Change the color scheme','zillah'),
+		'section' => 'colors',
+		'priority' => 1,
+		'metro_customizr_image_control' => true,
+		'metro_customizr_icon_control' => true,
+		'metro_customizr_text_control' => false,
+		'metro_customizr_link_control' => true
+	) ) );
 
 }
 add_action( 'customize_register', 'zillah_customize_register' );
@@ -111,6 +141,18 @@ function zillah_sanitize_repeater( $input ) {
         return $result;
     }
     return $input;
+}
+
+function zillah_sanitize_select( $input, $setting ) {
+
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
 /**

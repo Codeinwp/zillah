@@ -46,30 +46,24 @@ if ( ! function_exists( 'zillah_entry_footer' ) ) :
 function zillah_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'zillah' ) );
-		if ( $categories_list && zillah_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'zillah' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+
+		global $wp_customize;
+		$zillah_tags_show = get_theme_mod( 'zillah_tags_show', true );
+
+		if( $zillah_tags_show === true || is_customize_preview() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'zillah' ) );
+			if ( $tags_list ) {
+				printf( '<span class="tags-links' . ( $zillah_tags_show === false && is_customize_preview() ? ' zillah-only-customizer' : '' ) . '">' . esc_html__( 'Tagged %1$s', 'zillah' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
 		}
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'zillah' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'zillah' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'zillah' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</span>';
 	}
 
 	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'zillah' ),
+			esc_html__( ' Edit %s', 'zillah' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',

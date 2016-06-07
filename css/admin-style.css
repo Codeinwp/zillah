@@ -2,18 +2,21 @@
 	margin-top: 15px;
 	color: #689181;
 }
+
 .zillah_repeater_container, .zillah_general_control_repeater_container {
 	width: 100%;
 	float: left;
 	padding: 5px 0;
 	cursor:move;
 }
+
 .zillah_repeater_container .zillah-box-content-hidden, .zillah_general_control_repeater_container .zillah-box-content-hidden {
 	padding: 5px;
 	border: 1px solid #dfdfdf;
 	border-top:0px;
 	padding-top: 0px;
 }
+
 button.zillah_remove_field {
 	display: inline-block;
 	width: 25% !important;
@@ -35,19 +38,21 @@ button.zillah_general_control_remove_field:hover{
 	border: 0;
 }
 
-
 .zillah_repeater_container .zillah_icon_link,  .zillah_general_control_repeater_container .zillah_text_control, .zillah_general_control_repeater_container .zillah_link_control{
 	width: 100% !important;
 	margin: 3px 0 0 !important;
 }
+
 .zillah_repeater_container .zillah_icons, .zillah_general_control_repeater_container .zillah_icon_control {
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
+
 #zillah_new_field, #zillah_general_control_new_field {
 	width: 100%;
 }
+
 .customize-control-widget_form .widget-control-save {
 	display:block !important;
 }
@@ -160,4 +165,84 @@ button.zillah_general_control_remove_field:hover{
 
 #accordion-section-zillah_shop_section .accordion-section-title:after, #accordion-section-zillah_sections_order .accordion-section-title:after, #accordion-section-zillah_features_ribbon_section .accordion-section-title:after, #accordion-section-zillah_portfolio_section .accordion-section-title:after, #accordion-section-zillah_shortcodes_section .accordion-section-title:after, #accordion-section-zillah_new_features .accordion-section-title:after {
 	content: "\f160";
+}
+
+/***********************************/
+/***** Palette picker control ******/
+/***********************************/
+
+#customize-control-metro_customizr_contact_form_shortcode {
+	display: none;
+}
+
+.metro_customizr_radio_control {
+	margin-top: 0;
+}
+
+.metro_customizr_general_control_repeater_container .metrox-box-content-hidden {
+	padding-top: 5px;
+}
+
+.zillah_palette_picker li span {
+	width: 43px;
+	height: 40px;
+	display: inline-block;
+}
+
+.zillah_palette_input {
+	border: 1px solid #cfcfcf;
+	width: 209px;
+	height: 40px;
+	float: left;
+	line-height: 40px;
+	font-size: 16px;
+	padding: 5px;
+	cursor: pointer;
+	background-color: #FFFFFF;
+}
+
+.zillah_palette_input span {
+	display: block;
+	height: 40px;
+	float: left;
+	width: 40px;
+}
+
+.zillah_dropdown {
+	width: 20px;
+	height: 50px;
+	font-size: 20px;
+	float: left;
+	border: 1px solid #cfcfcf;
+	text-align: center;
+	border-left: 0px;
+	cursor: pointer;
+	line-height: 50px;
+	background-color: #00a5f9;
+	color: #FFFFFF;
+	font-size: 12px;
+}
+
+.zillah_dropdown span {
+	line-height: 50px;
+}
+
+.zillah_palette_picker {
+	clear: both;
+	text-align: center;
+	padding-top: 6px;
+	border: 1px solid #cfcfcf;
+	border-top: 0px;
+	display: none;
+	width: 240px;
+	background-color: #fff;
+}
+
+.zillah_palette_picker li span {
+	cursor: pointer;
+}
+
+.zillah_pallete_default {
+	line-height: 40px;
+	cursor: pointer;
 }
