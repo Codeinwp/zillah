@@ -62,8 +62,8 @@
 			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ); ?>
 		</div>
 		<?php
-			$author_first_name = get_the_author_meta( 'first_name' );
-			$author_last_name = get_the_author_meta( 'last_name' );
+			$author_first_name = sanitize_text_field( get_the_author_meta( 'first_name' ) );
+			$author_last_name = sanitize_text_field( get_the_author_meta( 'last_name' ) );
 			if( !empty( $author_first_name ) || !empty( $author_last_name ) ) {
 				echo '<div class="author-details-title">';
 					if( !empty($author_first_name) ) {
@@ -75,7 +75,7 @@
 				echo '</div>';
 			}
 	
-			$author_description = nl2br( get_the_author_meta('description') );
+			$author_description = wp_kses_post( nl2br( get_the_author_meta('description') ) );
 			if( !empty( $author_description ) ){
 				echo '<div class="author-details-content">' . $author_description . '</div>';
 			}
