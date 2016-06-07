@@ -2796,7 +2796,7 @@ div.sharedaddy h3.sd-title:before {
 
 	.content-inner-wrap,
 	.comments-area-wrap .comments-area {
-		max-width: 840px;
+		max-width: 740px;
 		margin: 0 auto;
 	}
 
@@ -2974,6 +2974,11 @@ div.sharedaddy h3.sd-title:before {
 
     .header-inner-site-branding {
         padding: 124px 0;
+    }
+
+    .content-inner-wrap,
+    .comments-area-wrap .comments-area {
+        max-width: 840px;
     }
 
 }
