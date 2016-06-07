@@ -44,7 +44,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		set_post_thumbnail_size( 1170, 545, true );
 
-		add_image_size ( 'slider-thumbnail', 900, 515, true );
+		add_image_size ( 'zillah-slider-thumbnail', 900, 515, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -203,11 +203,11 @@ function zillah_fonts_url() {
 function zillah_scripts() {
 	wp_enqueue_style( 'zillah-style', get_stylesheet_uri(), array( 'zillah-boostrap-css' ) );
 
-	wp_enqueue_style ( 'zillah-boostrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v3.3.6', 'all' );
+	wp_enqueue_style ( 'boostrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v3.3.6', 'all' );
 
 	wp_enqueue_style( 'zillah-fonts', zillah_fonts_url(), array(), null );
 
-	wp_enqueue_style( 'zillah-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), 'v4.5.0', false );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), 'v4.5.0', false );
 
 	wp_enqueue_script( 'zillah-functions-js', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20151216', true );
 
@@ -216,7 +216,7 @@ function zillah_scripts() {
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'zillah' ) . '</span>',
 	) );
 
-	wp_enqueue_script( 'zillah-boostrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20130115', true );
+	wp_enqueue_script( 'boostrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20130115', true );
 
 	wp_enqueue_script( 'zillah-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -397,7 +397,7 @@ function zillah_slider(){
 
 				<div class="item-inner-half">
 					<a href="<?php the_permalink(); ?>"" class="item-inner-link"></a>
-					<?php the_post_thumbnail( 'slider-thumbnail' ); ?>
+					<?php the_post_thumbnail( 'zillah-slider-thumbnail' ); ?>
 					<div class="carousel-caption">
 						<div class="carousel-caption-inner">
 							<p class="carousel-caption-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
