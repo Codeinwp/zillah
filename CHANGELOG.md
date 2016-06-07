@@ -1,4 +1,8 @@
 
+### 1.0.2 - 07/06/2016
+**Changes:** 
+- Fixed issue with Related Posts
+
 ### 1.0.1 - 07/06/2016
 **Changes:** 
 - Add colors schemes options
