@@ -339,7 +339,7 @@ h6 {
 }
 
 p {
-	margin-bottom: 2.5em;
+	margin-bottom: 2em;
 }
 
 dfn,
@@ -2256,6 +2256,21 @@ div.sharedaddy h3.sd-title:before {
 }
 
 /*--------------------------------------------------------------
+## Disqus Comment Plugin
+--------------------------------------------------------------*/
+#disqus_thread {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+@media screen and (min-width: 1600px) {
+    #disqus_thread {
+        padding: 40px 15px;
+    }
+}
+
+/*--------------------------------------------------------------
 ## Responsive
 --------------------------------------------------------------*/
 
@@ -2702,7 +2717,7 @@ div.sharedaddy h3.sd-title:before {
 	}
 
 	.main-navigation ul ul a {
-		width: 200px;
+		width: 100%;
 	}
 
 	.main-navigation ul ul li {
