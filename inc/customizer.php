@@ -35,7 +35,7 @@ function zillah_customize_register( $wp_customize ) {
 	/* Advanced options */
 	$wp_customize->add_section( 'zillah_home_theme_option_section', array(
 		'title'	=> esc_html__( 'Theme options', 'zillah' ),
-		'priority'	=> 80,
+		'priority'	=> 20,
 	) );
 
 	/* Show sidebar */
@@ -71,7 +71,7 @@ function zillah_customize_register( $wp_customize ) {
 	/* Featured Content Slider */
 	$wp_customize->add_section( 'zillah_featured_content_slider_section', array(
 		'title'	=> esc_html__( 'Featured content slider', 'zillah' ),
-		'priority'	=> 90,
+		'priority'	=> 25,
 	) );
 
 	$wp_customize->add_setting('zillah_home_slider_show', array(
