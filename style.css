@@ -1297,6 +1297,10 @@ p.dropcap:first-letter {
     margin-bottom: 50px;
 }
 
+.post-thumbnail-wrap img {
+	width: 100%;
+}
+
 .entry-title-blog {
     margin-bottom: 0;
 }

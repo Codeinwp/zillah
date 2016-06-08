@@ -438,6 +438,8 @@ function zillah_php_style() {
 		$zillah_c5 = $zillah_picker->color5;
 	}
 
+	$header_text_color = get_header_textcolor();
+
 	if( isset( $zillah_c5 ) ) {
 		$rgb = zillah_get_rgb( $zillah_c5 );
 	}
@@ -473,10 +475,11 @@ function zillah_php_style() {
 				color: '.$zillah_c2.';
 			}
 			a, .entry-content a:visited, .comment-content a:visited,
-			.site-title a, .site-title a:visited,
 			.cat-links, .entry-header .cat-links, .cat-links a,
 			p.dropcap:first-letter,
-			.site-footer .fa {
+			.site-footer .fa,
+			.author-details-title,
+			.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
 				color:'.$zillah_c2.';
 			}
 			button, input[type="button"], input[type="reset"], input[type="submit"], .btn {
@@ -545,11 +548,6 @@ function zillah_php_style() {
 		';
 
 		/* Color 4 */
-		echo '
-			body {
-				background: '.$zillah_c4.'; 
-			}
-		';
 
 		/* Color 5 */
 		echo '
@@ -574,6 +572,12 @@ function zillah_php_style() {
 				.main-navigation ul ul li.focus > a {
 					color: #FFF; 
 				}
+			}
+		';
+
+		echo '
+			.site-title a {
+				color: #'. esc_attr( $header_text_color ) .'
 			}
 		';
 
