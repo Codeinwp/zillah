@@ -2146,6 +2146,7 @@ object {
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post{
     padding:0px 0px 20px 0px;
     margin:5px;
+    background: #f6f6f6;
 }
 
 #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post{
