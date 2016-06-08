@@ -2143,29 +2143,7 @@ object {
 	float: right;
 }
 
-.entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post{
-    padding:0px 0px 20px 0px;
-    margin:5px;
-    background: #f6f6f6;
-}
 
-#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post{
-    width: 32%;
-}
-
-#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post{
-    opacity: 1;
-}
-
-.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a{
-    letter-spacing: 1px;
-    font-size: 15px;
-}
-
-#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a{
-    text-decoration: none;
-    color: #7fcaad;
-}
 
 .sd-social-icon .sd-button span.share-count {
 	display: none !important;
@@ -2189,6 +2167,9 @@ div.sharedaddy h3.sd-title:before {
 	.search-post #main div.sharedaddy {
 		float: right;
 	}
+	.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post{
+	width: 32%;
+}
 }
 
 /* Related posts */
@@ -2244,12 +2225,14 @@ div.sharedaddy h3.sd-title:before {
 
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post{
 	padding: 0 0 20px 0;
-	margin: 5px;
+	margin: 5px 0.6%;
+	background: #f6f6f6;
 }
 
 .entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post{
-	width: 32%;
+	width: 100%;
 }
+
 
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post{
 	opacity: 1;
