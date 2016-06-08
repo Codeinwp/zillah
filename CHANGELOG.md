@@ -1,4 +1,8 @@
 
+### 1.0.4 - 08/06/2016
+**Changes:** 
+- Update style for related posts
+
 ### 1.0.2 - 07/06/2016
 **Changes:** 
 - Fixed issue with Related Posts
