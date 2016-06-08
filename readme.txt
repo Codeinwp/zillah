@@ -1,4 +1,4 @@
-=== zillah ===
+=== Zillah ===
 
 Contributors: themeisle, codeinwp
 Tags: gray, green, responsive-layout, right-sidebar, one-column, custom-background, custom-colors, featured-image-header, featured-images, sticky-post, photoblogging, translation-ready, threaded-comments, rtl-language-support, theme-options
