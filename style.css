@@ -4,7 +4,7 @@ Theme URI: 		http://themeisle.com/themes/zillah/
 Author: 		ThemeIsle
 Author URI: 	http://themeisle.com
 Description: 	Zillah is a free blogging WordPress theme.
-Version: 		1.0.2
+Version: 		1.0.3
 License: 		GNU General Public License v2 or later
 License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: 	zillah
@@ -339,7 +339,7 @@ h6 {
 }
 
 p {
-	margin-bottom: 2.5em;
+	margin-bottom: 2em;
 }
 
 dfn,
@@ -1298,7 +1298,7 @@ p.dropcap:first-letter {
 }
 
 .post-thumbnail-wrap img {
-	width: 100%;
+    width: 100%;
 }
 
 .entry-title-blog {
@@ -2150,6 +2150,7 @@ object {
 .entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post{
     padding:0px 0px 20px 0px;
     margin:5px;
+    background: #f6f6f6;
 }
 
 #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post{
@@ -2261,6 +2262,21 @@ div.sharedaddy h3.sd-title:before {
 .entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a{
 	text-decoration: none;
 	color: #7fcaad;
+}
+
+/*--------------------------------------------------------------
+## Disqus Comment Plugin
+--------------------------------------------------------------*/
+#disqus_thread {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+@media screen and (min-width: 1600px) {
+    #disqus_thread {
+        padding: 40px 15px;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -2710,7 +2726,7 @@ div.sharedaddy h3.sd-title:before {
 	}
 
 	.main-navigation ul ul a {
-		width: 200px;
+		width: 100%;
 	}
 
 	.main-navigation ul ul li {
@@ -2785,7 +2801,7 @@ div.sharedaddy h3.sd-title:before {
 
 	.content-inner-wrap,
 	.comments-area-wrap .comments-area {
-		max-width: 840px;
+		max-width: 740px;
 		margin: 0 auto;
 	}
 
@@ -2963,6 +2979,11 @@ div.sharedaddy h3.sd-title:before {
 
     .header-inner-site-branding {
         padding: 124px 0;
+    }
+
+    .content-inner-wrap,
+    .comments-area-wrap .comments-area {
+        max-width: 840px;
     }
 
 }
