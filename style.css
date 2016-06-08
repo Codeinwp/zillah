@@ -2167,9 +2167,7 @@ div.sharedaddy h3.sd-title:before {
 	.search-post #main div.sharedaddy {
 		float: right;
 	}
-	.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post{
-	width: 32%;
-}
+
 }
 
 /* Related posts */
@@ -2230,7 +2228,7 @@ div.sharedaddy h3.sd-title:before {
 }
 
 .entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post{
-	width: 100%;
+	width: 32%;
 }
 
 
