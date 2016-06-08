@@ -306,39 +306,28 @@ function zillah_brand(){
 
 	echo '<div class="header-logo-wrap">';
 
-	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-		the_custom_logo();
-		echo '<div class="header-title-wrap zillah-only-customizer">';
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-		echo '</div>';
+		$zillah_tagline_hide  = get_theme_mod( 'zillah_tagline_show', false );
 
-	} else {
-		if( is_customize_preview() ){ ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link zillah-only-customizer" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>">
-				<img src="">
-			</a>
-			<?php
+		if ( function_exists( 'the_custom_logo' ) ) {
+			the_custom_logo();
 		}
-		echo '<div class="header-title-wrap">';
+
+		if( ( ! $zillah_tagline_hide && display_header_text() ) || is_customize_preview() ) {
+			echo '<div class="header-title-wrap' . ( ($zillah_tagline_hide || !display_header_text() ) && is_customize_preview() ? ' zillah-only-customizer' : '' ) . '">';
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-		echo '</div>';
-	}
+			echo '</div>';
+		}
 
-	$description = get_bloginfo( 'description', 'display' );
-	if ( $description || is_customize_preview() ) : ?>
-		<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-		<?php
-	endif;
+		$description = get_bloginfo( 'description', 'display' );
+		if ( ( $description && display_header_text() ) || is_customize_preview() ) : ?>
+			<p class="site-description<?php echo ! display_header_text() && is_customize_preview() ? ' zillah-only-customizer' : ''; ?>"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			<?php
+		endif;
 
 	echo '</div>';
 }

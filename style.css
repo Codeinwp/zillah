@@ -1721,6 +1721,10 @@ object {
 	padding: 12px 0;
 }
 
+.header-title-wrap {
+	margin-top: 20px;
+}
+
 .menu-toggle-button-wrap {
     display: table-cell;
     vertical-align: middle;
