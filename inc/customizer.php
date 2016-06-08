@@ -14,23 +14,31 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
 	$wp_customize->get_setting( 'header_textcolor' )->default = '#7fcaad';
 
 	require_once ( 'class/zillah_category-selector-control.php');
-	
-	$wp_customize->remove_control( 'display_header_text' );
 
     $wp_customize->get_control( 'blogname' )->priority = 3;
     $wp_customize->get_control( 'blogdescription' )->priority = 4;
-
-	$wp_customize->remove_control( 'background_color' );
-	$wp_customize->remove_control( 'header_textcolor' );
 
 	$custom_logo = $wp_customize->get_control( 'custom_logo' );
 	if( !empty( $custom_logo ) ) {
 		$wp_customize->get_control( 'custom_logo' )->priority = 5;
 	}
+
+	/* Title tagline */
+	$wp_customize->add_setting('zillah_tagline_show', array(
+		'default' => 0,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_tagline_show', array(
+		'label' => esc_html__('Hide Site Title', 'zillah'),
+		'section' => 'title_tagline',
+		'priority' => 50,
+		'type'	=> 'checkbox',
+	));
 
 	/* Advanced options */
 	$wp_customize->add_section( 'zillah_home_theme_option_section', array(

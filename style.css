@@ -1,7 +1,7 @@
 /*
 Theme Name: 	Zillah
-Theme URI: 		http://themeisle.com/themes/zillah/
-Author: 		ThemeIsle
+Theme URI: 	http://themeisle.com/themes/zillah/
+Author: 	ThemeIsle
 Author URI: 	http://themeisle.com
 Description: 	Zillah is a free blogging WordPress theme.
 Version: 		1.0.4
@@ -1723,6 +1723,10 @@ object {
 	display: table;
 	width: 100%;
 	padding: 12px 0;
+}
+
+.header-title-wrap {
+	margin-top: 20px;
 }
 
 .menu-toggle-button-wrap {
