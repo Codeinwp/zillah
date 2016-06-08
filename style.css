@@ -312,6 +312,13 @@ th {
 	background: #fff198;
 }
 
+.wp-caption figcaption.wp-caption-text {
+	margin: 0;
+	padding: 10px;
+	font-size: 13px;
+	background: #F6F6F6;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -1380,13 +1387,18 @@ p.dropcap:first-letter {
 }
 
 .more-link {
-	margin-top: 50px;
+	margin-top: 45px;
 	float: left;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 15px;
 	font-family: 'Cabin', Helvetica, sans-serif;
 }
+
+.content-inner-wrap > .more-link {
+	margin-top: -34px;
+}
+
 
 .post-edit-link {
     font-style: italic;

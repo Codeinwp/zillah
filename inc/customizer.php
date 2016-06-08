@@ -165,9 +165,9 @@ function zillah_sanitize_select( $input, $setting ) {
 
 
 function zillah_sanitize_category_dropdown($input){
-	$cat = get_category_by_slug( $input );
+	$cat = get_the_category_by_ID( $input );
 	if( empty( $cat ) ){
-		return 'all';
+		return '';
 	}
 	return $input;
 }
