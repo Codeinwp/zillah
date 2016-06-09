@@ -65,12 +65,18 @@
 			$author_first_name =  get_the_author_meta( 'first_name' );
 			$author_last_name = get_the_author_meta( 'last_name' );
 			if( !empty( $author_first_name ) || !empty( $author_last_name ) ) {
+
+				$author_name = '';
+				if ( ! empty( $author_first_name ) ) {
+					$author_name .= sanitize_text_field( $author_first_name ) . ' ';
+				}
+				if ( ! empty( $author_last_name ) ) {
+					$author_name .= sanitize_text_field( $author_last_name );
+				}
+
 				echo '<div class="author-details-title">';
-					if( !empty($author_first_name) ) {
-						echo sanitize_text_field($author_first_name) . ' ';
-					}
-					if( !empty($author_last_name) ) {
-						echo sanitize_text_field($author_last_name);
+					if( $author_name!=='' ) {
+							echo '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( $author_name ) . '">' . $author_name . '</a>';
 					}
 				echo '</div>';
 			}
@@ -80,5 +86,6 @@
 				echo '<div class="author-details-content">' . $author_description . '</div>';
 			}
 		?>
+
 	</div>
 </div>
