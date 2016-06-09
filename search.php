@@ -22,7 +22,7 @@ get_header(); ?>
 
 		<div class="content-wrap">
 
-			<div id="primary" class="content-area search-page">
+			<div id="primary" class="content-area content-area-arch search-page">
 				<main id="main" class="site-main" role="main">
 
 				<?php

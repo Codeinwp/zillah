@@ -1,14 +1,14 @@
 /*
-Theme Name: 	Zillah
-Theme URI: 	http://themeisle.com/themes/zillah/
-Author: 	ThemeIsle
-Author URI: 	http://themeisle.com
-Description: 	Zillah is a free blogging WordPress theme.
-Version: 		1.0.5
-License: 		GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: 	zillah
-Tags:			right-sidebar, one-column, custom-background, custom-colors, featured-image-header, featured-images, sticky-post, translation-ready, threaded-comments, rtl-language-support, theme-options
+Theme Name:     Zillah
+Theme URI:      http://themeisle.com/themes/zillah/
+Author:         ThemeIsle
+Author URI:     http://themeisle.com
+Description:    Zillah is a free blogging WordPress theme.
+Version:        1.0.5
+License:        GNU General Public License v2 or later
+License URI:    http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:    zillah
+Tags:           right-sidebar, one-column, custom-background, custom-colors, featured-image-header, featured-images, sticky-post, translation-ready, threaded-comments, rtl-language-support, theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -124,39 +124,49 @@ h1, h2, h3 {
 
 h1 {
 	font-size: 35px;
+    font-size: 2.1875em;
 	line-height: 45px;
+    line-height: 2.8125;
 	color: #373735;
 }
 
 h2 {
     font-size: 23px;
+    font-size: 1.4375em;
     line-height: 35px;
+    line-height: 2.1875;
 }
 
 h3 {
     font-size: 24px;
+    font-size: 1.5em;
     line-height: 36px;
+    line-height: 2.25;
 }
 
 h4, h5, h6 {
     font-family: 'Merriweather', Georgia, serif;
     line-height: 27px;
+    line-height: 1.6875;
 	margin: 25px 0;
 	color: #575756;
 }
 
 h4 {
     font-size: 24px;
+    font-size: 1.5em;
 }
 
 h5 {
     font-size: 20px;
+    font-size: 1.25em;
 }
 
 h6 {
 	text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 15px;
+    font-size: 0.9375em;
 }
 
 
@@ -316,6 +326,7 @@ th {
 	margin: 0;
 	padding: 10px;
 	font-size: 13px;
+    font-size: 0.8125em;
 	background: #F6F6F6;
 }
 
@@ -360,7 +371,9 @@ blockquote {
     border-left: solid 5px #7fcaad;
     margin-left: 0;
     font-size: 20px;
+    font-size: 1.25em;
     line-height: 29px;
+    line-height: 1.8125;
     color: #373735;
     padding: 0 20px;
     margin: 50px 0;
@@ -379,6 +392,7 @@ pre {
 	background: #eee;
     font-family: "Courier 10 Pitch", Courier, monospace;
     font-size: 16px;
+    font-size: 1em;
     line-height: 1.6;
     margin-bottom: 16px;
     max-width: 100%;
@@ -394,6 +408,7 @@ tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 16px;
+    font-size: 1em;
 }
 
 abbr,
@@ -509,7 +524,9 @@ input[type="submit"],
     color: #fff;
     border: none;
     font-size: 14px;
+    font-size: 0.875em;
     line-height: 18px;
+    line-height: 1.125;
 }
 
 .btn {
@@ -556,7 +573,9 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	font-size: 14px;
+    font-size: 0.875em;
 	line-height: 18px;
+    line-height: 1.125;
 	font-weight: normal;
 	color: #aaaaaa;
 	letter-spacing: 1px;
@@ -572,8 +591,10 @@ textarea {
 }
 
 select {
-	font-size: 14px;
-	line-height: 18px;
+    font-size: 14px;
+    font-size: 0.875em;
+    line-height: 18px;
+    line-height: 1.125;
 	font-weight: normal;
 	color: #aaaaaa;
 	letter-spacing: 1px;
@@ -622,8 +643,10 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
-	font-size: 14px;
-	line-height: 18px;
+    font-size: 14px;
+    font-size: 0.875em;
+    line-height: 18px;
+    line-height: 1.125;
 	font-weight: normal;
 	color: #aaaaaa;
 	letter-spacing: 1px;
@@ -719,7 +742,9 @@ a:active {
 	padding: 15px 30px;
 	color: #fff;
 	font-size: 16px;
+    font-size: 1em;
 	line-height: 20px;
+    line-height: 1.25;
 }
 
 .main-navigation ul ul {
@@ -861,6 +886,7 @@ a:active {
     letter-spacing: 2.5px;
     color: #aaa;
     font-size: 14px;
+    font-size: 0.875em;
 	background: #7fcaad;
 	color: #fFf;
 }
@@ -956,6 +982,7 @@ a:active {
 .author-details-title {
 	font-family: 'Cabin', Helvetica, sans-serif;
 	font-size: 14px;
+    font-size: 0.875em;
 	font-weight: 600;
 	color: #628d7c;
 	text-transform: uppercase;
@@ -965,6 +992,7 @@ a:active {
 
 .author-details-content {
 	font-size: 14px;
+    font-size: 0.875em;
 	color: #aaaaaa;
 }
 
@@ -1098,6 +1126,7 @@ a:active {
 
 .taxonomy-description {
 	font-size: 16px;
+    font-size: 1em;
 	font-style: normal;
 	font-weight: normal;
 	letter-spacing: 0;
@@ -1153,7 +1182,9 @@ a:active {
 .not-found .page-title,
 .search-nothing-found {
 	font-size: 24px;
+    font-size: 1.5em;
 	line-height: 30px;
+    font-size: 1.875;
 	color: #575756;
 	font-weight: 400;
 }
@@ -1162,14 +1193,22 @@ p.dropcap:first-letter {
 	float: left;
 	color: #628d7c;
 	font-size: 50px;
+    font-size: 3.125em;
 	line-height: 50px;
 	padding-top: 4px;
 	padding-right: 8px;
 	padding-left: 3px;
 }
 
-.entry-content {
+.content-area-arch .entry-content {
     font-size: 15px;
+    font-size: 0.9375em;
+}
+
+.content-area-arch p.dropcap:first-letter {
+    font-size: 45px;
+    font-size: 2.8125em;
+    line-height: 45px;
 }
 
 /*--------------------------------------------------------------
@@ -1206,7 +1245,9 @@ p.dropcap:first-letter {
 .entry-title {
     font-family: 'Cabin', Helvetica, sans-serif;
     font-size: 30px;
+    font-size: 1875em;
     line-height: 36px;
+    line-height: 2.25;
     text-transform: uppercase;
     color: #373735;
     letter-spacing: 2px;
@@ -1218,6 +1259,7 @@ p.dropcap:first-letter {
 	text-align: center;
     font-family: 'Cabin', Helvetica, sans-serif;
     font-size: 40px;
+    font-size: 2.5em;
     color: #575756;
     font-weight: 400;
     letter-spacing: 3px;
@@ -1245,6 +1287,7 @@ p.dropcap:first-letter {
 .comment-reply-title {
 	font-family: 'Merriweather', Georgia, serif;
 	font-size: 20px;
+    font-size: 1.25em;
 	text-transform: none;
 	letter-spacing: 1px;
 }
@@ -1282,7 +1325,9 @@ p.dropcap:first-letter {
     content: "+";
     text-indent: 0px;
     font-size: 30px;
+    font-size: 1.875em;
     line-height: 16px;
+    line-height: 1;
     font-weight: 100;
 }
 
@@ -1315,7 +1360,9 @@ p.dropcap:first-letter {
 .entry-title-blog a,
 .entry-title {
     font-size: 24px;
+    font-size: 1.5em;
     line-height: 30px;
+    line-height: 1.875;
     color: #575756;
     font-weight: 400;
 	margin-bottom: 0;
@@ -1363,6 +1410,7 @@ p.dropcap:first-letter {
 .entry-header .posted-on {
 	color: #aaaaaa;
 	font-size: 15px;
+    font-size: 0.9375em;
 	padding-bottom: 10px;
 	display: block;
 }
@@ -1378,6 +1426,7 @@ p.dropcap:first-letter {
 .entry-header .cat-links {
 	font-family: 'Cabin', Helvetica, sans-serif;
 	font-size: 15px;
+    font-size: 0.9375em;
 	font-weight: 400;
 	color: #7fcaad;
 	text-transform: uppercase;
@@ -1392,6 +1441,7 @@ p.dropcap:first-letter {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 15px;
+    font-size: 0.9375em;
 	font-family: 'Cabin', Helvetica, sans-serif;
 }
 
@@ -1430,12 +1480,14 @@ h2.comments-title {
 	color: #373735;
 	font-family: 'Merriweather', Georgia, serif;
 	font-size: 20px;
+    font-size: 1.25em;
 	line-height: 1.75;
 	text-transform: none;
 }
 
 .comment-content {
 	font-size: 14px;
+    font-size: 0.875em;
 	color: #575756;
 }
 
@@ -1449,6 +1501,7 @@ h2.comments-title {
 
 .comments-title {
 	font-size: 18px;
+    font-size: 1.125em;
 }
 
 .comment-list {
@@ -1482,7 +1535,9 @@ h2.comments-title {
 .comment-metadata a {
 	font-family: 'Cabin', Helvetica, sans-serif;
 	font-size: 14px;
+    font-size: 0.875em;
 	line-height: 16px;
+    line-height: 1;
 	font-weight: 400;
 	color: #aaaaaa;
 	letter-spacing: 1px;
@@ -1534,6 +1589,7 @@ h2.comments-title {
 	font-weight: 600;
 	color: #628d7c;
 	font-size: 14px;
+    font-size: 0.875em;
 	text-transform: uppercase;
 	letter-spacing: 1.75px;
 }
@@ -1544,6 +1600,7 @@ h2.comments-title {
 
 .comment-reply-link {
 	font-size: 14px;
+    font-size: 0.875em;
 }
 
 .comment-list .children {
@@ -1666,6 +1723,7 @@ object {
     color: #686868;
     display: block;
     font-size: 12px;
+    font-size: 0.75em;
     font-style: italic;
     line-height: 1.6153846154;
     padding-top: 0.5384615385em;
@@ -1692,6 +1750,7 @@ object {
 .site-title {
 	font-family: 'Lato', Helvetica, sans-serif;
     font-size: 56px;
+    font-size: 3.5em;
     line-height: 1;
     color: #373735;
     letter-spacing: 10px;
@@ -1775,6 +1834,7 @@ object {
 	width: 100%;
 	font-family: 'Cabin', Helvetica, sans-serif;
 	font-size: 13px;
+    font-size: 0.8125em;
 }
 
 .header-search label {
@@ -1786,6 +1846,7 @@ object {
 	content: "\f002";
 	font-family: 'FontAwesome';
 	font-size: 14px;
+    font-size: 0.875em;
 	display: block;
 	width: 20px;
 	height: 20px;
@@ -1829,6 +1890,7 @@ object {
 
 .menu-toggle {
 	font-size: 20px;
+    font-size: 1.25em;
     padding: 10px 15px;
     background: none;
     color: #6f6e6b;
@@ -1866,6 +1928,7 @@ object {
 	content: "\f1e0";
 	font-family: 'FontAwesome';
 	font-size: 16px;
+    font-size: 1em;
 	display: block;
 	width: 20px;
 	height: 20px;
@@ -1927,6 +1990,7 @@ object {
 .site-footer {
     background: #575756;
     font-size: 14px;
+    font-size: 0.875em;
 	font-weight: 300;
     color: #aaaaaa;
     text-align: left;
@@ -1952,6 +2016,7 @@ object {
     color: #dfdfdf;
     font-family: 'Cabin', Helvetica, sans-serif;
     font-size: 14px;
+    font-size: 0.875em;
     margin: 0 0 20px;
     line-height: 21px;
 }
@@ -1959,6 +2024,7 @@ object {
 .site-info {
 	text-align: center;
 	font-size: 12px;
+    font-size: 0.75em;
 	letter-spacing: 1px;
 	padding: 15px 0;
 	background: #373735;
@@ -2018,6 +2084,7 @@ object {
     background: none;
     color: #7fcaad;
     font-size: 14px;
+    font-size: 0.875em;
     line-height: 22px;
 }
 
@@ -2059,6 +2126,7 @@ object {
 
 .footer-social-icons li a {
 	font-size: 20px;
+    font-size: 1.25em;
     line-height: 30px;
 	margin: 0 8px;
 }
@@ -2152,6 +2220,7 @@ object {
 	padding-right: 15px;
 	color: #aaaaaa;
 	font-size: 15px;
+    font-size: 0.9375em;
 	font-weight: 400;
 }
 
@@ -2190,6 +2259,7 @@ div.sharedaddy h3.sd-title:before {
 .entry-content #jp-relatedposts h3.jp-relatedposts-headline {
 	font-family: 'Merriweather', Georgia, serif;
 	font-size: 20px;
+    font-size: 1.25em;
 	font-weight: 400;
 	text-align: center;
 	width: 100%;
@@ -2219,6 +2289,7 @@ div.sharedaddy h3.sd-title:before {
 	color: #575756;
 	letter-spacing: 1px;
 	font-size: 15px;
+    font-size: 0.9375em;
 }
 
 .entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:hover {
@@ -2278,6 +2349,9 @@ div.sharedaddy h3.sd-title:before {
 
 @media screen and (min-width: 600px) {
 
+	/*-----------
+	 * Content
+	 -----------*/
 	.entry-content blockquote.alignleft,
 	.entry-content blockquote.alignright {
 		width: -webkit-calc(50% - 0.736842105em);
@@ -2356,6 +2430,7 @@ div.sharedaddy h3.sd-title:before {
 	.widget-title {
 		color: #628d7c;
 	    font-size: 14px;
+        font-size: 0.875em;
 	    margin: 0 0 20px;
 		line-height: 21px;
 	}
@@ -2364,6 +2439,7 @@ div.sharedaddy h3.sd-title:before {
 		list-style: none;
 	    padding: 10px 0 0;
 	    font-size: 16px;
+        font-size: 1em;
 		color: #aaaaaa;
 	}
 
@@ -2377,12 +2453,14 @@ div.sharedaddy h3.sd-title:before {
 
 	.widget li a {
 		font-size: 15px;
+        font-size: 0.9375em;
 		line-height: 19px;
 	}
 
 	.widget_categories li a {
 	    text-transform: uppercase;
 	    font-size: 14px;
+        font-size: 0.875em;
 	    letter-spacing: 2px;
 	    font-family: 'Cabin', Helvetica, sans-serif;
 	}
@@ -2429,7 +2507,9 @@ div.sharedaddy h3.sd-title:before {
 	    display: block;
 		font-family: 'Cabin', Helvetica, sans-serif;
 	    font-size: 13px;
+        font-size: 0.8125em;
 	    line-height: 13px;
+        line-height: 0.8125;
 	    color: #aaaaaa;
 	    text-transform: uppercase;
 	    margin-top: 5px;
@@ -2454,6 +2534,7 @@ div.sharedaddy h3.sd-title:before {
 
 	.widget_calendar caption {
 		font-size: 14px;
+        font-size: 0.875em;
 		margin: 0;
 	}
 
@@ -2500,6 +2581,7 @@ div.sharedaddy h3.sd-title:before {
 	    color: #aaaaaa;
 	    position: absolute;
 	    font-size: 18px;
+        font-size: 1.125em;
 	    padding-right: 20px;
 	    z-index: 5;
 	    right: 0px;
@@ -2592,7 +2674,9 @@ div.sharedaddy h3.sd-title:before {
 
 	h2 {
     	font-size: 28px;
+        font-size: 1.75em;
     	line-height: 40px;
+        line-height: 2.5;
 	}
 
 	.post-navigation {
@@ -2714,6 +2798,7 @@ div.sharedaddy h3.sd-title:before {
 
 	.main-navigation li a {
 	    font-size: 13px;
+        font-size: 0.8125em;
 	    color: #aaaaaa;
 	    padding: 5px 10px;
 	}
@@ -2769,6 +2854,7 @@ div.sharedaddy h3.sd-title:before {
 	.widget-area .widget {
 	   width: 300px;
 		font-size: 14px;
+        font-size: 0.875em;
 	}
 
 	.widget-area .widget:first-child {
@@ -2877,6 +2963,7 @@ div.sharedaddy h3.sd-title:before {
 		font-family: 'Cabin', Helvetica, sans-serif;
 		text-transform: uppercase;
 		font-size: 18px;
+        font-size: 1.125em;
 		letter-spacing: 2px;
 		color: #373735;
 		margin: 0;
@@ -2897,6 +2984,7 @@ div.sharedaddy h3.sd-title:before {
 	.carousel-caption-category a {
 		color: #aaaaaa;
 		font-size: 14px;
+        font-size: 0.875em;
 		letter-spacing: .5px;
 		margin: 0;
 		padding: 0;
@@ -2960,6 +3048,7 @@ div.sharedaddy h3.sd-title:before {
 
     .entry-content {
         font-size: 16px;
+        font-size: 1em;
     }
 
     .main-navigation li a {
@@ -2979,4 +3068,11 @@ div.sharedaddy h3.sd-title:before {
         max-width: 840px;
     }
 
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
 }
