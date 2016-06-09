@@ -126,7 +126,6 @@ h1 {
 	font-size: 35px;
     font-size: 2.1875em;
 	line-height: 45px;
-    line-height: 2.8125;
 	color: #373735;
 }
 
@@ -134,14 +133,12 @@ h2 {
     font-size: 23px;
     font-size: 1.4375em;
     line-height: 35px;
-    line-height: 2.1875;
 }
 
 h3 {
     font-size: 24px;
     font-size: 1.5em;
     line-height: 36px;
-    line-height: 2.25;
 }
 
 h4, h5, h6 {
@@ -373,7 +370,6 @@ blockquote {
     font-size: 20px;
     font-size: 1.25em;
     line-height: 29px;
-    line-height: 1.8125;
     color: #373735;
     padding: 0 20px;
     margin: 50px 0;
@@ -526,7 +522,6 @@ input[type="submit"],
     font-size: 14px;
     font-size: 0.875em;
     line-height: 18px;
-    line-height: 1.125;
 }
 
 .btn {
@@ -575,7 +570,6 @@ textarea {
 	font-size: 14px;
     font-size: 0.875em;
 	line-height: 18px;
-    line-height: 1.125;
 	font-weight: normal;
 	color: #aaaaaa;
 	letter-spacing: 1px;
@@ -594,7 +588,6 @@ select {
     font-size: 14px;
     font-size: 0.875em;
     line-height: 18px;
-    line-height: 1.125;
 	font-weight: normal;
 	color: #aaaaaa;
 	letter-spacing: 1px;
@@ -646,7 +639,6 @@ input[type="color"] {
     font-size: 14px;
     font-size: 0.875em;
     line-height: 18px;
-    line-height: 1.125;
 	font-weight: normal;
 	color: #aaaaaa;
 	letter-spacing: 1px;
@@ -744,7 +736,6 @@ a:active {
 	font-size: 16px;
     font-size: 1em;
 	line-height: 20px;
-    line-height: 1.25;
 }
 
 .main-navigation ul ul {
@@ -1247,7 +1238,6 @@ p.dropcap:first-letter {
     font-size: 30px;
     font-size: 1875em;
     line-height: 36px;
-    line-height: 2.25;
     text-transform: uppercase;
     color: #373735;
     letter-spacing: 2px;
@@ -1327,7 +1317,6 @@ p.dropcap:first-letter {
     font-size: 30px;
     font-size: 1.875em;
     line-height: 16px;
-    line-height: 1;
     font-weight: 100;
 }
 
@@ -1362,7 +1351,6 @@ p.dropcap:first-letter {
     font-size: 24px;
     font-size: 1.5em;
     line-height: 30px;
-    line-height: 1.875;
     color: #575756;
     font-weight: 400;
 	margin-bottom: 0;
@@ -1481,7 +1469,6 @@ h2.comments-title {
 	font-family: 'Merriweather', Georgia, serif;
 	font-size: 20px;
     font-size: 1.25em;
-	line-height: 1.75;
 	text-transform: none;
 }
 
@@ -1537,7 +1524,6 @@ h2.comments-title {
 	font-size: 14px;
     font-size: 0.875em;
 	line-height: 16px;
-    line-height: 1;
 	font-weight: 400;
 	color: #aaaaaa;
 	letter-spacing: 1px;
@@ -2509,7 +2495,6 @@ div.sharedaddy h3.sd-title:before {
 	    font-size: 13px;
         font-size: 0.8125em;
 	    line-height: 13px;
-        line-height: 0.8125;
 	    color: #aaaaaa;
 	    text-transform: uppercase;
 	    margin-top: 5px;
@@ -2676,7 +2661,6 @@ div.sharedaddy h3.sd-title:before {
     	font-size: 28px;
         font-size: 1.75em;
     	line-height: 40px;
-        line-height: 2.5;
 	}
 
 	.post-navigation {
