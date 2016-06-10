@@ -1541,18 +1541,18 @@ h2.comments-title {
 
 .comment-body {
     position: relative;
-    padding: 45px 0 45px 100px;
+    padding: 25px 0 15px 40px;
     padding-right: 15px;
-	border-bottom: 1px solid #e9e8e8;
-	margin-left: 0;
-	min-height: 195px;
+    border-bottom: 1px solid #e9e8e8;
+    margin-left: 0;
+    min-height: 30px;
 }
 
 .comment-author img {
     position: absolute;
-    margin-left: -100px;
-    width: 70px;
-    width: 70px;
+    margin-left: -40px;
+    width: 30px;
+    height: 30px;
 }
 
 .pingback {
@@ -1594,7 +1594,7 @@ h2.comments-title {
 
 .comment-list .children {
 	margin-left: 0;
-	padding: 0 0 0 0;
+	padding: 0 0 0 20px;
 }
 
 /*--------------------------------------------------------------
@@ -2727,6 +2727,7 @@ div.sharedaddy h3.sd-title:before {
 
     .comment-body {
         padding: 45px 0 45px 155px;
+        min-height: 195px;
     }
 
     .comment-list .children {
@@ -3087,7 +3088,17 @@ div.sharedaddy h3.sd-title:before {
 
 
 @media screen and (max-width: 600px) {
+
     body {
         font-size: 14px;
+    }
+
+    .comment-content {
+        font-size: 14px;
+        font-size: 1em;
+    }
+
+    .comment-author .fn, .comment-author .fn a, .comment-metadata, .comment-metadata a {
+        letter-spacing: 0.5px;
     }
 }
