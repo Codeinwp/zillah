@@ -213,20 +213,20 @@
         $(document).ready(function () {
             headerHeight    = $headerToHide.height();
             isAdminBar      = $( '#wpadminbar' ).length > 0 ? true : false;
-            initTop         = isAdminBar ? 32 : 0;
+            initTop         = isAdminBar && window.innerWidth > 768 ? 32 : 0;
             $body.css( 'padding-top', headerHeight );
 
         });
 
         $(window).resize(function () {
             headerHeight    = $headerToHide.height();
-            initTop         = isAdminBar ? 32 : 0;
-            $body.css( 'padding-top', headerHeight );
+            initTop         = isAdminBar && window.innerWidth > 768 ? 32 : 0;
+			$body.css( 'padding-top', window.innerWidth > 768 ? headerHeight : 0 );
         });
 
         $(window).scroll(function (event) {
             var thisScrollTop = $(this).scrollTop();
-            changeDirection = ( (thisScrollTop > lastScrollTop && lastDirectionDown === false) || (thisScrollTop < lastScrollTop && lastDirectionDown === true) ? true : false );
+            changeDirection = ( thisScrollTop > headerHeight && (thisScrollTop > lastScrollTop && lastDirectionDown === false) || (thisScrollTop < lastScrollTop && lastDirectionDown === true) ? true : false );
             if (changeDirection === true) {
                 $headerToHide.toggleClass('hide-header');
                 lastDirectionDown = ( lastDirectionDown === false ? true : false );
