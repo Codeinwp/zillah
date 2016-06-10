@@ -3101,4 +3101,9 @@ div.sharedaddy h3.sd-title:before {
     .comment-author .fn, .comment-author .fn a, .comment-metadata, .comment-metadata a {
         letter-spacing: 0.5px;
     }
+
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
