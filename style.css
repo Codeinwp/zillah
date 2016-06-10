@@ -1233,18 +1233,6 @@ p.dropcap:first-letter {
     padding: 70px 0px;
 }
 
-.entry-title {
-    font-family: 'Cabin', Helvetica, sans-serif;
-    font-size: 30px;
-    font-size: 1875em;
-    line-height: 36px;
-    text-transform: uppercase;
-    color: #373735;
-    letter-spacing: 2px;
-    font-weight: 600;
-    margin: 0px 0px 10px 0px;
-}
-
 .page-main-header .entry-title {
 	text-align: center;
     font-family: 'Cabin', Helvetica, sans-serif;
@@ -1346,14 +1334,23 @@ p.dropcap:first-letter {
     margin-bottom: 0;
 }
 
-.entry-title-blog a,
 .entry-title {
+    font-family: 'Cabin', Helvetica, sans-serif;
     font-size: 24px;
     font-size: 1.5em;
     line-height: 30px;
     color: #575756;
-    font-weight: 400;
-	margin-bottom: 0;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.entry-title-blog a {
+    font-size: 24px;
+    font-size: 1em;
+    color: #575756;
+    margin: 0;
 }
 
 .entry-title-blog a:hover {
@@ -1429,7 +1426,7 @@ p.dropcap:first-letter {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 15px;
-    font-size: 0.9375em;
+    font-size: 1em;
 	font-family: 'Cabin', Helvetica, sans-serif;
 }
 
@@ -1544,11 +1541,18 @@ h2.comments-title {
 
 .comment-body {
     position: relative;
-    padding: 45px 0 45px 155px;
+    padding: 45px 0 45px 100px;
     padding-right: 15px;
 	border-bottom: 1px solid #e9e8e8;
 	margin-left: 0;
 	min-height: 195px;
+}
+
+.comment-author img {
+    position: absolute;
+    margin-left: -100px;
+    width: 70px;
+    width: 70px;
 }
 
 .pingback {
@@ -1589,8 +1593,8 @@ h2.comments-title {
 }
 
 .comment-list .children {
-	margin-left: 0px;
-	padding: 0 0 0 60px;
+	margin-left: 0;
+	padding: 0 0 0 0;
 }
 
 /*--------------------------------------------------------------
@@ -1795,6 +1799,8 @@ object {
 	margin-bottom: 0;
 	margin-top: 15px;
 	color: #aaaaaa;
+    font-size: 15px;
+    font-size: 0.9375em;
 }
 
 .header-social-icons {
@@ -1996,7 +2002,15 @@ object {
 	color: #7fcaad;
 }
 
-.site-footer h3,
+.site-footer h3 {
+    color: #dfdfdf;
+    font-family: 'Cabin', Helvetica, sans-serif;
+    font-size: 14px;
+    font-size: 0.875em;
+    margin: 0 0 20px;
+    line-height: 21px;
+}
+
 .site-footer .widget-title {
     color: #dfdfdf;
     font-family: 'Cabin', Helvetica, sans-serif;
@@ -2008,8 +2022,8 @@ object {
 
 .site-info {
 	text-align: center;
-	font-size: 12px;
-    font-size: 0.75em;
+    font-size: 12px;
+    font-size: 0.857em;
 	letter-spacing: 1px;
 	padding: 15px 0;
 	background: #373735;
@@ -2213,8 +2227,6 @@ object {
 	float: right;
 }
 
-
-
 .sd-social-icon .sd-button span.share-count {
 	display: none !important;
 }
@@ -2415,16 +2427,14 @@ div.sharedaddy h3.sd-title:before {
 	.widget-title {
 		color: #628d7c;
 	    font-size: 14px;
-        font-size: 0.875em;
+        font-size: 1em;
 	    margin: 0 0 20px;
 		line-height: 21px;
 	}
 
-	.widget li {
+	.widget ul > li {
 		list-style: none;
 	    padding: 10px 0 0;
-	    font-size: 16px;
-        font-size: 1em;
 		color: #aaaaaa;
 	}
 
@@ -2436,16 +2446,8 @@ div.sharedaddy h3.sd-title:before {
 		padding: 10px 0 0;
 	}
 
-	.widget li a {
-		font-size: 15px;
-        font-size: 0.9375em;
-		line-height: 19px;
-	}
-
 	.widget_categories li a {
 	    text-transform: uppercase;
-	    font-size: 14px;
-        font-size: 0.875em;
 	    letter-spacing: 2px;
 	    font-family: 'Cabin', Helvetica, sans-serif;
 	}
@@ -2652,6 +2654,13 @@ div.sharedaddy h3.sd-title:before {
         display: block;
     }
 
+    /*-----------
+    * Comments
+    -----------*/
+    .comment-list .children {
+        padding: 0 0 0 30px;
+    }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -2707,6 +2716,23 @@ div.sharedaddy h3.sd-title:before {
 	    flex-flow: row wrap;
 	}
 
+    /*-----------
+    * Comments
+    -----------*/
+    .comment-author img {
+        margin-left: -155px;
+        width: 105px;
+        height: 105px;
+    }
+
+    .comment-body {
+        padding: 45px 0 45px 155px;
+    }
+
+    .comment-list .children {
+        padding: 0 0 0 60px;
+    }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -2744,6 +2770,8 @@ div.sharedaddy h3.sd-title:before {
 	    position: relative;
 	    top: 0;
 	    background: none;
+        display: table-cell;
+        vertical-align: middle;
 	}
 
 	.main-navigation ul {
@@ -2941,17 +2969,19 @@ div.sharedaddy h3.sd-title:before {
 		text-shadow: none;
 	}
 
-	.carousel-caption-title,
-	.carousel-caption-title a {
-		font-family: 'Cabin', Helvetica, sans-serif;
-		text-transform: uppercase;
-		font-size: 18px;
-        font-size: 1.125em;
-		letter-spacing: 2px;
-		color: #373735;
+	.carousel-caption-title {
 		margin: 0;
 		padding: 0;
 	}
+
+    .carousel-caption-title a {
+        font-size: 18px;
+        font-size: 1.125em;
+        font-family: 'Cabin', Helvetica, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #373735;
+    }
 
     .carousel-caption-title {
         white-space: nowrap;
@@ -2963,16 +2993,18 @@ div.sharedaddy h3.sd-title:before {
 		color: #628d7c;
 	}
 
-	.carousel-caption-category,
-	.carousel-caption-category a {
-		color: #aaaaaa;
-		font-size: 14px;
-        font-size: 0.875em;
-		letter-spacing: .5px;
+	.carousel-caption-category {
 		margin: 0;
 		padding: 0;
-        text-transform: lowercase;
 	}
+
+    .carousel-caption-category a {
+        color: #aaaaaa;
+        font-size: 14px;
+        font-size: 0.875em;
+        letter-spacing: .5px;
+        text-transform: lowercase;
+    }
 
 	.carousel-caption-category a:hover {
 		color: #628d7c;
