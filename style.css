@@ -1437,7 +1437,6 @@ p.dropcap:first-letter {
 	margin-top: -34px;
 }
 
-
 .post-edit-link {
     font-style: italic;
 }
@@ -1627,8 +1626,8 @@ object {
 	max-width: 100%;
 }
 
-.wp-video {
-	padding: 0 0 2.5em;
+.mejs-container {
+    margin-bottom: 2em;
 }
 
 /*--------------------------------------------------------------
