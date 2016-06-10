@@ -201,9 +201,9 @@ function zillah_fonts_url() {
  * Enqueue scripts and styles.
  */
 function zillah_scripts() {
-	wp_enqueue_style( 'zillah-style', get_stylesheet_uri(), array( 'boostrap-css' ) );
+	wp_enqueue_style( 'zillah-style', get_stylesheet_uri(), array( 'bootstrap-css' ) );
 
-	wp_enqueue_style ( 'boostrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v3.3.6', 'all' );
+	wp_enqueue_style ( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v3.3.6', 'all' );
 
 	wp_enqueue_style( 'zillah-fonts', zillah_fonts_url(), array(), null );
 
@@ -364,11 +364,13 @@ function zillah_slider(){
 
 		if( $size ) :
 
-			echo "<ol class=\"carousel-indicators\">";
-			for( $i=0; $i<$size; $i++ ){
-				echo "<li data-target=\"#home-carousel\" data-slide-to=\"". $i . "\"" . ( $i===0 ? " class=\"active\"" : "" ) . "></li>";
+			if( $size > 1 ) {
+				echo "<ol class=\"carousel-indicators\">";
+				for ( $i = 0; $i < $size; $i ++ ) {
+					echo "<li data-target=\"#home-carousel\" data-slide-to=\"" . $i . "\"" . ( $i === 0 ? " class=\"active\"" : "" ) . "></li>";
+				}
+				echo "</ol>";
 			}
-			echo "</ol>";
 
 			echo "<div class=\"carousel-inner\" role=\"listbox\">";
 

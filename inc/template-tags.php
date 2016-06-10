@@ -48,7 +48,7 @@ function zillah_entry_footer() {
 	if ( 'post' === get_post_type() ) {
 
 		global $wp_customize;
-		$zillah_tags_show = get_theme_mod( 'zillah_tags_show', true );
+		$zillah_tags_show = get_theme_mod( 'zillah_tags_show', false );
 
 		if( $zillah_tags_show === true || is_customize_preview() ) {
 			/* translators: used between list items, there is a space after the comma */
