@@ -490,7 +490,8 @@ function zillah_php_style() {
 			.reply a,
 			a.post-edit-link, a.post-edit-link:visited,
 			.site-title a, .site-title a:visited,
-			.tags-links a:visited {
+			.tags-links a:visited,
+			.logged-in-as a, .logged-in-as a:visited {
 				color: '.$zillah_c2.';
 			}
 			@media screen and (max-width: 992px) {

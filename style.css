@@ -1317,7 +1317,7 @@ p.dropcap:first-letter {
 ## Blog
 --------------------------------------------------------------*/
 .post-thumbnail {	
-	display: block;
+	display: inline-block;
 }
 
 .post-thumbnail-wrap {
@@ -1327,7 +1327,7 @@ p.dropcap:first-letter {
 }
 
 .post-thumbnail-wrap img {
-    width: 100%;
+    max-height: 438px;
 }
 
 .entry-title-blog {
@@ -3083,6 +3083,10 @@ div.sharedaddy h3.sd-title:before {
     .content-inner-wrap,
     .comments-area-wrap .comments-area {
         max-width: 840px;
+    }
+
+    .post-thumbnail-wrap img {
+        max-height: 545px;
     }
 
 }
