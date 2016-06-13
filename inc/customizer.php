@@ -48,7 +48,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Show sidebar */
 	$wp_customize->add_setting('zillah_sidebar_show', array(
-		'default' => 0,
+		'default' => false,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
 		'transport' => 'postMessage',
 	));
@@ -63,7 +63,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Show Tags */
 	$wp_customize->add_setting('zillah_tags_show', array(
-		'default' => 0,
+		'default' => false,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
 		'transport' => 'postMessage',
 	));
@@ -98,7 +98,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('zillah_home_slider_category', array(
 		'default' => 0,
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'zillah_sanitize_category_dropdown',
 	));
 
 	$wp_customize->add_control( new Zillah_Category_Control( $wp_customize, 'zillah_home_slider_category', array(
@@ -161,6 +161,15 @@ function zillah_sanitize_select( $input, $setting ) {
 
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+
+function zillah_sanitize_category_dropdown($input){
+	$cat = get_the_category_by_ID( $input );
+	if( empty( $cat ) ){
+		return '';
+	}
+	return $input;
 }
 
 /**

@@ -201,9 +201,9 @@ function zillah_fonts_url() {
  * Enqueue scripts and styles.
  */
 function zillah_scripts() {
-	wp_enqueue_style( 'zillah-style', get_stylesheet_uri(), array( 'boostrap-css' ) );
+	wp_enqueue_style( 'zillah-style', get_stylesheet_uri(), array( 'bootstrap-css' ) );
 
-	wp_enqueue_style ( 'boostrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v3.3.6', 'all' );
+	wp_enqueue_style ( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 'v3.3.6', 'all' );
 
 	wp_enqueue_style( 'zillah-fonts', zillah_fonts_url(), array(), null );
 
@@ -264,8 +264,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-function zillah_excerpt_more($more) {
+function zillah_read_more_link() {
 	return '<span class="clearfix clearfix-post"></span><a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
+}
+add_filter( 'the_content_more_link', 'zillah_read_more_link' );
+
+
+function zillah_excerpt_more() {
+	return '...<span class="clearfix clearfix-post"></span><a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 add_filter('excerpt_more', 'zillah_excerpt_more');
 
@@ -364,11 +370,13 @@ function zillah_slider(){
 
 		if( $size ) :
 
-			echo "<ol class=\"carousel-indicators\">";
-			for( $i=0; $i<$size; $i++ ){
-				echo "<li data-target=\"#home-carousel\" data-slide-to=\"". $i . "\"" . ( $i===0 ? " class=\"active\"" : "" ) . "></li>";
+			if( $size > 1 ) {
+				echo "<ol class=\"carousel-indicators\">";
+				for ( $i = 0; $i < $size; $i ++ ) {
+					echo "<li data-target=\"#home-carousel\" data-slide-to=\"" . $i . "\"" . ( $i === 0 ? " class=\"active\"" : "" ) . "></li>";
+				}
+				echo "</ol>";
 			}
-			echo "</ol>";
 
 			echo "<div class=\"carousel-inner\" role=\"listbox\">";
 
@@ -466,9 +474,6 @@ function zillah_php_style() {
 
 		/* Color 2 */
 		echo '
-			a:visited {
-				color: inherit;
-			}
 			.widget-title {
 				color: '.$zillah_c2.';
 			}
@@ -488,7 +493,11 @@ function zillah_php_style() {
             }
 			a.more-link,
 			a.more-link:visited,
-			.reply a {
+			.reply a,
+			a.post-edit-link, a.post-edit-link:visited,
+			.site-title a, .site-title a:visited,
+			.tags-links a:visited,
+			.logged-in-as a, .logged-in-as a:visited {
 				color: '.$zillah_c2.';
 			}
 			@media screen and (max-width: 992px) {
@@ -499,17 +508,29 @@ function zillah_php_style() {
 			
 		';
 
+		echo '
+			.site-title a, .site-title a:visited {
+				color: #'. esc_attr( $header_text_color ) .'
+			}
+		';
+
 		/* Color 3 */
 		echo '
-			.main-navigation li:hover > a:hover, 
-			.main-navigation li.focus > a:hover,
-			.widget li a:hover,
-			.main-navigation li:hover > a, 
-			.main-navigation li.focus > a{
+			 .main-navigation li:hover > a:hover, 
+			 .main-navigation li.focus > a:hover,
+			 .widget li a:hover,
+			 .main-navigation li:hover > a, 
+			 .main-navigation li.focus > a,
+			 a.post-edit-link:hover,
+			 .tags-links a:hover,
+			 .dropdown-toggle,
+			 .dropdown-toggle.toggled-on, 
+			 .dropdown-toggle.toggled-on:hover, 
+			 .dropdown-toggle.toggled-on:focus {
 				color: '.$zillah_c3.';
-			}
-			a.more-link:hover,
-			a:hover,
+			 }
+			 a.more-link:hover,
+			 a:hover,
 			.site-title a:hover,
 			.cat-links a:hover,
 			.entry-title-blog a:hover,
@@ -567,17 +588,13 @@ function zillah_php_style() {
 				.main-navigation ul ul li:hover > a:hover, 
 				.main-navigation ul ul li.focus > a:hover, 
 				.main-navigation ul ul li:hover > a, 
-				.main-navigation ul ul li.focus > a {
+				.main-navigation ul ul li.focus > a,
+				.main-navigation a:visited {
 					color: #FFF; 
 				}
 			}
 		';
 
-		echo '
-			.site-title a {
-				color: #'. esc_attr( $header_text_color ) .'
-			}
-		';
 
 	}
 	echo '</style>';
