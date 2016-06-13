@@ -747,7 +747,7 @@ a:active {
 }
 
 .main-navigation ul ul a {
-	padding: 12px 20px;
+	padding: 12px 35px 12px 20px;
 	width: 100%;
 }
 
@@ -2817,6 +2817,7 @@ div.sharedaddy h3.sd-title:before {
 
 	.main-navigation ul ul a {
 		width: 100%;
+        padding: 12px 20px;
 	}
 
 	.main-navigation ul ul li {

@@ -515,7 +515,11 @@ function zillah_php_style() {
 			 .main-navigation li:hover > a, 
 			 .main-navigation li.focus > a,
 			 a.post-edit-link:hover,
-			 .tags-links a:hover {
+			 .tags-links a:hover,
+			 .dropdown-toggle,
+			 .dropdown-toggle.toggled-on, 
+			 .dropdown-toggle.toggled-on:hover, 
+			 .dropdown-toggle.toggled-on:focus {
 				color: '.$zillah_c3.';
 			 }
 			 a.more-link:hover,
