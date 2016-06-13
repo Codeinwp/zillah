@@ -1,4 +1,15 @@
 
+### 1.0.5 - 13/06/2016
+**Changes:** 
+- Fixed issues with mobile menu color schemes
+- New screenshot
+- Fixed issues with font sizes on mobile devices
+- Fixed issues with comments layout on mobile devices
+- Fixed the option to hide post tags
+- Fixed issue with scrolling header on Safari
+- Add unminified scripts for all the minified scripts used
+- Update scripts licenses
+
 ### 1.0.4 - 08/06/2016
 **Changes:** 
 - Update style for related posts
