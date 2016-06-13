@@ -468,9 +468,6 @@ function zillah_php_style() {
 
 		/* Color 2 */
 		echo '
-			a:visited {
-				color: inherit;
-			}
 			.widget-title {
 				color: '.$zillah_c2.';
 			}
@@ -490,7 +487,10 @@ function zillah_php_style() {
             }
 			a.more-link,
 			a.more-link:visited,
-			.reply a {
+			.reply a,
+			a.post-edit-link, a.post-edit-link:visited,
+			.site-title a, .site-title a:visited,
+			.tags-links a:visited {
 				color: '.$zillah_c2.';
 			}
 			@media screen and (max-width: 992px) {
@@ -501,17 +501,25 @@ function zillah_php_style() {
 			
 		';
 
+		echo '
+			.site-title a, .site-title a:visited {
+				color: #'. esc_attr( $header_text_color ) .'
+			}
+		';
+
 		/* Color 3 */
 		echo '
-			.main-navigation li:hover > a:hover, 
-			.main-navigation li.focus > a:hover,
-			.widget li a:hover,
-			.main-navigation li:hover > a, 
-			.main-navigation li.focus > a{
+			 .main-navigation li:hover > a:hover, 
+			 .main-navigation li.focus > a:hover,
+			 .widget li a:hover,
+			 .main-navigation li:hover > a, 
+			 .main-navigation li.focus > a,
+			 a.post-edit-link:hover,
+			 .tags-links a:hover {
 				color: '.$zillah_c3.';
-			}
-			a.more-link:hover,
-			a:hover,
+			 }
+			 a.more-link:hover,
+			 a:hover,
 			.site-title a:hover,
 			.cat-links a:hover,
 			.entry-title-blog a:hover,
@@ -569,17 +577,13 @@ function zillah_php_style() {
 				.main-navigation ul ul li:hover > a:hover, 
 				.main-navigation ul ul li.focus > a:hover, 
 				.main-navigation ul ul li:hover > a, 
-				.main-navigation ul ul li.focus > a {
+				.main-navigation ul ul li.focus > a,
+				.main-navigation a:visited {
 					color: #FFF; 
 				}
 			}
 		';
 
-		echo '
-			.site-title a {
-				color: #'. esc_attr( $header_text_color ) .'
-			}
-		';
 
 	}
 	echo '</style>';

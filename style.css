@@ -1230,7 +1230,7 @@ p.dropcap:first-letter {
 
 .page-main-header {
     position: relative;
-    padding: 70px 0px;
+    padding: 70px 0 0;
 }
 
 .page-main-header .entry-title {
