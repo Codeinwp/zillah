@@ -48,7 +48,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Show sidebar */
 	$wp_customize->add_setting('zillah_sidebar_show', array(
-		'default' => 0,
+		'default' => false,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
 		'transport' => 'postMessage',
 	));
@@ -63,7 +63,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Show Tags */
 	$wp_customize->add_setting('zillah_tags_show', array(
-		'default' => 0,
+		'default' => false,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
 		'transport' => 'postMessage',
 	));
