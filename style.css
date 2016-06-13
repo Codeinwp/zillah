@@ -1144,7 +1144,7 @@ a:active {
 
 .content-inner-wrap,
 .content-area-with-sidebar .content-inner-wrap {
-	padding: 0 15px;
+	padding: 0 20px;
 }
 
 .not-found .page-header,
@@ -3090,11 +3090,11 @@ div.sharedaddy h3.sd-title:before {
 @media screen and (max-width: 600px) {
 
     body {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .comment-content {
-        font-size: 14px;
+        font-size: 15px;
         font-size: 1em;
     }
 
