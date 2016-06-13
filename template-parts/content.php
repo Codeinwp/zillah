@@ -38,7 +38,7 @@
 					the_excerpt();
 				} else {
 					the_content( false );
-					echo zillah_excerpt_more();
+					echo zillah_read_more_link();
 				}
 
 				wp_link_pages( array(

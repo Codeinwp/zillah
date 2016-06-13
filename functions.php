@@ -264,8 +264,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-function zillah_excerpt_more() {
+function zillah_read_more_link() {
 	return '<span class="clearfix clearfix-post"></span><a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
+}
+add_filter( 'the_content_more_link', 'zillah_read_more_link' );
+
+
+function zillah_excerpt_more() {
+	return '...<span class="clearfix clearfix-post"></span><a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 add_filter('excerpt_more', 'zillah_excerpt_more');
 
