@@ -447,8 +447,12 @@ function zillah_exclude_single_posts_home($query) {
 			);
 			$slider_posts = get_posts( $args );
 			$array_post = array();
-			foreach( $slider_posts as $post ) {
-				array_push( $array_post, $post->ID );
+			if( !empty( $slider_posts ) ) {
+				foreach ( $slider_posts as $post ) {
+					if( !empty( $post->ID ) ) {
+						array_push( $array_post, $post->ID );
+					}
+				}
 			}
 			$query->set( 'post__not_in', $array_post );
 		}
