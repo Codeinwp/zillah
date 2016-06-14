@@ -2392,30 +2392,8 @@ div.sharedaddy h3.sd-title:before {
 	/*-----------
 	 * Header
 	 -----------*/
-	.header-social-icons {
-		display: table-cell;
-		vertical-align: middle;
-		width: 160px;
-		text-align: left;
-	}
-
-	.header-social-icons ul {
-		padding: 0;
-		margin: 0;
-		float: left;
-	}
-
-	.header-social-icons li {
-		list-style: none;
-		float: left;
-	}
-
-	.header-social-icons li .fa {
-		margin: 0px 8px;
-	}
-
 	.menu-toggle-button-wrap {
-		text-align: center;
+		text-align: left;
 	}
 
     .no-social-menu .menu-toggle-button-wrap {
@@ -2697,6 +2675,93 @@ div.sharedaddy h3.sd-title:before {
 		display: block;
 	}
 
+    /*-----------
+     * Menus
+     -----------*/
+    .main-navigation {
+        position: relative;
+        top: 0;
+        background: none;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .main-navigation ul {
+        max-height: initial;
+        overflow-x: visible;
+        overflow-y: visible;
+    }
+
+    .main-navigation li {
+        width: auto;
+    }
+
+    .main-navigation li.menu-item-has-children {
+        padding-right: 10px;
+    }
+
+    .main-navigation ul ul {
+        position: absolute;
+        top: 100%;
+        left: -999em;
+        z-index: 99999;
+        padding-left: 0;
+        background: #373735;
+        width: 250px;
+    }
+
+    .main-navigation ul ul ul {
+        left: -999em;
+        top: -1px;
+    }
+
+    .main-navigation li a {
+        font-size: 13px;
+        font-size: 0.8125em;
+        color: #aaaaaa;
+        padding: 5px 10px;
+    }
+
+    .main-navigation ul ul a {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .main-navigation ul ul li {
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .main-navigation ul {
+        display: block;
+    }
+
+    .dropdown-toggle {
+        z-index: -1;
+        top: 2px;
+        background: none;
+        color: #999999;
+        width: 15px;
+    }
+
+    .main-navigation .menu-item-has-children > ul {
+        display: block;
+    }
+
+    .main-navigation ul ul .dropdown-toggle {
+        top: 15px;
+    }
+
+    .main-navigation li:hover > a,
+    .main-navigation li.focus > a {
+        color: #7fcaad;
+    }
+
+
 	/*-----------
 	 * Footer
 	 -----------*/
@@ -2786,95 +2851,31 @@ div.sharedaddy h3.sd-title:before {
 		padding-top: 110px;
 	}
 
-	/*-----------
-	 * Menus
-	 -----------*/
-   	.main-navigation {
-	    position: relative;
-	    top: 0;
-	    background: none;
+    .header-social-icons {
         display: table-cell;
         vertical-align: middle;
-	}
+        width: 160px;
+        text-align: left;
+    }
 
-	.main-navigation ul {
-	    max-height: initial;
-	    overflow-x: visible;
-	    overflow-y: visible;
-	}
+    .header-social-icons ul {
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
 
-	.main-navigation li {
-		width: auto;
-	}
+    .header-social-icons li {
+        list-style: none;
+        float: left;
+    }
 
-	.main-navigation li.menu-item-has-children {
-		padding-right: 10px;
-	}
+    .header-social-icons li .fa {
+        margin: 0px 8px;
+    }
 
-	.main-navigation ul {
-		text-align: center;
-	}
-
-	.main-navigation ul ul {
-		position: absolute;
-		top: 100%;
-		left: -999em;
-		z-index: 99999;
-		padding-left: 0;
-		background: #373735;
-		width: 250px;
-	}
-
-	.main-navigation ul ul ul {
-		left: -999em;
-		top: -1px;
-	}
-
-	.main-navigation li a {
-	    font-size: 13px;
-        font-size: 0.8125em;
-	    color: #aaaaaa;
-	    padding: 5px 10px;
-	}
-
-	.main-navigation ul ul a {
-		width: 100%;
-        padding: 12px 20px;
-	}
-
-	.main-navigation ul ul li {
-		border-bottom: 1px solid rgba(255,255,255,0.25);
-		width: 100%;
-	}
-
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: block;
-	}
-
-	.dropdown-toggle {
-	    z-index: -1;
-	    top: 2px;
-	    background: none;
-	    color: #999999;
-	    width: 15px;
-	}
-
-	.main-navigation .menu-item-has-children > ul {
-		display: block;
-	}
-
-	.main-navigation ul ul .dropdown-toggle {
-		top: 15px;
-	}
-
-	.main-navigation li:hover > a,
-	.main-navigation li.focus > a {
-		color: #7fcaad;
-	}
+    .main-navigation ul {
+        text-align: center;
+    }
 
 	/*-----------
 	 * Footer

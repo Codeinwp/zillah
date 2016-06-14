@@ -526,7 +526,7 @@ function zillah_php_style() {
 			.logged-in-as a, .logged-in-as a:visited {
 				color: '.$zillah_c2.';
 			}
-			@media screen and (max-width: 992px) {
+			@media screen and (max-width: 767px) {
 				.main-navigation {
 					background: '.$zillah_c2.';
 				}
@@ -567,7 +567,7 @@ function zillah_php_style() {
 			.comment-content a:hover {
 				color:'.$zillah_c3.';
 			}
-			@media screen and (max-width: 992px) {
+			@media screen and (max-width: 767px) {
 				 .main-navigation ul ul {
 					background:'.$zillah_c3.';
 				 }
@@ -606,7 +606,7 @@ function zillah_php_style() {
 			.widget-area .widget li a {
 				color: #6f6e6b;
 			}
-			@media screen and (max-width: 992px) {
+			@media screen and (max-width: 767px) {
 				.main-navigation ul ul li:hover > a:hover, 
 				.main-navigation ul ul li.focus > a:hover, 
 				.main-navigation ul ul li:hover > a, 
