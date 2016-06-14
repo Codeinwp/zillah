@@ -76,6 +76,20 @@ function zillah_customize_register( $wp_customize ) {
 		'type'	=> 'checkbox',
 	));
 
+	/* Get image as featured */
+	$wp_customize->add_setting('zillah_image_as_thumbnail', array(
+		'default' => false,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_image_as_thumbnail', array(
+		'label' => esc_html__('Get 1st image in the post as featured.', 'zillah'),
+		'section' => 'zillah_home_theme_option_section',
+		'priority' => 2,
+		'type'	=> 'checkbox',
+	));
+	
 	/* Featured Content Slider */
 	$wp_customize->add_section( 'zillah_featured_content_slider_section', array(
 		'title'	=> esc_html__( 'Featured content slider', 'zillah' ),

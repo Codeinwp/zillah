@@ -265,7 +265,7 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 function zillah_read_more_link() {
-	return '<span class="clearfix clearfix-post"></span><a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
+	return '<a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 add_filter( 'the_content_more_link', 'zillah_read_more_link' );
 
@@ -469,7 +469,6 @@ function zillah_php_style() {
 				background: '.$zillah_c1.';
 				opacity: 0.8;
 			}
-			
 		';
 
 		/* Color 2 */
@@ -505,7 +504,6 @@ function zillah_php_style() {
 					background: '.$zillah_c2.';
 				}
 			}
-			
 		';
 
 		echo '
@@ -522,11 +520,7 @@ function zillah_php_style() {
 			 .main-navigation li:hover > a, 
 			 .main-navigation li.focus > a,
 			 a.post-edit-link:hover,
-			 .tags-links a:hover,
-			 .dropdown-toggle,
-			 .dropdown-toggle.toggled-on, 
-			 .dropdown-toggle.toggled-on:hover, 
-			 .dropdown-toggle.toggled-on:focus {
+			 .tags-links a:hover {
 				color: '.$zillah_c3.';
 			 }
 			 a.more-link:hover,
@@ -547,11 +541,16 @@ function zillah_php_style() {
 				color:'.$zillah_c3.';
 			}
 			@media screen and (max-width: 992px) {
-				.main-navigation ul ul {
+				 .main-navigation ul ul {
 					background:'.$zillah_c3.';
-				}
+				 }
+				 .dropdown-toggle,
+				 .dropdown-toggle.toggled-on, 
+				 .dropdown-toggle.toggled-on:hover, 
+				 .dropdown-toggle.toggled-on:focus {
+					color: '.$zillah_c3.';
+				 }
 			}
-			
 			button:focus,
 			input[type="button"]:focus,
 			input[type="reset"]:focus,
@@ -562,11 +561,7 @@ function zillah_php_style() {
 			input[type="submit"]:active {
 				background:'.$zillah_c3.';
 			}
-			
-			
 		';
-
-		/* Color 4 */
 
 		/* Color 5 */
 		echo '
@@ -622,3 +617,31 @@ function custom_excerpt_length( $length ) {
 	}
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+function zillah_post_image() {
+	if ( has_post_thumbnail() ) {
+		echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+		the_post_thumbnail();
+		echo '</div></a>';
+	} else {
+		$post_image_link = zillah_catch_that_image();
+		$zillah_image_as_thumbnail = get_theme_mod( 'zillah_image_as_thumbnail', false );
+		if( $post_image_link && $zillah_image_as_thumbnail ) {
+			echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+			echo '<img width="1170" height="545" src="'. $post_image_link .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
+			echo '</div></a>';
+		}
+	}
+}
+
+
+function zillah_catch_that_image() {
+	global $post, $posts;
+	$first_img = false;
+	ob_start();
+	ob_end_clean();
+	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+	$first_img = ! empty( $matches[1][0] ) ? $matches[1][0] : false;
+	return $first_img;
+}

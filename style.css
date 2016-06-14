@@ -1431,7 +1431,7 @@ p.dropcap:first-letter {
 }
 
 .content-inner-wrap > .more-link {
-	margin-top: -34px;
+	margin-top: 20px;
 }
 
 .post-edit-link {
@@ -2185,7 +2185,7 @@ object {
 	clear: none !important;
 	float: left;
 	padding-top: 3px;
-	margin-top: 5px;
+	margin-top: 14px;
 }
 
 .blog-post .sd-social-icon .sd-button span.share-count,
