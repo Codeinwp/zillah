@@ -431,6 +431,33 @@ function zillah_slider(){
 }
 
 
+function zillah_exclude_single_posts_home($query) {
+
+	if ( $query->is_home() && $query->is_main_query() ) {
+		$zillah_home_slider_show  = get_theme_mod( 'zillah_home_slider_show', false );
+		if( $zillah_home_slider_show ) {
+			$zillah_home_slider_category = get_theme_mod( 'zillah_home_slider_category', 0 );
+			$args = array(
+				'posts_per_page' => 6,
+				'post_type'      => 'post',
+				'category'       => $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
+				'meta_query'     => array(
+					array( 'key' => '_thumbnail_id' )
+				)
+			);
+			$slider_posts = get_posts( $args );
+			$array_post = array();
+			foreach( $slider_posts as $post ) {
+				array_push( $array_post, $post->ID );
+			}
+			$query->set( 'post__not_in', $array_post );
+		}
+	}
+
+}
+add_action('pre_get_posts', 'zillah_exclude_single_posts_home');
+
+
 add_action('wp_head','zillah_php_style');
 function zillah_php_style() {
 	$zillah_palette_picker = get_theme_mod('zillah_palette_picker');
