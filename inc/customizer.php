@@ -79,8 +79,7 @@ function zillah_customize_register( $wp_customize ) {
 	/* Get image as featured */
 	$wp_customize->add_setting('zillah_image_as_thumbnail', array(
 		'default' => false,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-		'transport' => 'postMessage',
+		'sanitize_callback' => 'zillah_sanitize_checkbox'
 	));
 
 	$wp_customize->add_control('zillah_image_as_thumbnail', array(
