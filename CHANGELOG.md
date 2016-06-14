@@ -1,4 +1,11 @@
 
+### 1.0.6 - 14/06/2016
+**Changes:** 
+- Fixed layout for related posts on mobile devices
+- Aligned the menu on the left side on tablets
+- Add option to show the first image in the content as featured image
+- Remove posts featured in the slider, from the posts list
+
 ### 1.0.5 - 13/06/2016
 **Changes:** 
 - Fixed issues with mobile menu color schemes
