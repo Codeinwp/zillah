@@ -2341,6 +2341,10 @@ div.sharedaddy h3.sd-title:before {
 
 @media only screen and (max-width: 480px) {
 
+	.entry-content #jp-relatedposts .jp-relatedposts-items-visual {
+		text-align: center;
+	}
+
 	.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
 		width: 98%;
 	}
@@ -2675,93 +2679,6 @@ div.sharedaddy h3.sd-title:before {
 		display: block;
 	}
 
-    /*-----------
-     * Menus
-     -----------*/
-    .main-navigation {
-        position: relative;
-        top: 0;
-        background: none;
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    .main-navigation ul {
-        max-height: initial;
-        overflow-x: visible;
-        overflow-y: visible;
-    }
-
-    .main-navigation li {
-        width: auto;
-    }
-
-    .main-navigation li.menu-item-has-children {
-        padding-right: 10px;
-    }
-
-    .main-navigation ul ul {
-        position: absolute;
-        top: 100%;
-        left: -999em;
-        z-index: 99999;
-        padding-left: 0;
-        background: #373735;
-        width: 250px;
-    }
-
-    .main-navigation ul ul ul {
-        left: -999em;
-        top: -1px;
-    }
-
-    .main-navigation li a {
-        font-size: 13px;
-        font-size: 0.8125em;
-        color: #aaaaaa;
-        padding: 5px 10px;
-    }
-
-    .main-navigation ul ul a {
-        width: 100%;
-        padding: 12px 20px;
-    }
-
-    .main-navigation ul ul li {
-        border-bottom: 1px solid rgba(255,255,255,0.25);
-        width: 100%;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .main-navigation ul {
-        display: block;
-    }
-
-    .dropdown-toggle {
-        z-index: -1;
-        top: 2px;
-        background: none;
-        color: #999999;
-        width: 15px;
-    }
-
-    .main-navigation .menu-item-has-children > ul {
-        display: block;
-    }
-
-    .main-navigation ul ul .dropdown-toggle {
-        top: 15px;
-    }
-
-    .main-navigation li:hover > a,
-    .main-navigation li.focus > a {
-        color: #7fcaad;
-    }
-
-
 	/*-----------
 	 * Footer
 	 -----------*/
@@ -2873,9 +2790,95 @@ div.sharedaddy h3.sd-title:before {
         margin: 0px 8px;
     }
 
-    .main-navigation ul {
-        text-align: center;
-    }
+	/*-----------
+	 * Menus
+	 -----------*/
+   	.main-navigation {
+	    position: relative;
+	    top: 0;
+	    background: none;
+        display: table-cell;
+        vertical-align: middle;
+	}
+
+	.main-navigation ul {
+	    max-height: initial;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	}
+
+	.main-navigation li {
+		width: auto;
+	}
+
+	.main-navigation li.menu-item-has-children {
+		padding-right: 10px;
+	}
+
+	.main-navigation ul {
+		text-align: center;
+	}
+
+	.main-navigation ul ul {
+		position: absolute;
+		top: 100%;
+		left: -999em;
+		z-index: 99999;
+		padding-left: 0;
+		background: #373735;
+		width: 250px;
+	}
+
+	.main-navigation ul ul ul {
+		left: -999em;
+		top: -1px;
+	}
+
+	.main-navigation li a {
+	    font-size: 13px;
+        font-size: 0.8125em;
+	    color: #aaaaaa;
+	    padding: 5px 10px;
+	}
+
+	.main-navigation ul ul a {
+		width: 100%;
+        padding: 12px 20px;
+	}
+
+	.main-navigation ul ul li {
+		border-bottom: 1px solid rgba(255,255,255,0.25);
+		width: 100%;
+	}
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: block;
+	}
+
+	.dropdown-toggle {
+	    z-index: -1;
+	    top: 2px;
+	    background: none;
+	    color: #999999;
+	    width: 15px;
+	}
+
+	.main-navigation .menu-item-has-children > ul {
+		display: block;
+	}
+
+	.main-navigation ul ul .dropdown-toggle {
+		top: 15px;
+	}
+
+	.main-navigation li:hover > a,
+	.main-navigation li.focus > a {
+		color: #7fcaad;
+	}
 
 	/*-----------
 	 * Footer
