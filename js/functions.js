@@ -220,8 +220,8 @@
 
         $(window).resize(function () {
             headerHeight    = $headerToHide.height();
-            initTop         = isAdminBar && window.innerWidth > 768 ? 32 : 0;
-			$body.css( 'padding-top', window.innerWidth > 768 ? headerHeight : 0 );
+            initTop         = isAdminBar && window.innerWidth > 992 ? 32 : 0;
+			$body.css( 'padding-top', window.innerWidth > 992 ? headerHeight : 0 );
         });
 
         $(window).scroll(function (event) {

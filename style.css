@@ -4,7 +4,7 @@ Theme URI:      http://themeisle.com/themes/zillah/
 Author:         ThemeIsle
 Author URI:     http://themeisle.com
 Description:    Zillah is a free blogging WordPress theme.
-Version:        1.0.5
+Version:        1.0.6
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:    zillah
@@ -1431,7 +1431,7 @@ p.dropcap:first-letter {
 }
 
 .content-inner-wrap > .more-link {
-	margin-top: -34px;
+	margin-top: 20px;
 }
 
 .post-edit-link {
@@ -2185,7 +2185,7 @@ object {
 	clear: none !important;
 	float: left;
 	padding-top: 3px;
-	margin-top: 5px;
+	margin-top: 14px;
 }
 
 .blog-post .sd-social-icon .sd-button span.share-count,
@@ -2325,6 +2325,32 @@ div.sharedaddy h3.sd-title:before {
 	color: #7fcaad;
 }
 
+@media only screen and (max-width: 640px) {
+
+	.entry-content #jp-relatedposts .jp-relatedposts-items-visual {
+		text-align: center;
+	}
+
+	.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+		width: 48%;
+		display: inline-block;
+		float: none;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+	.entry-content #jp-relatedposts .jp-relatedposts-items-visual {
+		text-align: center;
+	}
+
+	.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+		width: 98%;
+	}
+
+}
+
 /*--------------------------------------------------------------
 ## Disqus Comment Plugin
 --------------------------------------------------------------*/
@@ -2370,30 +2396,8 @@ div.sharedaddy h3.sd-title:before {
 	/*-----------
 	 * Header
 	 -----------*/
-	.header-social-icons {
-		display: table-cell;
-		vertical-align: middle;
-		width: 160px;
-		text-align: left;
-	}
-
-	.header-social-icons ul {
-		padding: 0;
-		margin: 0;
-		float: left;
-	}
-
-	.header-social-icons li {
-		list-style: none;
-		float: left;
-	}
-
-	.header-social-icons li .fa {
-		margin: 0px 8px;
-	}
-
 	.menu-toggle-button-wrap {
-		text-align: center;
+		text-align: left;
 	}
 
     .no-social-menu .menu-toggle-button-wrap {
@@ -2763,6 +2767,28 @@ div.sharedaddy h3.sd-title:before {
 	.header-inner-site-branding {
 		padding-top: 110px;
 	}
+
+    .header-social-icons {
+        display: table-cell;
+        vertical-align: middle;
+        width: 160px;
+        text-align: left;
+    }
+
+    .header-social-icons ul {
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
+
+    .header-social-icons li {
+        list-style: none;
+        float: left;
+    }
+
+    .header-social-icons li .fa {
+        margin: 0px 8px;
+    }
 
 	/*-----------
 	 * Menus
