@@ -2325,6 +2325,28 @@ div.sharedaddy h3.sd-title:before {
 	color: #7fcaad;
 }
 
+@media only screen and (max-width: 640px) {
+
+	.entry-content #jp-relatedposts .jp-relatedposts-items-visual {
+		text-align: center;
+	}
+
+	.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+		width: 48%;
+		display: inline-block;
+		float: none;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+	.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+		width: 98%;
+	}
+
+}
+
 /*--------------------------------------------------------------
 ## Disqus Comment Plugin
 --------------------------------------------------------------*/
