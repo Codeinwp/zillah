@@ -84,8 +84,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		// Add theme support for custom logo
 		add_theme_support( 'custom-logo', array(
-			'height' => 145,
-			'width' => 315,
+			'height' => 290,
+			'width' => 630,
 			'flex-width' => true,
 		) );
 	}

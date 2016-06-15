@@ -1324,7 +1324,7 @@ p.dropcap:first-letter {
 ## Blog
 --------------------------------------------------------------*/
 .post-thumbnail {	
-	display: inline-block;
+	display: block;
 }
 
 .post-thumbnail-wrap {
@@ -1334,7 +1334,7 @@ p.dropcap:first-letter {
 }
 
 .post-thumbnail-wrap img {
-    max-height: 438px;
+    width: 100%;
 }
 
 .entry-title-blog {
@@ -1931,6 +1931,11 @@ object {
 	width: 20px;
 	height: 20px;
 	line-height: 20px;
+}
+
+.header-logo-wrap img {
+    max-height: 145px;
+    width: auto;
 }
 
 .social-navigation a[href*="twitter.com"]::before {
@@ -3116,10 +3121,6 @@ div.sharedaddy h3.sd-title:before {
     .content-inner-wrap,
     .comments-area-wrap .comments-area {
         max-width: 840px;
-    }
-
-    .post-thumbnail-wrap img {
-        max-height: 545px;
     }
 
 }
