@@ -55,7 +55,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control('zillah_sidebar_show', array(
 		'label' => esc_html__('Show sidebar', 'zillah'),
-		'description' => esc_html__('If you check this box, the sidebar will appear.', 'zillah'),
+		'description' => esc_html__('If you check this box, the sidebar will appear on homepage and archive page.', 'zillah'),
 		'section' => 'zillah_home_theme_option_section',
 		'priority' => 1,
 		'type'	=> 'checkbox',
