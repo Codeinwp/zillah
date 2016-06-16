@@ -134,116 +134,91 @@ function zillah_customize_register( $wp_customize ) {
 		'metro_customizr_link_control' => true
 	) ) );
 
-
-
-
-
-
-
-	/* Fonts */
-	$wp_customize->add_section( 'zillah_fonts_section', array(
-		'title'	=> esc_html__( 'Fonts', 'zillah' ),
-		'priority'	=> 90,
-	) );
-
-
 	/* Google fonts  */
 	$wp_customize->add_setting('zillah_google_fonts_one', array(
 		'default' => 0,
 		'sanitize_callback' => 'sanitize_text_field',
 	));
 
-	$wp_customize->add_control(
-		new Zillah_Google_Fonts_Control(
-			$wp_customize,
-			'zillah_google_fonts_one',
+	$wp_customize->add_control( new Zillah_Google_Fonts_Control( $wp_customize, 'zillah_google_fonts_one', array(
+		'label'    => 'Select first font family ( content )',
+		'section'  => 'zillah_home_theme_option_section',
+		'priority' => 4,
+		'ti_google_fonts' => array(
 			array(
-				'label'    => 'Select first font family ( content )',
-				'section'  => 'zillah_fonts_section',
-				'priority' => 1,
-				'ti_google_fonts' => array(
-					array(
-						'font_family' => 'Merriweather',
-						'type' => 'serif',
-						'subset' => '400',
-					),
-					array(
-						'font_family'=>'Open Sans',
-						'type' => 'sans-serif',
-						'subset'=>'400',
-					),
-					array(
-						'font_family'=>'Josefin Slab',
-						'type' => 'serif',
-						'subset'=>'400',
-					),
-					array(
-						'font_family'=>'Ubuntu',
-						'type' => 'sans-serif',
-						'subset'=>'400',
-					),
-					array(
-						'font_family'=>'Vollkorn',
-						'type' => 'serif',
-						'subset'=>'400',
-					),
-				),
-			)
-		)
-	);
-
+				'font_family' => 'Merriweather',
+				'type' => 'serif',
+				'subset' => '400',
+			),
+			array(
+				'font_family'=>'Open Sans',
+				'type' => 'sans-serif',
+				'subset'=>'400',
+			),
+			array(
+				'font_family'=>'Josefin Slab',
+				'type' => 'serif',
+				'subset'=>'400',
+			),
+			array(
+				'font_family'=>'Ubuntu',
+				'type' => 'sans-serif',
+				'subset'=>'400',
+			),
+			array(
+				'font_family'=>'Vollkorn',
+				'type' => 'serif',
+				'subset'=>'400',
+			),
+		),
+	)));
 
 	$wp_customize->add_setting('zillah_google_fonts_two', array(
 		'default' => 0,
 		'sanitize_callback' => 'sanitize_text_field',
 	));
 
-	$wp_customize->add_control(
-		new Zillah_Google_Fonts_Control(
-			$wp_customize,
-			'zillah_google_fonts_two',
+	$wp_customize->add_control( new Zillah_Google_Fonts_Control( $wp_customize, 'zillah_google_fonts_two', array(
+		'label'    => 'Select second font family ( headings )',
+		'section'  => 'zillah_home_theme_option_section',
+		'priority' => 5,
+		'ti_google_fonts' => array(
 			array(
-				'label'    => 'Select second font family ( headings )',
-				'section'  => 'zillah_fonts_section',
-				'priority' => 1,
-				'ti_google_fonts' => array(
-					array(
-						'font_family'=>'Cabin',
-						'type' => 'sans-serif',
-						'subset'=>'400',
-					),
-					array(
-						'font_family'=>'Lato',
-						'type' => 'sans-serif',
-						'subset'=>'400',
-					),
-					array(
-						'font_family' => 'Arvo',
-						'type' => 'serif',
-						'subset'=>'400',
-					),
-					array(
-						'font_family'=>'Open Sans',
-						'type' => 'sans-serif',
-						'subset'=>'400',
-					),
-					array(
-						'font_family'=>'Ubuntu',
-						'type' => 'sans-serif',
-						'subset'=>'400',
-					),
-				),
-			)
-		)
-	);
+				'font_family'=>'Cabin',
+				'type' => 'sans-serif',
+				'subset'=>'400',
+			),
+			array(
+				'font_family'=>'Lato',
+				'type' => 'sans-serif',
+				'subset'=>'400',
+			),
+			array(
+				'font_family' => 'Arvo',
+				'type' => 'serif',
+				'subset'=>'400',
+			),
+			array(
+				'font_family'=>'Open Sans',
+				'type' => 'sans-serif',
+				'subset'=>'400',
+			),
+			array(
+				'font_family'=>'Ubuntu',
+				'type' => 'sans-serif',
+				'subset'=>'400',
+			),
+		),
+	)));
 
 	/* Font size */
 	$wp_customize->add_setting('example_select_box', array(
-		'default'        => '16px',
+		'default' => '16px',
 	));
 	$wp_customize->add_control( 'example_select_box', array(
 		'label'   => 'Select Something:',
-		'section' => 'zillah_fonts_section',
+		'section' => 'zillah_home_theme_option_section',
+		'priority' => 6,
 		'type'    => 'select',
 		'choices'    => array(
 			'14px' => 'Small',
@@ -251,16 +226,6 @@ function zillah_customize_register( $wp_customize ) {
 			'18px' => 'Large',
 		),
 	));
-
-
-
-
-
-
-
-
-
-
 
 }
 add_action( 'customize_register', 'zillah_customize_register' );
