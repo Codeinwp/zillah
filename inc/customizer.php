@@ -17,6 +17,7 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->default = '#7fcaad';
 
 	require_once ( 'class/zillah_category-selector-control.php');
+	require_once ( 'class/zillah-google-fonts.php');
 
     $wp_customize->get_control( 'blogname' )->priority = 3;
     $wp_customize->get_control( 'blogdescription' )->priority = 4;
@@ -132,6 +133,134 @@ function zillah_customize_register( $wp_customize ) {
 		'metro_customizr_text_control' => false,
 		'metro_customizr_link_control' => true
 	) ) );
+
+
+
+
+
+
+
+	/* Fonts */
+	$wp_customize->add_section( 'zillah_fonts_section', array(
+		'title'	=> esc_html__( 'Fonts', 'zillah' ),
+		'priority'	=> 90,
+	) );
+
+
+	/* Google fonts  */
+	$wp_customize->add_setting('zillah_google_fonts_one', array(
+		'default' => 0,
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(
+		new Zillah_Google_Fonts_Control(
+			$wp_customize,
+			'zillah_google_fonts_one',
+			array(
+				'label'    => 'Select first font family ( content )',
+				'section'  => 'zillah_fonts_section',
+				'priority' => 1,
+				'ti_google_fonts' => array(
+					array(
+						'font_family' => 'Merriweather',
+						'type' => 'serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family'=>'Open Sans',
+						'type' => 'sans-serif',
+						'subset'=>'400',
+					),
+					array(
+						'font_family'=>'Josefin Slab',
+						'type' => 'serif',
+						'subset'=>'400',
+					),
+					array(
+						'font_family'=>'Ubuntu',
+						'type' => 'sans-serif',
+						'subset'=>'400',
+					),
+					array(
+						'font_family'=>'Vollkorn',
+						'type' => 'serif',
+						'subset'=>'400',
+					),
+				),
+			)
+		)
+	);
+
+
+	$wp_customize->add_setting('zillah_google_fonts_two', array(
+		'default' => 0,
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(
+		new Zillah_Google_Fonts_Control(
+			$wp_customize,
+			'zillah_google_fonts_two',
+			array(
+				'label'    => 'Select second font family ( headings )',
+				'section'  => 'zillah_fonts_section',
+				'priority' => 1,
+				'ti_google_fonts' => array(
+					array(
+						'font_family'=>'Cabin',
+						'type' => 'sans-serif',
+						'subset'=>'400',
+					),
+					array(
+						'font_family'=>'Lato',
+						'type' => 'sans-serif',
+						'subset'=>'400',
+					),
+					array(
+						'font_family' => 'Arvo',
+						'type' => 'serif',
+						'subset'=>'400',
+					),
+					array(
+						'font_family'=>'Open Sans',
+						'type' => 'sans-serif',
+						'subset'=>'400',
+					),
+					array(
+						'font_family'=>'Ubuntu',
+						'type' => 'sans-serif',
+						'subset'=>'400',
+					),
+				),
+			)
+		)
+	);
+
+	/* Font size */
+	$wp_customize->add_setting('example_select_box', array(
+		'default'        => '16px',
+	));
+	$wp_customize->add_control( 'example_select_box', array(
+		'label'   => 'Select Something:',
+		'section' => 'zillah_fonts_section',
+		'type'    => 'select',
+		'choices'    => array(
+			'14px' => 'Small',
+			'16px' => 'Medium',
+			'18px' => 'Large',
+		),
+	));
+
+
+
+
+
+
+
+
+
+
 
 }
 add_action( 'customize_register', 'zillah_customize_register' );

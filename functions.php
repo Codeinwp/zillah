@@ -477,11 +477,19 @@ function zillah_php_style() {
 
 	$header_text_color = get_header_textcolor();
 
+	$zillah_first_font_one = get_theme_mod( 'zillah_google_fonts_one' );
+	$zillah_first_font_two = get_theme_mod( 'zillah_google_fonts_two' );
+	$zillah_first_font_one = explode( '|', $zillah_first_font_one );
+	$zillah_first_font_two = explode( '|', $zillah_first_font_two );
+
+	$zillah_font_size = get_theme_mod( 'example_select_box', '16px' );
+
 	if( isset( $zillah_c5 ) ) {
 		$rgb = zillah_get_rgb( $zillah_c5 );
 	}
 
 	echo '<style id="zillah_customizr_pallete" type="text/css">';
+
 	if(!empty($zillah_palette_picker)){
 
 		/* Color 1 */
@@ -621,8 +629,66 @@ function zillah_php_style() {
 			}
 		';
 
-
 	}
+
+	echo '
+		h4, h5, h6,
+		body,
+		button,
+		input,
+		select,
+		textarea,
+		.comment-reply-title,
+		h2.comments-title,
+		.site-info a,
+		.entry-content #jp-relatedposts h3.jp-relatedposts-headline,
+		.entry-content #jp-relatedposts h3.jp-relatedposts-headline em {
+			font-family: \''.$zillah_first_font_one[0].'\', '.$zillah_first_font_one[1].';
+			font-wight: '.$zillah_first_font_one[2].';
+		}
+	';
+
+	echo '
+		h1, h2, h3,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.btn,
+		.main-navigation a,
+		.posts-navigation .nav-previous a,
+		.posts-navigation .nav-next a,
+		.post-navigation .nav-links a,
+		.author-details-title,
+		.page-main-header .entry-title,
+		.comment-respond label,
+	    .entry-title,
+		.categories-links a,
+		.entry-header .cat-links,
+		.more-link,
+		.comment-author .fn,
+		.comment-author .fn a,
+		.comment-metadata,
+		.comment-metadata a,
+		.reply a,
+		.header-search input[type="search"],
+		.site-footer h3,
+		.site-footer .widget-title,
+		.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a,
+		.widget_categories li a ,
+		.widget_recent_entries .post-date,
+		.carousel-caption-title a {
+			font-family: \''.$zillah_first_font_two[0].'\', '.$zillah_first_font_two[1].';
+			font-wight: '.$zillah_first_font_two[2].';
+		}';
+
+
+	echo '
+		body {
+			font-size: '.$zillah_font_size.';
+		}
+	';
+
 	echo '</style>';
 }
 

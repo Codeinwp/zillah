@@ -39,3 +39,15 @@ jQuery(document).ready(function () {
         }
     });
 });
+
+
+
+jQuery( document ).ready( function() {
+
+    jQuery( '.ti-google-fonts input:radio:checked' ).parent( 'label' ).addClass( 'ti-google-fonts-active' );
+    jQuery( '.ti-google-fonts input' ).click( function() {
+        jQuery( this ).parent().parent().find( '.ti-google-fonts-active' ).removeClass( 'ti-google-fonts-active' );
+        jQuery( this ).parent().addClass( 'ti-google-fonts-active' );
+    });
+
+});
