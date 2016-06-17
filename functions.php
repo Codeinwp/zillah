@@ -69,11 +69,15 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
 		add_theme_support( 'post-formats', array(
-//			'aside',
-//			'image',
-//			'video',
-//			'quote',
-//			'link',
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+			'gallery',
+			'status',
+			'audio',
+			'chat',
 		) );
 
 		// Set up the WordPress core custom background feature.
@@ -722,7 +726,7 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-
+/* Post image */
 function zillah_post_image() {
 	if ( has_post_thumbnail() ) {
 		echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
@@ -739,7 +743,7 @@ function zillah_post_image() {
 	}
 }
 
-
+/* Get the first image from post */
 function zillah_catch_that_image() {
 	global $post, $posts;
 	$first_img = false;
@@ -748,4 +752,61 @@ function zillah_catch_that_image() {
 	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
 	$first_img = ! empty( $matches[1][0] ) ? $matches[1][0] : false;
 	return $first_img;
+}
+
+/* Get first embed media */
+function zillah_get_first_embed_media($post_id) {
+	$post = get_post($post_id);
+	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
+	$embeds = get_media_embedded_in_content( $content );
+	if( !empty($embeds) ) {
+		//check what is the first embed containg video tag, youtube or vimeo
+		foreach( $embeds as $embed ) {
+			if( strpos( $embed, 'video' ) || strpos( $embed, 'youtube' ) || strpos( $embed, 'vimeo' ) ) {
+				return $embed;
+			}
+		}
+	} else {
+		//No video embedded found
+		return false;
+	}
+}
+
+
+/* Get gallery */
+function zillah_get_gallery() {
+
+	if ( get_post_gallery() ) :
+		$gallery = get_post_gallery( get_the_ID(), false );
+
+		if( isset( $gallery['ids'] ) ) {
+			$ids = explode( ",", $gallery['ids'] );
+		} else {
+			return false;
+		}
+
+		if ( $ids ) {
+			echo '<div id="carousel-post-gallery" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner" role="listbox">';
+
+				/* Loop through all the image and output them one by one */
+				$i = 0;
+				foreach ( $ids as $id ) :
+					$thumb = wp_get_attachment_image_src( $id, 'zillah-slider-thumbnail' );
+					$url = $thumb['0'];
+					$i ++;
+					if( $i > 6 ) {
+						break;
+					}
+					?>
+					<div class="item<?php echo $i === 1 ? ' active' : ''; ?>">
+						<img src="<?php echo $url; ?>" alt="">
+					</div>
+					<?php
+				endforeach;
+			echo '	</div>
+			</div>';
+		}
+	endif;
+
 }

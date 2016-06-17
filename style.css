@@ -1333,6 +1333,14 @@ p.dropcap:first-letter {
     margin-bottom: 50px;
 }
 
+.post-thumbnail-wrap iframe {
+	width: 100%;
+}
+
+#carousel-post-gallery img {
+	width: 100%;
+}
+
 .post-thumbnail-wrap img {
     width: 100%;
 }

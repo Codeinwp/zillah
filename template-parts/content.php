@@ -22,7 +22,24 @@
 	</header><!-- .entry-header -->
 
 	<?php
-		zillah_post_image();
+		$post_format = get_post_format();
+		if( $post_format === 'video' ) {
+			echo '<div class="post-thumbnail-wrap">';
+			echo zillah_get_first_embed_media( get_the_ID() );
+			echo '</div>';
+		} else if( $post_format === 'gallery' ) {
+			if ( has_post_thumbnail() ) {
+				echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+				the_post_thumbnail();
+				echo '</div></a>';
+			} else {
+				echo '<div class="post-thumbnail-wrap">';
+				zillah_get_gallery();
+				echo '</div>';
+			}
+		} else {
+			zillah_post_image();
+		}
 	?>
 
 	<div class="entry-content">
