@@ -314,6 +314,11 @@ function zillah_brand(){
 
 		if ( function_exists( 'the_custom_logo' ) ) {
 			the_custom_logo();
+		} else {
+			$zillah_logo_old = get_theme_mod( 'zillah_logo_old', false );
+			echo '<a href="'.esc_url( home_url( '/' ) ).'" class="custom-logo-link" rel="home" itemprop="url">';
+				echo '<img width="630" height="290" src="'.$zillah_logo_old.'" class="custom-logo" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" itemprop="logo">';
+			echo '</a>';
 		}
 
 		if( ( ! $zillah_tagline_hide && display_header_text() ) || is_customize_preview() ) {

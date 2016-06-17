@@ -215,6 +215,7 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('example_select_box', array(
 		'default' => '16px',
 	));
+
 	$wp_customize->add_control( 'example_select_box', array(
 		'label'   => 'Select Something:',
 		'section' => 'zillah_home_theme_option_section',
@@ -226,6 +227,19 @@ function zillah_customize_register( $wp_customize ) {
 			'18px' => 'Large',
 		),
 	));
+
+	if( ! $custom_logo ) {
+
+		$wp_customize->add_setting( 'zillah_logo_old' );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zillah_logo_old', array(
+			'label'    => __( 'Logo', 'zillah' ),
+			'section'  => 'title_tagline',
+			'settings' => 'zillah_logo_old',
+		) ) );
+
+	}
+
 
 }
 add_action( 'customize_register', 'zillah_customize_register' );
