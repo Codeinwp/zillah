@@ -525,6 +525,7 @@ function zillah_php_style() {
 			p.dropcap:first-letter,
 			.site-footer .fa,
 			.author-details-title,
+			.author-details-title a:visited,
 			.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
 				color:'.$zillah_c2.';
 			}
@@ -564,7 +565,8 @@ function zillah_php_style() {
 			 .main-navigation li:hover > a, 
 			 .main-navigation li.focus > a,
 			 a.post-edit-link:hover,
-			 .tags-links a:hover {
+			 .tags-links a:hover,
+			 .author-details-title a:hover {
 				color: '.$zillah_c3.';
 			 }
 			 a.more-link:hover,
