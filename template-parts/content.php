@@ -7,38 +7,33 @@
  * @package zillah
  */
 
+
+	$post_format = get_post_format();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post entry-content-wrap' ); ?>>
 
-	<header class="entry-header">
-		<div class="content-inner-wrap">
-			<?php
-			zillah_posted_date();
-			the_title( '<h2 class="entry-title entry-title-blog"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			zillah_category();
-			?>
-		</div>
-	</header><!-- .entry-header -->
+	<?php if( $post_format !== 'quote' ) : ?>
+		<header class="entry-header">
+			<div class="content-inner-wrap">
+				<?php
+				zillah_posted_date();
+				the_title( '<h2 class="entry-title entry-title-blog"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				zillah_category();
+				?>
+			</div>
+		</header><!-- .entry-header -->
+	<?php endif; ?>
 
 	<?php
-		$post_format = get_post_format();
 		if( $post_format === 'video' ) {
-			echo '<div class="post-thumbnail-wrap">';
-			echo zillah_get_first_embed_media( get_the_ID() );
-			echo '</div>';
+			zillah_post_video();
 		} else if( $post_format === 'gallery' ) {
-			if ( has_post_thumbnail() ) {
-				echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
-				the_post_thumbnail();
-				echo '</div></a>';
-			} else {
-				echo '<div class="post-thumbnail-wrap">';
-				zillah_get_gallery();
-				echo '</div>';
-			}
-		} else {
+			zillah_post_gallery();
+		} else if ( $post_format === 'image' ) {
 			zillah_post_image();
+		} else {
+			zillah_post_thumbnail();
 		}
 	?>
 
@@ -46,18 +41,22 @@
 		<div class="content-inner-wrap">
 			<?php
 
-				$pos = strpos( $post->post_content, '<!--more-->' );
-				if ( $pos <= 0 ) {
-					the_excerpt();
+				if ( $post_format === 'quote' || $post_format === 'aside' || $post_format === 'audio' || $post_format === 'chat' || $post_format === 'link' || $post_format === 'status' ) {
+					the_content();
 				} else {
-					the_content( false );
-					echo zillah_read_more_link();
-				}
+					$pos = strpos( $post->post_content, '<!--more-->' );
+					if ( $pos <= 0 ) {
+						the_excerpt();
+					} else {
+						the_content( false );
+						echo zillah_read_more_link();
+					}
 
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
-					'after'  => '</div>',
-				) );
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
+						'after'  => '</div>',
+					) );
+				}
 			?>
 		</div>
 	</div><!-- .entry-content -->

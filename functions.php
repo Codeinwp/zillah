@@ -726,22 +726,45 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+/* Post thumbnail */
+function zillah_post_thumbnail() {
+	$post_format = get_post_format();
+	if ( has_post_thumbnail() ) {
+		echo '<div class="post-thumbnail-wrap">';
+		echo '<a ' . ( $post_format !== 'quote' ? 'href="' . esc_url( get_permalink() ) . '"' : '' ) . ' class="post-thumbnail" rel="bookmark">';
+		the_post_thumbnail();
+		echo '</a>';
+		echo '</div>';
+	} else {
+		$post_image_link = zillah_catch_that_image();
+		$zillah_image_as_thumbnail = get_theme_mod( 'zillah_image_as_thumbnail', false );
+		if( $post_image_link && $zillah_image_as_thumbnail ) {
+			echo '<div class="post-thumbnail-wrap">';
+			echo '<a ' . ( $post_format !== 'quote' ? 'href="' . esc_url( get_permalink() ) . '"' : '' ) . ' class="post-thumbnail" rel="bookmark">';
+			echo '<img width="1170" height="545" src="'. $post_image_link .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
+			echo '</a>';
+			echo '</div>';
+		}
+	}
+}
+
+
 /* Post image */
 function zillah_post_image() {
 	if ( has_post_thumbnail() ) {
 		echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
 		the_post_thumbnail();
-		echo '</div></a>';
+		echo '</a></div>';
 	} else {
 		$post_image_link = zillah_catch_that_image();
-		$zillah_image_as_thumbnail = get_theme_mod( 'zillah_image_as_thumbnail', false );
-		if( $post_image_link && $zillah_image_as_thumbnail ) {
+		if( $post_image_link ) {
 			echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
 			echo '<img width="1170" height="545" src="'. $post_image_link .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
-			echo '</div></a>';
+			echo '</a></div>';
 		}
 	}
 }
+
 
 /* Get the first image from post */
 function zillah_catch_that_image() {
@@ -753,6 +776,7 @@ function zillah_catch_that_image() {
 	$first_img = ! empty( $matches[1][0] ) ? $matches[1][0] : false;
 	return $first_img;
 }
+
 
 /* Get first embed media */
 function zillah_get_first_embed_media($post_id) {
@@ -774,7 +798,7 @@ function zillah_get_first_embed_media($post_id) {
 
 
 /* Get gallery */
-function zillah_get_gallery() {
+function zillah_post_gallery() {
 
 	if ( get_post_gallery() ) :
 		$gallery = get_post_gallery( get_the_ID(), false );
@@ -786,27 +810,56 @@ function zillah_get_gallery() {
 		}
 
 		if ( $ids ) {
-			echo '<div id="carousel-post-gallery" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner" role="listbox">';
+			echo '<div class="post-thumbnail-wrap">
+					<div id="carousel-post-gallery" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner" role="listbox">';
 
-				/* Loop through all the image and output them one by one */
-				$i = 0;
-				foreach ( $ids as $id ) :
-					$thumb = wp_get_attachment_image_src( $id, 'zillah-slider-thumbnail' );
-					$url = $thumb['0'];
-					$i ++;
-					if( $i > 6 ) {
-						break;
-					}
-					?>
-					<div class="item<?php echo $i === 1 ? ' active' : ''; ?>">
-						<img src="<?php echo $url; ?>" alt="">
-					</div>
-					<?php
-				endforeach;
-			echo '	</div>
+							/* Loop through all the image and output them one by one */
+							$i = 0;
+							foreach ( $ids as $id ) :
+								$thumb = wp_get_attachment_image_src( $id, 'zillah-slider-thumbnail' );
+								$url = $thumb['0'];
+								$i ++;
+								if( $i > 6 ) {
+									break;
+								}
+								?>
+								<div class="item<?php echo $i === 1 ? ' active' : ''; ?>">
+									<img src="<?php echo $url; ?>" alt="">
+								</div>
+								<?php
+							endforeach;
+
+			echo '</div>
+				</div>
 			</div>';
+		} else {
+			if ( has_post_thumbnail() ) {
+				echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+				the_post_thumbnail();
+				echo '</div></a>';
+			}
 		}
 	endif;
 
 }
+
+
+/* Post video */
+function zillah_post_video() {
+
+	$zillah_video = zillah_get_first_embed_media( get_the_ID() );
+	if( $zillah_video || has_post_thumbnail() ) {
+		echo '<div class="post-thumbnail-wrap">';
+		if( $zillah_video )  {
+			echo $zillah_video;
+		} else if( has_post_thumbnail() ) {
+			echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+				the_post_thumbnail();
+			echo '</div></a>';
+		}
+		echo '</div>';
+	}
+
+}
+

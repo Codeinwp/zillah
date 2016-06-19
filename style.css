@@ -1002,6 +1002,22 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Post format
+--------------------------------------------------------------*/
+/* quote */
+.post_format-post-format-quote .content-inner-wrap p {
+     margin-bottom: 0;
+ }
+
+.post_format-post-format-quote blockquote {
+    margin: 0;
+}
+
+.post_format-post-format-quote .post-thumbnail {
+    margin-top: -45px;
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
