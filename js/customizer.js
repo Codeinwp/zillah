@@ -110,8 +110,6 @@
 				result+= '<li class="zillah-only-customizer"><button type="button" class="search-opt search-toggle"><i class="fa fa-search"></i></button><div class="header-search"></div></li>';
 			}
 			$( '.social-media-icons' ).html( result );
-			zillah_header_social_icons_width();
-			zillah_menu_toggle_height();
 		} );
 	} );
 

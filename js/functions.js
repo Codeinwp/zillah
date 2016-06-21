@@ -99,7 +99,10 @@
 //ACCESSIBILITY MENU
 ( function( $ ) {
 
+	/* global screenReaderText */
+
     function initMainNavigation( container ) {
+
         // Add dropdown toggle that display child menu items.
         container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
@@ -208,7 +211,7 @@
     var headerHeight,
         isAdminBar,
         lastScrollTop       = 0,
-        initTop             = 0;
+        initTop             = 0,
         changeDirection     = false,
         lastDirectionDown   = false;
     var $headerToHide       = $( '.header-inner-top' ),
