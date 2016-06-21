@@ -56,15 +56,19 @@
 
 </article><!-- #post-## -->
 
-<div class="author-details-wrap">
-	<div class="content-inner-wrap">
-		<div class="author-details-img-wrap">
-			<?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ); ?>
-		</div>
-		<?php
-			$author_first_name =  get_the_author_meta( 'first_name' );
-			$author_last_name = get_the_author_meta( 'last_name' );
-			if( !empty( $author_first_name ) || !empty( $author_last_name ) ) {
+<?php
+	$author_first_name =  get_the_author_meta( 'first_name' );
+	$author_last_name = get_the_author_meta( 'last_name' );
+	$author_description = wp_kses_post( nl2br( get_the_author_meta('description') ) );
+
+	if( !empty( $author_first_name ) || !empty( $author_last_name ) || !empty( $author_description ) ) {
+
+		echo '<div class="author-details-wrap">';
+			echo '<div class="content-inner-wrap">';
+
+				echo '<div class="author-details-img-wrap">';
+					echo get_avatar( get_the_author_meta( 'user_email' ), '100' );
+				echo '</div>';
 
 				$author_name = '';
 				if ( ! empty( $author_first_name ) ) {
@@ -79,13 +83,14 @@
 							echo '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( $author_name ) . '">' . $author_name . '</a>';
 					}
 				echo '</div>';
-			}
-	
-			$author_description = wp_kses_post( nl2br( get_the_author_meta('description') ) );
-			if( !empty( $author_description ) ){
-				echo '<div class="author-details-content">' . $author_description . '</div>';
-			}
-		?>
 
-	</div>
-</div>
+				if( !empty( $author_description ) ){
+					echo '<div class="author-details-content">' . $author_description . '</div>';
+				}
+
+			echo '</div>';
+		echo '</div>';
+
+	}
+?>
+

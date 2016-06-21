@@ -4,7 +4,7 @@ Theme URI:      http://themeisle.com/themes/zillah/
 Author:         ThemeIsle
 Author URI:     http://themeisle.com
 Description:    Zillah is a free blogging WordPress theme.
-Version:        1.0.6
+Version:        1.0.7
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:    zillah
@@ -378,6 +378,13 @@ blockquote {
 .entry-content blockquote.alignleft,
 .entry-content blockquote.alignright {
 	margin: 50px 0;
+}
+
+.entry-content a img,
+.entry-summary a img,
+.comment-content a img,
+.textwidget a img {
+    display: block;
 }
 
 address {
@@ -995,6 +1002,22 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Post format
+--------------------------------------------------------------*/
+/* quote */
+.post_format-post-format-quote .content-inner-wrap p {
+     margin-bottom: 0;
+ }
+
+.post_format-post-format-quote blockquote {
+    margin: 0;
+}
+
+.post_format-post-format-quote .post-thumbnail {
+    margin-top: -45px;
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -1317,7 +1340,7 @@ p.dropcap:first-letter {
 ## Blog
 --------------------------------------------------------------*/
 .post-thumbnail {	
-	display: inline-block;
+	display: block;
 }
 
 .post-thumbnail-wrap {
@@ -1326,8 +1349,16 @@ p.dropcap:first-letter {
     margin-bottom: 50px;
 }
 
+.post-thumbnail-wrap iframe {
+	width: 100%;
+}
+
+#carousel-post-gallery img {
+	width: 100%;
+}
+
 .post-thumbnail-wrap img {
-    max-height: 438px;
+    width: 100%;
 }
 
 .entry-title-blog {
@@ -1924,6 +1955,11 @@ object {
 	width: 20px;
 	height: 20px;
 	line-height: 20px;
+}
+
+.header-logo-wrap img {
+    max-height: 145px;
+    width: auto;
 }
 
 .social-navigation a[href*="twitter.com"]::before {
@@ -3024,6 +3060,7 @@ div.sharedaddy h3.sd-title:before {
 	.carousel-caption-category {
 		margin: 0;
 		padding: 0;
+		color: #aaaaaa;
 	}
 
     .carousel-caption-category a {
@@ -3109,10 +3146,6 @@ div.sharedaddy h3.sd-title:before {
     .content-inner-wrap,
     .comments-area-wrap .comments-area {
         max-width: 840px;
-    }
-
-    .post-thumbnail-wrap img {
-        max-height: 545px;
     }
 
 }

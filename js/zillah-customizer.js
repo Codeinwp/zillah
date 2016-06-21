@@ -23,11 +23,10 @@ jQuery(document).ready(function () {
 
             jQuery('.zillah_palette_input').html(metro_palette);
 
-            jQuery('.zillah_palette_input span').each(function (index) {
+            jQuery('.zillah_palette_input span').each(function () {
                 it++;
-                var colnb = 'color' + it;
                 var colval = jQuery(this).css('background-color');
-                values["color" + it] = colval;
+                values['color' + it] = colval;
             });
             th.parent().parent().find('.zillah_palette_colector').val(JSON.stringify(values));
             th.parent().parent().find('.zillah_palette_colector').trigger('change');
@@ -38,4 +37,16 @@ jQuery(document).ready(function () {
             th.parent().parent().find('.zillah_palette_colector').trigger('change');
         }
     });
+});
+
+
+
+jQuery( document ).ready( function() {
+
+    jQuery( '.ti-google-fonts input:radio:checked' ).parent( 'label' ).addClass( 'ti-google-fonts-active' );
+    jQuery( '.ti-google-fonts input' ).click( function() {
+        jQuery( this ).parent().parent().find( '.ti-google-fonts-active' ).removeClass( 'ti-google-fonts-active' );
+        jQuery( this ).parent().addClass( 'ti-google-fonts-active' );
+    });
+
 });

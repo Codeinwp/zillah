@@ -99,7 +99,10 @@
 //ACCESSIBILITY MENU
 ( function( $ ) {
 
+	/* global screenReaderText */
+
     function initMainNavigation( container ) {
+
         // Add dropdown toggle that display child menu items.
         container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
@@ -188,7 +191,13 @@
 	}
     
     $( document ).ready( function() {
-		$( window ).on( 'load.parallax-one', onResizeARIA )
+		$( window ).on( 'load.parallax-one', onResizeARIA );
+
+
+		$( '#carousel-post-gallery' ).carousel({
+			interval: 2000
+		});
+
 	} );
     
     
@@ -202,7 +211,7 @@
     var headerHeight,
         isAdminBar,
         lastScrollTop       = 0,
-        initTop             = 0;
+        initTop             = 0,
         changeDirection     = false,
         lastDirectionDown   = false;
     var $headerToHide       = $( '.header-inner-top' ),
@@ -224,7 +233,7 @@
 			$body.css( 'padding-top', window.innerWidth > 992 ? headerHeight : 0 );
         });
 
-        $(window).scroll(function (event) {
+        $(window).scroll(function () {
             var thisScrollTop = $(this).scrollTop();
             changeDirection = ( thisScrollTop > headerHeight && (thisScrollTop > lastScrollTop && lastDirectionDown === false) || (thisScrollTop < lastScrollTop && lastDirectionDown === true) ? true : false );
             if (changeDirection === true) {

@@ -69,11 +69,15 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
 		add_theme_support( 'post-formats', array(
-//			'aside',
-//			'image',
-//			'video',
-//			'quote',
-//			'link',
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+			'gallery',
+			'status',
+			'audio',
+			'chat',
 		) );
 
 		// Set up the WordPress core custom background feature.
@@ -84,8 +88,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		// Add theme support for custom logo
 		add_theme_support( 'custom-logo', array(
-			'height' => 145,
-			'width' => 315,
+			'height' => 290,
+			'width' => 630,
 			'flex-width' => true,
 		) );
 	}
@@ -234,7 +238,7 @@ add_action( 'wp_enqueue_scripts', 'zillah_scripts' );
 function zillah_customizer_script() {
 	wp_enqueue_style( 'zillah-font-awesome-admin', get_template_directory_uri() . '/css/font-awesome.min.css', array(), 'v4.5.0', false );
 	wp_enqueue_script( 'zillah-customizer-script', get_template_directory_uri() .'/js/zillah-customizer.js', array( 'jquery' ), '1.0.1', true );
-	wp_enqueue_style( 'zillah-admin-stylesheet', get_stylesheet_directory_uri().'/css/admin-style.css','1.0.0' );
+	wp_enqueue_style( 'zillah-admin-stylesheet', get_template_directory_uri() .'/css/admin-style.css','1.0.0' );
 }
 add_action(  'customize_controls_enqueue_scripts', 'zillah_customizer_script'  );
 
@@ -314,6 +318,11 @@ function zillah_brand(){
 
 		if ( function_exists( 'the_custom_logo' ) ) {
 			the_custom_logo();
+		} else {
+			$zillah_logo_old = get_theme_mod( 'zillah_logo_old', false );
+			echo '<a href="'.esc_url( home_url( '/' ) ).'" class="custom-logo-link" rel="home" itemprop="url">';
+				echo '<img width="630" height="290" src="'.$zillah_logo_old.'" class="custom-logo" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" itemprop="logo">';
+			echo '</a>';
 		}
 
 		if( ( ! $zillah_tagline_hide && display_header_text() ) || is_customize_preview() ) {
@@ -477,129 +486,154 @@ function zillah_php_style() {
 
 	$header_text_color = get_header_textcolor();
 
+	$zillah_first_font_one = get_theme_mod( 'zillah_google_fonts_one' );
+	$zillah_first_font_two = get_theme_mod( 'zillah_google_fonts_two' );
+
+	if( !empty($zillah_first_font_one) ) {
+		$zillah_first_font_one = explode( '|', $zillah_first_font_one );
+	}
+	if( !empty($zillah_first_font_two) ) {
+		$zillah_first_font_two = explode( '|', $zillah_first_font_two );
+	}
+
+	$zillah_font_size = get_theme_mod( 'zillah_select_box_font_size', '16px' );
+
 	if( isset( $zillah_c5 ) ) {
 		$rgb = zillah_get_rgb( $zillah_c5 );
 	}
 
 	echo '<style id="zillah_customizr_pallete" type="text/css">';
+
 	if(!empty($zillah_palette_picker)){
 
 		/* Color 1 */
-		echo '
-			.post-navigation .nav-links a,
-			.posts-navigation .nav-previous a,
-			.posts-navigation .nav-previous a, 
-			.posts-navigation .nav-next a {
-				background: '.$zillah_c1.';
-				opacity: 1;
-			}
-			.post-navigation .nav-links a:hover,
-			.posts-navigation .nav-previous a:hover,
-			.posts-navigation .nav-previous a:hover, 
-			.posts-navigation .nav-next a:hover {
-				background: '.$zillah_c1.';
-				opacity: 0.8;
-			}
-		';
+		if( !empty($zillah_c1) ) {
+			echo '
+				.post-navigation .nav-links a,
+				.posts-navigation .nav-previous a,
+				.posts-navigation .nav-previous a, 
+				.posts-navigation .nav-next a {
+					background: ' . $zillah_c1 . ';
+					opacity: 1;
+				}
+				.post-navigation .nav-links a:hover,
+				.posts-navigation .nav-previous a:hover,
+				.posts-navigation .nav-previous a:hover, 
+				.posts-navigation .nav-next a:hover {
+					background: ' . $zillah_c1 . ';
+					opacity: 0.8;
+				}
+			';
+		}
 
 		/* Color 2 */
-		echo '
-			.widget-title {
-				color: '.$zillah_c2.';
-			}
-			a, .entry-content a:visited, .comment-content a:visited,
-			.cat-links, .entry-header .cat-links, .cat-links a,
-			p.dropcap:first-letter,
-			.site-footer .fa,
-			.author-details-title,
-			.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
-				color:'.$zillah_c2.';
-			}
-			button, input[type="button"], input[type="reset"], input[type="submit"], .btn {
-				background: '.$zillah_c2.';
-			}
-			blockquote {
-                border-left: solid 5px '.$zillah_c2.';
-            }
-			a.more-link,
-			a.more-link:visited,
-			.reply a,
-			a.post-edit-link, a.post-edit-link:visited,
-			.site-title a, .site-title a:visited,
-			.tags-links a:visited,
-			.logged-in-as a, .logged-in-as a:visited {
-				color: '.$zillah_c2.';
-			}
-			@media screen and (max-width: 991px) {
-				.main-navigation {
-					background: '.$zillah_c2.';
+		if( !empty($zillah_c2) ) {
+			echo '
+				.widget-title {
+					color: ' . $zillah_c2 . ';
 				}
-			}
-		';
+				a, .entry-content a:visited, .comment-content a:visited,
+				.cat-links, .entry-header .cat-links, .cat-links a,
+				p.dropcap:first-letter,
+				.site-footer .fa,
+				.author-details-title,
+				.author-details-title a:visited,
+				.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+					color:' . $zillah_c2 . ';
+				}
+				button, input[type="button"], input[type="reset"], input[type="submit"], .btn {
+					background: ' . $zillah_c2 . ';
+				}
+				blockquote {
+	                border-left: solid 5px ' . $zillah_c2 . ';
+	            }
+				a.more-link,
+				a.more-link:visited,
+				.reply a,
+				a.post-edit-link, a.post-edit-link:visited,
+				.site-title a, .site-title a:visited,
+				.tags-links a:visited,
+				.logged-in-as a, .logged-in-as a:visited {
+					color: ' . $zillah_c2 . ';
+				}
+				@media screen and (max-width: 991px) {
+					.main-navigation {
+						background: ' . $zillah_c2 . ';
+					}
+				}
+			';
+		}
 
-		echo '
-			.site-title a, .site-title a:visited {
-				color: #'. esc_attr( $header_text_color ) .'
-			}
-		';
+		if( !empty( $header_text_color ) ) {
+			echo '
+				.site-title a, .site-title a:visited {
+					color: #' . esc_attr( $header_text_color ) . '
+				}
+			';
+		}
 
 		/* Color 3 */
-		echo '
-			 .main-navigation li:hover > a:hover, 
-			 .main-navigation li.focus > a:hover,
-			 .widget li a:hover,
-			 .main-navigation li:hover > a, 
-			 .main-navigation li.focus > a,
-			 a.post-edit-link:hover,
-			 .tags-links a:hover {
-				color: '.$zillah_c3.';
-			 }
-			 a.more-link:hover,
-			 a:hover,
-			.site-title a:hover,
-			.cat-links a:hover,
-			.entry-title-blog a:hover,
-			.carousel-caption-title a:hover,
-			.carousel-caption-category a:hover,
-			.social-navigation a:hover,
-			.widget-area .widget li a:hover,
-			.site-footer a:hover,
-			.menu-toggle:hover, .menu-toggle:focus,
-			.comment-metadata a:hover, .comment-author .fn a:hover,
-			.reply a:hover,
-			.entry-content a:hover,
-			.comment-content a:hover {
-				color:'.$zillah_c3.';
-			}
-			@media screen and (max-width: 991px) {
-				 .main-navigation ul ul {
-					background:'.$zillah_c3.';
+		if( !empty( $zillah_c3 ) ) {
+			echo '
+				 .main-navigation li:hover > a:hover, 
+				 .main-navigation li.focus > a:hover,
+				 .widget li a:hover,
+				 .main-navigation li:hover > a, 
+				 .main-navigation li.focus > a,
+				 a.post-edit-link:hover,
+				 .tags-links a:hover,
+				 .author-details-title a:hover {
+					color: ' . $zillah_c3 . ';
 				 }
-				 .dropdown-toggle,
-				 .dropdown-toggle.toggled-on, 
-				 .dropdown-toggle.toggled-on:hover, 
-				 .dropdown-toggle.toggled-on:focus {
-					color: '.$zillah_c3.';
-				 }
-			}
-			button:focus,
-			input[type="button"]:focus,
-			input[type="reset"]:focus,
-			input[type="submit"]:focus,
-			button:active,
-			input[type="button"]:active,
-			input[type="reset"]:active,
-			input[type="submit"]:active {
-				background:'.$zillah_c3.';
-			}
-		';
+				 a.more-link:hover,
+				 a:hover,
+				.site-title a:hover,
+				.cat-links a:hover,
+				.entry-title-blog a:hover,
+				.carousel-caption-title a:hover,
+				.carousel-caption-category a:hover,
+				.social-navigation a:hover,
+				.widget-area .widget li a:hover,
+				.site-footer a:hover,
+				.menu-toggle:hover, .menu-toggle:focus,
+				.comment-metadata a:hover, .comment-author .fn a:hover,
+				.reply a:hover,
+				.entry-content a:hover,
+				.comment-content a:hover {
+					color:' . $zillah_c3 . ';
+				}
+				@media screen and (max-width: 991px) {
+					 .main-navigation ul ul {
+						background:' . $zillah_c3 . ';
+					 }
+					 .dropdown-toggle,
+					 .dropdown-toggle.toggled-on, 
+					 .dropdown-toggle.toggled-on:hover, 
+					 .dropdown-toggle.toggled-on:focus {
+						color: ' . $zillah_c3 . ';
+					 }
+				}
+				button:focus,
+				input[type="button"]:focus,
+				input[type="reset"]:focus,
+				input[type="submit"]:focus,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active {
+					background:' . $zillah_c3 . ';
+				}
+			';
+		}
 
 		/* Color 5 */
-		echo '
-			body {
-				color: '.$zillah_c5.'; 
-			}
-		';
+		if( !empty( $zillah_c5 ) ) {
+			echo '
+				body {
+					color: ' . $zillah_c5 . '; 
+				}
+			';
+		}
 
 		echo '
 			.carousel-caption-title, 
@@ -621,8 +655,72 @@ function zillah_php_style() {
 			}
 		';
 
-
 	}
+
+	if( !empty( $zillah_first_font_one[0] ) && !empty( $zillah_first_font_one[1] ) && !empty( $zillah_first_font_one[2] ) ) {
+		echo '
+			h4, h5, h6,
+			body,
+			button,
+			input,
+			select,
+			textarea,
+			.comment-reply-title,
+			h2.comments-title,
+			.site-info a,
+			.entry-content #jp-relatedposts h3.jp-relatedposts-headline,
+			.entry-content #jp-relatedposts h3.jp-relatedposts-headline em {
+				font-family: \'' . $zillah_first_font_one[0] . '\', ' . $zillah_first_font_one[1] . ';
+				font-weight: ' . $zillah_first_font_one[2] . ';
+			}
+		';
+	}
+
+	if( !empty( $zillah_first_font_two[0] ) && !empty( $zillah_first_font_two[1] ) && !empty( $zillah_first_font_two[2] ) ) {
+
+		echo '
+		h1, h2, h3,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.btn,
+		.main-navigation a,
+		.posts-navigation .nav-previous a,
+		.posts-navigation .nav-next a,
+		.post-navigation .nav-links a,
+		.author-details-title,
+		.page-main-header .entry-title,
+		.comment-respond label,
+	    .entry-title,
+		.categories-links a,
+		.entry-header .cat-links,
+		.more-link,
+		.comment-author .fn,
+		.comment-author .fn a,
+		.comment-metadata,
+		.comment-metadata a,
+		.reply a,
+		.header-search input[type="search"],
+		.site-footer h3,
+		.site-footer .widget-title,
+		.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a,
+		.widget_categories li a ,
+		.widget_recent_entries .post-date,
+		.carousel-caption-title a {
+			font-family: \'' . $zillah_first_font_two[0] . '\', ' . $zillah_first_font_two[1] . ';
+			font-weight: ' . $zillah_first_font_two[2] . ';
+		}';
+	}
+
+	if( !empty($zillah_font_size) ) {
+		echo '
+			body {
+				font-size: ' . $zillah_font_size . ';
+			}
+		';
+	}
+
 	echo '</style>';
 }
 
@@ -649,24 +747,47 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-
-function zillah_post_image() {
+/* Post thumbnail */
+function zillah_post_thumbnail() {
+	$post_format = get_post_format();
 	if ( has_post_thumbnail() ) {
-		echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+		echo '<div class="post-thumbnail-wrap">';
+		echo '<a ' . ( $post_format !== 'quote' ? 'href="' . esc_url( get_permalink() ) . '"' : '' ) . ' class="post-thumbnail" rel="bookmark">';
 		the_post_thumbnail();
-		echo '</div></a>';
+		echo '</a>';
+		echo '</div>';
 	} else {
 		$post_image_link = zillah_catch_that_image();
 		$zillah_image_as_thumbnail = get_theme_mod( 'zillah_image_as_thumbnail', false );
 		if( $post_image_link && $zillah_image_as_thumbnail ) {
-			echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+			echo '<div class="post-thumbnail-wrap">';
+			echo '<a ' . ( $post_format !== 'quote' ? 'href="' . esc_url( get_permalink() ) . '"' : '' ) . ' class="post-thumbnail" rel="bookmark">';
 			echo '<img width="1170" height="545" src="'. $post_image_link .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
-			echo '</div></a>';
+			echo '</a>';
+			echo '</div>';
 		}
 	}
 }
 
 
+/* Post image */
+function zillah_post_image() {
+	if ( has_post_thumbnail() ) {
+		echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+		the_post_thumbnail();
+		echo '</a></div>';
+	} else {
+		$post_image_link = zillah_catch_that_image();
+		if( $post_image_link ) {
+			echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+			echo '<img width="1170" height="545" src="'. $post_image_link .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
+			echo '</a></div>';
+		}
+	}
+}
+
+
+/* Get the first image from post */
 function zillah_catch_that_image() {
 	global $post, $posts;
 	$first_img = false;
@@ -676,3 +797,90 @@ function zillah_catch_that_image() {
 	$first_img = ! empty( $matches[1][0] ) ? $matches[1][0] : false;
 	return $first_img;
 }
+
+
+/* Get first embed media */
+function zillah_get_first_embed_media($post_id) {
+	$post = get_post($post_id);
+	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
+	$embeds = get_media_embedded_in_content( $content );
+	if( !empty($embeds) ) {
+		//check what is the first embed containg video tag, youtube or vimeo
+		foreach( $embeds as $embed ) {
+			if( strpos( $embed, 'video' ) || strpos( $embed, 'youtube' ) || strpos( $embed, 'vimeo' ) ) {
+				return $embed;
+			}
+		}
+	} else {
+		//No video embedded found
+		return false;
+	}
+}
+
+
+/* Get gallery */
+function zillah_post_gallery() {
+
+	if ( get_post_gallery() ) :
+		$gallery = get_post_gallery( get_the_ID(), false );
+
+		if( isset( $gallery['ids'] ) ) {
+			$ids = explode( ",", $gallery['ids'] );
+		} else {
+			return false;
+		}
+
+		if ( $ids ) {
+			echo '<div class="post-thumbnail-wrap">
+					<div id="carousel-post-gallery" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner" role="listbox">';
+
+							/* Loop through all the image and output them one by one */
+							$i = 0;
+							foreach ( $ids as $id ) :
+								$thumb = wp_get_attachment_image_src( $id, 'zillah-slider-thumbnail' );
+								$url = $thumb['0'];
+								$i ++;
+								if( $i > 6 ) {
+									break;
+								}
+								?>
+								<div class="item<?php echo $i === 1 ? ' active' : ''; ?>">
+									<img src="<?php echo $url; ?>" alt="">
+								</div>
+								<?php
+							endforeach;
+
+			echo '</div>
+				</div>
+			</div>';
+		} else {
+			if ( has_post_thumbnail() ) {
+				echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+				the_post_thumbnail();
+				echo '</div></a>';
+			}
+		}
+	endif;
+
+}
+
+
+/* Post video */
+function zillah_post_video() {
+
+	$zillah_video = zillah_get_first_embed_media( get_the_ID() );
+	if( $zillah_video || has_post_thumbnail() ) {
+		echo '<div class="post-thumbnail-wrap">';
+		if( $zillah_video )  {
+			echo $zillah_video;
+		} else if( has_post_thumbnail() ) {
+			echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
+				the_post_thumbnail();
+			echo '</div></a>';
+		}
+		echo '</div>';
+	}
+	
+}
+

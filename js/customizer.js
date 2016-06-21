@@ -44,7 +44,7 @@
     // Hide Site Title
     wp.customize( 'zillah_tagline_show', function( value ) {
         value.bind( function( to ) {
-            if( to != '' ) {
+            if( to !== '' ) {
                 $( '.header-title-wrap' ).addClass( 'zillah-only-customizer' );
             }
             else {
@@ -57,7 +57,7 @@
 	// Logo
 	wp.customize( 'custom_logo', function( value ) {
   		value.bind( function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.custom-logo-link' ).removeClass( 'zillah-only-customizer' );
 				$( '.header-title-wrap' ).addClass( 'zillah-only-customizer' );
 			}
@@ -71,7 +71,7 @@
 	// Slider
 	wp.customize( 'zillah_home_slider_show', function( value ) {
 		value.bind( function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '#home-carousel' ).removeClass( 'zillah-only-customizer' );
 			}
 			else {
@@ -83,7 +83,7 @@
 	// Slider
 	wp.customize( 'zillah_tags_show', function( value ) {
 		value.bind( function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.tags-links' ).removeClass( 'zillah-only-customizer' );
 			}
 			else {
@@ -93,10 +93,10 @@
 	} );
 
 	// Social repeater
-	wp.customize( "zillah_social_icons", function( value ) {
+	wp.customize( 'zillah_social_icons', function( value ) {
 		value.bind( function( to ) {
 			var obj = JSON.parse( to );
-			var result ="";
+			var result = '';
 
 			var lastIcon = $( '.social-media-icons li:last-child' );
 			
@@ -104,20 +104,18 @@
 				result+=  '<li><a href="' + item.link + '" class="social-icon"><i class="fa ' + item.icon_value + '"></i></a></li>';
 			});
 			
-			if ( ! lastIcon.hasClass("zillah-only-customizer") ){
+			if ( ! lastIcon.hasClass('zillah-only-customizer') ){
 				result+= '<li><button type="button" class="search-opt search-toggle"><i class="fa fa-search"></i></button><div class="header-search"></div></li>';
 			} else {
 				result+= '<li class="zillah-only-customizer"><button type="button" class="search-opt search-toggle"><i class="fa fa-search"></i></button><div class="header-search"></div></li>';
 			}
 			$( '.social-media-icons' ).html( result );
-			zillah_header_social_icons_width();
-			zillah_menu_toggle_height();
 		} );
 	} );
 
 
 	// Page header image
-	wp.customize( "zillah_page_header", function( value ) {
+	wp.customize( 'zillah_page_header', function( value ) {
 		value.bind( function( to ) {
 			$('.page-main-header').css('background-image','url("'+ to +'")');
 		} );
@@ -127,7 +125,7 @@
 	// Sidebar
 	wp.customize( 'zillah_sidebar_show', function( value ) {
 		value.bind( function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '#secondary' ).removeClass( 'zillah-only-customizer' );
 				$( '.content-area' ).addClass( 'content-area-with-sidebar' );
 			}
