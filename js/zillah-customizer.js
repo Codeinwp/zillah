@@ -23,11 +23,10 @@ jQuery(document).ready(function () {
 
             jQuery('.zillah_palette_input').html(metro_palette);
 
-            jQuery('.zillah_palette_input span').each(function (index) {
+            jQuery('.zillah_palette_input span').each(function () {
                 it++;
-                var colnb = 'color' + it;
                 var colval = jQuery(this).css('background-color');
-                values["color" + it] = colval;
+                values['color' + it] = colval;
             });
             th.parent().parent().find('.zillah_palette_colector').val(JSON.stringify(values));
             th.parent().parent().find('.zillah_palette_colector').trigger('change');

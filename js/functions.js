@@ -188,7 +188,7 @@
 	}
     
     $( document ).ready( function() {
-		$( window ).on( 'load.parallax-one', onResizeARIA )
+		$( window ).on( 'load.parallax-one', onResizeARIA );
 
 
 		$( '#carousel-post-gallery' ).carousel({
@@ -230,7 +230,7 @@
 			$body.css( 'padding-top', window.innerWidth > 992 ? headerHeight : 0 );
         });
 
-        $(window).scroll(function (event) {
+        $(window).scroll(function () {
             var thisScrollTop = $(this).scrollTop();
             changeDirection = ( thisScrollTop > headerHeight && (thisScrollTop > lastScrollTop && lastDirectionDown === false) || (thisScrollTop < lastScrollTop && lastDirectionDown === true) ? true : false );
             if (changeDirection === true) {
