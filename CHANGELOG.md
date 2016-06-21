@@ -1,4 +1,8 @@
 
+### 1.0.8 - 21/06/2016
+**Changes:** 
+- Added missing sanitizations
+
 ### 1.0.7 - 21/06/2016
 **Changes:** 
 - Fixed image padding issue in post content
