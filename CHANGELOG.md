@@ -1,4 +1,13 @@
 
+### 1.0.7 - 21/06/2016
+**Changes:** 
+- Fixed image padding issue in post content
+- Retina logo
+- Fixed issue with enqueued script for child themes
+- Add option for custom fonts family and size
+- Show author gravatar only if the name or description exists
+- Add support for post formats
+
 ### 1.0.6 - 14/06/2016
 **Changes:** 
 - Fixed layout for related posts on mobile devices
