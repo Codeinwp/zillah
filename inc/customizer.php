@@ -212,12 +212,12 @@ function zillah_customize_register( $wp_customize ) {
 	)));
 
 	/* Font size */
-	$wp_customize->add_setting('example_select_box', array(
+	$wp_customize->add_setting('zillah_select_box_font_size', array(
 		'default' => '16px',
 	));
 
-	$wp_customize->add_control( 'example_select_box', array(
-		'label'   => 'Select Something:',
+	$wp_customize->add_control( 'zillah_select_box_font_size', array(
+		'label'   => 'Select Font Size:',
 		'section' => 'zillah_home_theme_option_section',
 		'priority' => 6,
 		'type'    => 'select',
