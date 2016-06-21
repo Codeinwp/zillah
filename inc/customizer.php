@@ -214,6 +214,7 @@ function zillah_customize_register( $wp_customize ) {
 	/* Font size */
 	$wp_customize->add_setting('zillah_select_box_font_size', array(
 		'default' => '16px',
+		'sanitize_callback' => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control( 'zillah_select_box_font_size', array(
@@ -230,7 +231,9 @@ function zillah_customize_register( $wp_customize ) {
 
 	if( ! $custom_logo ) {
 
-		$wp_customize->add_setting( 'zillah_logo_old' );
+		$wp_customize->add_setting( 'zillah_logo_old', array(
+			'sanitize_callback' => 'esc_url',
+		));
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zillah_logo_old', array(
 			'label'    => __( 'Logo', 'zillah' ),
