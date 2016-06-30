@@ -44,7 +44,7 @@
     // Hide Site Title
     wp.customize( 'zillah_tagline_show', function( value ) {
         value.bind( function( to ) {
-            if( to !== '' ) {
+            if( to !== false ) {
                 $( '.header-title-wrap' ).addClass( 'zillah-only-customizer' );
             }
             else {
@@ -52,21 +52,6 @@
             }
         } );
     } );
-
-
-	// Logo
-	wp.customize( 'custom_logo', function( value ) {
-  		value.bind( function( to ) {
-			if( to !== '' ) {
-				$( '.custom-logo-link' ).removeClass( 'zillah-only-customizer' );
-				$( '.header-title-wrap' ).addClass( 'zillah-only-customizer' );
-			}
-			else {
-				$( '.custom-logo-link' ).addClass( 'zillah-only-customizer' );
-				$( '.header-title-wrap' ).removeClass( 'zillah-only-customizer' );
-			}
-  		} );
-	} );
 
 	// Slider
 	wp.customize( 'zillah_home_slider_show', function( value ) {
