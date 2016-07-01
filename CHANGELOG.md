@@ -1,4 +1,8 @@
 
+### 1.0.10 - 01/07/2016
+**Changes:** 
+- Update style.css
+
 ### 1.0.9 - 30/06/2016
 **Changes:** 
 - Fixed Custom logo customizer issue
