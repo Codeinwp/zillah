@@ -375,14 +375,14 @@ function zillah_slider(){
 
 		$size = intval( round( sizeof( $slider_posts ) / 2, 0, PHP_ROUND_HALF_DOWN) );
 
-		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . ( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) . "\" data-ride=\"carousel\">";
+		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . esc_attr( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) ) . "\" data-ride=\"carousel\">";
 
 		if( $size ) :
 
 			if( $size > 1 ) {
 				echo "<ol class=\"carousel-indicators\">";
 				for ( $i = 0; $i < $size; $i ++ ) {
-					echo "<li data-target=\"#home-carousel\" data-slide-to=\"" . $i . "\"" . ( $i === 0 ? " class=\"active\"" : "" ) . "></li>";
+					echo "<li data-target=\"#home-carousel\" data-slide-to=\"" . esc_attr( $i ) . "\"" . ( $i === 0 ? " class=\"active\"" : "" ) . "></li>";
 				}
 				echo "</ol>";
 			}
@@ -400,11 +400,11 @@ function zillah_slider(){
 				<?php endif; ?>
 
 				<div class="item-inner-half">
-					<a href="<?php the_permalink(); ?>"" class="item-inner-link"></a>
+					<a href="<?php esc_url( the_permalink() ); ?>" class="item-inner-link"></a>
 					<?php the_post_thumbnail( 'zillah-slider-thumbnail' ); ?>
 					<div class="carousel-caption">
 						<div class="carousel-caption-inner">
-							<p class="carousel-caption-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+							<p class="carousel-caption-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></p>
 							<p class="carousel-caption-category"><?php echo get_the_category_list( ', ' ); ?></p>
 						</div>
 					</div>
@@ -762,7 +762,7 @@ function zillah_post_thumbnail() {
 		if( $post_image_link && $zillah_image_as_thumbnail ) {
 			echo '<div class="post-thumbnail-wrap">';
 			echo '<a ' . ( $post_format !== 'quote' ? 'href="' . esc_url( get_permalink() ) . '"' : '' ) . ' class="post-thumbnail" rel="bookmark">';
-			echo '<img width="1170" height="545" src="'. $post_image_link .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
+			echo '<img width="1170" height="545" src="'. esc_attr( $post_image_link ) .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
 			echo '</a>';
 			echo '</div>';
 		}
@@ -780,7 +780,7 @@ function zillah_post_image() {
 		$post_image_link = zillah_catch_that_image();
 		if( $post_image_link ) {
 			echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
-			echo '<img width="1170" height="545" src="'. $post_image_link .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
+			echo '<img width="1170" height="545" src="'. esc_attr( $post_image_link ) .'" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="'. esc_attr( get_the_title() ) .'">';
 			echo '</a></div>';
 		}
 	}
@@ -846,7 +846,7 @@ function zillah_post_gallery() {
 								}
 								?>
 								<div class="item<?php echo $i === 1 ? ' active' : ''; ?>">
-									<img src="<?php echo $url; ?>" alt="">
+									<img src="<?php echo esc_url( $url ); ?>" alt="">
 								</div>
 								<?php
 							endforeach;
