@@ -923,7 +923,7 @@ a:active {
 
 .post-navigation .nav-links a {
 	font-family: 'Cabin', Helvetica, sans-serif;
-	padding: 15px;
+	padding: 15px 15px 10px;
 	float: left;
     line-height: 20px;
 	width: 95%;
@@ -943,16 +943,38 @@ a:active {
 	float: left;
 }
 
+.post-navigation .nav-links .nav-previous a span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+    display: inline-block;
+}
+
 .post-navigation .nav-links .nav-previous a:before {
 	content: "< ";
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 5px;
 }
 
 .post-navigation .nav-links .nav-next a:after {
-	content: " >";
+    content: " >";
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 5px;
 }
 
 .post-navigation .nav-links .nav-next a {
 	float: right;
+}
+
+.post-navigation .nav-links .nav-next a span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+    display: inline-block;
 }
 
 .site-main .post-navigation {
