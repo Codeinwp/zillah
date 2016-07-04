@@ -803,14 +803,25 @@ a:active {
 	display: block;
 }
 
-.dropdown-toggle {
+.dropdown-toggle,
+.dropdown-toggle:active,
+.dropdown-toggle:focus {
     position: absolute;
     z-index: 9;
     right: 0;
+    margin: 0 5px 0 0;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: none;
+    box-shadow: none;
+}
+
+.dropdown-toggle .dropdown-toggle-inner {
+    float: left;
     top: 13px;
     width: 25px;
     height: 25px;
-    margin: 0 5px 0 0;
     padding: 0;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -820,7 +831,7 @@ a:active {
     text-align: center;
 }
 
-.dropdown-toggle:after {
+.dropdown-toggle .dropdown-toggle-inner:after {
 	content: "\f107";
 	font-family: FontAwesome;
 	font-style: normal;
@@ -833,22 +844,22 @@ a:active {
 	padding-left: 3px;
 }
 
-.dropdown-toggle:hover,
-.dropdown-toggle:focus {
+.dropdown-toggle:hover .dropdown-toggle-inner,
+.dropdown-toggle:focus .dropdown-toggle-inner {
     background-color: rgba(255,255,255,0.75);
     color: #628D7C;
     z-index: 1;
 }
 
-.dropdown-toggle.toggled-on,
-.dropdown-toggle.toggled-on:hover,
-.dropdown-toggle.toggled-on:focus {
+.dropdown-toggle.toggled-on .dropdown-toggle-inner,
+.dropdown-toggle.toggled-on:hover .dropdown-toggle-inner,
+.dropdown-toggle.toggled-on:focus .dropdown-toggle-inner {
     background-color: rgba(255,255,255,0.75);
     color: #628D7C;
     z-index: 1;
 }
 
-.dropdown-toggle.toggled-on:after {
+.dropdown-toggle.toggled-on .dropdown-toggle-inner:after {
 	content: "\f106";
 	font-family: FontAwesome;
 }
