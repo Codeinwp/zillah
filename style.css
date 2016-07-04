@@ -644,14 +644,14 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"] {
     font-size: 14px;
-    font-size: 0.875em;
+    font-size: 0.975em;
     line-height: 18px;
 	font-weight: normal;
 	color: #aaaaaa;
 	letter-spacing: 1px;
 	border: solid 1px #dfdfdf;
 	background: #fff;
-    padding: 22px;
+    padding: 14px;
     position: relative;
 }
 
