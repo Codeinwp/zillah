@@ -220,7 +220,7 @@ function zillah_scripts() {
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'zillah' ) . '</span>',
 	) );
 
-	wp_enqueue_script( 'boostrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20130115', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20130115', true );
 
 	wp_enqueue_script( 'zillah-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -735,7 +735,7 @@ function zillah_get_rgb( $color ) {
 }
 
 
-function custom_excerpt_length( $length ) {
+function zillah_custom_excerpt_length( $length ) {
 	global $wp_customize;
 	$zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 
@@ -745,7 +745,7 @@ function custom_excerpt_length( $length ) {
 		return 85;
 	}
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'zillah_custom_excerpt_length', 999 );
 
 /* Post thumbnail */
 function zillah_post_thumbnail() {
