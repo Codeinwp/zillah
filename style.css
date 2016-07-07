@@ -1400,14 +1400,14 @@ p.dropcap:first-letter {
 
 .entry-title {
     font-family: 'Cabin', Helvetica, sans-serif;
-    font-size: 24px;
-    font-size: 1.5em;
-    line-height: 30px;
+    font-size: 20px;
+    font-size: 1.2em;
+    line-height: 25px;
     color: #575756;
     letter-spacing: 2px;
     font-weight: 600;
     margin: 0;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .entry-title-blog a {
@@ -1475,7 +1475,7 @@ p.dropcap:first-letter {
 .entry-header .cat-links {
     font-family: 'Cabin', Helvetica, sans-serif;
     font-size: 15px;
-    font-size: 0.9375em;
+    font-size: 0.8375em;;
     font-weight: 400;
     color: #7fcaad;
     text-transform: uppercase;
@@ -2460,6 +2460,16 @@ div.sharedaddy h3.sd-title:before {
 
     .content-area-with-sidebar .content-inner-wrap {
         padding: 0 45px;
+    }
+    .entry-title {
+        font-size: 24px;
+        font-size: 1.5em;
+        line-height: 30px;
+        text-transform: uppercase;
+    }
+
+    .entry-header .cat-links {
+        font-size: 0.9375em;
     }
 
     /*-----------
