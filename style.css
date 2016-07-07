@@ -1162,13 +1162,14 @@ a:active {
     text-align: center;
     color: #575756;
     border: none;
-    margin: 90px 0 0;
+    margin: 60px 0 0;
     padding-bottom: 0;
 }
 
 .page-header h1.page-title {
     color: #575756;
     margin: 0;
+    font-size: 1.1875em;
 }
 
 .taxonomy-description {
@@ -1834,6 +1835,18 @@ object {
     background-position: center;
 }
 
+.header-inner-site-branding.header-logo-wrap-single {
+    padding: 50px 0;
+}
+
+.header-inner-site-branding.header-logo-wrap-single .header-logo-wrap img {
+    max-height: 70px;
+}
+
+.header-inner-site-branding.header-logo-wrap-single .site-description {
+    font-size: 0.8375em;
+}
+
 .main-navigation-wrap {
     display: table-cell;
     vertical-align: middle;
@@ -2470,6 +2483,26 @@ div.sharedaddy h3.sd-title:before {
 
     .entry-header .cat-links {
         font-size: 0.9375em;
+    }
+
+    .header-inner-site-branding.header-logo-wrap-single {
+        padding: 94px 0;
+    }
+
+    .header-inner-site-branding.header-logo-wrap-single .header-logo-wrap img {
+        max-height: 145px;
+    }
+
+    .header-inner-site-branding.header-logo-wrap-single .site-description {
+        font-size: 0.9375em;
+    }
+
+    .page-header {
+        margin: 90px 0 0;
+    }
+
+    .page-header h1.page-title {
+        font-size: 2.1875em;
     }
 
     /*-----------

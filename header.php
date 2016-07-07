@@ -71,7 +71,7 @@
 			</div>
 		</div>
 
-		<div class="header-inner-site-branding">
+		<div class="header-inner-site-branding<?php echo ! is_home() || ! is_front_page() ? ' header-logo-wrap-single' : ''; ?>">
 			<div class="container container-header-logo">
 						<div class="site-branding-wrap">
 					<div class="site-branding">
