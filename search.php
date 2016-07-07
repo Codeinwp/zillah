@@ -11,6 +11,7 @@ get_header(); ?>
 
 
 	</div><!-- .container -->
+	<?php zillah_hook_search_before(); ?>
 
 	<header class="page-main-header page-header-search">
 		<div class="container">
@@ -24,7 +25,7 @@ get_header(); ?>
 
 			<div id="primary" class="content-area content-area-arch search-page">
 				<main id="main" class="site-main" role="main">
-
+					<?php zillah_hook_search_top(); ?>
 				<?php
 				if ( have_posts() ) : ?>
 
@@ -49,10 +50,12 @@ get_header(); ?>
 
 				endif; ?>
 
+					<?php zillah_hook_search_bottom(); ?>
 				</main><!-- #main -->
 			</section><!-- #primary -->
 
 		</div><!-- .content-wrap -->
+	<?php zillah_hook_search_after(); ?>
 
 <?php
 get_footer();

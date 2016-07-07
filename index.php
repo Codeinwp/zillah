@@ -16,11 +16,13 @@ global $wp_customize;
 $zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 
 get_header(); ?>
+	<?php zillah_hook_index_before(); ?>
 
 	<div class="content-wrap">
 
 		<div id="primary" class="content-area content-area-arch<?php echo $zillah_sidebar_show !== false ? " content-area-with-sidebar" : ""; ?>">
 			<main id="main" class="site-main" role="main">
+				<?php zillah_hook_index_top(); ?>
 
 			<?php
 			if ( have_posts() ) :
@@ -53,6 +55,7 @@ get_header(); ?>
 
 			endif; ?>
 
+				<?php zillah_hook_index_bottom(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
@@ -63,6 +66,7 @@ get_header(); ?>
 		?>
 
 	</div><!-- .content-wrap -->
+	<?php zillah_hook_index_after(); ?>
 
 <?php
 get_footer();

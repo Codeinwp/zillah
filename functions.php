@@ -268,6 +268,19 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
+/**
+ * Theme Hook Alliance hook.
+ */
+require get_template_directory() . '/inc/tha-theme-hooks.php';
+
+/**
+ * Hooks.
+ */
+require get_template_directory() . '/inc/zillah_hooks.php';
+
+
+
+
 function zillah_read_more_link() {
 	return '<a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }

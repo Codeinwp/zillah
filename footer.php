@@ -11,10 +11,14 @@
 
 ?>
 
+			<?php zillah_hook_content_bottom(); ?>
 		</div><!-- .container -->
 	</div><!-- #content -->
+	<?php zillah_hook_content_after(); ?>
 
+	<?php zillah_hook_footer_before(); ?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php zillah_hook_footer_top(); ?>
 
 		<?php if ( is_active_sidebar( 'zillah-footer-widget-area-3' ) || is_active_sidebar( 'zillah-footer-widget-area' ) || is_active_sidebar( 'zillah-footer-widget-area-2' ) ) : ?>
 
@@ -67,10 +71,13 @@
 				</div>
 			</div>
 		</div><!-- .site-info -->
-
+		
+		<?php zillah_hook_footer_bottom(); ?>
 	</footer><!-- #colophon -->
+	<?php zillah_hook_footer_after(); ?>
 </div><!-- #page -->
 
+<?php zillah_hook_body_bottom(); ?>
 <?php wp_footer(); ?>
 
 </body>

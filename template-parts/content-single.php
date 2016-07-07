@@ -29,8 +29,10 @@
 	}
 	?>
 
+	<?php zillah_hook_entry_before(); ?>
 	<div class="entry-content">
 		<div class="content-inner-wrap">
+			<?php zillah_hook_entry_top(); ?>
 			<?php
 
 				the_content( sprintf(
@@ -45,8 +47,10 @@
 				) );
 
 			?>
+			<?php zillah_hook_entry_bottom(); ?>
 		</div>
 	</div><!-- .entry-content -->
+	<?php zillah_hook_entry_after(); ?>
 
 	<footer class="entry-footer">
 		<div class="content-inner-wrap">

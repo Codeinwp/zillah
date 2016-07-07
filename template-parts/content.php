@@ -37,8 +37,10 @@
 		}
 	?>
 
+	<?php zillah_hook_entry_before(); ?>
 	<div class="entry-content">
 		<div class="content-inner-wrap">
+			<?php zillah_hook_entry_top(); ?>
 			<?php
 
 				if ( $post_format === 'quote' || $post_format === 'aside' || $post_format === 'audio' || $post_format === 'chat' || $post_format === 'link' || $post_format === 'status' ) {
@@ -58,7 +60,9 @@
 					) );
 				}
 			?>
+			<?php zillah_hook_entry_bottom(); ?>
 		</div>
 	</div><!-- .entry-content -->
+	<?php zillah_hook_entry_after(); ?>
 
 </article><!-- #post-## -->
