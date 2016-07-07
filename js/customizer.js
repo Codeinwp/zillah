@@ -121,4 +121,12 @@
 		} );
 	} );
 
+
+	// Header Image
+	wp.customize( 'header_image', function( value ) {
+		value.bind( function( to ) {
+			$( '.header-inner-site-branding' ).css( 'background-image', 'url(' + to + ')' );
+		} );
+	} );
+
 } )( jQuery );
