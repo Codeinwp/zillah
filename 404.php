@@ -25,7 +25,7 @@ get_header(); ?>
 						<?php
 							get_search_form();
 						?>
-
+						<?php zillah_hook_404_content(); ?>
 					</div><!-- .page-content -->
 				</section><!-- .error-404 -->
 

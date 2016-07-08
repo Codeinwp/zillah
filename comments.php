@@ -20,7 +20,9 @@ if ( post_password_required() ) {
 }
 ?>
 
+<?php zillah_hook_comments_before(); ?>
 <div id="comments" class="comments-area">
+	<?php zillah_hook_comments_top(); ?>
 
 	<?php
 	if ( have_comments() ) : ?>
@@ -82,4 +84,6 @@ if ( post_password_required() ) {
 	comment_form();
 	?>
 
+	<?php zillah_hook_comments_bottom(); ?>
 </div><!-- #comments -->
+<?php zillah_hook_comments_after(); ?>

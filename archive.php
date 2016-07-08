@@ -13,6 +13,7 @@ $zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 get_header(); ?>
 
 	</div><!-- .container -->
+	<?php zillah_hook_archive_before(); ?>
 
 	<header class="page-header">
 		<div class="container">
@@ -27,6 +28,7 @@ get_header(); ?>
 
 			<div id="primary" class="content-area content-area-arch<?php echo $zillah_sidebar_show !== false ? " content-area-with-sidebar" : ""; ?>">
 				<main id="main" class="site-main" role="main">
+					<?php zillah_hook_archive_top(); ?>
 
 				<?php
 				if ( have_posts() ) : ?>
@@ -52,6 +54,7 @@ get_header(); ?>
 
 				endif; ?>
 
+					<?php zillah_hook_archive_bottom(); ?>
 				</main><!-- #main -->
 			</div><!-- #primary -->
 
@@ -63,6 +66,7 @@ get_header(); ?>
 
 		</div><!-- .content-wrap -->
 
+	<?php zillah_hook_archive_after(); ?>
 <?php
 get_footer();
 

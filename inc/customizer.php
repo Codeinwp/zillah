@@ -11,10 +11,12 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function zillah_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->default = '#7fcaad';
+	$wp_customize->get_setting( 'blogname' )->transport             = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport      = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport     = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->default       = '#7fcaad';
+	$wp_customize->get_setting( 'header_image' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'header_image_data' )->transport    = 'postMessage';
 
 	require_once ( 'class/zillah_category-selector-control.php');
 	require_once ( 'class/zillah-google-fonts.php');

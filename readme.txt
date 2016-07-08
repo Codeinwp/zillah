@@ -64,3 +64,54 @@ Zillah includes support for Infinite Scroll in Jetpack.
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+
+== Available hooks ==
+
+* `zillah_html_before`
+* `zillah_head_top`
+* `zillah_head_bottom`
+* `zillah_body_top`
+* `zillah_body_bottom`
+* `zillah_header_before`
+* `zillah_header_after`
+* `zillah_header_top`
+* `zillah_header_bottom`
+* `zillah_content_before`
+* `zillah_content_after`
+* `zillah_content_top`
+* `zillah_content_bottom`
+* `zillah_entry_before`
+* `zillah_entry_after`
+* `zillah_entry_top`
+* `zillah_entry_bottom`
+* `zillah_page_before`
+* `zillah_page_after`
+* `zillah_page_top`
+* `zillah_page_bottom`
+* `zillah_index_before`
+* `zillah_index_after`
+* `zillah_index_top`
+* `zillah_index_bottom`
+* `zillah_archive_before`
+* `zillah_archive_after`
+* `zillah_archive_top`
+* `zillah_archive_bottom`
+* `zillah_search_before`
+* `zillah_search_after`
+* `zillah_search_top`
+* `zillah_search_bottom`
+* `zillah_comments_before`
+* `zillah_comments_after`
+* `zillah_comments_top`
+* `zillah_comments_bottom`
+* `zillah_sidebar_before`
+* `zillah_sidebar_after`
+* `zillah_sidebar_top`
+* `zillah_sidebar_bottom`
+* `zillah_404_content`
+* `zillah_footer_before`
+* `zillah_footer_after`
+* `zillah_footer_top`
+* `zillah_footer_bottom`
+
+*  All Theme Hook Alliance hooks are included!

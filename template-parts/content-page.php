@@ -12,7 +12,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'content-page entry-content-wrap' ); ?>>
 	<div class="content-inner-wrap">
 
+		<?php zillah_hook_entry_before(); ?>
 		<div class="entry-content">
+			<?php zillah_hook_entry_top(); ?>
 			<?php
 				the_content();
 
@@ -21,7 +23,9 @@
 					'after'  => '</div>',
 				) );
 			?>
+			<?php zillah_hook_entry_bottom(); ?>
 		</div><!-- .entry-content -->
+		<?php zillah_hook_entry_after(); ?>
 
 		<footer class="entry-footer">
 			<?php

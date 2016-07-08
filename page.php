@@ -16,6 +16,7 @@ get_header(); ?>
 
 	</div><!-- .container -->
 
+	<?php zillah_hook_page_before(); ?>
 	<header class="page-main-header">
 		<div class="container">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -28,6 +29,7 @@ get_header(); ?>
 
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
+					<?php zillah_hook_page_top(); ?>
 
 					<?php
 					while ( have_posts() ) : the_post();
@@ -43,11 +45,12 @@ get_header(); ?>
 
 					endwhile; // End of the loop.
 					?>
-
+					<?php zillah_hook_page_bottom(); ?>
 				</main><!-- #main -->
 			</div><!-- #primary -->
 
 		</div><!-- .content-wrap -->
+	<?php zillah_hook_page_after(); ?>
 
 <?php
 get_footer();

@@ -29,8 +29,10 @@
 	}
 	?>
 
+	<?php zillah_hook_entry_before(); ?>
 	<div class="entry-content">
 		<div class="content-inner-wrap">
+			<?php zillah_hook_entry_top(); ?>
 			<?php
 
 				the_content( sprintf(
@@ -45,8 +47,10 @@
 				) );
 
 			?>
+			<?php zillah_hook_entry_bottom(); ?>
 		</div>
 	</div><!-- .entry-content -->
+	<?php zillah_hook_entry_after(); ?>
 
 	<footer class="entry-footer">
 		<div class="content-inner-wrap">
@@ -80,12 +84,12 @@
 
 				echo '<div class="author-details-title">';
 					if( $author_name!=='' ) {
-							echo '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( $author_name ) . '">' . $author_name . '</a>';
+							echo '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( $author_name ) . '">' . esc_html( $author_name ) . '</a>';
 					}
 				echo '</div>';
 
 				if( !empty( $author_description ) ){
-					echo '<div class="author-details-content">' . $author_description . '</div>';
+					echo '<div class="author-details-content">' . esc_html( $author_description ) . '</div>';
 				}
 
 			echo '</div>';
