@@ -1975,10 +1975,12 @@ object {
 }
 
 .menu-toggle:hover,
-.menu-toggle:focus {
+.menu-toggle:focus,
+.menu-toggle[aria-expanded="true"] {
     color: #7FCAAD;
     background: none;
     border-color: #dfdfdf;
+    opacity: 0.8;
 }
 
 .main-navigation-wrap-inner {
@@ -3040,6 +3042,17 @@ div.sharedaddy h3.sd-title:before {
     ul ul .dropdown-toggle:focus,
     ul ul .dropdown-toggle:active {
         margin-top: 0;
+    }
+
+    .dropdown-toggle.toggled-on .dropdown-toggle-inner:after {
+        content: "\f107";
+    }
+
+    .dropdown-toggle.toggled-on .dropdown-toggle-inner,
+    .dropdown-toggle.toggled-on:hover .dropdown-toggle-inner,
+    .dropdown-toggle.toggled-on:focus .dropdown-toggle-inner {
+        background: none;
+        color: #999999;
     }
 
     /*-----------
