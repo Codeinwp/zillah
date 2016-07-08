@@ -2687,10 +2687,10 @@ div.sharedaddy h3.sd-title:before {
         padding-right: 20px;
         z-index: 5;
         right: 0px;
-        top: -4px;
-        height: 64px;
+        top: 0px;
+        height: 47px;
         width: 35px;
-        line-height: 64px;
+        line-height: 40px;
         padding-top: 5px;
         text-align: center;
     }
@@ -2700,7 +2700,7 @@ div.sharedaddy h3.sd-title:before {
         right: 0;
         top: 0;
         width: 50px;
-        height: 64px;
+        height: 47px;
         border: none;
         box-shadow: none;
         background: none;
