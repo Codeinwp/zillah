@@ -1,4 +1,12 @@
 
+### 1.0.11 - 08/07/2016
+**Changes:** 
+- Fixed responsive isseus with the menu
+- Limit text for next / prev buttons
+- Decreased search page title on mobile devices
+- Added hooks
+- Decreased header on mobile devices
+
 ### 1.0.10 - 01/07/2016
 **Changes:** 
 - Update style.css
