@@ -1,4 +1,8 @@
 
+### 1.0.12 - 02/08/2016
+**Changes:** 
+- Fixed issue with html beeing outputed in author description
+
 ### 1.0.11 - 08/07/2016
 **Changes:** 
 - Fixed responsive isseus with the menu
