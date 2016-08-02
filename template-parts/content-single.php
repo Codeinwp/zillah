@@ -87,7 +87,7 @@
 							echo '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( $author_name ) . '">' . esc_html( $author_name ) . '</a>';
 					}
 				echo '</div>';
-a
+
 				if( !empty( $author_description ) ){
 					echo '<div class="author-details-content">' . $author_description . '</div>';
 				}
