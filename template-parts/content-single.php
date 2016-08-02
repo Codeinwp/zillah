@@ -89,7 +89,7 @@
 				echo '</div>';
 
 				if( !empty( $author_description ) ){
-					echo '<div class="author-details-content">' . esc_html( $author_description ) . '</div>';
+					echo '<div class="author-details-content">' . $author_description . '</div>';
 				}
 
 			echo '</div>';
