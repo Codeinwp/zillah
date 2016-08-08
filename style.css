@@ -518,7 +518,7 @@ input[type="submit"],
 .btn {
     border-bottom: 0px;
     border-radius: 0px;
-    padding: 16px 50px;
+    padding: 12px 40px;
     text-transform: uppercase;
     font-family: 'Cabin', Helvetica, sans-serif;
     letter-spacing: 2.5px;
