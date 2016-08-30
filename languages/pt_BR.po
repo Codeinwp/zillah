@@ -1,0 +1,334 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Zillah\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-25 18:00-0300\n"
+"PO-Revision-Date: 2016-08-26 08:33-0300\n"
+"Language-Team: Themeisle <friends@themeisle.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;"
+"esc_attr_x;esc_attr__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.4\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: pt_BR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: inc\n"
+"X-Poedit-SearchPath-2: template-parts\n"
+
+#: 404.php:19
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Esta p&aacute;gina n&atilde;o pode ser encontrada."
+
+#: 404.php:23
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+
+#: comments.php:39 comments.php:61
+msgid "Comment navigation"
+msgstr "Comentar navegação"
+
+#: comments.php:42 comments.php:64
+msgid "Older Comments"
+msgstr "Comentários mais antigos"
+
+#: comments.php:43 comments.php:65
+msgid "Newer Comments"
+msgstr "Comentários mais recentes"
+
+#: comments.php:78
+msgid "Comments are closed."
+msgstr "Comentários estão fechados."
+
+#: footer.php:56
+#, php-format
+msgid "Proudly powered by %1$s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:57
+msgid "WordPress"
+msgstr "WordPress"
+
+#: footer.php:61
+#, php-format
+msgid "Theme Zillah by %1$s"
+msgstr "Tema por %s."
+
+#: footer.php:62
+msgid "Themeisle"
+msgstr "..."
+
+#: footer.php:66
+msgid "Back to top"
+msgstr "Voltar ao topo"
+
+#: functions.php:51
+msgid "Primary"
+msgstr "Primeiro"
+
+#: functions.php:52
+msgid "Social Links Menu"
+msgstr "Menu de Links Sociais"
+
+#: functions.php:114
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:116 functions.php:127
+msgid "Add widgets here."
+msgstr "Adicione widgets aqui."
+
+#: functions.php:124
+#, php-format
+msgid "Footer Widget Area %d"
+msgstr "Área de widgets do rodapé %d."
+
+#: functions.php:215
+msgid "expand child menu"
+msgstr "expandir sub-menu"
+
+#: functions.php:216
+msgid "collapse child menu"
+msgstr "fechar sub-menu"
+
+#: functions.php:270
+#, php-format
+msgid "Continue Reading %s"
+msgstr "Continue a ler %s"
+
+#: header.php:25
+msgid "Skip to content"
+msgstr "Pular para o conteúdo principal"
+
+#: search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Resultados da pesquisa para:%s"
+
+#: searchform.php:10
+msgid "Search &hellip;"
+msgstr "Pesquisar"
+
+#: searchform.php:10
+msgid "Search for:"
+msgstr "Pesquisa"
+
+#: searchform.php:12
+msgid "Search"
+msgstr "Pesquisar"
+
+#: inc/customizer.php:37
+msgid "Theme options"
+msgstr "Opções do Tema"
+
+#: inc/customizer.php:49
+msgid "Show sidebar"
+msgstr "Exibir sidebar"
+
+#: inc/customizer.php:50
+msgid "If you check this box, the sidebar will appear."
+msgstr "Se você marcar essa caixa, a barra lateral irá aparecer."
+
+#: inc/customizer.php:64
+msgid "Show tags"
+msgstr "Exibir Tags"
+
+#: inc/customizer.php:65
+msgid "If you check this box, the tags will appear in posts."
+msgstr "Se você marcar essa caixa, as etiquetas aparecerão em posts."
+
+#: inc/customizer.php:73
+msgid "Featured content slider"
+msgstr "Slides conteúdo destaque"
+
+#: inc/customizer.php:84
+msgid "Show slider"
+msgstr "Mostrar Slider"
+
+#: inc/customizer.php:85
+msgid "If you check this box, the slider area will appear on the homepage."
+msgstr "Marque esta caixa para ativar a opção inscreva-se na página inicial."
+
+#: inc/customizer.php:106
+msgid "Change the color scheme"
+msgstr "Alterar o esquema de cores"
+
+#: inc/plugin-enhancements.php:82
+#, php-format
+msgid ""
+"The %1$s is required to use some of this theme&rsquo;s features, including: "
+msgstr ""
+"O %1$s é necessário para usar alguns dos recursos do presente tema, "
+"incluindo:"
+
+#: inc/plugin-enhancements.php:83
+msgid "Jetpack plugin"
+msgstr "Plugin jetpack"
+
+#: inc/plugin-enhancements.php:90
+#, php-format
+msgid "The %1$s is required to use some of this theme&rsquo;s features."
+msgstr "O %1$s é necessário para usar alguns dos recursos deste tema."
+
+#: inc/plugin-enhancements.php:91
+msgid "Simple Contact Form Plugin - PirateForms plugin"
+msgstr "Formulário de contato simples Plugin - plugin PirateForms"
+
+#: inc/plugin-enhancements.php:113
+msgid "Site Logo"
+msgstr "Logo do Site"
+
+#: inc/plugin-enhancements.php:122
+msgid "Featured Content"
+msgstr "Publicar conteúdo em destaque"
+
+#: inc/plugin-enhancements.php:131
+msgid "Social Menu"
+msgstr "Menu Social"
+
+#: inc/plugin-enhancements.php:140
+msgid "Menus"
+msgstr "Menus"
+
+#: inc/plugin-enhancements.php:149
+msgid "Comics"
+msgstr "Histórias em quadrinhos"
+
+#: inc/plugin-enhancements.php:158
+msgid "Testimonials"
+msgstr "Depoimentos"
+
+#: inc/plugin-enhancements.php:167
+msgid "Portfolios"
+msgstr "Portfolios"
+
+#: inc/plugin-enhancements.php:176
+msgid "Related Posts"
+msgstr "Posts relacionados"
+
+#: inc/plugin-enhancements.php:185
+msgid "Social Links"
+msgstr "Links Redes Sociais"
+
+#: inc/plugin-enhancements.php:203
+msgid "no specific module needed"
+msgstr "nenhum módulo específica necessária"
+
+#: inc/plugin-enhancements.php:204
+msgid "Custom Content Types module"
+msgstr "Módulo Personalizado"
+
+#: inc/plugin-enhancements.php:277
+#, php-format
+msgid " Please activate %1$s. %2$s"
+msgstr "Por favor, ative%1$s. %2$s"
+
+#: inc/plugin-enhancements.php:279
+msgid "Activate"
+msgstr "Ativar"
+
+#: inc/plugin-enhancements.php:287
+#, php-format
+msgid " Please install %1$s. %2$s"
+msgstr "Por favor instalar%1$s. %2$s"
+
+#: inc/plugin-enhancements.php:289
+msgid "Install"
+msgstr "Instalar"
+
+#: inc/plugin-enhancements.php:314
+#, php-format
+msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
+msgstr "Para usar%1$s, por favor ativar o plugin Jetpack%2$s."
+
+#: inc/template-tags.php:55
+msgid ", "
+msgstr ","
+
+#: inc/template-tags.php:57
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Marcado em %1$s"
+
+#: inc/template-tags.php:66
+#, php-format
+msgid " Edit %s"
+msgstr "Editar %s"
+
+#: inc/class/zillah-palette-picker.php:55
+#: inc/class/zillah-palette-picker.php:64
+msgid "Default"
+msgstr "Padrão"
+
+#: inc/class/zillah_category-selector-control.php:14
+msgid "&mdash; Select &mdash;"
+msgstr "&mdash; Escolha &mdash;"
+
+#: inc/widgets/about-me.php:6
+msgid "About me widget."
+msgstr "Sobre mim widget."
+
+#: inc/widgets/about-me.php:8
+msgid "Zillah: About me"
+msgstr "Zillah: Sobre mim"
+
+#: inc/widgets/about-me.php:49
+msgid "Title:"
+msgstr "Título:"
+
+#: inc/widgets/about-me.php:52
+msgid "Enter the URL for your photo"
+msgstr "Digite a URL para sua foto"
+
+#: inc/widgets/about-me.php:55
+msgid "Add your text:"
+msgstr "Adicione seu texto:"
+
+#: template-parts/content-none.php:16
+msgid "Sorry, nothing found!"
+msgstr "Nenhuma postagem encontrada"
+
+#: template-parts/content-none.php:23
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto para publicar o seu primeiro post? <a href=“%1$s”>Comece aqui</a>."
+
+#: template-parts/content-none.php:27
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Desculpe, mas nada combina com seus termos de pesquisa. Por favor, tente "
+"novamente com algumas palavras-chave diferentes."
+
+#: template-parts/content-none.php:33
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Parece que podemos encontrar o que você está procurando. Talvez a pesquisa "
+"pode ajudar."
+
+#: template-parts/content-page.php:20 template-parts/content-single.php:43
+#: template-parts/content.php:48
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: template-parts/content-page.php:31
+#, php-format
+msgid "Edit %s"
+msgstr "Editar %s"
+
+#: template-parts/content-single.php:38 template-parts/content.php:42
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuar lendo %s <span class=\"meta-nov\">&rarr;</span>"
