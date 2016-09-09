@@ -1810,11 +1810,11 @@ object {
 
 .site-title {
     font-family: 'Lato', Helvetica, sans-serif;
-    font-size: 56px;
-    font-size: 3.5em;
+    font-size: 32px;
+    font-size: 2em;
     line-height: 1;
     color: #373735;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: 900;
     margin: 25px 0;
@@ -2462,6 +2462,12 @@ div.sharedaddy h3.sd-title:before {
 --------------------------------------------------------------*/
 
 @media screen and (min-width: 600px) {
+
+    .site-title {
+        font-size: 56px;
+        font-size: 3.5em;
+        letter-spacing: 10px;
+    }
 
     /*-----------
      * Content
