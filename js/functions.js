@@ -251,3 +251,77 @@
     }
 
 } )(jQuery,window);
+
+
+
+// Slider On Mobile to Posts
+( function($) {
+	var mobileTest;
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		mobileTest = true;
+	} else {
+		mobileTest = false;
+	}
+	console.log(mobileTest);
+
+	// if(mobileTest !== undefined && mobileTest === true) {
+		var postTitles = [];
+		var postImages = [];
+		var postCategories = [];
+		var postPublishedDate = [];
+		var postExcerpts = [];
+		var postPermalinks = [];
+		var postIds = [];
+
+		$('.item-inner-half').each(function () {
+
+			var sliderElement = $(this);
+
+			var title = sliderElement.find('.carousel-caption-title').html();
+			postTitles.push(title);
+
+			var featuredImage = sliderElement.find('img').attr('src');
+			postImages.push(featuredImage);
+
+			var categories = sliderElement.find('.carousel-caption-category').html();
+			postCategories.push(categories);
+
+			var date = sliderElement.find('.carousel-caption-title').data('published');
+			postPublishedDate.push(date);
+
+			var excerpt = sliderElement.find('.carousel-caption-title').data('excerpt');
+			postExcerpts.push(excerpt);
+
+			var permalink = sliderElement.find('.carousel-caption-title a').attr('href');
+			postPermalinks.push(permalink);
+
+			var postId = sliderElement.find('.carousel-caption-title').data('postid');
+			postIds.push(postId);
+
+		});
+	
+		if(postTitles.length !== 0) {
+			var i, l;
+			for (i = 0, l = postTitles.length; i < l; i++) {
+				$('article.blog-post').first().clone().prependTo('#main').attr('id', 'post-' + postIds[i]).attr('class', 'blog-post slider-cloned-post');
+				$('#post-' + postIds[i] + ' time').removeAttr('datetime').html(postPublishedDate[i]);
+				$('#post-' + postIds[i] + ' h2.entry-title').html(postTitles[i]);
+				$('#post-' + postIds[i] + ' .cat-links').html('<span class=\"screen-reader-text\">Categories</span>' + postCategories[i]);
+				$('#post-' + postIds[i] + ' .content-inner-wrap p').html(postExcerpts[i]);
+				$('#post-' + postIds[i] + ' .content-inner-wrap a').attr('href', postPermalinks[i]);
+
+				// if( ( typeof (postImages[i]) !== 'undefined' ) && ( postImages[i] ) ) {
+				// 	var featuredImage = $('#post-' + postIds[i] + ' img');
+					// if ( typeof ( featuredImage ) !== 'undefined' ) {
+						// alert('iii');
+						// featuredImage.attr('src', postImages[i]);
+					// } else {
+						// alert('ssss');
+						// $('#post-' + postIds[i] + ' .entry-content').append('<div class=\"post-thumbnail-wrap\"><a href=\"' + postPermalinks[i] + '\" class=\"post-thumbnail\" rel=\"bookmark\"><img src=\"' + postImages[i] + '\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"' + 'TEST' + '\"></a></div>');
+							// (featuredImage)
+					// }
+				// }
+			}
+		}
+	// }
+}) (jQuery);
