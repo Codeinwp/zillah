@@ -387,7 +387,7 @@ function zillah_slider(){
 
 		$slider_posts = new WP_Query( $args );
 
-		$size = intval( round( $slider_posts->found_posts / 2, 0, PHP_ROUND_HALF_DOWN) );
+		$size = intval( round( $slider_posts->post_count / 2, 0, PHP_ROUND_HALF_DOWN) );
 
 		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . esc_attr( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) . "\" data-ride=\"carousel\">";
 
@@ -395,7 +395,7 @@ function zillah_slider(){
 
 			if( $size > 1 ) {
 				echo "<ol class=\"carousel-indicators\">";
-				for ( $i = 0; $i < $size-1; $i ++ ) {
+				for ( $i = 0; $i < $size; $i ++ ) {
 					echo "<li data-target=\"#home-carousel\" data-slide-to=\"" . esc_attr( $i ) . "\"" . ( $i === 0 ? " class=\"active\"" : "" ) . "></li>";
 				}
 				echo "</ol>";

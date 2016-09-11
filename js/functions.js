@@ -253,75 +253,86 @@
 } )(jQuery,window);
 
 
-
-// Slider On Mobile to Posts
+// Transform Slider Posts to Normal Posts on mobile.
 ( function($) {
-	var mobileTest;
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		mobileTest = true;
-	} else {
-		mobileTest = false;
-	}
-	console.log(mobileTest);
 
-	// if(mobileTest !== undefined && mobileTest === true) {
-		var postTitles = [];
-		var postImages = [];
-		var postCategories = [];
-		var postPublishedDate = [];
-		var postExcerpts = [];
-		var postPermalinks = [];
-		var postIds = [];
+    // Check if mobile by userAgent.
+    var mobileTest;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        mobileTest = true;
+    } else {
+        mobileTest = false;
+    }
 
-		$('.item-inner-half').each(function () {
+    // Save content and atributes from slider.
+    var topCarousel = $('#home-carousel');
 
-			var sliderElement = $(this);
+    if( ( typeof (topCarousel) !== 'undefined' ) && ( mobileTest === true ) ) {
+            var postTitles = [];
+            var postImages = [];
+            var postCategories = [];
+            var postPublishedDate = [];
+            var postExcerpts = [];
+            var postPermalinks = [];
+            var postIds = [];
 
-			var title = sliderElement.find('.carousel-caption-title').html();
-			postTitles.push(title);
+            $('.item-inner-half').each(function () {
 
-			var featuredImage = sliderElement.find('img').attr('src');
-			postImages.push(featuredImage);
+                var sliderElement = $(this);
 
-			var categories = sliderElement.find('.carousel-caption-category').html();
-			postCategories.push(categories);
+                var title = sliderElement.find('.carousel-caption-title').html();
+                postTitles.push(title);
 
-			var date = sliderElement.find('.carousel-caption-title').data('published');
-			postPublishedDate.push(date);
+                var featuredImage = sliderElement.find('img').attr('src');
+                postImages.push(featuredImage);
 
-			var excerpt = sliderElement.find('.carousel-caption-title').data('excerpt');
-			postExcerpts.push(excerpt);
+                var categories = sliderElement.find('.carousel-caption-category').html();
+                postCategories.push(categories);
 
-			var permalink = sliderElement.find('.carousel-caption-title a').attr('href');
-			postPermalinks.push(permalink);
+                var date = sliderElement.find('.carousel-caption-title').data('published');
+                postPublishedDate.push(date);
 
-			var postId = sliderElement.find('.carousel-caption-title').data('postid');
-			postIds.push(postId);
+                var excerpt = sliderElement.find('.carousel-caption-title').data('excerpt');
+                postExcerpts.push(excerpt);
 
-		});
-	
-		if(postTitles.length !== 0) {
-			var i, l;
-			for (i = 0, l = postTitles.length; i < l; i++) {
-				$('article.blog-post').first().clone().prependTo('#main').attr('id', 'post-' + postIds[i]).attr('class', 'blog-post slider-cloned-post');
-				$('#post-' + postIds[i] + ' time').removeAttr('datetime').html(postPublishedDate[i]);
-				$('#post-' + postIds[i] + ' h2.entry-title').html(postTitles[i]);
-				$('#post-' + postIds[i] + ' .cat-links').html('<span class=\"screen-reader-text\">Categories</span>' + postCategories[i]);
-				$('#post-' + postIds[i] + ' .content-inner-wrap p').html(postExcerpts[i]);
-				$('#post-' + postIds[i] + ' .content-inner-wrap a').attr('href', postPermalinks[i]);
+                var permalink = sliderElement.find('.carousel-caption-title a').attr('href');
+                postPermalinks.push(permalink);
 
-				// if( ( typeof (postImages[i]) !== 'undefined' ) && ( postImages[i] ) ) {
-				// 	var featuredImage = $('#post-' + postIds[i] + ' img');
-					// if ( typeof ( featuredImage ) !== 'undefined' ) {
-						// alert('iii');
-						// featuredImage.attr('src', postImages[i]);
-					// } else {
-						// alert('ssss');
-						// $('#post-' + postIds[i] + ' .entry-content').append('<div class=\"post-thumbnail-wrap\"><a href=\"' + postPermalinks[i] + '\" class=\"post-thumbnail\" rel=\"bookmark\"><img src=\"' + postImages[i] + '\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"' + 'TEST' + '\"></a></div>');
-							// (featuredImage)
-					// }
-				// }
-			}
-		}
-	// }
+                var postId = sliderElement.find('.carousel-caption-title').data('postid');
+                postIds.push(postId);
+
+            });
+
+            // Remove the slider.
+            topCarousel.remove();
+
+
+            if (postTitles.length !== 0) {
+                var i, l;
+                for (i = 0, l = postTitles.length; i < l; i++) {
+
+                    // Clone the first post.
+                    $('article.blog-post').first().clone().prependTo('#main').attr('id', 'post-' + postIds[i]).attr('class', 'blog-post slider-cloned-post');
+
+                    // Remove existing image from cloned post to avoid post-format issues.
+                    var existingImage = $('#post-' + postIds[i] + ' .post-thumbnail-wrap');
+                    if (existingImage.length) {
+                        existingImage.remove();
+                    }
+
+                    // Replace content and attributes in cloned posts.
+                    $('#post-' + postIds[i] + ' time').removeAttr('datetime').html(postPublishedDate[i]);
+                    $('#post-' + postIds[i] + ' h2.entry-title').html(postTitles[i]);
+                    $('#post-' + postIds[i] + ' .cat-links').html('<span class=\"screen-reader-text\">Categories</span>' + postCategories[i]);
+                    $('#post-' + postIds[i] + ' .content-inner-wrap p').html(postExcerpts[i]);
+                    $('#post-' + postIds[i] + ' .content-inner-wrap a.post-thumbnail').attr('href', postPermalinks[i]);
+                    $('#post-' + postIds[i] + ' .content-inner-wrap .posted-on a').attr('href', postPermalinks[i]);
+
+                    // Add the post thumbnail
+                    var imagine = '<div class=\"post-thumbnail-wrap\"><a href=\"' + postPermalinks[i] + '\" class=\"post-thumbnail\" rel=\"bookmark\"><img src=\"' + postImages[i] + '\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"' + 'cca' + '\"></a></div>';
+                    $('#post-' + postIds[i] + '.slider-cloned-post .entry-content').prepend(imagine);
+
+                }
+            }
+    }
 }) (jQuery);
