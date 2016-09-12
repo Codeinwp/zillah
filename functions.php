@@ -386,7 +386,7 @@ function zillah_slider(){
 
 		$slider_posts = get_posts( $args );
 
-		$size = intval( round( sizeof( $slider_posts ) / 2, 0, PHP_ROUND_HALF_DOWN) );
+		$size = intval( floor( sizeof( $slider_posts ) / 2 ) );
 
 		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . esc_attr( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) . "\" data-ride=\"carousel\">";
 
