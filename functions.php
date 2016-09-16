@@ -376,11 +376,11 @@ function zillah_slider(){
 		$zillah_home_slider_category = get_theme_mod( 'zillah_home_slider_category', 0 );
 
 		$args = array(
-			'posts_per_page'   => 6,
-			'post_type'        => 'post',
-			'ignore_sticky_posts'    => 'true',
-			'category'         =>  $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
-			'meta_query' => array(
+			'posts_per_page'        => 6,
+			'post_type'             => 'post',
+			'ignore_sticky_posts'   => 'true',
+			'cat'                   =>  $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
+			'meta_query'            => array(
 				array('key' => '_thumbnail_id')
 			)
 		);
