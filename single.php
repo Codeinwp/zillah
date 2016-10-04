@@ -18,9 +18,7 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'single' );
-
-				//the_post_navigation();
-
+				
 				the_post_navigation( array(
 					'prev_text' => '<span class="post-title">'.__( '%title', 'zillah' ).'</span>',
 					'next_text' => '<span class="post-title">'.__( '%title', 'zillah' ).'</span>'
