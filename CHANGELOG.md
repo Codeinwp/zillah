@@ -1,4 +1,12 @@
 
+### 1.0.13 - 04/10/2016
+**Changes:** 
+- Fixed missing microdata author
+- Improve buttons layout
+- Added pt_BR translations files
+- Fixed issue with title not beeing responsive
+- Added the posts from the slider, in the main content, on mobile
+
 ### 1.0.12 - 02/08/2016
 **Changes:** 
 - Fixed issue with html beeing outputed in author description
