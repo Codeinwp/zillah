@@ -79,7 +79,7 @@ class zillah_Theme_Plugin_Enhancements {
 				'slug'    => 'jetpack',
 				'name'    => 'Jetpack by WordPress.com',
 				'message' => sprintf(
-					esc_html__( 'The %1$s is required to use some of this theme&rsquo;s features, including: ', 'zillah' ),
+					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features, including: ', 'zillah' ),
 					'<strong>' . esc_html__( 'Jetpack plugin', 'zillah' ) . '</strong>' ),
 				'modules' => rtrim( $dependency_list, ', ' ) . '.',
 			),
@@ -87,7 +87,7 @@ class zillah_Theme_Plugin_Enhancements {
 				'slug'    => 'pirate-forms',
 				'name'    => 'Free & Simple Contact Form Plugin - PirateForms',
 				'message' => sprintf(
-					esc_html__( 'The %1$s is required to use some of this theme&rsquo;s features.', 'zillah' ),
+					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features.', 'zillah' ),
 					'<strong>' . esc_html__( 'Simple Contact Form Plugin - PirateForms plugin', 'zillah' ) . '</strong>' ),
 			),
 		);
