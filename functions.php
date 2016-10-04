@@ -225,8 +225,19 @@ function zillah_scripts() {
 	wp_enqueue_script( 'zillah-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+
 		wp_enqueue_script( 'comment-reply' );
+
 	}
+
+	if( is_front_page() ) {
+
+		wp_enqueue_script( 'zillah_ajax_slider_posts',  get_template_directory_uri() . '/js/ajax-slider-posts.js', array( 'jquery' ), '1.0', true );
+
+		wp_localize_script( 'zillah_ajax_slider_posts', 'requestpost', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+	}
+
 
 }
 add_action( 'wp_enqueue_scripts', 'zillah_scripts' );
@@ -376,17 +387,18 @@ function zillah_slider(){
 		$zillah_home_slider_category = get_theme_mod( 'zillah_home_slider_category', 0 );
 
 		$args = array(
-			'posts_per_page'   => 6,
-			'post_type'        => 'post',
-			'category'         =>  $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
-			'meta_query' => array(
+			'posts_per_page'        => 6,
+			'post_type'             => 'post',
+			'ignore_sticky_posts'   => 'true',
+			'cat'                   =>  $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
+			'meta_query'            => array(
 				array('key' => '_thumbnail_id')
 			)
 		);
 
-		$slider_posts = get_posts( $args );
+		$slider_posts = new WP_Query( $args );
 
-		$size = intval( round( sizeof( $slider_posts ) / 2, 0, PHP_ROUND_HALF_DOWN) );
+		$size = intval( round( $slider_posts->post_count / 2, 0, PHP_ROUND_HALF_DOWN) );
 
 		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . esc_attr( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) . "\" data-ride=\"carousel\">";
 
@@ -403,8 +415,8 @@ function zillah_slider(){
 			echo "<div class=\"carousel-inner\" role=\"listbox\">";
 
 			$index = 0;
-			foreach ( $slider_posts as $post ) : setup_postdata( $slider_posts );
-
+			while ( $slider_posts->have_posts() ) :
+				$slider_posts->the_post();
 				$index++;
 				?>
 
@@ -417,7 +429,7 @@ function zillah_slider(){
 					<?php the_post_thumbnail( 'zillah-slider-thumbnail' ); ?>
 					<div class="carousel-caption">
 						<div class="carousel-caption-inner">
-							<p class="carousel-caption-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></p>
+							<p class="carousel-caption-title" data-postid="<?php the_ID(); ?>"data-excerpt="<?php echo esc_html( get_the_excerpt() ); ?>" data-published="<?php echo get_the_date(); ?>"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></p>
 							<p class="carousel-caption-category"><?php echo get_the_category_list( ', ' ); ?></p>
 						</div>
 					</div>
@@ -434,7 +446,7 @@ function zillah_slider(){
 				?>
 
 				<?php
-			endforeach;
+			endwhile;
 
 			if( $index%2 !== 0 ):
 				echo "</div>";
@@ -896,4 +908,3 @@ function zillah_post_video() {
 	}
 	
 }
-

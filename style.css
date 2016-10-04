@@ -4,7 +4,7 @@ Theme URI:      http://themeisle.com/themes/zillah/
 Author:         ThemeIsle
 Author URI:     http://themeisle.com
 Description:    Zillah is a free blogging WordPress theme.
-Version:        1.0.12
+Version:        1.0.13
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:    zillah
@@ -518,7 +518,7 @@ input[type="submit"],
 .btn {
     border-bottom: 0px;
     border-radius: 0px;
-    padding: 16px 50px;
+    padding: 12px 40px;
     text-transform: uppercase;
     font-family: 'Cabin', Helvetica, sans-serif;
     letter-spacing: 2.5px;
@@ -1810,11 +1810,11 @@ object {
 
 .site-title {
     font-family: 'Lato', Helvetica, sans-serif;
-    font-size: 56px;
-    font-size: 3.5em;
+    font-size: 32px;
+    font-size: 2em;
     line-height: 1;
     color: #373735;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: 900;
     margin: 25px 0;
@@ -2462,6 +2462,12 @@ div.sharedaddy h3.sd-title:before {
 --------------------------------------------------------------*/
 
 @media screen and (min-width: 600px) {
+
+    .site-title {
+        font-size: 56px;
+        font-size: 3.5em;
+        letter-spacing: 10px;
+    }
 
     /*-----------
      * Content

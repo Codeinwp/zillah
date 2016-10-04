@@ -82,7 +82,7 @@
 					$author_name .= sanitize_text_field( $author_last_name );
 				}
 
-				echo '<div class="author-details-title">';
+				echo '<div class="author-details-title" itemprop="author">';
 					if( $author_name!=='' ) {
 							echo '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( $author_name ) . '">' . esc_html( $author_name ) . '</a>';
 					}
