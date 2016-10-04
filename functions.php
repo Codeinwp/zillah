@@ -761,7 +761,6 @@ function zillah_get_rgb( $color ) {
 
 
 function zillah_custom_excerpt_length( $length ) {
-	global $wp_customize;
 	$zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 
 	if( $zillah_sidebar_show ) {

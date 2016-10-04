@@ -47,7 +47,6 @@ function zillah_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 
-		global $wp_customize;
 		$zillah_tags_show = get_theme_mod( 'zillah_tags_show', false );
 
 		if( $zillah_tags_show === true || is_customize_preview() ) {
