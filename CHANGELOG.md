@@ -1,4 +1,14 @@
 
+### 1.0.14 - 05/10/2016
+**Changes:** 
+- Improved code quality
+- Removed unused code
+- Improved sanitization function for palette colors options
+- Regenerate pot file
+- Update tags in readme.txt
+- Fixed escaping issues
+- Changed required plugins to recommended
+
 ### 1.0.13 - 04/10/2016
 **Changes:** 
 - Fixed missing microdata author
