@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zillah\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-07 12:29+0200\n"
-"PO-Revision-Date: 2016-06-07 12:29+0200\n"
-"Last-Translator: \n"
-"Language-Team: Themeisle <friends@themeisle.com>\n"
+"POT-Creation-Date: 2016-10-04 17:51+0200\n"
+"PO-Revision-Date: 2016-10-04 17:52+0200\n"
+"Last-Translator: rodica <rodica@themeisle.com>\n"
+"Language-Team: ThemeIsle <friends@themeisle.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;esc_attr_x;esc_attr__\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;esc_attr_x;esc_attr__;_x:1,2c;_ex:1,2c\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: inc\n"
@@ -23,44 +23,44 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
-#: comments.php:39
-#: comments.php:61
+#: comments.php:41
+#: comments.php:63
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:42
-#: comments.php:64
+#: comments.php:44
+#: comments.php:66
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:43
-#: comments.php:65
+#: comments.php:45
+#: comments.php:67
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:78
+#: comments.php:80
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:56
+#: footer.php:60
 #, php-format
 msgid "Proudly powered by %1$s"
 msgstr ""
 
-#: footer.php:57
+#: footer.php:61
 msgid "WordPress"
 msgstr ""
 
-#: footer.php:61
+#: footer.php:65
 #, php-format
 msgid "Theme Zillah by %1$s"
 msgstr ""
 
-#: footer.php:62
+#: footer.php:66
 msgid "Themeisle"
 msgstr ""
 
-#: footer.php:66
+#: footer.php:70
 msgid "Back to top"
 msgstr ""
 
@@ -72,40 +72,61 @@ msgstr ""
 msgid "Social Links Menu"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:118
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:116
-#: functions.php:127
+#: functions.php:120
+#: functions.php:131
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:124
+#: functions.php:128
 #, php-format
 msgid "Footer Widget Area %d"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:168
+msgctxt "Cabin font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:174
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:180
+msgctxt "Merriweather font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:219
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:216
+#: functions.php:220
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:296
+#: functions.php:302
 #, php-format
 msgid "Continue Reading %s"
 msgstr ""
 
-#: header.php:25
+#: header.php:28
 msgid "Skip to content"
 msgstr ""
 
-#: search.php:17
+#: search.php:18
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:9
+msgctxt "label"
+msgid "Search for:"
 msgstr ""
 
 #: searchform.php:10
@@ -120,40 +141,57 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: inc/customizer.php:37
+#: single.php:23
+#: single.php:24
+msgid "%title"
+msgstr ""
+
+#: inc/customizer.php:40
+msgid "Hide Site Title"
+msgstr ""
+
+#: inc/customizer.php:48
 msgid "Theme options"
 msgstr ""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:60
 msgid "Show sidebar"
 msgstr ""
 
-#: inc/customizer.php:50
-msgid "If you check this box, the sidebar will appear."
+#: inc/customizer.php:61
+msgid "If you check this box, the sidebar will appear on homepage and archive page."
 msgstr ""
 
-#: inc/customizer.php:64
+#: inc/customizer.php:75
 msgid "Show tags"
 msgstr ""
 
-#: inc/customizer.php:65
+#: inc/customizer.php:76
 msgid "If you check this box, the tags will appear in posts."
 msgstr ""
 
-#: inc/customizer.php:73
+#: inc/customizer.php:89
+msgid "Get 1st image in the post as featured."
+msgstr ""
+
+#: inc/customizer.php:97
 msgid "Featured content slider"
 msgstr ""
 
-#: inc/customizer.php:84
+#: inc/customizer.php:108
 msgid "Show slider"
 msgstr ""
 
-#: inc/customizer.php:85
+#: inc/customizer.php:109
 msgid "If you check this box, the slider area will appear on the homepage."
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:130
 msgid "Change the color scheme"
+msgstr ""
+
+#: inc/customizer.php:241
+msgid "Logo"
 msgstr ""
 
 #: inc/plugin-enhancements.php:82
@@ -255,6 +293,16 @@ msgstr ""
 msgid " Edit %s"
 msgstr ""
 
+#: inc/template-tags.php:152
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:155
+msgctxt "Used before category names."
+msgid "Categories"
+msgstr ""
+
 #: inc/class/zillah-palette-picker.php:55
 #: inc/class/zillah-palette-picker.php:64
 msgid "Default"
@@ -301,19 +349,18 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:20
-#: template-parts/content-single.php:43
-#: template-parts/content.php:48
+#: template-parts/content-page.php:22
+#: template-parts/content-single.php:45
+#: template-parts/content.php:58
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-page.php:31
+#: template-parts/content-page.php:35
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: template-parts/content-single.php:38
-#: template-parts/content.php:42
+#: template-parts/content-single.php:40
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
