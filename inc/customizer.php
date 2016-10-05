@@ -125,15 +125,14 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Colors */
 	require_once ( 'class/zillah-palette-picker.php');
-	$wp_customize->add_setting( 'zillah_palette_picker',array('sanitize_callback' => 'sanitize_text_field'));
+	$wp_customize->add_setting( 'zillah_palette_picker',array(
+		'sanitize_callback' => 'zillah_sanitize_palette'
+	) );
+
 	$wp_customize->add_control( new Zillah_Palette( $wp_customize, 'zillah_palette_picker', array(
 		'label'   => esc_html__('Change the color scheme','zillah'),
 		'section' => 'colors',
 		'priority' => 1,
-		'metro_customizr_image_control' => true,
-		'metro_customizr_icon_control' => true,
-		'metro_customizr_text_control' => false,
-		'metro_customizr_link_control' => true
 	) ) );
 
 	/* Google fonts  */
@@ -282,6 +281,60 @@ function zillah_sanitize_category_dropdown($input){
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function zillah_customize_preview_js() {
-	wp_enqueue_script( 'zillah_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
+	wp_enqueue_script( 'zillah_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.1', true );
 }
 add_action( 'customize_preview_init', 'zillah_customize_preview_js' );
+
+
+function zillah_sanitize_palette($input){
+	if( !empty($input) ) {
+		$json = json_decode($input, true);
+		$palette_name =  array('p1','p2','p3');
+		$red = $green = $blue = '';
+
+		foreach($json as $key => $value){
+			switch ($key){
+				case 'palette_name':
+					if( !in_array( $value, $palette_name, true) ){
+						return '';
+					}
+					break;
+				default:
+					$value = str_replace( ' ', '', $value );
+					sscanf( $value, 'rgb(%d,%d,%d)', $red, $green, $blue );
+					$value = 'rgb('.$red.','.$green.','.$blue.')';
+					if( !zillah_is_color($red) || !zillah_is_color($green) || !zillah_is_color($blue) ){
+						return '';
+					} else {
+						$json[$key] = $value;
+					}
+			}
+		}
+		return json_encode($json);
+	}
+	return '';
+}
+
+function zillah_is_color($value){
+	return $value >= 0 && $value <= 255;
+}
+
+function rgba( $value ) {
+
+	// If empty or an array return transparent
+	if ( empty( $value ) || is_array( $value ) ) {
+		return 'rgba(0,0,0,0)';
+	}
+
+	// If string does not start with 'rgba', then treat as hex
+	// sanitize the hex color and finally convert hex to rgba
+	if ( false === strpos( $value, 'rgba' ) ) {
+		return Kirki_Color::get_rgba( Kirki_Color::sanitize_hex( $value ) );
+	}
+
+	// By now we know the string is formatted as an rgba color so we need to further sanitize it.
+	$value = str_replace( ' ', '', $value );
+	sscanf( $value, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+	return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
+
+}

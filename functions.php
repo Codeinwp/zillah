@@ -506,11 +506,10 @@ function zillah_php_style() {
 		$zillah_c2 = $zillah_picker->color2;
 		$zillah_c3 = $zillah_picker->color3;
 		$zillah_c4 = $zillah_picker->color4;
-		$zillah_c5 = $zillah_picker->color5;
+
 	}
 
-	$header_text_color = get_header_textcolor();
-
+	$header_text_color = get_theme_mod('header_textcolor','7fcaad');
 	$zillah_first_font_one = get_theme_mod( 'zillah_google_fonts_one' );
 	$zillah_first_font_two = get_theme_mod( 'zillah_google_fonts_two' );
 
@@ -523,11 +522,19 @@ function zillah_php_style() {
 
 	$zillah_font_size = get_theme_mod( 'zillah_select_box_font_size', '16px' );
 
-	if( isset( $zillah_c5 ) ) {
-		$rgb = zillah_get_rgb( $zillah_c5 );
+	if( isset( $zillah_c4 ) ) {
+		$rgb = zillah_get_rgb( $zillah_c4 );
 	}
 
 	echo '<style id="zillah_customizr_pallete" type="text/css">';
+
+	if( !empty( $header_text_color ) ) {
+		echo '
+				.site-title a, .site-title a:visited {
+					color: #'. esc_attr( $header_text_color ) . '
+				}
+			';
+	}
 
 	if(!empty($zillah_palette_picker)){
 
@@ -576,7 +583,6 @@ function zillah_php_style() {
 				a.more-link:visited,
 				.reply a,
 				a.post-edit-link, a.post-edit-link:visited,
-				.site-title a, .site-title a:visited,
 				.tags-links a:visited,
 				.logged-in-as a, .logged-in-as a:visited {
 					color: ' . $zillah_c2 . ';
@@ -587,14 +593,14 @@ function zillah_php_style() {
 					}
 				}
 			';
-		}
 
-		if( !empty( $header_text_color ) ) {
-			echo '
+			if( empty( $header_text_color ) ) {
+				echo '
 				.site-title a, .site-title a:visited {
-					color: #' . esc_attr( $header_text_color ) . '
+					color: '. $zillah_c2 . '
 				}
 			';
+			}
 		}
 
 		/* Color 3 */
@@ -651,11 +657,11 @@ function zillah_php_style() {
 			';
 		}
 
-		/* Color 5 */
-		if( !empty( $zillah_c5 ) ) {
+		/* Color 4 */
+		if( !empty( $zillah_c4 ) ) {
 			echo '
 				body {
-					color: ' . $zillah_c5 . '; 
+					color: ' . $zillah_c4 . '; 
 				}
 			';
 		}
