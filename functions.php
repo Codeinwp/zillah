@@ -531,7 +531,7 @@ function zillah_php_style() {
 	if( !empty( $header_text_color ) ) {
 		echo '
 				.site-title a, .site-title a:visited {
-					color: #'. esc_attr( $header_text_color ) . '
+					color: '. esc_attr( $header_text_color ) . '
 				}
 			';
 	}

@@ -43,9 +43,13 @@ class Zillah_Palette extends WP_Customize_Control {
 		<div class="zillah_palette_selected">
 			<div class="zillah_palette_input">
 				<?php
+				if(!empty($json->color5)){
+					$json->color4 = $json->color5;
+					$json->color5 = '';
+				}
 				if(!empty($json)){
 					foreach($json as $key => $value){
-						if($key !== 'palette_name'){
+						if($key !== 'palette_name' && $key !== 'color5'){
 							echo '<span style="background-color:'.$value.'"></span>';
 						}
 					}
