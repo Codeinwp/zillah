@@ -24,12 +24,15 @@ class Zillah_About_Me extends WP_Widget {
 				<img class="about-photo" src="<?php echo esc_url($image_url); ?>" <?php echo ( !empty($title) ? 'alt="'.esc_attr($title).'"' : 'alt=""' ); ?>/>
 			</div>
 			<?php
-		} ?>
+		}
 
-		<div class="textwidget">
-			<?php echo wp_kses_post($text); ?>
-		</div>
-		<?php
+		if(!empty($text)){?>
+			<div class="textwidget">
+				<?php echo wp_kses_post($text); ?>
+			</div>
+			<?php
+		}
+
 		echo $args['after_widget'];
 	}
 
