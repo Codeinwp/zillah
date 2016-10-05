@@ -24,20 +24,27 @@
 	// Header text color.
     wp.customize( 'header_textcolor', function( value ) {
         value.bind( function( to ) {
-            if ( 'blank' === to ) {
-                $( '.site-title a, .site-description' ).css( {
-                    'clip': 'rect(1px, 1px, 1px, 1px)',
-                    'position': 'absolute'
-                } );
+        	var color = '';
+            if ( '' !== to ) {
+            	color = to;
+
             } else {
-                $( '.site-title a, .site-description' ).css( {
-                    'clip': 'auto',
-                    'position': 'relative'
-                } );
-                $( '.site-title a' ).css( {
-                    'color': to
-                } );
-            }
+				var palette = wp.customize._value.zillah_palette_picker();
+				if(typeof palette !==  'undefined' && palette !== ''){
+					var obj = JSON.parse(palette);
+					if(typeof obj.color2 !== 'undefined'){
+						color = obj.color2;
+					}
+				} else {
+					color = '#6ca790';
+				}
+			}
+
+			if(color !== ''){
+				$( '.site-title a' ).css( {
+					'color': color
+				} );
+			}
         } );
     } );
 

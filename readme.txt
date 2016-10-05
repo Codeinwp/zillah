@@ -1,7 +1,7 @@
 === Zillah ===
 
 Contributors: themeisle, codeinwp
-Tags: gray, green, responsive-layout, right-sidebar, one-column, custom-background, custom-colors, featured-image-header, featured-images, sticky-post, photoblogging, translation-ready, threaded-comments, rtl-language-support, theme-options
+Tags: right-sidebar, one-column, custom-background, custom-colors, featured-image-header, featured-images, sticky-post, translation-ready, threaded-comments, rtl-language-support, theme-options
 
 Requires at least: 4.0
 Tested up to: 4.4.2

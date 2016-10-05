@@ -345,7 +345,7 @@ function zillah_brand(){
 		} else {
 			$zillah_logo_old = get_theme_mod( 'zillah_logo_old', false );
 			echo '<a href="'.esc_url( home_url( '/' ) ).'" class="custom-logo-link" rel="home" itemprop="url">';
-				echo '<img width="630" height="290" src="'.$zillah_logo_old.'" class="custom-logo" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" itemprop="logo">';
+				echo '<img width="630" height="290" src="'.esc_url($zillah_logo_old).'" class="custom-logo" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" itemprop="logo">';
 			echo '</a>';
 		}
 
@@ -378,8 +378,6 @@ function zillah_brand(){
 
 function zillah_slider(){
 
-	global $post;
-
 	$zillah_home_slider_show  = get_theme_mod( 'zillah_home_slider_show', false );
 
 	if ( ! is_paged() && is_front_page() && ( $zillah_home_slider_show === true || $zillah_home_slider_show === false && is_customize_preview() ) ):
@@ -398,7 +396,7 @@ function zillah_slider(){
 
 		$slider_posts = new WP_Query( $args );
 
-		$size = intval( round( $slider_posts->post_count / 2, 0, PHP_ROUND_HALF_DOWN) );
+		$size = (int)( round( $slider_posts->post_count / 2, 0, PHP_ROUND_HALF_DOWN) );
 
 		echo "<div id=\"home-carousel\" class=\"carousel slide home-carousel" . esc_attr( $zillah_home_slider_show === false && is_customize_preview() ? " zillah-only-customizer" : "" ) . "\" data-ride=\"carousel\">";
 
@@ -425,11 +423,11 @@ function zillah_slider(){
 				<?php endif; ?>
 
 				<div class="item-inner-half">
-					<a href="<?php esc_url( the_permalink() ); ?>" class="item-inner-link"></a>
+					<a href="<?php the_permalink(); ?>" class="item-inner-link"></a>
 					<?php the_post_thumbnail( 'zillah-slider-thumbnail' ); ?>
 					<div class="carousel-caption">
 						<div class="carousel-caption-inner">
-							<p class="carousel-caption-title" data-postid="<?php the_ID(); ?>"data-excerpt="<?php echo esc_html( get_the_excerpt() ); ?>" data-published="<?php echo get_the_date(); ?>"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></p>
+							<p class="carousel-caption-title" data-postid="<?php the_ID(); ?>" data-excerpt="<?php echo esc_html( get_the_excerpt() ); ?>" data-published="<?php echo get_the_date(); ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 							<p class="carousel-caption-category"><?php echo get_the_category_list( ', ' ); ?></p>
 						</div>
 					</div>
@@ -505,12 +503,11 @@ function zillah_php_style() {
 		$zillah_c1 = $zillah_picker->color1;
 		$zillah_c2 = $zillah_picker->color2;
 		$zillah_c3 = $zillah_picker->color3;
-		$zillah_c4 = $zillah_picker->color4;
 		$zillah_c5 = $zillah_picker->color5;
+
 	}
 
-	$header_text_color = get_header_textcolor();
-
+	$header_text_color = get_theme_mod('header_textcolor','7fcaad');
 	$zillah_first_font_one = get_theme_mod( 'zillah_google_fonts_one' );
 	$zillah_first_font_two = get_theme_mod( 'zillah_google_fonts_two' );
 
@@ -523,11 +520,16 @@ function zillah_php_style() {
 
 	$zillah_font_size = get_theme_mod( 'zillah_select_box_font_size', '16px' );
 
-	if( isset( $zillah_c5 ) ) {
-		$rgb = zillah_get_rgb( $zillah_c5 );
-	}
 
 	echo '<style id="zillah_customizr_pallete" type="text/css">';
+
+	if( !empty( $header_text_color ) ) {
+		echo '
+				.site-title a, .site-title a:visited {
+					color: #'. esc_attr( $header_text_color ) . '
+				}
+			';
+	}
 
 	if(!empty($zillah_palette_picker)){
 
@@ -576,7 +578,6 @@ function zillah_php_style() {
 				a.more-link:visited,
 				.reply a,
 				a.post-edit-link, a.post-edit-link:visited,
-				.site-title a, .site-title a:visited,
 				.tags-links a:visited,
 				.logged-in-as a, .logged-in-as a:visited {
 					color: ' . $zillah_c2 . ';
@@ -587,14 +588,14 @@ function zillah_php_style() {
 					}
 				}
 			';
-		}
 
-		if( !empty( $header_text_color ) ) {
-			echo '
+			if( empty( $header_text_color ) ) {
+				echo '
 				.site-title a, .site-title a:visited {
-					color: #' . esc_attr( $header_text_color ) . '
+					color: '. $zillah_c2 . '
 				}
 			';
+			}
 		}
 
 		/* Color 3 */
@@ -651,7 +652,7 @@ function zillah_php_style() {
 			';
 		}
 
-		/* Color 5 */
+		/* Color 4 */
 		if( !empty( $zillah_c5 ) ) {
 			echo '
 				body {
@@ -749,19 +750,8 @@ function zillah_php_style() {
 	echo '</style>';
 }
 
-/**
- * Converts a HEX value to RGB.
- */
-function zillah_get_rgb( $color ) {
-
-	preg_match_all('!\d+!', $color, $matches);
-
-	return array( 'red' => $matches[0][0], 'green' => $matches[0][1], 'blue' => $matches[0][2] );
-}
-
 
 function zillah_custom_excerpt_length( $length ) {
-	global $wp_customize;
 	$zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 
 	if( $zillah_sidebar_show ) {
@@ -814,12 +804,14 @@ function zillah_post_image() {
 
 /* Get the first image from post */
 function zillah_catch_that_image() {
-	global $post, $posts;
+	global $post;
 	$first_img = false;
 	ob_start();
 	ob_end_clean();
-	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-	$first_img = ! empty( $matches[1][0] ) ? $matches[1][0] : false;
+	preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+	if( !empty( $matches[1][0] ) ){
+		$first_img = $matches[1][0];
+	}
 	return $first_img;
 }
 

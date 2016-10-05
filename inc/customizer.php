@@ -14,7 +14,7 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport             = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport      = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport     = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->default       = '#7fcaad';
+	$wp_customize->get_setting( 'header_textcolor' )->default       = '7fcaad';
 	$wp_customize->get_setting( 'header_image' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'header_image_data' )->transport    = 'postMessage';
 
@@ -100,8 +100,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('zillah_home_slider_show', array(
 		'default' => 0,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-		'transport' => 'postMessage',
+		'sanitize_callback' => 'zillah_sanitize_checkbox'
 	));
 
 	$wp_customize->add_control('zillah_home_slider_show', array(
@@ -125,15 +124,14 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Colors */
 	require_once ( 'class/zillah-palette-picker.php');
-	$wp_customize->add_setting( 'zillah_palette_picker',array('sanitize_callback' => 'sanitize_text_field'));
+	$wp_customize->add_setting( 'zillah_palette_picker',array(
+		'sanitize_callback' => 'zillah_sanitize_palette'
+	) );
+
 	$wp_customize->add_control( new Zillah_Palette( $wp_customize, 'zillah_palette_picker', array(
 		'label'   => esc_html__('Change the color scheme','zillah'),
 		'section' => 'colors',
 		'priority' => 1,
-		'metro_customizr_image_control' => true,
-		'metro_customizr_icon_control' => true,
-		'metro_customizr_text_control' => false,
-		'metro_customizr_link_control' => true
 	) ) );
 
 	/* Google fonts  */
@@ -256,26 +254,6 @@ function zillah_sanitize_checkbox( $input ){
     return ( isset( $input ) && true == $input ? true : false );
 }
 
-function zillah_sanitize_repeater( $input ) {
-    $input_decoded = json_decode( $input, true );
-    if( !empty( $input_decoded ) ) {
-        $icons_array = array('none' => 'none','500px' => 'fa-500px','amazon' => 'fa-amazon','android' => 'fa-android','behance' => 'fa-behance','behance-square' => 'fa-behance-square','bitbucket' => 'fa-bitbucket','bitbucket-square' => 'fa-bitbucket-square','american-express' => 'fa-cc-amex','diners-club' => 'fa-cc-diners-club','discover' => 'fa-cc-discover','jcb' => 'fa-cc-jcb','mastercard' => 'fa-cc-mastercard','paypal' => 'fa-cc-paypal','stripe' => 'fa-cc-stripe','visa' => 'fa-cc-visa','codepen' => 'fa-codepen','css3' => 'fa-css3','delicious' => 'fa-delicious','deviantart' => 'fa-deviantart','digg' => 'fa-digg','dribble' => 'fa-dribbble','dropbox' => 'fa-dropbox','drupal' => 'fa-drupal','facebook' => 'fa-facebook','facebook-official' => 'fa-facebook-official','facebook-square' => 'fa-facebook-square','flickr' => 'fa-flickr','foursquare' => 'fa-foursquare','git' => 'fa-git','git-square' => 'fa-git-square','github' => 'fa-github','github-alt' => 'fa-github-alt','github-square' => 'fa-github-square','google' => 'fa-google','google-plus' => 'fa-google-plus','google-plus-square' => 'fa-google-plus-square','html5' => 'fa-html5','instagram' => 'fa-instagram','joomla' => 'fa-joomla','jsfiddle' => 'fa-jsfiddle','linkedin' => 'fa-linkedin','linkedin-square' => 'fa-linkedin-square','opencart' => 'fa-opencart','openid' => 'fa-openid','paypal' => 'fa-paypal','pinterest' => 'fa-pinterest','pinterest-p' => 'fa-pinterest-p','pinterest-square' => 'fa-pinterest-square','rebel' => 'fa-rebel','reddit' => 'fa-reddit','reddit-square' => 'fa-reddit-square','share' => 'fa-share-alt','share-square' => 'fa-share-alt-square','skype' => 'fa-skype','slack' => 'fa-slack','soundcloud' => 'fa-soundcloud','spotify' => 'fa-spotify','stack-overflow' => 'fa-stack-overflow','steam' => 'fa-steam','steam-square' => 'fa-steam-square','tripadvisor' => 'fa-tripadvisor','tumblr' => 'fa-tumblr','tumblr-square' => 'fa-tumblr-square','twitch' => 'fa-twitch','twitter' => 'fa-twitter','twitter-square' => 'fa-twitter-square','vimeo' => 'fa-vimeo','vimeo-square' => 'fa-vimeo-square','vine' => 'fa-vine','whatsapp' => 'fa-whatsapp','wordpress' => 'fa-wordpress','yahoo' => 'fa-yahoo','youtube' => 'fa-youtube','youtube-play' => 'fa-youtube-play','youtube-squar' => 'fa-youtube-square');
-
-        foreach ($input_decoded as $iconk => $iconv) {
-            foreach ($iconv as $key => $value) {
-                if ( $key == 'icon_value' && !in_array( $value, $icons_array ) ){
-                    $input_decoded [$iconk][$key] = 'none';
-                }
-                if( $key == 'link' ){
-                    $input_decoded [$iconk][$key] = esc_url( $value );;
-                }
-            }
-        }
-        $result =  json_encode( $input_decoded );
-        return $result;
-    }
-    return $input;
-}
 
 function zillah_sanitize_select( $input, $setting ) {
 
@@ -302,6 +280,40 @@ function zillah_sanitize_category_dropdown($input){
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function zillah_customize_preview_js() {
-	wp_enqueue_script( 'zillah_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
+	wp_enqueue_script( 'zillah_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.1', true );
 }
 add_action( 'customize_preview_init', 'zillah_customize_preview_js' );
+
+
+function zillah_sanitize_palette($input){
+	if( !empty($input) ) {
+		$json = json_decode($input, true);
+		$palette_name =  array('p1','p2','p3');
+		$red = $green = $blue = '';
+
+		foreach($json as $key => $value){
+			switch ($key){
+				case 'palette_name':
+					if( !in_array( $value, $palette_name, true) ){
+						return '';
+					}
+					break;
+				default:
+					$value = str_replace( ' ', '', $value );
+					sscanf( $value, 'rgb(%d,%d,%d)', $red, $green, $blue );
+					$value = 'rgb('.$red.','.$green.','.$blue.')';
+					if( !zillah_is_color($red) || !zillah_is_color($green) || !zillah_is_color($blue) ){
+						return '';
+					} else {
+						$json[$key] = $value;
+					}
+			}
+		}
+		return json_encode($json);
+	}
+	return '';
+}
+
+function zillah_is_color($value){
+	return $value >= 0 && $value <= 255;
+}

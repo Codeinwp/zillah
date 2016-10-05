@@ -15,17 +15,24 @@ class Zillah_About_Me extends WP_Widget {
 		$text 		= apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
 		echo $args['before_widget'];
 
-		if ( $title ) {
-			echo $args['before_title'] . $title . $args['after_title'];
+		if ( !empty($title) ) {
+			echo $args['before_title'] . wp_kses_post($title) . $args['after_title'];
 		}
 
-		if ( $image_url ) {
-			echo '<div class="photo-wrapper"><img class="about-photo" src="' . $image_url . '" '. ( $title ? 'alt="'.$title.'"' : 'alt=""' ) . '/></div>';
+		if ( !empty($image_url) ) { ?>
+			<div class="photo-wrapper">
+				<img class="about-photo" src="<?php echo esc_url($image_url); ?>" <?php echo ( !empty($title) ? 'alt="'.esc_attr($title).'"' : 'alt=""' ); ?>/>
+			</div>
+			<?php
 		}
 
-		?>
-		<div class="textwidget"><?php echo !empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?></div>
-		<?php
+		if(!empty($text)){?>
+			<div class="textwidget">
+				<?php echo wp_kses_post($text); ?>
+			</div>
+			<?php
+		}
+
 		echo $args['after_widget'];
 	}
 
@@ -46,14 +53,15 @@ class Zillah_About_Me extends WP_Widget {
 		$text 		= esc_textarea($instance['text']);
 		$image_url  = esc_url($instance['image_url']);
 		?>
-		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'zillah'); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'zillah'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo wp_kses_post($title); ?>" /></p>
 
 		<p><label for="<?php echo $this->get_field_id('image_url'); ?>"><?php _e('Enter the URL for your photo', 'zillah'); ?></label>
 			<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'image_url' ); ?>" name="<?php echo $this->get_field_name( 'image_url' ); ?>" type="text" value="<?php echo esc_url($image_url); ?>" size="3" /></p>
 
 		<p><label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Add your text:', 'zillah'); ?></label>
-			<textarea class="widefat" rows="10" cols="16" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+			<textarea class="widefat" rows="10" cols="16" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo wp_kses_post($text); ?></textarea>
 		<?php
 	}
 }
