@@ -19,9 +19,11 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/content', 'single' );
 
+				//the_post_navigation();
+
 				the_post_navigation( array(
-					'prev_text' => '<span class="post-title">'.__( '%title', 'zillah' ).'</span>',
-					'next_text' => '<span class="post-title">'.__( '%title', 'zillah' ).'</span>'
+					'prev_text' => _x( '<span class="post-title">%title</span>', 'previous post', 'zillah' ),
+					'next_text' => _x( '<span class="post-title">%title</span>', 'next post', 'zillah' ),
 				) );
 
 				// If comments are open or we have at least one comment, load up the comment template.
