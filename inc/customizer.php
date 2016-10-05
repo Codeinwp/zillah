@@ -318,23 +318,3 @@ function zillah_sanitize_palette($input){
 function zillah_is_color($value){
 	return $value >= 0 && $value <= 255;
 }
-
-function rgba( $value ) {
-
-	// If empty or an array return transparent
-	if ( empty( $value ) || is_array( $value ) ) {
-		return 'rgba(0,0,0,0)';
-	}
-
-	// If string does not start with 'rgba', then treat as hex
-	// sanitize the hex color and finally convert hex to rgba
-	if ( false === strpos( $value, 'rgba' ) ) {
-		return Kirki_Color::get_rgba( Kirki_Color::sanitize_hex( $value ) );
-	}
-
-	// By now we know the string is formatted as an rgba color so we need to further sanitize it.
-	$value = str_replace( ' ', '', $value );
-	sscanf( $value, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
-	return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
-
-}
