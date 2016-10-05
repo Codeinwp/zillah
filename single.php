@@ -22,8 +22,8 @@ get_header(); ?>
 				//the_post_navigation();
 
 				the_post_navigation( array(
-					'prev_text' => _x( '<span class="post-title">%title</span>', 'zillah' ),
-					'next_text' => _x( '<span class="post-title">%title</span>', 'zillah' ),
+					'prev_text' => _x( '<span class="post-title">%title</span>', 'previous post', 'zillah' ),
+					'next_text' => _x( '<span class="post-title">%title</span>', 'next post', 'zillah' ),
 				) );
 
 				// If comments are open or we have at least one comment, load up the comment template.
