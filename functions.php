@@ -503,7 +503,7 @@ function zillah_php_style() {
 		$zillah_c1 = $zillah_picker->color1;
 		$zillah_c2 = $zillah_picker->color2;
 		$zillah_c3 = $zillah_picker->color3;
-		$zillah_c4 = $zillah_picker->color4;
+		$zillah_c5 = $zillah_picker->color5;
 
 	}
 
@@ -526,7 +526,7 @@ function zillah_php_style() {
 	if( !empty( $header_text_color ) ) {
 		echo '
 				.site-title a, .site-title a:visited {
-					color: '. esc_attr( $header_text_color ) . '
+					color: #'. esc_attr( $header_text_color ) . '
 				}
 			';
 	}
@@ -653,10 +653,10 @@ function zillah_php_style() {
 		}
 
 		/* Color 4 */
-		if( !empty( $zillah_c4 ) ) {
+		if( !empty( $zillah_c5 ) ) {
 			echo '
 				body {
-					color: ' . $zillah_c4 . '; 
+					color: ' . $zillah_c5 . '; 
 				}
 			';
 		}

@@ -184,7 +184,7 @@ button.zillah_general_control_remove_field:hover{
 }
 
 .zillah_palette_picker li span {
-	width: 53px;
+	width: 43px;
 	height: 40px;
 	display: inline-block;
 }
@@ -205,7 +205,7 @@ button.zillah_general_control_remove_field:hover{
 	display: block;
 	height: 40px;
 	float: left;
-	width: 50px;
+	width: 40px;
 }
 
 .zillah_dropdown {

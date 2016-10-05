@@ -14,7 +14,7 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport             = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport      = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport     = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->default       = '#7fcaad';
+	$wp_customize->get_setting( 'header_textcolor' )->default       = '7fcaad';
 	$wp_customize->get_setting( 'header_image' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'header_image_data' )->transport    = 'postMessage';
 

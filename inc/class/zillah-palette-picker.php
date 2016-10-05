@@ -19,21 +19,24 @@ class Zillah_Palette extends WP_Customize_Control {
 				'color1'=>'#be624d',
 				'color2'=>'#f5876e',
 				'color3'=>'#be624d',
-				'color4'=>'#6f6e6b'
+				'color4'=>'#f6f6f6',
+				'color5'=>'#6f6e6b'
 			),
 			array(
 				'palette_name'=>'p1',
 				'color1'=>'#b0606d',
 				'color2'=>'#f59f4c',
 				'color3'=>'#ffc154',
-				'color4'=>'#6f6e6b'
+				'color4'=>'#fafafa',
+				'color5'=>'#6f6e6b'
 			),
 			array(
 				'palette_name'=>'p1',
 				'color1'=>'#333331',
 				'color2'=>'#c2a26f',
 				'color3'=>'#E2C9A1',
-				'color4'=>'#6f6e6b'
+				'color4'=>'#f6f6f6',
+				'color5'=>'#6f6e6b'
 			),
 		);
 
@@ -47,10 +50,6 @@ class Zillah_Palette extends WP_Customize_Control {
 		<div class="zillah_palette_selected">
 			<div class="zillah_palette_input">
 				<?php
-				if(!empty($json->color5)){
-					$json->color4 = $json->color5;
-					$json->color5 = '';
-				}
 				if(!empty($json)){
 					foreach($json as $key => $value){
 						if($key !== 'palette_name' && $key !== 'color5'){
@@ -70,12 +69,13 @@ class Zillah_Palette extends WP_Customize_Control {
 				esc_html_e('Default','zillah'); ?>
 			</li>
 			<?php
-			foreach($zillah_pallete as $pallete){
-				echo '<li class="'.$pallete['palette_name'].'">';
-				echo '<span style="background-color:'.$pallete['color1'].'"></span>';
-				echo '<span style="background-color:'.$pallete['color2'].'"></span>';
-				echo '<span style="background-color:'.$pallete['color3'].'"></span>';
-				echo '<span style="background-color:'.$pallete['color4'].'"></span>';
+			foreach($zillah_pallete as $palette){
+				echo '<li class="'.$palette['palette_name'].'">';
+				echo '<span style="background-color:'.$palette['color1'].'"></span>';
+				echo '<span style="background-color:'.$palette['color2'].'"></span>';
+				echo '<span style="background-color:'.$palette['color3'].'"></span>';
+				echo '<span style="background-color:'.$palette['color4'].'"></span>';
+				echo '<span style="background-color:'.$palette['color5'].'"></span>';
 				echo '</li>';
 			} ?>
 		</ul>
