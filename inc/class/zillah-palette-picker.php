@@ -36,10 +36,14 @@ class Zillah_Palette extends WP_Customize_Control {
 				'color4'=>'#6f6e6b'
 			),
 		);
-		?>
-		<label>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-		</label>
+
+		if(!empty($this->label)) { ?>
+			<label>
+				<span class="customize-control-title"><?php echo $this->label; ?></span>
+			</label>
+			<?php
+		} ?>
+
 		<div class="zillah_palette_selected">
 			<div class="zillah_palette_input">
 				<?php
@@ -50,7 +54,7 @@ class Zillah_Palette extends WP_Customize_Control {
 				if(!empty($json)){
 					foreach($json as $key => $value){
 						if($key !== 'palette_name' && $key !== 'color5'){
-							echo '<span style="background-color:'.$value.'"></span>';
+							echo '<span style="background-color:'.esc_attr($value).'"></span>';
 						}
 					}
 				} else {
@@ -78,6 +82,4 @@ class Zillah_Palette extends WP_Customize_Control {
 		<input class='zillah_palette_colector' type='hidden' value='' <?php $this->link(); ?> />
 		<?php
 	}
-}
-
-?>
+} ?>

@@ -32,7 +32,7 @@ if (class_exists('WP_Customize_Control')) {
 			}
 			printf(
 				'<div class="ti-google-fonts"><span class="customize-control-title">%s</span><div class="ti-google-fonts-wrap">%s</div></div>',
-				esc_html($this->label),
+				$this->label,
 				( !empty($ti_google_fonts) ? $ti_google_fonts : __('No fonts to show', 'zillah') )
 			);
 
