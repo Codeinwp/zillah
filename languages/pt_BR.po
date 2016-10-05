@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zillah\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-04 17:51+0200\n"
-"PO-Revision-Date: 2016-10-04 17:53+0200\n"
+"POT-Creation-Date: 2016-10-05 18:01+0200\n"
+"PO-Revision-Date: 2016-10-05 18:02+0200\n"
 "Last-Translator: rodica <rodica@themeisle.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;esc_attr_x;esc_attr__;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_x;_x:1,2c;_ex:1,2c\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: inc\n"
@@ -142,11 +142,15 @@ msgstr "Pesquisa"
 msgid "Search"
 msgstr "Pesquisar"
 
-#: single.php:23
-#: single.php:24
-#, fuzzy
-msgid "%title"
-msgstr "Título:"
+#: single.php:25
+msgctxt "previous post"
+msgid "<span class=\"post-title\">%title</span>"
+msgstr ""
+
+#: single.php:26
+msgctxt "next post"
+msgid "<span class=\"post-title\">%title</span>"
+msgstr ""
 
 #: inc/customizer.php:40
 msgid "Hide Site Title"
@@ -189,18 +193,18 @@ msgstr "Mostrar Slider"
 msgid "If you check this box, the slider area will appear on the homepage."
 msgstr "Marque esta caixa para ativar a opção inscreva-se na página inicial."
 
-#: inc/customizer.php:130
+#: inc/customizer.php:133
 msgid "Change the color scheme"
 msgstr "Alterar o esquema de cores"
 
-#: inc/customizer.php:241
+#: inc/customizer.php:240
 #, fuzzy
 msgid "Logo"
 msgstr "Logo do Site"
 
 #: inc/plugin-enhancements.php:82
-#, php-format
-msgid "The %1$s is required to use some of this theme&rsquo;s features, including: "
+#, fuzzy, php-format
+msgid "The %1$s is recommended to use some of this theme&rsquo;s features, including: "
 msgstr "O %1$s é necessário para usar alguns dos recursos do presente tema, incluindo:"
 
 #: inc/plugin-enhancements.php:83
@@ -208,8 +212,8 @@ msgid "Jetpack plugin"
 msgstr "Plugin jetpack"
 
 #: inc/plugin-enhancements.php:90
-#, php-format
-msgid "The %1$s is required to use some of this theme&rsquo;s features."
+#, fuzzy, php-format
+msgid "The %1$s is recommended to use some of this theme&rsquo;s features."
 msgstr "O %1$s é necessário para usar alguns dos recursos deste tema."
 
 #: inc/plugin-enhancements.php:91
@@ -283,33 +287,37 @@ msgstr "Instalar"
 msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
 msgstr "Para usar%1$s, por favor ativar o plugin Jetpack%2$s."
 
-#: inc/template-tags.php:55
+#: inc/template-tags.php:54
 msgid ", "
 msgstr ","
 
-#: inc/template-tags.php:57
+#: inc/template-tags.php:56
 #, php-format
 msgid "Tagged %1$s"
 msgstr "Marcado em %1$s"
 
-#: inc/template-tags.php:66
+#: inc/template-tags.php:65
 #, php-format
 msgid " Edit %s"
 msgstr "Editar %s"
 
-#: inc/template-tags.php:152
+#: inc/template-tags.php:151
 #, fuzzy
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ","
 
-#: inc/template-tags.php:155
+#: inc/template-tags.php:154
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr ""
 
-#: inc/class/zillah-palette-picker.php:55
-#: inc/class/zillah-palette-picker.php:64
+#: inc/class/zillah-google-fonts.php:36
+msgid "No fonts to show"
+msgstr ""
+
+#: inc/class/zillah-palette-picker.php:60
+#: inc/class/zillah-palette-picker.php:69
 msgid "Default"
 msgstr "Padrão"
 
@@ -325,15 +333,15 @@ msgstr "Sobre mim widget."
 msgid "Zillah: About me"
 msgstr "Zillah: Sobre mim"
 
-#: inc/widgets/about-me.php:49
+#: inc/widgets/about-me.php:57
 msgid "Title:"
 msgstr "Título:"
 
-#: inc/widgets/about-me.php:52
+#: inc/widgets/about-me.php:60
 msgid "Enter the URL for your photo"
 msgstr "Digite a URL para sua foto"
 
-#: inc/widgets/about-me.php:55
+#: inc/widgets/about-me.php:63
 msgid "Add your text:"
 msgstr "Adicione seu texto:"
 
@@ -369,6 +377,10 @@ msgstr "Editar %s"
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continuar lendo %s <span class=\"meta-nov\">&rarr;</span>"
+
+#, fuzzy
+#~ msgid "%title"
+#~ msgstr "Título:"
 
 #~ msgid "If you check this box, the sidebar will appear."
 #~ msgstr "Se você marcar essa caixa, a barra lateral irá aparecer."
