@@ -1627,6 +1627,18 @@ p.dropcap:first-letter {
     text-align: center;
 }
 
+.content-area-with-sidebar .content-inner-wrap.content-inner-wrap-blog-alt {
+    padding: 0;
+}
+
+.single-post-alt .post-thumbnail-wrap {
+    margin-bottom: 0;
+}
+
+.single-post-alt .entry-content {
+    margin-top: 50px;
+}
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -3413,6 +3425,14 @@ div.sharedaddy h3.sd-title:before {
 
     .blog-post-alt:nth-child(2n+1) {
         clear: none;
+    }
+
+    .blog-post-alt.blog-post-alt-sidebar:nth-child(3n+1) {
+        clear: none;
+    }
+
+    .blog-post-alt.blog-post-alt-sidebar:nth-child(2n+1) {
+        clear: left;
     }
 
 }
