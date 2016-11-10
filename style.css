@@ -1531,7 +1531,7 @@ p.dropcap:first-letter {
     font-size: 1em;
     text-transform: none;
     letter-spacing: 1px;
-    padding: 23px 0;
+    padding: 23px 0 0;
     width: 100%;
     display: block;
 }
@@ -1560,6 +1560,7 @@ p.dropcap:first-letter {
 
 .blog-post-alt .post-thumbnail-wrap {
     margin-bottom: 0;
+    padding-top: 23px;
 }
 
 .blog-post-alt .content-inner-wrap {
