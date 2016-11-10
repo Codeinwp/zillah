@@ -157,3 +157,19 @@ if ( ! function_exists( 'zillah_category' ) ) :
 		}
 	}
 endif;
+
+
+if ( ! function_exists( 'zillah_comments_number' ) ) :
+	/**
+	 * Prints comments number.
+	 */
+	function zillah_comments_number() {
+
+		echo '<span class="alt-comments-number">';
+		printf(
+			_nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'zillah' ),
+			number_format_i18n( get_comments_number() )
+		);
+		echo '</span>';
+	}
+endif;

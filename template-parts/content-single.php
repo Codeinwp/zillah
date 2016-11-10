@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-content-wrap' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'article entry-content-wrap' ); ?>>
 
 	<header class="entry-header">
 		<div class="content-inner-wrap">

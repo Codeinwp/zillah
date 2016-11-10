@@ -49,6 +49,21 @@ function zillah_customize_register( $wp_customize ) {
 		'priority'	=> 20,
 	) );
 
+	/* Alternative layout */
+	$wp_customize->add_setting('zillah_alt_layout', array(
+		'default' => false,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_alt_layout', array(
+		'label' => esc_html__('Alternative layout', 'zillah'),
+		'description' => esc_html__('If you check this box, the alternative layout will be used on blog and single page.', 'zillah'),
+		'section' => 'zillah_home_theme_option_section',
+		'priority' => 1,
+		'type'	=> 'checkbox',
+	));
+
 	/* Show sidebar */
 	$wp_customize->add_setting('zillah_sidebar_show', array(
 		'default' => false,

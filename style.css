@@ -1430,7 +1430,7 @@ p.dropcap:first-letter {
 }
 
 .blog-post,
-.site-main > article {
+.site-main > article.article {
     border: 0px;
     padding: 45px 0 45px 0;
     margin-bottom: 60px;
@@ -1508,6 +1508,108 @@ p.dropcap:first-letter {
 
 .post-edit-link {
     font-style: italic;
+}
+
+/*--------------------------------------------------------------
+## Alternative layout
+--------------------------------------------------------------*/
+.blog-post-alt-inner {
+    background: #FFF;
+}
+
+.blog-post-alt .content-inner-wrap {
+    padding: 0;
+}
+
+.blog-post-alt .posted-on {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 15px;
+    font-size: 1em;
+    text-transform: none;
+    letter-spacing: 1px;
+    padding: 23px 0;
+    width: 100%;
+    display: block;
+}
+
+.blog-post-alt .entry-title-blog a {
+    font-family: 'Cabin', sans-serif;
+    font-size: 18px;
+    font-size: 0.75em;
+    color: #575756;
+    margin: 0;
+}
+
+.blog-post-alt .entry-title-blog {
+    padding: 20px 0;
+}
+
+.blog-post-alt .entry-header {
+    padding-bottom: 0;
+}
+
+.blog-post-alt .post-thumbnail-wrap {
+    margin-bottom: 0;
+}
+
+.blog-post-alt .content-inner-wrap {
+    padding: 0;
+}
+
+.blog-post-alt .entry-content .content-inner-wrap {
+    border-top: 1px solid #f6f6f6;
+    padding: 15px 0;
+    float: left;
+    width: 100%;
+}
+
+.blog-post-alt .content-inner-wrap > .more-link {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.blog-post-alt .meta-nav {
+    display: none;
+}
+
+.container-alt-layout {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.single-post-alt {
+    font-family: 'Merriweather', Georgia, serif;
+    letter-spacing: 1px;
+}
+
+.single-post-alt .entry-header .cat-links {
+    font-weight: 600;
+}
+
+.single-post-alt .content-inner-wrap-alt {
+    margin-bottom: -60px;
+}
+
+.alt-comments-number {
+    background: #7fcaad;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFF;
+    font-family: 'Cabin';
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 12px 35px;
+    display: inline-block;
+    position: relative;
+    z-index: 9;
+    margin-top: 30px;
+}
+
+.single-post-alt .entry-header {
+    padding-bottom: 35px;
 }
 
 /*--------------------------------------------------------------
@@ -2801,6 +2903,22 @@ div.sharedaddy h3.sd-title:before {
     -----------*/
     .comment-list .children {
         padding: 0 0 0 30px;
+    }
+
+    /*-----------
+    * Alternative layout
+    -----------*/
+    .single-post-alt .entry-title {
+        font-size: 21px;
+        font-size: 1.3em;
+    }
+
+    .entry-header .posted-on {
+        padding-bottom: 15px;
+    }
+
+    .single-post-alt .entry-header .cat-links {
+        padding-top: 15px;
     }
 
 }
