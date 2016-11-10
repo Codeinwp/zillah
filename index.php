@@ -45,7 +45,6 @@ get_header(); ?>
 					 */
 
 					$alternative = $zillah_alternative_layout == false ? $zillah_alternative_layout : '-alternative';
-
 					get_template_part( 'template-parts/content' . $alternative , get_post_format() );
 
 				endwhile;

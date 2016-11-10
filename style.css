@@ -1515,6 +1515,10 @@ p.dropcap:first-letter {
 --------------------------------------------------------------*/
 .blog-post-alt-inner {
     background: #FFF;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .blog-post-alt .content-inner-wrap {
@@ -1536,8 +1540,14 @@ p.dropcap:first-letter {
     font-family: 'Cabin', sans-serif;
     font-size: 18px;
     font-size: 0.75em;
-    color: #575756;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    letter-spacing: 1.5px;
+    display: block;
+    padding: 0 10px;
 }
 
 .blog-post-alt .entry-title-blog {
@@ -1610,6 +1620,11 @@ p.dropcap:first-letter {
 
 .single-post-alt .entry-header {
     padding-bottom: 35px;
+}
+
+.blog-post-alt .page-links {
+    margin: 0;
+    text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -2913,7 +2928,7 @@ div.sharedaddy h3.sd-title:before {
         font-size: 1.3em;
     }
 
-    .entry-header .posted-on {
+    .single-post-alt .entry-header .posted-on {
         padding-bottom: 15px;
     }
 
@@ -3373,12 +3388,31 @@ div.sharedaddy h3.sd-title:before {
         border: 5px solid #fff;
     }
 
+    /* Alternative layout */
+    .blog-post-alt:nth-child(2n+1) {
+        clear: left;
+    }
+
+    .blog-post-alt ~ .posts-navigation {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
 }
 
 @media screen and (min-width: 1200px) {
 
     .container {
         width: 970px;
+    }
+
+    /* Alternative layout */
+    .blog-post-alt:nth-child(3n+1) {
+        clear: left;
+    }
+
+    .blog-post-alt:nth-child(2n+1) {
+        clear: none;
     }
 
 }
