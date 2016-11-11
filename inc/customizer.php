@@ -79,6 +79,21 @@ function zillah_customize_register( $wp_customize ) {
 		'type'	=> 'checkbox',
 	));
 
+	/* Show sidebar on mobile */
+	$wp_customize->add_setting('zillah_sidebar_show_mobile', array(
+		'default' => false,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control('zillah_sidebar_show_mobile', array(
+		'label' => esc_html__('Show sidebar on mobile', 'zillah'),
+		'description' => esc_html__('If you check this box, the sidebar will appear on homepage and archive page on mobile version.', 'zillah'),
+		'section' => 'zillah_home_theme_option_section',
+		'priority' => 1,
+		'type'	=> 'checkbox',
+	));
+
 	/* Show Tags */
 	$wp_customize->add_setting('zillah_tags_show', array(
 		'default' => false,

@@ -1146,6 +1146,263 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+    margin: 0 0 1.5em;
+}
+
+.site-footer .widget {
+    padding-bottom: 50px;
+}
+
+.widget select {
+    max-width: 100%;
+}
+
+.widget-area,
+.widget-area..sidebar-mobile-title {
+    max-width: 300px;
+    letter-spacing: 0.25px;
+}
+
+.widget-area .widget:last-child {
+    border-bottom: 0;
+}
+
+.widget-title {
+    color: #628d7c;
+    font-size: 14px;
+    font-size: 1em;
+    margin: 0 0 20px;
+    line-height: 21px;
+}
+
+.widget ul > li {
+    list-style: none;
+    padding: 10px 0 0;
+    color: #aaaaaa;
+}
+
+.widget ul li:first-child {
+    padding-top: 0;
+}
+
+.widget ul ul li:first-child {
+    padding: 10px 0 0;
+}
+
+.widget_categories li a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Cabin', Helvetica, sans-serif;
+}
+
+.widget ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget ul ul {
+    padding-left: 15px;
+}
+
+.widget input[type="text"],
+.widget input[type="email"],
+.widget input[type="url"],
+.widget input[type="password"],
+.widget input[type="search"],
+.widget input[type="number"],
+.widget input[type="tel"],
+.widget input[type="range"],
+.widget input[type="date"],
+.widget input[type="month"],
+.widget input[type="week"],
+.widget input[type="time"],
+.widget input[type="datetime"],
+.widget input[type="datetime-local"],
+.widget input[type="color"] ,
+.widget select,
+.widget textarea {
+    width: 100%;
+}
+
+.widget-area .widget {
+    padding: 30px 0 30px 30px;
+    margin: 0px;
+    margin-bottom: 5px;
+    width: 300px;
+}
+
+.widget_recent_entries .post-date {
+    display: block;
+    font-family: 'Cabin', Helvetica, sans-serif;
+    font-size: 13px;
+    font-size: 0.8125em;
+    line-height: 13px;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.widget_recent_entries li {
+    padding: 10px 0px;
+}
+
+.widget_archive li {
+    color: #aaaaaa;
+}
+
+/* Calendar Widget */
+.widget_calendar table,
+.widget_calendar td {
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.widget_calendar caption {
+    font-size: 14px;
+    font-size: 0.875em;
+    margin: 0;
+}
+
+.widget_calendar th,
+.widget_calendar td {
+    padding: 0;
+    text-align: center;
+}
+
+.widget_calendar a {
+    display: block;
+}
+
+.widget_calendar a:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.widget_calendar tbody td {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.site-footer .widget_calendar tbody td {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.widget_calendar tbody .pad, .site-footer .widget_calendar tbody .pad {
+    background-color: transparent;
+}
+
+.widget_search label {
+    width: 100%;
+}
+
+.widget_search form {
+    position: relative;
+}
+
+.widget_search label:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #aaaaaa;
+    position: absolute;
+    font-size: 18px;
+    font-size: 1.125em;
+    padding-right: 20px;
+    z-index: 5;
+    right: 0px;
+    top: 0px;
+    height: 47px;
+    width: 35px;
+    line-height: 40px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.widget_search input[type="submit"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 47px;
+    border: none;
+    box-shadow: none;
+    background: none;
+    z-index: 9;
+    text-indent: -99999900px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.widget-area.widget-area-mobile {
+    display: block;
+}
+
+.widget-area.widget-area-mobile {
+    width: 100%;
+    max-width: 100%;
+}
+
+.widget-area.widget-area-mobile .widget {
+    width: 100%;
+}
+
+.widget-area.widget-area-mobile .widget {
+    padding: 30px 0 30px;
+}
+
+.sidebar-mobile-title {
+    width: 100%;
+    background: #fff;
+    display: block;
+    padding: 15px 45px;
+}
+
+.sidebar-mobile-title > span {
+    line-height: 20px;
+    display: inline-block;
+}
+
+.sidebar-mobile-title:before {
+    content: "\f107";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #aaaaaa;
+    font-size: 18px;
+    font-size: 1.125em;
+    text-align: left;
+    line-height: 24px;
+}
+
+.widget-area-mobile-open .sidebar-mobile-title:before {
+    content: "\f106";
+}
+
+.sidebar-inner-wrap {
+    height: 1px;
+    overflow: hidden;
+}
+
+.widget-area-mobile-open .sidebar-inner-wrap {
+    height: auto;
+}
+
+.widget-area.widget-area-mobile .widget {
+    padding: 30px 15px;
+}
+
+/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 .content-wrap {
@@ -2672,200 +2929,6 @@ div.sharedaddy h3.sd-title:before {
         text-align: left;
     }
 
-    /*--------------------------------------------------------------
-    # Widgets
-    --------------------------------------------------------------*/
-    .widget {
-        margin: 0 0 1.5em;
-    }
-
-    .site-footer .widget {
-        padding-bottom: 50px;
-    }
-
-    .widget select {
-        max-width: 100%;
-    }
-
-    .widget-area {
-        max-width: 300px;
-        letter-spacing: 0.25px;
-    }
-
-    .widget-area .widget:last-child {
-        border-bottom: 0;
-    }
-
-    .widget-title {
-        color: #628d7c;
-        font-size: 14px;
-        font-size: 1em;
-        margin: 0 0 20px;
-        line-height: 21px;
-    }
-
-    .widget ul > li {
-        list-style: none;
-        padding: 10px 0 0;
-        color: #aaaaaa;
-    }
-
-    .widget ul li:first-child {
-        padding-top: 0;
-    }
-
-    .widget ul ul li:first-child {
-        padding: 10px 0 0;
-    }
-
-    .widget_categories li a {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-family: 'Cabin', Helvetica, sans-serif;
-    }
-
-    .widget ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .widget ul ul {
-        padding-left: 15px;
-    }
-
-    .widget input[type="text"],
-    .widget input[type="email"],
-    .widget input[type="url"],
-    .widget input[type="password"],
-    .widget input[type="search"],
-    .widget input[type="number"],
-    .widget input[type="tel"],
-    .widget input[type="range"],
-    .widget input[type="date"],
-    .widget input[type="month"],
-    .widget input[type="week"],
-    .widget input[type="time"],
-    .widget input[type="datetime"],
-    .widget input[type="datetime-local"],
-    .widget input[type="color"] ,
-    .widget select,
-    .widget textarea {
-        width: 100%;
-    }
-
-    .widget-area .widget {
-        padding: 30px 0 30px 30px;
-        margin: 0px;
-        margin-bottom: 5px;
-        width: 300px;
-
-    }
-
-    .widget_recent_entries .post-date {
-        display: block;
-        font-family: 'Cabin', Helvetica, sans-serif;
-        font-size: 13px;
-        font-size: 0.8125em;
-        line-height: 13px;
-        color: #aaaaaa;
-        text-transform: uppercase;
-        margin-top: 5px;
-        letter-spacing: 1px;
-    }
-
-    .widget_recent_entries li {
-        padding: 10px 0px;
-    }
-
-    .widget_archive li {
-        color: #aaaaaa;
-    }
-
-    /* Calendar Widget */
-    .widget_calendar table,
-    .widget_calendar td {
-        border: 0;
-        border-collapse: separate;
-        border-spacing: 1px;
-    }
-
-    .widget_calendar caption {
-        font-size: 14px;
-        font-size: 0.875em;
-        margin: 0;
-    }
-
-    .widget_calendar th,
-    .widget_calendar td {
-        padding: 0;
-        text-align: center;
-    }
-
-    .widget_calendar a {
-        display: block;
-    }
-
-    .widget_calendar a:hover {
-        background-color: rgba(0, 0, 0, 0.15);
-    }
-
-    .widget_calendar tbody td {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .site-footer .widget_calendar tbody td {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .widget_calendar tbody .pad, .site-footer .widget_calendar tbody .pad {
-        background-color: transparent;
-    }
-
-    .widget_search label {
-        width: 100%;
-    }
-
-    .widget_search form {
-        position: relative;
-    }
-
-    .widget_search label:before {
-        content: "\f002";
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        color: #aaaaaa;
-        position: absolute;
-        font-size: 18px;
-        font-size: 1.125em;
-        padding-right: 20px;
-        z-index: 5;
-        right: 0px;
-        top: 0px;
-        height: 47px;
-        width: 35px;
-        line-height: 40px;
-        padding-top: 5px;
-        text-align: center;
-    }
-
-    .widget_search input[type="submit"] {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 50px;
-        height: 47px;
-        border: none;
-        box-shadow: none;
-        background: none;
-        z-index: 9;
-        text-indent: -99999900px;
-        overflow: hidden;
-        padding: 0;
-    }
-
     /*-----------
      * Footer
      -----------*/
@@ -2947,6 +3010,10 @@ div.sharedaddy h3.sd-title:before {
 
     .single-post-alt .entry-header .cat-links {
         padding-top: 15px;
+    }
+
+    .widget-area.widget-area-mobile .widget {
+        padding: 30px 0;
     }
 
 }
@@ -3217,13 +3284,15 @@ div.sharedaddy h3.sd-title:before {
         max-width: 435px;
     }
 
-    .widget-area .widget {
+    .widget-area .widget,
+    .widget-area.widget-area-mobile .widget {
         width: 300px;
         font-size: 14px;
         font-size: 0.875em;
     }
 
-    .widget-area .widget:first-child {
+    .widget-area .widget:first-child,
+    .widget-area.widget-area-mobile .widget:first-child{
         padding-top: 0;
     }
 
@@ -3269,6 +3338,22 @@ div.sharedaddy h3.sd-title:before {
     .widget-area {
         display: block;
         float: right;
+    }
+
+    .sidebar-mobile-title {
+        display: none;
+    }
+
+    .widget-area.widget-area-mobile {
+        width: auto;
+    }
+
+    .widget-area.widget-area-mobile .widget {
+        padding: 30px 0 30px 30px;
+    }
+
+    .sidebar-inner-wrap {
+        height: auto !important;
     }
 
     /*-----------

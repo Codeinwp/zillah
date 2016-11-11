@@ -199,7 +199,23 @@
 		});
 
 	} );
-    
+
+	// Enable menuToggle.
+	( function() {
+
+		var $sidebarButton = $( '.sidebar-mobile-title' );
+
+		if ( ! $sidebarButton ) {
+			return;
+		}
+
+		// Add an initial values for the attribute.
+		$sidebarButton.click(function() {
+			$( this ).parent().toggleClass( 'widget-area-mobile-open' );
+		} );
+        
+	} )();
+
     
 } )( jQuery );
 
