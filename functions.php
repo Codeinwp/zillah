@@ -1,6 +1,6 @@
 <?php
 /**
- * zillah functions and definitions.
+ * Zillah functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -293,18 +293,24 @@ require get_template_directory() . '/inc/tha-theme-hooks.php';
  */
 require get_template_directory() . '/inc/zillah_hooks.php';
 
-
+/**
+ * Customize the read more link
+ */
 function zillah_read_more_link() {
 	return '<a href="' . esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 add_filter( 'the_content_more_link', 'zillah_read_more_link' );
 
-
+/**
+ * Customize the read more link
+ */
 function zillah_read_more_link_alt() {
 	return '<a href="' . esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link">' . sprintf( __( 'Read the post %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 
-
+/**
+ * Customize the excerpt message
+ */
 function zillah_excerpt_more() {
 	return '...<span class="clearfix clearfix-post"></span><a href="' . esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
@@ -382,7 +388,6 @@ function zillah_brand() {
  *
  * @since Zillah 1.0
  */
-
 function zillah_slider() {
 
 	$zillah_home_slider_show  = get_theme_mod( 'zillah_home_slider_show', false );
@@ -469,7 +474,9 @@ function zillah_slider() {
 
 }
 
-
+/**
+ * Exclude posts from the slider on the main page loop
+ */
 function zillah_exclude_single_posts_home( $query ) {
 
 	if ( $query->is_home() && $query->is_main_query() ) {
@@ -502,6 +509,10 @@ add_action( 'pre_get_posts', 'zillah_exclude_single_posts_home' );
 
 
 add_action( 'wp_head','zillah_php_style' );
+
+/**
+ * Custom color palette
+ */
 function zillah_php_style() {
 	$zillah_palette_picker = get_theme_mod( 'zillah_palette_picker' );
 	if ( ! empty( $zillah_palette_picker ) ) {
@@ -539,7 +550,9 @@ function zillah_php_style() {
 
 	if ( ! empty( $zillah_palette_picker ) ) {
 
-		/* Color 1 */
+		/**
+		 * Color 1
+		 */
 		if ( ! empty( $zillah_c1 ) ) {
 			echo '
 				.post-navigation .nav-links a,
@@ -559,7 +572,9 @@ function zillah_php_style() {
 			';
 		}
 
-		/* Color 2 */
+		/**
+		 * Color 2
+		 */
 		if ( ! empty( $zillah_c2 ) ) {
 			echo '
 				.widget-title {
@@ -604,7 +619,9 @@ function zillah_php_style() {
 			}
 		}
 
-		/* Color 3 */
+		/**
+		 * Color 3
+		 */
 		if ( ! empty( $zillah_c3 ) ) {
 			echo '
 				 .main-navigation li:hover > a:hover, 
@@ -658,7 +675,9 @@ function zillah_php_style() {
 			';
 		}
 
-		/* Color 4 */
+		/**
+		 * Color 4
+		 */
 		if ( ! empty( $zillah_c5 ) ) {
 			echo '
 				body {
@@ -756,7 +775,9 @@ function zillah_php_style() {
 	echo '</style>';
 }
 
-
+/**
+ * Change the excerpt length
+ */
 function zillah_custom_excerpt_length( $length ) {
 	$zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 
@@ -768,7 +789,9 @@ function zillah_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'zillah_custom_excerpt_length', 999 );
 
-/* Post thumbnail */
+/**
+ * Post thumbnail
+ */
 function zillah_post_thumbnail() {
 	$post_format = get_post_format();
 	if ( has_post_thumbnail() ) {
@@ -791,7 +814,9 @@ function zillah_post_thumbnail() {
 }
 
 
-/* Post image */
+/**
+ * Post image
+ */
 function zillah_post_image() {
 	if ( has_post_thumbnail() ) {
 		echo '<div class="post-thumbnail-wrap"><a href="' . esc_url( get_permalink() ) . '" class="post-thumbnail" rel="bookmark">';
@@ -808,7 +833,9 @@ function zillah_post_image() {
 }
 
 
-/* Get the first image from post */
+/**
+ * Get the first image from post
+ */
 function zillah_catch_that_image() {
 	global $post;
 	$first_img = false;
@@ -822,7 +849,9 @@ function zillah_catch_that_image() {
 }
 
 
-/* Get first embed media */
+/**
+ * Get first embed media
+ */
 function zillah_get_first_embed_media( $post_id ) {
 	$post = get_post( $post_id );
 	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
@@ -841,7 +870,9 @@ function zillah_get_first_embed_media( $post_id ) {
 }
 
 
-/* Get gallery */
+/**
+ * Get gallery
+ */
 function zillah_post_gallery() {
 
 	if ( get_post_gallery() ) :
@@ -889,7 +920,9 @@ function zillah_post_gallery() {
 }
 
 
-/* Post video */
+/**
+ * Post video
+ */
 function zillah_post_video() {
 
 	$zillah_video = zillah_get_first_embed_media( get_the_ID() );

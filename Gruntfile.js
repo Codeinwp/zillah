@@ -8,8 +8,8 @@ module.exports = function( grunt ) {
     config = config();
     config.files.php.push( '!inc/admin/**/*.php' );
     config.files.js.push( '!inc/admin/**/*.js' );
-    config.files.js.push( '!bootstrap.js' );
-    config.files.js.push( '!bootstrap.min.js' );
-    config.files.js.push( '!skip-link-focus-fix.js' );
+    config.files.js.push( '!js/bootstrap.js' );
+    config.files.js.push( '!js/bootstrap.min.js' );
+    config.files.js.push( '!js/skip-link-focus-fix.js' );
     loader( grunt, config ).init();
 };

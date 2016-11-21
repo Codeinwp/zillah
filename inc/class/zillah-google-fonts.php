@@ -1,21 +1,47 @@
 <?php
-if ( class_exists( 'WP_Customize_Control' ) ) {
-	class Zillah_Google_Fonts_Control extends WP_Customize_Control {
-		/**
-		 * Render the control's content.
-		 *
-		 * @since 3.4.0
-		 */
+/**
+ * Customize control for choosing fonts
+ *
+ * @package zillah
+ */
 
+if ( class_exists( 'WP_Customize_Control' ) ) {
+
+	/**
+	 * Class Zillah_Google_Fonts_Control
+	 */
+	class Zillah_Google_Fonts_Control extends WP_Customize_Control {
+
+		/**
+		 * Options for the control
+		 *
+		 * @var array
+		 */
 		private $options = array();
+
+		/**
+		 * Id of the control
+		 *
+		 * @var int|string
+		 */
 		private $control_id = '';
 
+		/**
+		 * Zillah_Google_Fonts_Control constructor.
+		 *
+		 * @param object  $manager Manager.
+		 * @param integer $id Id.
+		 * @param array   $args The arguments.
+		 */
 		public function __construct( $manager, $id, $args = array() ) {
 			parent::__construct( $manager, $id, $args );
 			$this->options = $args;
 			$this->control_id = $id;
 		}
 
+		/**
+		 * Create the control
+		 */
 		public function render_content() {
 			$options = $this->options;
 			$control_id = $this->control_id;

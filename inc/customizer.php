@@ -283,7 +283,14 @@ function zillah_sanitize_checkbox( $input ) {
 	return ( isset( $input ) && true == $input ? true : false );
 }
 
-
+/**
+ * Function to sanitize the select controls
+ *
+ * @param string $input The value to sanitize.
+ * @param object $setting The setting of the control.
+ *
+ * @return mixed
+ */
 function zillah_sanitize_select( $input, $setting ) {
 
 	// Ensure input is a slug.
@@ -296,7 +303,13 @@ function zillah_sanitize_select( $input, $setting ) {
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
-
+/**
+ * Function to sanitize the categories controls
+ *
+ * @param integer $input The value to sanitize (selected id of category).
+ *
+ * @return string
+ */
 function zillah_sanitize_category_dropdown( $input ) {
 	$cat = get_the_category_by_ID( $input );
 	if ( empty( $cat ) ) {
@@ -313,7 +326,13 @@ function zillah_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'zillah_customize_preview_js' );
 
-
+/**
+ * Function to sanitize the palette control
+ *
+ * @param string $input The value to sanitize.
+ *
+ * @return string
+ */
 function zillah_sanitize_palette( $input ) {
 	if ( ! empty( $input ) ) {
 		$json = json_decode( $input, true );
@@ -343,6 +362,13 @@ function zillah_sanitize_palette( $input ) {
 	return '';
 }
 
+/**
+ * Check if the value is a color
+ *
+ * @param string $value The value to check.
+ *
+ * @return bool
+ */
 function zillah_is_color( $value ) {
 	return $value >= 0 && $value <= 255;
 }

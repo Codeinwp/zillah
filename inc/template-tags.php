@@ -165,10 +165,25 @@ if ( ! function_exists( 'zillah_comments_number' ) ) :
 	function zillah_comments_number() {
 
 		echo '<span class="alt-comments-number">';
-		printf(
-			_nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'zillah' ),
-			number_format_i18n( get_comments_number() )
-		);
+
+		$comments_number = get_comments_number();
+		if ( 1 === $comments_number ) {
+			/* translators: %s: post title */
+			printf( _x( '1 Comment', 'comments title', 'zillah' ) );
+		} else {
+			printf(
+				/* translators: 1: number of comments, 2: post title */
+				_nx(
+					'%1$s Comment',
+					'%1$s Comments',
+					$comments_number,
+					'comments title',
+					'zillah'
+				),
+				number_format_i18n( $comments_number )
+			);
+		}
+
 		echo '</span>';
 	}
 endif;

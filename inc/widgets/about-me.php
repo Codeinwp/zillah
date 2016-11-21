@@ -1,13 +1,30 @@
 <?php
+/**
+ * Class Zillah_About_Me
+ *
+ * @package zillah
+ */
 
+/**
+ * Class Zillah_About_Me
+ */
 class Zillah_About_Me extends WP_Widget {
 
+	/**
+	 * Zillah_About_Me constructor.
+	 */
 	public function __construct() {
 		$widget_ops = array( 'classname' => 'Zillah_About_Me', 'description' => __( 'About me widget.', 'zillah' ) );
 		$control_ops = array( 'width' => 400, 'height' => 350 );
 		parent::__construct( 'Zillah_About_Me', __( 'Zillah: About me', 'zillah' ), $widget_ops, $control_ops );
 	}
 
+	/**
+	 * Build the widget
+	 *
+	 * @param array $args Array of arguments.
+	 * @param array $instance The instance.
+	 */
 	public function widget( $args, $instance ) {
 
 		$title 		= apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
@@ -36,6 +53,14 @@ class Zillah_About_Me extends WP_Widget {
 		echo $args['after_widget'];
 	}
 
+	/**
+	 * Update the variables in the widget
+	 *
+	 * @param array $new_instance The new values.
+	 * @param array $old_instance The old values that needs to be updated.
+	 *
+	 * @return mixed
+	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] 		= strip_tags( $new_instance['title'] );
@@ -47,6 +72,11 @@ class Zillah_About_Me extends WP_Widget {
 		return $instance;
 	}
 
+	/**
+	 * The widget form
+	 *
+	 * @param array $instance The widget instance.
+	 */
 	public function form( $instance ) {
 		$instance 	= wp_parse_args( (array) $instance, array( 'title' => '', 'text' => '', 'image_url' => '' ) );
 		$title 		= strip_tags( $instance['title'] );

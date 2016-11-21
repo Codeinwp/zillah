@@ -7,15 +7,22 @@
  * @package zillah
  */
 
-class zillah_Theme_Plugin_Enhancements {
+/**
+ * Class Zillah_Theme_Plugin_Enhancements
+ */
+class Zillah_Theme_Plugin_Enhancements {
 
 	/**
-	 * @var array; holds the information of the plugins declared as enhancements
+	 * Holds the information of the plugins declared as enhancements
+	 *
+	 * @var array
 	 */
 	var $plugins;
 
 	/**
-	 * @var boolean; whether to display an admin notice or not.
+	 * Whether to display an admin notice or not.
+	 *
+	 * @var boolean
 	 */
 	var $display_notice = false;
 
@@ -26,7 +33,7 @@ class zillah_Theme_Plugin_Enhancements {
 		static $instance = false;
 
 		if ( ! $instance ) {
-			$instance = new zillah_Theme_Plugin_Enhancements;
+			$instance = new Zillah_Theme_Plugin_Enhancements;
 		}
 
 		return $instance;
@@ -384,4 +391,4 @@ class zillah_Theme_Plugin_Enhancements {
 		}
 	}
 }
-add_action( 'admin_head', array( 'zillah_Theme_Plugin_Enhancements', 'init' ) );
+add_action( 'admin_head', array( 'Zillah_Theme_Plugin_Enhancements', 'init' ) );

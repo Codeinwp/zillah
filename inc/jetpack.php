@@ -51,7 +51,9 @@ function zillah_infinite_scroll_render() {
 	}
 }
 
-
+/**
+ * Add theme support for Pirate Forms
+ */
 function zillah_theme_setup() {
 
 	add_theme_support( 'pirate-forms' );

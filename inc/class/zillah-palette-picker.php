@@ -1,13 +1,17 @@
 <?php
 /**
  * A class to create a dropdown for theme colors
+ *
+ * @package zillah
+ */
+
+/**
+ * Class Zillah_Palette
  */
 class Zillah_Palette extends WP_Customize_Control {
 
 	/**
 	 * Render the content of the category dropdown
-	 *
-	 * @return HTML
 	 */
 	public function render_content() {
 

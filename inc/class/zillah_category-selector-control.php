@@ -1,5 +1,15 @@
 <?php
+/**
+ * Customize control for categories selector
+ *
+ * @package zillah
+ */
+
 if ( class_exists( 'WP_Customize_Control' ) ) {
+
+	/**
+	 * Class Zillah_Category_Control
+	 */
 	class Zillah_Category_Control extends WP_Customize_Control {
 		/**
 		 * Render the control's content.
