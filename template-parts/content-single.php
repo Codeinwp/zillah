@@ -61,40 +61,39 @@
 </article><!-- #post-## -->
 
 <?php
-	$author_first_name =  get_the_author_meta( 'first_name' );
+	$author_first_name = get_the_author_meta( 'first_name' );
 	$author_last_name = get_the_author_meta( 'last_name' );
-	$author_description = wp_kses_post( nl2br( get_the_author_meta('description') ) );
+	$author_description = wp_kses_post( nl2br( get_the_author_meta( 'description' ) ) );
 
-	if( !empty( $author_first_name ) || !empty( $author_last_name ) || !empty( $author_description ) ) {
+if ( ! empty( $author_first_name ) || ! empty( $author_last_name ) || ! empty( $author_description ) ) {
 
-		echo '<div class="author-details-wrap">';
-			echo '<div class="content-inner-wrap">';
+	echo '<div class="author-details-wrap">';
+	echo '<div class="content-inner-wrap">';
 
-				echo '<div class="author-details-img-wrap">';
-					echo get_avatar( get_the_author_meta( 'user_email' ), '100' );
-				echo '</div>';
-
-				$author_name = '';
-				if ( ! empty( $author_first_name ) ) {
-					$author_name .= sanitize_text_field( $author_first_name ) . ' ';
-				}
-				if ( ! empty( $author_last_name ) ) {
-					$author_name .= sanitize_text_field( $author_last_name );
-				}
-
-				echo '<div class="author-details-title" itemprop="author">';
-					if( $author_name!=='' ) {
-							echo '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( $author_name ) . '">' . esc_html( $author_name ) . '</a>';
-					}
-				echo '</div>';
-
-				if( !empty( $author_description ) ){
-					echo '<div class="author-details-content">' . $author_description . '</div>';
-				}
-
-			echo '</div>';
+		echo '<div class="author-details-img-wrap">';
+			echo get_avatar( get_the_author_meta( 'user_email' ), '100' );
 		echo '</div>';
 
+		$author_name = '';
+	if ( ! empty( $author_first_name ) ) {
+		$author_name .= sanitize_text_field( $author_first_name ) . ' ';
 	}
-?>
+	if ( ! empty( $author_last_name ) ) {
+		$author_name .= sanitize_text_field( $author_last_name );
+	}
 
+		echo '<div class="author-details-title" itemprop="author">';
+	if ( $author_name !== '' ) {
+		echo '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( $author_name ) . '">' . esc_html( $author_name ) . '</a>';
+	}
+			echo '</div>';
+
+	if ( ! empty( $author_description ) ) {
+		echo '<div class="author-details-content">' . $author_description . '</div>';
+	}
+
+			echo '</div>';
+			echo '</div>';
+
+}
+?>

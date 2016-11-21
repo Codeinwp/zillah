@@ -54,8 +54,9 @@ class zillah_Theme_Plugin_Enhancements {
 		$this->dependencies = $this->get_theme_dependencies();
 
 		// Return early if we have no plugin dependencies.
-		if ( empty( $this->dependencies ) )
+		if ( empty( $this->dependencies ) ) {
 			return;
+		}
 
 		// Otherwise, build an array to list all the required dependencies and modules.
 		$dependency_list = '';
@@ -80,7 +81,7 @@ class zillah_Theme_Plugin_Enhancements {
 				'name'    => 'Jetpack by WordPress.com',
 				'message' => sprintf(
 					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features, including: ', 'zillah' ),
-					'<strong>' . esc_html__( 'Jetpack plugin', 'zillah' ) . '</strong>' ),
+				'<strong>' . esc_html__( 'Jetpack plugin', 'zillah' ) . '</strong>' ),
 				'modules' => rtrim( $dependency_list, ', ' ) . '.',
 			),
 			array(
@@ -88,7 +89,7 @@ class zillah_Theme_Plugin_Enhancements {
 				'name'    => 'Free & Simple Contact Form Plugin - PirateForms',
 				'message' => sprintf(
 					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features.', 'zillah' ),
-					'<strong>' . esc_html__( 'Simple Contact Form Plugin - PirateForms plugin', 'zillah' ) . '</strong>' ),
+				'<strong>' . esc_html__( 'Simple Contact Form Plugin - PirateForms plugin', 'zillah' ) . '</strong>' ),
 			),
 		);
 
@@ -265,7 +266,7 @@ class zillah_Theme_Plugin_Enhancements {
 			// Custom message provided by the theme.
 			if ( isset( $plugin['message'] ) ) {
 				$notice .= $plugin['message'];
-				if( !empty($plugin['modules']) ) {
+				if ( ! empty( $plugin['modules'] ) ) {
 					$notice .= esc_html( $plugin['modules'] );
 				}
 			}
@@ -300,7 +301,7 @@ class zillah_Theme_Plugin_Enhancements {
 				$featurelist[] = $feature;
 			}
 
-			if ( 2 === count( $featurelist) ) {
+			if ( 2 === count( $featurelist ) ) {
 				$featurelist  = implode( ' or ', $featurelist );
 			} elseif ( 1 < count( $featurelist ) ) {
 				$last_feature = array_pop( $featurelist );
@@ -344,7 +345,7 @@ class zillah_Theme_Plugin_Enhancements {
 		$plugin_path  = false;
 
 		foreach ( $plugin_paths as $path ) {
-			if ( preg_match( '|^' . $slug .'|', $path ) ) {
+			if ( preg_match( '|^' . $slug . '|', $path ) ) {
 				$plugin_path = $path;
 			}
 		}

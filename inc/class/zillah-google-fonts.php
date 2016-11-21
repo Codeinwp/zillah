@@ -1,5 +1,5 @@
 <?php
-if (class_exists('WP_Customize_Control')) {
+if ( class_exists( 'WP_Customize_Control' ) ) {
 	class Zillah_Google_Fonts_Control extends WP_Customize_Control {
 		/**
 		 * Render the control's content.
@@ -21,10 +21,10 @@ if (class_exists('WP_Customize_Control')) {
 			$control_id = $this->control_id;
 
 			$ti_google_fonts = '';
-			if(!empty($options['ti_google_fonts'])){
-				foreach( $options['ti_google_fonts'] as $zilla_font ) {
-					$ti_input_value = implode( '|', $zilla_font);
-					$ti_google_fonts .= '<label class="ti-google-font-label" style="font-family:\''.esc_attr($zilla_font['font_family']).'\','.esc_attr($zilla_font['type']).'"><input type="radio" name="'.esc_attr($control_id).'" value="'. esc_attr($ti_input_value) .'">'. esc_html($zilla_font['font_family']) .'</label>';
+			if ( ! empty( $options['ti_google_fonts'] ) ) {
+				foreach ( $options['ti_google_fonts'] as $zilla_font ) {
+					$ti_input_value = implode( '|', $zilla_font );
+					$ti_google_fonts .= '<label class="ti-google-font-label" style="font-family:\'' . esc_attr( $zilla_font['font_family'] ) . '\',' . esc_attr( $zilla_font['type'] ) . '"><input type="radio" name="' . esc_attr( $control_id ) . '" value="' . esc_attr( $ti_input_value ) . '">' . esc_html( $zilla_font['font_family'] ) . '</label>';
 				}
 
 				// Hackily add in the data link parameter.
@@ -33,11 +33,11 @@ if (class_exists('WP_Customize_Control')) {
 			printf(
 				'<div class="ti-google-fonts"><span class="customize-control-title">%s</span><div class="ti-google-fonts-wrap">%s</div></div>',
 				$this->label,
-				( !empty($ti_google_fonts) ? $ti_google_fonts : __('No fonts to show', 'zillah') )
+				( ! empty( $ti_google_fonts ) ? $ti_google_fonts : __( 'No fonts to show', 'zillah' ) )
 			);
 
 		}
 
 	}
 }
-?>
+

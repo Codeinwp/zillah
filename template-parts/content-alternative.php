@@ -15,17 +15,17 @@ $post_format = get_post_format();
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-alt entry-content-wrap' . ( $zillah_sidebar_show ? 'col-xs-12 col-md-6 blog-post-alt-sidebar' : 'col-xs-12 col-md-6 col-lg-4' ) ); ?>>
 	<div class="blog-post-alt-inner">
 
-		<?php if( $post_format !== 'quote' ) : ?>
+		<?php if ( $post_format !== 'quote' ) : ?>
 			<header class="entry-header">
 				<div class="content-inner-wrap content-inner-wrap-blog-alt">
 					<?php
 					zillah_posted_date();
 
-					if( $post_format === 'video' ) {
+					if ( $post_format === 'video' ) {
 						zillah_post_video();
-					} else if( $post_format === 'gallery' ) {
+					} elseif ( $post_format === 'gallery' ) {
 						zillah_post_gallery();
-					} else if ( $post_format === 'image' ) {
+					} elseif ( $post_format === 'image' ) {
 						zillah_post_image();
 					} else {
 						zillah_post_thumbnail();

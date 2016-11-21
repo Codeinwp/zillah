@@ -70,7 +70,7 @@ add_theme_support( 'tha_hooks', array(
 	 * will be able to check whether the version of THA supplied by the theme
 	 * supports Core hooks.
 	 */
-	//'core',
+	// 'core',
 ) );
 
 /**
@@ -85,7 +85,7 @@ add_theme_support( 'tha_hooks', array(
  * 	  		add_action( 'tha_head_top', 'prefix_header_top' );
  * </code>
  *
- * @param bool $bool true
+ * @param bool  $bool true
  * @param array $args The hook type being checked
  * @param array $registered All registered hook types
  *

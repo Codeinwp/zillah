@@ -1,4 +1,9 @@
 <?php
+/**
+ * Hooks for Zillah theme
+ *
+ * @package zillah
+ */
 
 /**
  * Before HTML
@@ -379,7 +384,7 @@ function zillah_hook_comments_bottom() {
  */
 function zillah_hook_sidebar_before() {
 	do_action( 'zillah_sidebar_before' );
-	do_action( 'tha_sidebars_before' ); # Pluralization is intentional
+	do_action( 'tha_sidebars_before' ); // Pluralization is intentional
 }
 
 /**
@@ -390,7 +395,7 @@ function zillah_hook_sidebar_before() {
  */
 function zillah_hook_sidebar_after() {
 	do_action( 'zillah_sidebar_after' );
-	do_action( 'tha_sidebars_after' ); # Pluralization is intentional
+	do_action( 'tha_sidebars_after' ); // Pluralization is intentional
 }
 
 /**
@@ -454,7 +459,7 @@ function zillah_hook_footer_after() {
  */
 function zillah_hook_footer_top() {
 	do_action( 'zillah_footer_top' );
-	do_action( 'zillah_credits' ); # Backwards compatibility
+	do_action( 'zillah_credits' ); // Backwards compatibility
 	do_action( 'tha_footer_top' );
 }
 
