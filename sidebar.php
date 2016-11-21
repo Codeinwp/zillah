@@ -8,7 +8,6 @@
  */
 
 $zillah_sidebar_show        = get_theme_mod( 'zillah_sidebar_show', false );
-$zillah_sidebar_show_mobile = get_theme_mod( 'zillah_sidebar_show_mobile', false );
 
 if ( ! is_active_sidebar( 'zillah-sidebar-1' ) ) {
 	return;
@@ -16,9 +15,9 @@ if ( ! is_active_sidebar( 'zillah-sidebar-1' ) ) {
 ?>
 
 <?php zillah_hook_sidebar_before(); ?>
-<aside id="secondary" class="widget-area<?php echo $zillah_sidebar_show === false && is_customize_preview() ? ' zillah-only-customizer' : ''; ?><?php echo $zillah_sidebar_show_mobile ? ' widget-area-mobile' : ''; ?>" role="complementary">
+<aside id="secondary" class="widget-area<?php echo $zillah_sidebar_show === false && is_customize_preview() ? ' zillah-only-customizer' : ''; ?><?php echo $zillah_sidebar_show ? ' widget-area-mobile' : ''; ?>" role="complementary">
 	<?php
-	if ( $zillah_sidebar_show_mobile ) {
+	if ( $zillah_sidebar_show ) {
 		echo '<span class="sidebar-mobile-title"><span>' . esc_html__( 'Sidebar', 'zillah' ) . '</span></span>';
 	}
 	?>
