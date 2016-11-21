@@ -53,7 +53,6 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('zillah_alt_layout', array(
 		'default' => false,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
-		'transport' => 'postMessage',
 	));
 
 	$wp_customize->add_control('zillah_alt_layout', array(
