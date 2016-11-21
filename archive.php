@@ -25,7 +25,7 @@ get_header(); ?>
 
 		<div class="content-wrap">
 
-			<div id="primary" class="content-area content-area-arch<?php echo $zillah_sidebar_show !== false ? " content-area-with-sidebar" : ""; ?>">
+			<div id="primary" class="content-area content-area-arch<?php echo $zillah_sidebar_show !== false ? ' content-area-with-sidebar' : ''; ?>">
 				<main id="main" class="site-main" role="main">
 					<?php zillah_hook_archive_top(); ?>
 
@@ -58,9 +58,9 @@ get_header(); ?>
 			</div><!-- #primary -->
 
 			<?php
-				if ( $zillah_sidebar_show !== false || ( $zillah_sidebar_show === false && is_customize_preview() ) ) {
-					get_sidebar();
-				}
+			if ( $zillah_sidebar_show !== false || ( $zillah_sidebar_show === false && is_customize_preview() ) ) {
+				get_sidebar();
+			}
 			?>
 
 		</div><!-- .content-wrap -->

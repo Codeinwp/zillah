@@ -34,8 +34,8 @@ add_filter( 'body_class', 'zillah_body_classes' );
  */
 function zillah_slider_to_posts() {
 
-    $zillah_categ = get_theme_mod('zillah_home_slider_category');
-	if(!empty($zillah_categ)) {
+	$zillah_categ = get_theme_mod( 'zillah_home_slider_category' );
+	if ( ! empty( $zillah_categ ) ) {
 	    $args = array(
 			'posts_per_page'        => 6,
 			'cat'                   => $zillah_categ,
@@ -52,6 +52,7 @@ function zillah_slider_to_posts() {
 	        /* Start the Loop */
 	        while ( $the_query->have_posts() ) {
 	            $the_query->the_post();
+
 	            /*
 	            * Include the Post-Format-specific template for the content.
 	            * If you want to override this in a child theme, then include a file
@@ -66,7 +67,7 @@ function zillah_slider_to_posts() {
 	    /* Restore original Post Data */
 	    wp_reset_postdata();
 	}
-    die();
+	die();
 }
 
 add_action( 'wp_ajax_nopriv_request_post', 'zillah_slider_to_posts' );

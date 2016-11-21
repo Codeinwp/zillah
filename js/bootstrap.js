@@ -215,7 +215,7 @@ if (typeof jQuery === 'undefined') {
             if (state == 'loadingText') {
                 this.isLoading = true
                 $el.addClass(d).attr(d, d)
-            } else if (this.isLoading) {
+            } elseif (this.isLoading) {
                 this.isLoading = false
                 $el.removeClass(d).removeAttr(d)
             }

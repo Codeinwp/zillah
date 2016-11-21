@@ -13,7 +13,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post entry-content-wrap' ); ?>>
 
-	<?php if( $post_format !== 'quote' ) : ?>
+	<?php if ( $post_format !== 'quote' ) : ?>
 		<header class="entry-header">
 			<div class="content-inner-wrap">
 				<?php
@@ -26,15 +26,15 @@
 	<?php endif; ?>
 
 	<?php
-		if( $post_format === 'video' ) {
-			zillah_post_video();
-		} else if( $post_format === 'gallery' ) {
-			zillah_post_gallery();
-		} else if ( $post_format === 'image' ) {
-			zillah_post_image();
-		} else {
-			zillah_post_thumbnail();
-		}
+	if ( $post_format === 'video' ) {
+		zillah_post_video();
+	} elseif ( $post_format === 'gallery' ) {
+		zillah_post_gallery();
+	} elseif ( $post_format === 'image' ) {
+		zillah_post_image();
+	} else {
+		zillah_post_thumbnail();
+	}
 	?>
 
 	<?php zillah_hook_entry_before(); ?>
@@ -43,22 +43,22 @@
 			<?php zillah_hook_entry_top(); ?>
 			<?php
 
-				if ( $post_format === 'quote' || $post_format === 'aside' || $post_format === 'audio' || $post_format === 'chat' || $post_format === 'link' || $post_format === 'status' ) {
-					the_content();
+			if ( $post_format === 'quote' || $post_format === 'aside' || $post_format === 'audio' || $post_format === 'chat' || $post_format === 'link' || $post_format === 'status' ) {
+				the_content();
+			} else {
+				$pos = strpos( $post->post_content, '<!--more-->' );
+				if ( $pos <= 0 ) {
+					the_excerpt();
 				} else {
-					$pos = strpos( $post->post_content, '<!--more-->' );
-					if ( $pos <= 0 ) {
-						the_excerpt();
-					} else {
-						the_content( false );
-						echo zillah_read_more_link();
-					}
-
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
-						'after'  => '</div>',
-					) );
+					the_content( false );
+					echo zillah_read_more_link();
 				}
+
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
+					'after'  => '</div>',
+				) );
+			}
 			?>
 			<?php zillah_hook_entry_bottom(); ?>
 		</div>

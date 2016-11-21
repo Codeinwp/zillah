@@ -27,7 +27,11 @@ function zillah_jetpack_setup() {
 	add_theme_support( 'jetpack-related-posts' );
 
 	add_theme_support( 'social-links', array(
-		'facebook', 'twitter', 'linkedin', 'google_plus', 'tumblr',
+		'facebook',
+		'twitter',
+		'linkedin',
+		'google_plus',
+		'tumblr',
 	) );
 
 }
@@ -47,7 +51,9 @@ function zillah_infinite_scroll_render() {
 	}
 }
 
-
+/**
+ * Add theme support for Pirate Forms
+ */
 function zillah_theme_setup() {
 
 	add_theme_support( 'pirate-forms' );

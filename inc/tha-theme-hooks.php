@@ -70,7 +70,7 @@ add_theme_support( 'tha_hooks', array(
 	 * will be able to check whether the version of THA supplied by the theme
 	 * supports Core hooks.
 	 */
-	//'core',
+	// 'core',
 ) );
 
 /**
@@ -85,9 +85,9 @@ add_theme_support( 'tha_hooks', array(
  * 	  		add_action( 'tha_head_top', 'prefix_header_top' );
  * </code>
  *
- * @param bool $bool true
- * @param array $args The hook type being checked
- * @param array $registered All registered hook types
+ * @param bool  $bool true.
+ * @param array $args The hook type being checked.
+ * @param array $registered All registered hook types.
  *
  * @return bool
  */
@@ -112,6 +112,10 @@ function tha_body_top() {
 	do_action( 'tha_body_top' );
 }
 
+/**
+ * HTML <body> hooks
+ * $tha_supports[] = 'body';
+ */
 function tha_body_bottom() {
 	do_action( 'tha_body_bottom' );
 }
@@ -125,6 +129,11 @@ function tha_head_top() {
 	do_action( 'tha_head_top' );
 }
 
+/**
+ * HTML <head> hooks
+ *
+ * $tha_supports[] = 'head';
+ */
 function tha_head_bottom() {
 	do_action( 'tha_head_bottom' );
 }
@@ -138,14 +147,29 @@ function tha_header_before() {
 	do_action( 'tha_header_before' );
 }
 
+/**
+ * Semantic <header> hooks
+ *
+ * $tha_supports[] = 'header';
+ */
 function tha_header_after() {
 	do_action( 'tha_header_after' );
 }
 
+/**
+ * Semantic <header> hooks
+ *
+ * $tha_supports[] = 'header';
+ */
 function tha_header_top() {
 	do_action( 'tha_header_top' );
 }
 
+/**
+ * Semantic <header> hooks
+ *
+ * $tha_supports[] = 'header';
+ */
 function tha_header_bottom() {
 	do_action( 'tha_header_bottom' );
 }
@@ -159,22 +183,47 @@ function tha_content_before() {
 	do_action( 'tha_content_before' );
 }
 
+/**
+ * Semantic <content> hooks
+ *
+ * $tha_supports[] = 'content';
+ */
 function tha_content_after() {
 	do_action( 'tha_content_after' );
 }
 
+/**
+ * Semantic <content> hooks
+ *
+ * $tha_supports[] = 'content';
+ */
 function tha_content_top() {
 	do_action( 'tha_content_top' );
 }
 
+/**
+ * Semantic <content> hooks
+ *
+ * $tha_supports[] = 'content';
+ */
 function tha_content_bottom() {
 	do_action( 'tha_content_bottom' );
 }
 
+/**
+ * Semantic <content> hooks
+ *
+ * $tha_supports[] = 'content';
+ */
 function tha_content_while_before() {
 	do_action( 'tha_content_while_before' );
 }
 
+/**
+ * Semantic <content> hooks
+ *
+ * $tha_supports[] = 'content';
+ */
 function tha_content_while_after() {
 	do_action( 'tha_content_while_after' );
 }
@@ -188,22 +237,47 @@ function tha_entry_before() {
 	do_action( 'tha_entry_before' );
 }
 
+/**
+ * Semantic <entry> hooks
+ *
+ * $tha_supports[] = 'entry';
+ */
 function tha_entry_after() {
 	do_action( 'tha_entry_after' );
 }
 
+/**
+ * Semantic <entry> hooks
+ *
+ * $tha_supports[] = 'entry';
+ */
 function tha_entry_content_before() {
 	do_action( 'tha_entry_content_before' );
 }
 
+/**
+ * Semantic <entry> hooks
+ *
+ * $tha_supports[] = 'entry';
+ */
 function tha_entry_content_after() {
 	do_action( 'tha_entry_content_after' );
 }
 
+/**
+ * Semantic <entry> hooks
+ *
+ * $tha_supports[] = 'entry';
+ */
 function tha_entry_top() {
 	do_action( 'tha_entry_top' );
 }
 
+/**
+ * Semantic <entry> hooks
+ *
+ * $tha_supports[] = 'entry';
+ */
 function tha_entry_bottom() {
 	do_action( 'tha_entry_bottom' );
 }
@@ -217,6 +291,11 @@ function tha_comments_before() {
 	do_action( 'tha_comments_before' );
 }
 
+/**
+ * Comments block hooks
+ *
+ * $tha_supports[] = 'comments';
+ */
 function tha_comments_after() {
 	do_action( 'tha_comments_after' );
 }
@@ -230,14 +309,29 @@ function tha_sidebars_before() {
 	do_action( 'tha_sidebars_before' );
 }
 
+/**
+ * Semantic <sidebar> hooks
+ *
+ * $tha_supports[] = 'sidebar';
+ */
 function tha_sidebars_after() {
 	do_action( 'tha_sidebars_after' );
 }
 
+/**
+ * Semantic <sidebar> hooks
+ *
+ * $tha_supports[] = 'sidebar';
+ */
 function tha_sidebar_top() {
 	do_action( 'tha_sidebar_top' );
 }
 
+/**
+ * Semantic <sidebar> hooks
+ *
+ * $tha_supports[] = 'sidebar';
+ */
 function tha_sidebar_bottom() {
 	do_action( 'tha_sidebar_bottom' );
 }
@@ -251,14 +345,29 @@ function tha_footer_before() {
 	do_action( 'tha_footer_before' );
 }
 
+/**
+ * Semantic <footer> hooks
+ *
+ * $tha_supports[] = 'footer';
+ */
 function tha_footer_after() {
 	do_action( 'tha_footer_after' );
 }
 
+/**
+ * Semantic <footer> hooks
+ *
+ * $tha_supports[] = 'footer';
+ */
 function tha_footer_top() {
 	do_action( 'tha_footer_top' );
 }
 
+/**
+ * Semantic <footer> hooks
+ *
+ * $tha_supports[] = 'footer';
+ */
 function tha_footer_bottom() {
 	do_action( 'tha_footer_bottom' );
 }

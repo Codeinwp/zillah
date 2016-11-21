@@ -1,3 +1,5 @@
+/* global requestpost */
+
 // Transform Slider Posts to Normal Posts on mobile.
 ( function($) {
 
