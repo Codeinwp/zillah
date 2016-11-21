@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-page entry-content-wrap' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'article  entry-content-wrap' ); ?>>
 	<div class="content-inner-wrap">
 
 		<?php zillah_hook_entry_before(); ?>

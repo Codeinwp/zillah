@@ -290,12 +290,15 @@ require get_template_directory() . '/inc/tha-theme-hooks.php';
 require get_template_directory() . '/inc/zillah_hooks.php';
 
 
-
-
 function zillah_read_more_link() {
 	return '<a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 add_filter( 'the_content_more_link', 'zillah_read_more_link' );
+
+
+function zillah_read_more_link_alt() {
+	return '<a href="'. esc_url( get_permalink(get_the_ID()) ) . '" class="more-link">' . sprintf( __( 'Read the post %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
+}
 
 
 function zillah_excerpt_more() {
