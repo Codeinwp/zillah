@@ -1,4 +1,10 @@
 
+### 1.0.15 - 21/11/2016
+**Changes:** 
+- NEW Blog and single layout
+- Display the sidebar on mobile, if the option to show the sidebar is selected
+- Added grunt + fixed all generated issues
+
 ### 1.0.14 - 05/10/2016
 **Changes:** 
 - Improved code quality
