@@ -1,4 +1,9 @@
 
+### 1.1.0 - 16/12/2016
+**Changes:** 
+- Fixed layout issue on search results page
+- Improved customizer options for slider and sidebar
+
 ### 1.0.15 - 21/11/2016
 **Changes:** 
 - NEW Blog and single layout
