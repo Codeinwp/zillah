@@ -67,6 +67,7 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('zillah_sidebar_show', array(
 		'default' => false,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
 	));
 
 	$wp_customize->add_control('zillah_sidebar_show', array(
@@ -114,6 +115,7 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('zillah_home_slider_show', array(
 		'default' => 0,
 		'sanitize_callback' => 'zillah_sanitize_checkbox',
+		'transport' => 'postMessage',
 	));
 
 	$wp_customize->add_control('zillah_home_slider_show', array(
