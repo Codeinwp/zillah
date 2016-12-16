@@ -4,7 +4,7 @@ Theme URI:      https://themeisle.com/themes/zillah/
 Author:         ThemeIsle
 Author URI:     http://themeisle.com
 Description:    Zillah is a free minimal blogging WordPress theme from ThemeIsle. Is responsive and compatible with a wide range of plugins like : Nivo Slider, Siteorigin Page Builder, WooCoomerce, Photo Gallery Grid and Contact Form 7.
-Version:        1.0.15
+Version:        1.1.0
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:    zillah
@@ -205,7 +205,8 @@ figure {
 }
 
 hr {
-    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
     height: 0;
 }
 
@@ -265,7 +266,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 0;
 }
 
@@ -439,13 +441,15 @@ dt {
 # Elements
 --------------------------------------------------------------*/
 html {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
 }
 
 body {
@@ -542,7 +546,8 @@ input[type="reset"]:hover,
 input[type="submit"]:hover,
 .btn:hover {
     opacity: 0.8;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 button:focus,
@@ -555,7 +560,8 @@ input[type="reset"]:active,
 input[type="submit"]:active {
     background: #628d7c;
     border-color: #628d7c;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 input[type="text"],
@@ -584,10 +590,9 @@ textarea {
     background: #fff;
     padding: 15px;
     position: relative;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
     border-radius: 0;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     height: auto;
 }
 
@@ -625,7 +630,8 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
     border: 1px solid #2d2d2b;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 input[type="text"],
@@ -661,10 +667,9 @@ textarea {
 }
 
 textarea.form-control {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
     border-radius: 0;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     min-height: 220px;
     border: solid 1px #dfdfdf;
 }
@@ -818,8 +823,6 @@ a:active {
 }
 
 .dropdown-toggle .dropdown-toggle-inner {
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-radius: 2px;
     background: #FFFFFF;
     color: #7FCAAD;
@@ -1065,7 +1068,8 @@ a:active {
 .screen-reader-text:focus {
     background-color: #f1f1f1;
     border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
     color: #21759b;
     display: block;
@@ -1331,7 +1335,8 @@ a:active {
     width: 50px;
     height: 47px;
     border: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     background: none;
     z-index: 9;
     text-indent: -99999900px;
@@ -1411,7 +1416,8 @@ a:active {
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
     padding: 60px 0;
 }
 
@@ -1687,7 +1693,8 @@ p.dropcap:first-letter {
 }
 
 .blog-post,
-.site-main > article.article {
+.site-main > article.article,
+.search-page .site-main > article {
     border: 0px;
     padding: 45px 0 45px 0;
     margin-bottom: 60px;
@@ -1773,8 +1780,6 @@ p.dropcap:first-letter {
 .blog-post-alt-inner {
     background: #FFF;
     -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
@@ -3068,7 +3073,8 @@ div.sharedaddy h3.sd-title:before {
         display: -ms-flexbox;
         display: flex;
         -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
     }
 
     /*-----------
@@ -3106,8 +3112,6 @@ div.sharedaddy h3.sd-title:before {
         z-index: 9999;
         top: 0;
         -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        -o-transition: all 0.3s;
         transition: all 0.3s;
     }
 
@@ -3399,7 +3403,9 @@ div.sharedaddy h3.sd-title:before {
     .carousel-caption {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
         bottom: auto;
         padding: 0;
         text-align: center;
