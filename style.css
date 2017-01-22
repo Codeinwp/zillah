@@ -2777,7 +2777,8 @@ div.sharedaddy h3.sd-title:before {
     color: #628d7c;
 }
 
-.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
+.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
+.entry-content #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
     max-width: 80%;
     text-align: center;
     margin: 0 auto;
