@@ -1,4 +1,8 @@
 
+### 1.1.1 - 25/01/2017
+**Changes:** 
+- Support for Jetpack's related post date
+
 ### 1.1.0 - 16/12/2016
 **Changes:** 
 - Fixed layout issue on search results page
