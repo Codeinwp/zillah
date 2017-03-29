@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zillah 1.1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/zillah/issues\n"
-"POT-Creation-Date: 2017-03-29 08:52:44+00:00\n"
+"POT-Creation-Date: 2017-03-29 11:19:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -254,23 +254,27 @@ msgstr ""
 msgid "Get 1st image in the post as featured."
 msgstr ""
 
-#: inc/customizer.php:111
+#: inc/customizer.php:116
+msgid "Show updated date in post header."
+msgstr ""
+
+#: inc/customizer.php:124
 msgid "Featured content slider"
 msgstr ""
 
-#: inc/customizer.php:122
+#: inc/customizer.php:135
 msgid "Show slider"
 msgstr ""
 
-#: inc/customizer.php:123
+#: inc/customizer.php:136
 msgid "If you check this box, the slider area will appear on the homepage."
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:160
 msgid "Change the color scheme"
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:267
 msgid "Logo"
 msgstr ""
 
@@ -287,6 +291,14 @@ msgstr ""
 #: inc/template-tags.php:67
 #. translators: %s: Name of current post
 msgid " Edit %s"
+msgstr ""
+
+#: inc/template-tags.php:142
+msgid "Updated:"
+msgstr ""
+
+#: inc/template-tags.php:143
+msgid "Posted:"
 msgstr ""
 
 #: inc/widgets/class-zillah-about-me.php:19
@@ -389,13 +401,13 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:176
+#: inc/template-tags.php:183
 #. translators: %s: post title
 msgctxt "comments title"
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:180
+#: inc/template-tags.php:187
 #. translators: 1: number of comments, 2: post title
 msgctxt "comments title"
 msgid "%1$s Comment"
@@ -436,12 +448,12 @@ msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:154
+#: inc/template-tags.php:161
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:157
+#: inc/template-tags.php:164
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr ""

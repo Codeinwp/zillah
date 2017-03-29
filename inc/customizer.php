@@ -106,6 +106,19 @@ function zillah_customize_register( $wp_customize ) {
 		'type'	=> 'checkbox',
 	));
 
+	/* Show updated date */
+	$wp_customize->add_setting('zillah_show_updated', array(
+		'default' => false,
+		'sanitize_callback' => 'zillah_sanitize_checkbox',
+	));
+
+	$wp_customize->add_control('zillah_show_updated', array(
+		'label' => esc_html__( 'Show updated date in post header.', 'zillah' ),
+		'section' => 'zillah_home_theme_option_section',
+		'priority' => 3,
+		'type'	=> 'checkbox',
+	));
+
 	/* Featured Content Slider */
 	$wp_customize->add_section( 'zillah_featured_content_slider_section', array(
 		'title'	=> esc_html__( 'Featured content slider', 'zillah' ),

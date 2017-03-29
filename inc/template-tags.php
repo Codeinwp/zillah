@@ -124,16 +124,23 @@ if ( ! function_exists( 'zillah_posted_date' ) ) :
 	 * Prints HTML with meta information for the current post-date.
 	 */
 	function zillah_posted_date() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$show_updated = get_theme_mod( 'zillah_show_updated', false );
+		$time_string = '<time class="entry-date published updated" datetime="%1$s" itemprop="dateModified">%2$s</time><meta itemprop="datePublished" content="%2$s">';
+
+		if ( ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time><meta itemprop="datePublished" content="%4$s">';
+			if ( (bool) $show_updated === true ) {
+				$time_string = '%6$s <time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time> - %5$s <time datetime="%3$s" itemprop="dateModified">%4$s</time><meta itemprop="datePublished" content="%4$s">';
+			}
 		}
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
+			esc_html( get_the_modified_date() ),
+			esc_html__( 'Updated:', 'zillah' ),
+			esc_html__( 'Posted:', 'zillah' )
 		);
 
 		$posted_on = sprintf( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
