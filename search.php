@@ -15,7 +15,10 @@ get_header(); ?>
 
 	<header class="page-main-header page-header-search">
 		<div class="container">
-			<h1 class="entry-title page-title"><?php printf( esc_html__( 'Search Results for: %s', 'zillah' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<h1 class="entry-title page-title"><?php
+			/* translators: s: search term */
+			printf( esc_html__( 'Search Results for: %s', 'zillah' ), '<span>' . get_search_query() . '</span>' );
+			?></h1>
 		</div>
 	</header><!-- .page-header -->
 

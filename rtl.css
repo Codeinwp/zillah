@@ -24,9 +24,9 @@ textarea {
 
 /* Header */
 .dropdown-toggle {
-    right: initial;
-    left: 0;
-    margin: 0 0 0 5px;
+	right: initial;
+	left: 0;
+	margin: 0 0 0 5px;
 }
 
 .main-navigation ul {
@@ -34,22 +34,22 @@ textarea {
 }
 
 .main-navigation ul ul {
-    float: right;
-    text-align: right;
-    padding-left: 0;
-    padding-right: 30px;
+	float: right;
+	padding-right: 30px;
+	padding-left: 0;
+	text-align: right;
 }
 
 .header-search form {
-    float: left;
+	float: left;
 }
 
 .header-search label:before {
-	content: "\f002";
+	right: 0;
+	left: initial;
 	padding-right: 0;
 	padding-left: 20px;
-	left: initial;
-	right: 0;
+	content: "\f002";
 }
 
 .header-search input {
@@ -76,22 +76,22 @@ textarea {
 
 /* Footer */
 .site-footer {
-    text-align: right;
+	text-align: right;
 }
 
 .quick-contact .fa {
-    margin: 0px 0 15px 20px;
+	margin: 0 0 15px 20px;
 }
 
 /* Ribbon itnro [Homepage two] */
 .homepage-two .site-main {
-    padding-left: 0;
+	padding-left: 0;
 }
 
 /* Recently posted [homepage two] */
 .recently-item .entry-header {
-    float: right;
-    width: 100%;
+	float: right;
+	width: 100%;
 }
 
 .recently-item h2.entry-title a {
@@ -104,26 +104,26 @@ textarea {
 
 /* Page */
 .taxonomy-description {
-	text-align: right;
 	padding-right: 0;
 	padding-left: 315px;
+	text-align: right;
 }
 
 blockquote {
+	margin-right: 0;
+	padding: 0 20px;
+	border-right: 5px solid #7fcaad;
 	border-left: none;
-    border-right: 5px solid #7fcaad;
-    margin-right: 0;
-    padding: 0 20px;
 }
 
 /* Single page */
-.comment-navigation .nav-next, 
-.posts-navigation .nav-next, 
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
 .post-navigation .nav-next {
-	text-align: left;
-	margin-left: 0;
-	margin-right: -1px;
 	float: left;
+	margin-right: -1px;
+	margin-left: 0;
+	text-align: left;
 }
 
 .comment-body {
@@ -131,12 +131,12 @@ blockquote {
 }
 
 .comment-author {
-    left: initial;
-    right: 0;
+	right: 0;
+	left: initial;
 }
 
 .comment-list .children {
-    padding: 0 30px 0 0;
+	padding: 0 30px 0 0;
 }
 
 .author-details-img-wrap {
@@ -146,66 +146,62 @@ blockquote {
 }
 
 @media screen and (min-width: 480px) {
-
 }
 
 @media screen and (min-width: 600px) {
-
 	/* Sidebar */
 	.widget_search input[type="submit"] {
-		left: 0;
 		right: initial;
+		left: 0;
 	}
 
 	.widget_search label:before {
-	    content: "\f002";
-	    padding-left: 20px;
-	    padding-right: 0;
-	    right: initial;
-	    left: 0;
+		right: initial;
+		left: 0;
+		padding-right: 0;
+		padding-left: 20px;
+		content: "\f002";
 	}
 
 	.widget_search input {
 		padding-left: 50px;
 	}
 
-	/* Header */
+/* Header */
 	.menu-toggle-button-wrap {
 		text-align: center;
 	}
-
 }
 
 @media screen and (min-width: 768px) {
-
 	/* Header */
 	.main-navigation ul ul {
 		padding: 0;
 	}
 
-	/* Footer */
-	.footer-content-bottom, 
+/* Footer */
+	.footer-content-bottom,
 	.quick-contact {
 		text-align: right;
 	}
 
-	.quick-contact, 
+	.quick-contact,
 	.footer-widget-wrap {
 		float: right;
 	}
 
 	.footer-content-bottom-btn {
-	    padding-right: 25px;
-	    padding-left: 0;
+		padding-right: 25px;
+		padding-left: 0;
 	}
 
-	/* About us */
+/* About us */
 	.about-us-page .recently-posted-title {
 		float: right;
 	}
 
 	.see-all-posts {
-	    float: left;
+		float: left;
 	}
 
 	.recently-posted-wrap .recently-posted-about {
@@ -213,29 +209,27 @@ blockquote {
 	}
 
 	.recently-posted-wrap .recently-posted-about:nth-child(3n+1) {
-	    padding-right: 0;
-	    padding-left: 16.6px;
-	    clear: right;
+		clear: right;
+		padding-right: 0;
+		padding-left: 16.6px;
 	}
 
 	.recently-posted-wrap .recently-posted-about:nth-child(3n+3) {
-	    padding-right: 16.6px;
-	    padding-left: 0;
+		padding-right: 16.6px;
+		padding-left: 0;
 	}
-
 }
 
 @media screen and (min-width: 992px) {
-
 	.site-main {
 		padding: 0 0 0 60px;
 	}
 
-	/* header */
-	.main-navigation ul ul li:hover > ul, 
+/* header */
+	.main-navigation ul ul li:hover > ul,
 	.main-navigation ul ul li.focus > ul {
-    	right: 100%;
-    	left: initial;
+		right: 100%;
+		left: initial;
 	}
 
 	.main-navigation li.menu-item-has-children {
@@ -243,38 +237,38 @@ blockquote {
 		padding-left: 10px;
 	}
 
-	/* Footer */
+/* Footer */
 	.footer-video-wrap {
-	    margin-right: 0;
-	    margin-left: 60px;
+		margin-right: 0;
+		margin-left: 60px;
 	}
 
-	/* Ribbon [Homepage One] */
+/* Ribbon [Homepage One] */
 	.home-ribbon-text {
-	    margin-right: 0;
-	    margin-left: 20px;
-	    text-align: right;
+		margin-right: 0;
+		margin-left: 20px;
+		text-align: right;
 	}
 
-	/* Tree videos [Homepage Two] */
+/* Tree videos [Homepage Two] */
 	.home-three-videos-item {
-    	float: right;
+		float: right;
 	}
 
-	/* Ribbon intro [Homepage Two] */
+/* Ribbon intro [Homepage Two] */
 	.home-ribbon-intro-inner {
-	    text-align: right;
-	    float: right;
+		float: right;
+		text-align: right;
 	}
 
-	/* Recently posted [homepage two] */
+/* Recently posted [homepage two] */
 	.recently-image-wrap {
 		margin-right: 0;
 		margin-left: 50px;
 	}
 
-	/* Contact */
-	.search-page .site-main, 
+/* Contact */
+	.search-page .site-main,
 	.contact-page .site-main {
 		padding-left: 0;
 	}
@@ -289,44 +283,40 @@ blockquote {
 	}
 
 	.contact-block-content-wrap .contact-block-content:nth-child(odd) {
-	    padding-left: 15px;
 		padding-right: 0;
+		padding-left: 15px;
 	}
 
 	.contact-block {
-	    text-align: right;
-	}
-
-	.contact-link .fa {
-	    text-align: right;
-	}
-
-	/* About us */
-	.info-block {
 		text-align: right;
 	}
 
+	.contact-link .fa {
+		text-align: right;
+	}
+
+/* About us */
+	.info-block {
+		text-align: right;
+	}
 }
 
-
 @media screen and (min-width: 1200px) {
-
 	/* Recently posted */
 	.recently-posted-wrap .recently-posted-item:nth-child(2n+1) {
-	    clear: right;
+		clear: right;
 	}
 
 	.recently-posted-item {
-	    float: right;
+		float: right;
 	}
 
 	.recently-posted-wrap .recently-posted-item:nth-child(odd) {
-	    padding-left: 10px;
-	    padding-right: 0;
+		padding-right: 0;
+		padding-left: 10px;
 	}
 	.recently-posted-wrap .recently-posted-item:nth-child(even) {
-	    padding-right: 10px;
-	    padding-left: 0;
+		padding-right: 10px;
+		padding-left: 0;
 	}
-
 }

@@ -1417,7 +1417,9 @@ a:active {
     display: flex;
     -webkit-flex-flow: row wrap;
     -ms-flex-flow: row wrap;
-        flex-flow: row wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            flex-flow: row wrap;
     padding: 60px 0;
 }
 
@@ -3075,7 +3077,9 @@ div.sharedaddy h3.sd-title:before {
         display: flex;
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                flex-flow: row wrap;
     }
 
     /*-----------

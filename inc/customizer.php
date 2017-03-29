@@ -18,8 +18,8 @@ function zillah_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_image' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'header_image_data' )->transport    = 'postMessage';
 
-	require_once( 'class/zillah_category-selector-control.php' );
-	require_once( 'class/zillah-google-fonts.php' );
+	require_once( 'class/class-zillah-category-control.php' );
+	require_once( 'class/class-zillah-google-fonts-control.php' );
 
 	$wp_customize->get_control( 'blogname' )->priority = 3;
 	$wp_customize->get_control( 'blogdescription' )->priority = 4;
@@ -138,7 +138,7 @@ function zillah_customize_register( $wp_customize ) {
 	)));
 
 	/* Colors */
-	require_once( 'class/zillah-palette-picker.php' );
+	require_once( 'class/class-zillah-palette.php' );
 	$wp_customize->add_setting( 'zillah_palette_picker',array(
 		'sanitize_callback' => 'zillah_sanitize_palette',
 	) );
@@ -322,7 +322,9 @@ function zillah_sanitize_palette( $input ) {
 	if ( ! empty( $input ) ) {
 		$json = json_decode( $input, true );
 		$palette_name = array( 'p1','p2','p3' );
-		$red = $green = $blue = '';
+		$red = '';
+		$green = '';
+		$blue = '';
 
 		foreach ( $json as $key => $value ) {
 			switch ( $key ) {
