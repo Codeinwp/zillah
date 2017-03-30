@@ -125,6 +125,7 @@ function zillah_widgets_init() {
 	) );
 
 	register_sidebars( 3, array(
+		/* translators: d: Sidebar number */
 		'name'          => esc_html__( 'Footer Widget Area %d', 'zillah' ),
 		'id'            => 'zillah-footer-widget-area',
 		'class'         => 'col-sm-4',
@@ -145,7 +146,7 @@ add_action( 'widgets_init', 'zillah_widgets_init' );
 /*
  * Custom widgets
  */
-require get_template_directory() . '/inc/widgets/about-me.php';
+require get_template_directory() . '/inc/widgets/class-zillah-about-me.php';
 
 /**
  * Return the Google font stylesheet URL, if available.
@@ -239,7 +240,9 @@ function zillah_scripts() {
 
 		wp_enqueue_script( 'zillah_ajax_slider_posts',  get_template_directory_uri() . '/js/ajax-slider-posts.js', array( 'jquery' ), '1.0', true );
 
-		wp_localize_script( 'zillah_ajax_slider_posts', 'requestpost', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		wp_localize_script( 'zillah_ajax_slider_posts', 'requestpost', array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		) );
 
 	}
 
@@ -291,12 +294,13 @@ require get_template_directory() . '/inc/tha-theme-hooks.php';
 /**
  * Hooks.
  */
-require get_template_directory() . '/inc/zillah_hooks.php';
+require get_template_directory() . '/inc/zillah-hooks.php';
 
 /**
  * Customize the read more link
  */
 function zillah_read_more_link() {
+	/* translators: s: The post title */
 	return '<a href="' . esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 add_filter( 'the_content_more_link', 'zillah_read_more_link' );
@@ -305,6 +309,7 @@ add_filter( 'the_content_more_link', 'zillah_read_more_link' );
  * Customize the read more link
  */
 function zillah_read_more_link_alt() {
+	/* translators: s: The post title */
 	return '<a href="' . esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link">' . sprintf( __( 'Read the post %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 
@@ -312,6 +317,7 @@ function zillah_read_more_link_alt() {
  * Customize the excerpt message
  */
 function zillah_excerpt_more() {
+	/* translators: s: The post title */
 	return '...<span class="clearfix clearfix-post"></span><a href="' . esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link">' . sprintf( __( 'Continue Reading %s', 'zillah' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) . ' <span class="meta-nav">&rarr;</span>' ) . '</a>';
 }
 add_filter( 'excerpt_more', 'zillah_excerpt_more' );
@@ -320,7 +326,7 @@ add_filter( 'excerpt_more', 'zillah_excerpt_more' );
 /**
  * Load plugin enhancement file to display admin notices.
  */
-require get_template_directory() . '/inc/plugin-enhancements.php';
+require get_template_directory() . '/inc/class-zillah-theme-plugin-enhancements.php';
 
 
 /**
@@ -333,9 +339,9 @@ function zillah_inline_style() {
 	$custom_css = '';
 	if ( ! empty( $header_image ) ) {
 		$custom_css .= '
-                .header-inner-site-branding {
-                        background-image: url(' . esc_url( $header_image ) . ');
-                }';
+				.header-inner-site-branding {
+						background-image: url(' . esc_url( $header_image ) . ');
+				}';
 	}
 	wp_add_inline_style( 'zillah-style', $custom_css );
 }
@@ -402,7 +408,9 @@ function zillah_slider() {
 			'ignore_sticky_posts'   => 'true',
 			'cat'                   => $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
 			'meta_query'            => array(
-				array( 'key' => '_thumbnail_id' ),
+				array(
+					'key' => '_thumbnail_id',
+				),
 			),
 		);
 
@@ -488,7 +496,9 @@ function zillah_exclude_single_posts_home( $query ) {
 				'post_type'      => 'post',
 				'category'       => $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
 				'meta_query'     => array(
-					array( 'key' => '_thumbnail_id' ),
+					array(
+						'key' => '_thumbnail_id',
+					),
 				),
 			);
 			$slider_posts = get_posts( $args );
@@ -593,8 +603,8 @@ function zillah_php_style() {
 					background: ' . $zillah_c2 . ';
 				}
 				blockquote {
-	                border-left: solid 5px ' . $zillah_c2 . ';
-	            }
+					border-left: solid 5px ' . $zillah_c2 . ';
+				}
 				a.more-link,
 				a.more-link:visited,
 				.reply a,
@@ -617,7 +627,7 @@ function zillah_php_style() {
 				}
 			';
 			}
-		}
+		}// End if().
 
 		/**
 		 * Color 3
@@ -673,7 +683,7 @@ function zillah_php_style() {
 					background:' . $zillah_c3 . ';
 				}
 			';
-		}
+		}// End if().
 
 		/**
 		 * Color 4
@@ -706,7 +716,7 @@ function zillah_php_style() {
 			}
 		';
 
-	}
+	}// End if().
 
 	if ( ! empty( $zillah_first_font_one[0] ) && ! empty( $zillah_first_font_one[1] ) && ! empty( $zillah_first_font_one[2] ) ) {
 		echo '
@@ -743,7 +753,7 @@ function zillah_php_style() {
 		.author-details-title,
 		.page-main-header .entry-title,
 		.comment-respond label,
-	    .entry-title,
+		.entry-title,
 		.categories-links a,
 		.entry-header .cat-links,
 		.more-link,
@@ -762,7 +772,7 @@ function zillah_php_style() {
 			font-family: \'' . $zillah_first_font_two[0] . '\', ' . $zillah_first_font_two[1] . ';
 			font-weight: ' . $zillah_first_font_two[2] . ';
 		}';
-	}
+	}// End if().
 
 	if ( ! empty( $zillah_font_size ) ) {
 		echo '

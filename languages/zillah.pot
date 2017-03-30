@@ -1,66 +1,76 @@
+# Copyright (C) 2017 ThemeIsle
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zillah\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-05 18:01+0200\n"
-"PO-Revision-Date: 2016-10-05 18:01+0200\n"
-"Last-Translator: rodica <rodica@themeisle.com>\n"
-"Language-Team: ThemeIsle <friends@themeisle.com>\n"
+"Project-Id-Version: Zillah 1.1.1\n"
+"Report-Msgid-Bugs-To: https://github.com/Codeinwp/zillah/issues\n"
+"POT-Creation-Date: 2017-03-29 11:19:44+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_x;_x:1,2c;_ex:1,2c\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Themeisle Translate Team <friends@themeisle.com>\n"
+"Language-Team: Themeisle Translate <friends@themeisle.com>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: inc\n"
-"X-Poedit-SearchPath-2: template-parts\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
 
 #: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:23
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the "
+"links below or a search?"
 msgstr ""
 
-#: comments.php:41
-#: comments.php:63
+#: comments.php:54 comments.php:76
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:44
-#: comments.php:66
+#: comments.php:57 comments.php:79
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:45
-#: comments.php:67
+#: comments.php:58 comments.php:80
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:80
+#: comments.php:93
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:60
-#, php-format
+#: footer.php:61
+#. translators: 1: Link to WordPress.org
 msgid "Proudly powered by %1$s"
 msgstr ""
 
-#: footer.php:61
+#: footer.php:63
+#. translators: 1: s: 'WordPress'
 msgid "WordPress"
 msgstr ""
 
-#: footer.php:65
-#, php-format
+#: footer.php:69
+#. translators: 1: Link to ThemeIsle.com
 msgid "Theme Zillah by %1$s"
 msgstr ""
 
-#: footer.php:66
+#: footer.php:71
+#. translators: s: 'Themeisle'
 msgid "Themeisle"
 msgstr ""
 
-#: footer.php:70
+#: footer.php:75
 msgid "Back to top"
 msgstr ""
 
@@ -72,83 +82,138 @@ msgstr ""
 msgid "Social Links Menu"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:118 sidebar.php:21
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:120
-#: functions.php:131
+#: functions.php:120 functions.php:132
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:128
-#, php-format
+#: functions.php:129
+#. translators: d: Sidebar number
 msgid "Footer Widget Area %d"
 msgstr ""
 
-#: functions.php:168
-msgctxt "Cabin font: on or off"
-msgid "on"
-msgstr ""
-
-#: functions.php:174
-msgctxt "Lato font: on or off"
-msgid "on"
-msgstr ""
-
-#: functions.php:180
-msgctxt "Merriweather font: on or off"
-msgid "on"
-msgstr ""
-
-#: functions.php:219
+#: functions.php:225
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:226
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:296
-#: functions.php:302
-#, php-format
+#: functions.php:304 functions.php:321
+#. translators: s: The post title
 msgid "Continue Reading %s"
+msgstr ""
+
+#: functions.php:313
+#. translators: s: The post title
+msgid "Read the post %s"
 msgstr ""
 
 #: header.php:28
 msgid "Skip to content"
 msgstr ""
 
-#: search.php:18
-#, php-format
-msgid "Search Results for: %s"
+#: inc/class/class-zillah-category-control.php:24
+msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: searchform.php:9
-msgctxt "label"
-msgid "Search for:"
+#: inc/class/class-zillah-google-fonts-control.php:62
+msgid "No fonts to show"
 msgstr ""
 
-#: searchform.php:10
-msgid "Search &hellip;"
+#: inc/class/class-zillah-palette.php:64 inc/class/class-zillah-palette.php:73
+msgid "Default"
 msgstr ""
 
-#: searchform.php:10
-msgid "Search for:"
+#: inc/class-zillah-theme-plugin-enhancements.php:91
+#. translators:  'Jetpack plugin'
+msgid ""
+"The %1$s is recommended to use some of this theme&rsquo;s features, "
+"including: "
 msgstr ""
 
-#: searchform.php:12
-msgid "Search"
+#: inc/class-zillah-theme-plugin-enhancements.php:92
+msgid "Jetpack plugin"
 msgstr ""
 
-#: single.php:25
-msgctxt "previous post"
-msgid "<span class=\"post-title\">%title</span>"
+#: inc/class-zillah-theme-plugin-enhancements.php:100
+#. translators:  'Simple Contact Form Plugin - PirateForms plugin'
+msgid "The %1$s is recommended to use some of this theme&rsquo;s features."
 msgstr ""
 
-#: single.php:26
-msgctxt "next post"
-msgid "<span class=\"post-title\">%title</span>"
+#: inc/class-zillah-theme-plugin-enhancements.php:101
+msgid "Simple Contact Form Plugin - PirateForms plugin"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:123
+msgid "Site Logo"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:132
+msgid "Featured Content"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:141
+msgid "Social Menu"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:150
+msgid "Menus"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:159
+msgid "Comics"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:168
+msgid "Testimonials"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:177
+msgid "Portfolios"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:186
+msgid "Related Posts"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:195
+msgid "Social Links"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:213
+msgid "no specific module needed"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:214
+msgid "Custom Content Types module"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:286
+#. translators: 1: plugin name 2: activation link
+msgid " Please activate %1$s. %2$s"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:288
+msgid "Activate"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:297
+#. translators: 1: plugin name 2: install link
+msgid " Please install %1$s. %2$s"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:299
+msgid "Install"
+msgstr ""
+
+#: inc/class-zillah-theme-plugin-enhancements.php:325
+#. translators: 1: feature name 2: Jetpack module name
+msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
 msgstr ""
 
 #: inc/customizer.php:40
@@ -159,218 +224,261 @@ msgstr ""
 msgid "Theme options"
 msgstr ""
 
+#: inc/customizer.php:59
+msgid "Alternative layout"
+msgstr ""
+
 #: inc/customizer.php:60
+msgid ""
+"If you check this box, the alternative layout will be used on blog and "
+"single page."
+msgstr ""
+
+#: inc/customizer.php:74
 msgid "Show sidebar"
 msgstr ""
 
-#: inc/customizer.php:61
+#: inc/customizer.php:75
 msgid "If you check this box, the sidebar will appear on homepage and archive page."
 msgstr ""
 
-#: inc/customizer.php:75
+#: inc/customizer.php:89
 msgid "Show tags"
 msgstr ""
 
-#: inc/customizer.php:76
+#: inc/customizer.php:90
 msgid "If you check this box, the tags will appear in posts."
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:103
 msgid "Get 1st image in the post as featured."
 msgstr ""
 
-#: inc/customizer.php:97
+#: inc/customizer.php:116
+msgid "Show updated date in post header."
+msgstr ""
+
+#: inc/customizer.php:124
 msgid "Featured content slider"
 msgstr ""
 
-#: inc/customizer.php:108
+#: inc/customizer.php:135
 msgid "Show slider"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:136
 msgid "If you check this box, the slider area will appear on the homepage."
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:160
 msgid "Change the color scheme"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:267
 msgid "Logo"
 msgstr ""
 
-#: inc/plugin-enhancements.php:82
-#, php-format
-msgid "The %1$s is recommended to use some of this theme&rsquo;s features, including: "
-msgstr ""
-
-#: inc/plugin-enhancements.php:83
-msgid "Jetpack plugin"
-msgstr ""
-
-#: inc/plugin-enhancements.php:90
-#, php-format
-msgid "The %1$s is recommended to use some of this theme&rsquo;s features."
-msgstr ""
-
-#: inc/plugin-enhancements.php:91
-msgid "Simple Contact Form Plugin - PirateForms plugin"
-msgstr ""
-
-#: inc/plugin-enhancements.php:113
-msgid "Site Logo"
-msgstr ""
-
-#: inc/plugin-enhancements.php:122
-msgid "Featured Content"
-msgstr ""
-
-#: inc/plugin-enhancements.php:131
-msgid "Social Menu"
-msgstr ""
-
-#: inc/plugin-enhancements.php:140
-msgid "Menus"
-msgstr ""
-
-#: inc/plugin-enhancements.php:149
-msgid "Comics"
-msgstr ""
-
-#: inc/plugin-enhancements.php:158
-msgid "Testimonials"
-msgstr ""
-
-#: inc/plugin-enhancements.php:167
-msgid "Portfolios"
-msgstr ""
-
-#: inc/plugin-enhancements.php:176
-msgid "Related Posts"
-msgstr ""
-
-#: inc/plugin-enhancements.php:185
-msgid "Social Links"
-msgstr ""
-
-#: inc/plugin-enhancements.php:203
-msgid "no specific module needed"
-msgstr ""
-
-#: inc/plugin-enhancements.php:204
-msgid "Custom Content Types module"
-msgstr ""
-
-#: inc/plugin-enhancements.php:277
-#, php-format
-msgid " Please activate %1$s. %2$s"
-msgstr ""
-
-#: inc/plugin-enhancements.php:279
-msgid "Activate"
-msgstr ""
-
-#: inc/plugin-enhancements.php:287
-#, php-format
-msgid " Please install %1$s. %2$s"
-msgstr ""
-
-#: inc/plugin-enhancements.php:289
-msgid "Install"
-msgstr ""
-
-#: inc/plugin-enhancements.php:314
-#, php-format
-msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
-msgstr ""
-
-#: inc/template-tags.php:54
+#: inc/template-tags.php:56
+#. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:56
-#, php-format
+#: inc/template-tags.php:59
+#. translators: 1: tags
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:65
-#, php-format
+#: inc/template-tags.php:67
+#. translators: %s: Name of current post
 msgid " Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:151
-msgctxt "Used between list items, there is a space after the comma."
-msgid ", "
+#: inc/template-tags.php:142
+msgid "Updated:"
 msgstr ""
 
-#: inc/template-tags.php:154
-msgctxt "Used before category names."
-msgid "Categories"
+#: inc/template-tags.php:143
+msgid "Posted:"
 msgstr ""
 
-#: inc/class/zillah-google-fonts.php:36
-msgid "No fonts to show"
-msgstr ""
-
-#: inc/class/zillah-palette-picker.php:60
-#: inc/class/zillah-palette-picker.php:69
-msgid "Default"
-msgstr ""
-
-#: inc/class/zillah_category-selector-control.php:14
-msgid "&mdash; Select &mdash;"
-msgstr ""
-
-#: inc/widgets/about-me.php:6
+#: inc/widgets/class-zillah-about-me.php:19
 msgid "About me widget."
 msgstr ""
 
-#: inc/widgets/about-me.php:8
+#: inc/widgets/class-zillah-about-me.php:25
 msgid "Zillah: About me"
 msgstr ""
 
-#: inc/widgets/about-me.php:57
+#: inc/widgets/class-zillah-about-me.php:98
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/about-me.php:60
+#: inc/widgets/class-zillah-about-me.php:101
 msgid "Enter the URL for your photo"
 msgstr ""
 
-#: inc/widgets/about-me.php:63
+#: inc/widgets/class-zillah-about-me.php:104
 msgid "Add your text:"
+msgstr ""
+
+#: search.php:20
+#. translators: s: search term
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-alternative.php:49 template-parts/content-page.php:22
+#: template-parts/content-single-alternative.php:50
+#: template-parts/content-single.php:49 template-parts/content.php:58
+msgid "Pages:"
 msgstr ""
 
 #: template-parts/content-none.php:16
 msgid "Sorry, nothing found!"
 msgstr ""
 
-#: template-parts/content-none.php:23
-#, php-format
+#: template-parts/content-none.php:25
+#. translators: 1: link to new post
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:27
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+#: template-parts/content-none.php:36
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:33
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: template-parts/content-page.php:22
-#: template-parts/content-single.php:45
-#: template-parts/content.php:58
-msgid "Pages:"
+#: template-parts/content-none.php:42
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #: template-parts/content-page.php:35
-#, php-format
+#. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
+#: template-parts/content-single-alternative.php:41
 #: template-parts/content-single.php:40
-#, php-format
+#. translators: %s: Name of current post.
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
+#. Theme Name of the plugin/theme
+msgid "Zillah"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://themeisle.com/themes/zillah/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Zillah is a free minimal blogging WordPress theme from ThemeIsle. Is "
+"responsive and compatible with a wide range of plugins like : Nivo Slider, "
+"Siteorigin Page Builder, WooCoomerce, Photo Gallery Grid and Contact Form 7."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeIsle"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themeisle.com"
+msgstr ""
+
+#: comments.php:34
+#. translators: %s: post title
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:38
+#. translators: 1: number of comments, 2: post title
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:183
+#. translators: %s: post title
+msgctxt "comments title"
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:187
+#. translators: 1: number of comments, 2: post title
+msgctxt "comments title"
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:169
+#. Translators: If there are characters in your language that are not supported
+#. by Bitter, translate this to 'off'. Do not translate into your own language.
+msgctxt "Cabin font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:176
+#. Translators: If there are characters in your language that are not supported
+#. by Bitter, translate this to 'off'. Do not translate into your own language.
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:183
+#. Translators: If there are characters in your language that are not supported
+#. by Bitter, translate this to 'off'. Do not translate into your own language.
+msgctxt "Merriweather font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/template-tags.php:29
+#. translators: s: post date
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:35
+#. translators: s: post author
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:161
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:164
+msgctxt "Used before category names."
+msgid "Categories"
+msgstr ""
+
+#: searchform.php:11 searchform.php:12
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:12
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: single.php:28
+msgctxt "previous post"
+msgid "<span class=\"post-title\">%title</span>"
+msgstr ""
+
+#: single.php:29
+msgctxt "next post"
+msgid "<span class=\"post-title\">%title</span>"
+msgstr ""
