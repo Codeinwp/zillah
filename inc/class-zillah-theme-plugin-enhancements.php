@@ -17,14 +17,14 @@ class Zillah_Theme_Plugin_Enhancements {
 	 *
 	 * @var array
 	 */
-	var $plugins;
+	public $plugins;
 
 	/**
 	 * Whether to display an admin notice or not.
 	 *
 	 * @var boolean
 	 */
-	var $display_notice = false;
+	public $display_notice = false;
 
 	/**
 	 * Init function.
@@ -67,7 +67,7 @@ class Zillah_Theme_Plugin_Enhancements {
 
 		// Otherwise, build an array to list all the required dependencies and modules.
 		$dependency_list = '';
-		$this->modules = array();
+		$this->modules   = array();
 
 		// Create a list of dependencies.
 		foreach ( $this->dependencies as $dependency ) :
@@ -87,6 +87,7 @@ class Zillah_Theme_Plugin_Enhancements {
 				'slug'    => 'jetpack',
 				'name'    => 'Jetpack by WordPress.com',
 				'message' => sprintf(
+					/* translators:  'Jetpack plugin' */
 					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features, including: ', 'zillah' ),
 				'<strong>' . esc_html__( 'Jetpack plugin', 'zillah' ) . '</strong>' ),
 				'modules' => rtrim( $dependency_list, ', ' ) . '.',
@@ -95,6 +96,7 @@ class Zillah_Theme_Plugin_Enhancements {
 				'slug'    => 'pirate-forms',
 				'name'    => 'Free & Simple Contact Form Plugin - PirateForms',
 				'message' => sprintf(
+					/* translators:  'Simple Contact Form Plugin - PirateForms plugin' */
 					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features.', 'zillah' ),
 				'<strong>' . esc_html__( 'Simple Contact Form Plugin - PirateForms plugin', 'zillah' ) . '</strong>' ),
 			),
@@ -231,13 +233,11 @@ class Zillah_Theme_Plugin_Enhancements {
 				// the array containing the plugin enhancements.
 				if ( is_plugin_active( array_search( $plugin['name'], $installed_plugin_names ) ) ) {
 					unset( $this->plugins[ $key ] );
-				} // Set the plugin status as to-activate.
+				} // End if().
 				else {
 					$this->plugins[ $key ]['status'] = 'to-activate';
 					$this->display_notice = true;
 				}
-
-				// Set the plugin status as to-install.
 			} else {
 				$this->plugins[ $key ]['status'] = 'to-install';
 				$this->display_notice = true;
@@ -282,6 +282,7 @@ class Zillah_Theme_Plugin_Enhancements {
 			if ( 'to-activate' === $plugin['status'] ) {
 				$activate_url = $this->plugin_activate_url( $plugin['slug'] );
 				$notice .= sprintf(
+					/* translators: 1: plugin name 2: activation link */
 					esc_html__( ' Please activate %1$s. %2$s', 'zillah' ),
 					esc_html( $plugin['name'] ),
 					( $activate_url ) ? '<a href="' . $activate_url . '">' . esc_html__( 'Activate', 'zillah' ) . '</a>' : ''
@@ -292,6 +293,7 @@ class Zillah_Theme_Plugin_Enhancements {
 			if ( 'to-install' === $plugin['status'] ) {
 				$install_url = $this->plugin_install_url( $plugin['slug'] );
 				$notice .= sprintf(
+					/* translators: 1: plugin name 2: install link */
 					esc_html__( ' Please install %1$s. %2$s', 'zillah' ),
 					esc_html( $plugin['name'] ),
 					( $install_url ) ? '<a href="' . $install_url . '">' . esc_html__( 'Install', 'zillah' ) . '</a>' : ''
@@ -319,6 +321,7 @@ class Zillah_Theme_Plugin_Enhancements {
 
 			$notice .= '<p>';
 			$notice .= sprintf(
+				/* translators: 1: feature name 2: Jetpack module name */
 				esc_html__( 'To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s.', 'zillah' ),
 				esc_html( $featurelist ),
 				'<strong>' . esc_html( $this->get_module_name( $module ) ) . '</strong>'
@@ -333,7 +336,9 @@ class Zillah_Theme_Plugin_Enhancements {
 			'em'     => array(),
 			'b'      => array(),
 			'i'      => array(),
-			'a'      => array( 'href' => array() ),
+			'a'      => array(
+				'href' => array(),
+			),
 		);
 		printf(
 			'<div id="message" class="notice notice-warning is-dismissible">%s</div>',
@@ -379,7 +384,9 @@ class Zillah_Theme_Plugin_Enhancements {
 		 */
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
-		$plugin_information = plugins_api( 'plugin_information', array( 'slug' => $slug ) );
+		$plugin_information = plugins_api( 'plugin_information', array(
+			'slug' => $slug,
+		) );
 
 		if ( is_wp_error( $plugin_information ) ) {
 			return false;

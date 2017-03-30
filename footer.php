@@ -56,13 +56,18 @@
 			<div class="container container-footer-info"">
 
 				<div class="footer-copyright">
-					<?php printf(
-						__( 'Proudly powered by %1$s', 'zillah' ),
+					<?php
+					/* translators: 1: Link to WordPress.org */
+					printf( __( 'Proudly powered by %1$s', 'zillah' ),
+						/* translators: 1: s: 'WordPress' */
 						sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'zillah' ) )
 					); ?>
 					<span class="sep"> | </span>
-					<?php printf(
-						__( 'Theme Zillah by %1$s', 'zillah' ),
+					<?php
+
+					/* translators: 1: Link to ThemeIsle.com */
+					printf( __( 'Theme Zillah by %1$s', 'zillah' ),
+						/* translators: s: 'Themeisle' */
 						sprintf( '<a href="http://themeisle.com/" rel="nofollow">%s</a>', esc_html__( 'Themeisle', 'zillah' ) )
 					); ?>
 				</div>

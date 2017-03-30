@@ -35,7 +35,11 @@
 
 					<div class="main-navigation-wrap">
 
-						<div class="main-navigation-wrap-inner<?php echo wp_nav_menu( array( 'theme_location' => 'social', 'fallback_cb' => false, 'echo' => false ) ) !== false ? '' : ' no-social-menu'; ?>">
+						<div class="main-navigation-wrap-inner<?php echo wp_nav_menu( array(
+							'theme_location' => 'social',
+							'fallback_cb' => false,
+							'echo' => false,
+						) ) !== false ? '' : ' no-social-menu'; ?>">
 
 							<?php
 								wp_nav_menu( array(

@@ -4,7 +4,7 @@ Theme URI:      https://themeisle.com/themes/zillah/
 Author:         ThemeIsle
 Author URI:     http://themeisle.com
 Description:    Zillah is a free minimal blogging WordPress theme from ThemeIsle. Is responsive and compatible with a wide range of plugins like : Nivo Slider, Siteorigin Page Builder, WooCoomerce, Photo Gallery Grid and Contact Form 7.
-Version:        1.1.1
+Version:        1.1.2
 License:        GNU General Public License v2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:    zillah
@@ -1417,7 +1417,9 @@ a:active {
     display: flex;
     -webkit-flex-flow: row wrap;
     -ms-flex-flow: row wrap;
-        flex-flow: row wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            flex-flow: row wrap;
     padding: 60px 0;
 }
 
@@ -3075,7 +3077,9 @@ div.sharedaddy h3.sd-title:before {
         display: flex;
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                flex-flow: row wrap;
     }
 
     /*-----------

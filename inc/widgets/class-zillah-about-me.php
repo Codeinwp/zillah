@@ -14,8 +14,14 @@ class Zillah_About_Me extends WP_Widget {
 	 * Zillah_About_Me constructor.
 	 */
 	public function __construct() {
-		$widget_ops = array( 'classname' => 'Zillah_About_Me', 'description' => __( 'About me widget.', 'zillah' ) );
-		$control_ops = array( 'width' => 400, 'height' => 350 );
+		$widget_ops = array(
+			'classname' => 'Zillah_About_Me',
+			'description' => __( 'About me widget.', 'zillah' ),
+		);
+		$control_ops = array(
+			'width' => 400,
+			'height' => 350,
+		);
 		parent::__construct( 'Zillah_About_Me', __( 'Zillah: About me', 'zillah' ), $widget_ops, $control_ops );
 	}
 
@@ -67,7 +73,8 @@ class Zillah_About_Me extends WP_Widget {
 		$instance['image_url'] 	= esc_url_raw( $new_instance['image_url'] );
 		if ( current_user_can( 'unfiltered_html' ) ) {
 			$instance['text'] = $new_instance['text'];
-		} else { 			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) ); // wp_filter_post_kses() expects slashed
+		} else {
+		    $instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) ); // wp_filter_post_kses() expects slashed
 		}
 		return $instance;
 	}
@@ -78,7 +85,11 @@ class Zillah_About_Me extends WP_Widget {
 	 * @param array $instance The widget instance.
 	 */
 	public function form( $instance ) {
-		$instance 	= wp_parse_args( (array) $instance, array( 'title' => '', 'text' => '', 'image_url' => '' ) );
+		$instance 	= wp_parse_args( (array) $instance, array(
+			'title' => '',
+			'text' => '',
+			'image_url' => '',
+		) );
 		$title 		= strip_tags( $instance['title'] );
 		$text 		= esc_textarea( $instance['text'] );
 		$image_url  = esc_url( $instance['image_url'] );
