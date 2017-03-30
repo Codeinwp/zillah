@@ -1,4 +1,9 @@
 
+### 1.1.2 - 30/03/2017
+**Changes:** 
+- Added comparison mechanism for demo content to allow safer updates
+- NEW option for displaying the Updated date for posts
+
 ### 1.1.1 - 25/01/2017
 **Changes:** 
 - Support for Jetpack's related post date
