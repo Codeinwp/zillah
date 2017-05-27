@@ -130,7 +130,7 @@ if ( ! function_exists( 'zillah_posted_date' ) ) :
 		if ( ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time><meta itemprop="datePublished" content="%4$s">';
 			if ( (bool) $show_updated === true ) {
-				$time_string = '%6$s <time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time> - %5$s <time datetime="%3$s" itemprop="dateModified">%4$s</time><meta itemprop="datePublished" content="%4$s">';
+				$time_string = '%5$s <time datetime="%3$s" itemprop="dateModified">%4$s</time><meta itemprop="datePublished" content="%4$s">';
 			}
 		}
 
@@ -139,7 +139,7 @@ if ( ! function_exists( 'zillah_posted_date' ) ) :
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_modified_date() ),
-			esc_html__( 'Updated:', 'zillah' ),
+			esc_html__( 'Last Updated:', 'zillah' ),
 			esc_html__( 'Posted:', 'zillah' )
 		);
 
