@@ -15,10 +15,12 @@ get_header(); ?>
 
 	<header class="page-main-header page-header-search">
 		<div class="container">
-			<h1 class="entry-title page-title"><?php
+			<h1 class="entry-title page-title">
+			<?php
 			/* translators: s: search term */
 			printf( esc_html__( 'Search Results for: %s', 'zillah' ), '<span>' . get_search_query() . '</span>' );
-			?></h1>
+			?>
+			</h1>
 		</div>
 	</header><!-- .page-header -->
 
@@ -30,11 +32,13 @@ get_header(); ?>
 				<main id="main" class="site-main" role="main">
 					<?php zillah_hook_search_top(); ?>
 				<?php
-				if ( have_posts() ) : ?>
+				if ( have_posts() ) :
+				?>
 
 					<?php
 					/* Start the Loop */
-					while ( have_posts() ) : the_post();
+					while ( have_posts() ) :
+						the_post();
 
 						/**
 						 * Run the loop for the search to output the results.
@@ -51,7 +55,8 @@ get_header(); ?>
 
 					get_template_part( 'template-parts/content', 'none' );
 
-				endif; ?>
+				endif;
+				?>
 
 					<?php zillah_hook_search_bottom(); ?>
 				</main><!-- #main -->

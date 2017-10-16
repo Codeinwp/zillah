@@ -30,244 +30,310 @@ function zillah_customize_register( $wp_customize ) {
 	}
 
 	/* Title tagline */
-	$wp_customize->add_setting('zillah_tagline_show', array(
-		'default' => 0,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-		'transport' => 'postMessage',
-	));
+	$wp_customize->add_setting(
+		'zillah_tagline_show', array(
+			'default' => 0,
+			'sanitize_callback' => 'zillah_sanitize_checkbox',
+			'transport' => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_control('zillah_tagline_show', array(
-		'label' => esc_html__( 'Hide Site Title', 'zillah' ),
-		'section' => 'title_tagline',
-		'priority' => 50,
-		'type'	=> 'checkbox',
-	));
+	$wp_customize->add_control(
+		'zillah_tagline_show', array(
+			'label' => esc_html__( 'Hide Site Title', 'zillah' ),
+			'section' => 'title_tagline',
+			'priority' => 50,
+			'type'  => 'checkbox',
+		)
+	);
 
 	/* Advanced options */
-	$wp_customize->add_section( 'zillah_home_theme_option_section', array(
-		'title'	=> esc_html__( 'Theme options', 'zillah' ),
-		'priority'	=> 20,
-	) );
+	$wp_customize->add_section(
+		'zillah_home_theme_option_section', array(
+			'title' => esc_html__( 'Theme options', 'zillah' ),
+			'priority'  => 20,
+		)
+	);
 
 	/* Alternative layout */
-	$wp_customize->add_setting('zillah_alt_layout', array(
-		'default' => false,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-	));
+	$wp_customize->add_setting(
+		'zillah_alt_layout', array(
+			'default' => false,
+			'sanitize_callback' => 'zillah_sanitize_checkbox',
+		)
+	);
 
-	$wp_customize->add_control('zillah_alt_layout', array(
-		'label' => esc_html__( 'Alternative layout', 'zillah' ),
-		'description' => esc_html__( 'If you check this box, the alternative layout will be used on blog and single page.', 'zillah' ),
-		'section' => 'zillah_home_theme_option_section',
-		'priority' => 1,
-		'type'	=> 'checkbox',
-	));
+	$wp_customize->add_control(
+		'zillah_alt_layout', array(
+			'label' => esc_html__( 'Alternative layout', 'zillah' ),
+			'description' => esc_html__( 'If you check this box, the alternative layout will be used on blog and single page.', 'zillah' ),
+			'section' => 'zillah_home_theme_option_section',
+			'priority' => 1,
+			'type'  => 'checkbox',
+		)
+	);
 
 	/* Show sidebar */
-	$wp_customize->add_setting('zillah_sidebar_show', array(
-		'default' => false,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-		'transport' => 'postMessage',
-	));
+	$wp_customize->add_setting(
+		'zillah_sidebar_show', array(
+			'default' => false,
+			'sanitize_callback' => 'zillah_sanitize_checkbox',
+			'transport' => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_control('zillah_sidebar_show', array(
-		'label' => esc_html__( 'Show sidebar', 'zillah' ),
-		'description' => esc_html__( 'If you check this box, the sidebar will appear on homepage and archive page.', 'zillah' ),
-		'section' => 'zillah_home_theme_option_section',
-		'priority' => 1,
-		'type'	=> 'checkbox',
-	));
+	$wp_customize->add_control(
+		'zillah_sidebar_show', array(
+			'label' => esc_html__( 'Show sidebar', 'zillah' ),
+			'description' => esc_html__( 'If you check this box, the sidebar will appear on homepage and archive page.', 'zillah' ),
+			'section' => 'zillah_home_theme_option_section',
+			'priority' => 1,
+			'type'  => 'checkbox',
+		)
+	);
 
 	/* Show Tags */
-	$wp_customize->add_setting('zillah_tags_show', array(
-		'default' => false,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-		'transport' => 'postMessage',
-	));
+	$wp_customize->add_setting(
+		'zillah_tags_show', array(
+			'default' => false,
+			'sanitize_callback' => 'zillah_sanitize_checkbox',
+			'transport' => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_control('zillah_tags_show', array(
-		'label' => esc_html__( 'Show tags', 'zillah' ),
-		'description' => esc_html__( 'If you check this box, the tags will appear in posts.', 'zillah' ),
-		'section' => 'zillah_home_theme_option_section',
-		'priority' => 2,
-		'type'	=> 'checkbox',
-	));
+	$wp_customize->add_control(
+		'zillah_tags_show', array(
+			'label' => esc_html__( 'Show tags', 'zillah' ),
+			'description' => esc_html__( 'If you check this box, the tags will appear in posts.', 'zillah' ),
+			'section' => 'zillah_home_theme_option_section',
+			'priority' => 2,
+			'type'  => 'checkbox',
+		)
+	);
 
 	/* Get image as featured */
-	$wp_customize->add_setting('zillah_image_as_thumbnail', array(
-		'default' => false,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-	));
+	$wp_customize->add_setting(
+		'zillah_image_as_thumbnail', array(
+			'default' => false,
+			'sanitize_callback' => 'zillah_sanitize_checkbox',
+		)
+	);
 
-	$wp_customize->add_control('zillah_image_as_thumbnail', array(
-		'label' => esc_html__( 'Get 1st image in the post as featured.', 'zillah' ),
-		'section' => 'zillah_home_theme_option_section',
-		'priority' => 2,
-		'type'	=> 'checkbox',
-	));
+	$wp_customize->add_control(
+		'zillah_image_as_thumbnail', array(
+			'label' => esc_html__( 'Get 1st image in the post as featured.', 'zillah' ),
+			'section' => 'zillah_home_theme_option_section',
+			'priority' => 2,
+			'type'  => 'checkbox',
+		)
+	);
 
 	/* Show updated date */
-	$wp_customize->add_setting('zillah_show_updated', array(
-		'default' => false,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-	));
+	$wp_customize->add_setting(
+		'zillah_show_updated', array(
+			'default' => false,
+			'sanitize_callback' => 'zillah_sanitize_checkbox',
+		)
+	);
 
-	$wp_customize->add_control('zillah_show_updated', array(
-		'label' => esc_html__( 'Show updated date in post header.', 'zillah' ),
-		'section' => 'zillah_home_theme_option_section',
-		'priority' => 3,
-		'type'	=> 'checkbox',
-	));
+	$wp_customize->add_control(
+		'zillah_show_updated', array(
+			'label' => esc_html__( 'Show updated date in post header.', 'zillah' ),
+			'section' => 'zillah_home_theme_option_section',
+			'priority' => 3,
+			'type'  => 'checkbox',
+		)
+	);
 
 	/* Featured Content Slider */
-	$wp_customize->add_section( 'zillah_featured_content_slider_section', array(
-		'title'	=> esc_html__( 'Featured content slider', 'zillah' ),
-		'priority'	=> 25,
-	) );
+	$wp_customize->add_section(
+		'zillah_featured_content_slider_section', array(
+			'title' => esc_html__( 'Featured content slider', 'zillah' ),
+			'priority'  => 25,
+		)
+	);
 
-	$wp_customize->add_setting('zillah_home_slider_show', array(
-		'default' => 0,
-		'sanitize_callback' => 'zillah_sanitize_checkbox',
-		'transport' => 'postMessage',
-	));
+	$wp_customize->add_setting(
+		'zillah_home_slider_show', array(
+			'default' => 0,
+			'sanitize_callback' => 'zillah_sanitize_checkbox',
+			'transport' => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_control('zillah_home_slider_show', array(
-		'label' => esc_html__( 'Show slider', 'zillah' ),
-		'description' => esc_html__( 'If you check this box, the slider area will appear on the homepage.', 'zillah' ),
-		'section' => 'zillah_featured_content_slider_section',
-		'priority' => 1,
-		'type'	=> 'checkbox',
-	));
+	$wp_customize->add_control(
+		'zillah_home_slider_show', array(
+			'label' => esc_html__( 'Show slider', 'zillah' ),
+			'description' => esc_html__( 'If you check this box, the slider area will appear on the homepage.', 'zillah' ),
+			'section' => 'zillah_featured_content_slider_section',
+			'priority' => 1,
+			'type'  => 'checkbox',
+		)
+	);
 
-	$wp_customize->add_setting('zillah_home_slider_category', array(
-		'default' => 0,
-		'sanitize_callback' => 'zillah_sanitize_category_dropdown',
-	));
+	$wp_customize->add_setting(
+		'zillah_home_slider_category', array(
+			'default' => 0,
+			'sanitize_callback' => 'zillah_sanitize_category_dropdown',
+		)
+	);
 
-	$wp_customize->add_control( new Zillah_Category_Control( $wp_customize, 'zillah_home_slider_category', array(
-		'label'    => 'Category',
-		'section'  => 'zillah_featured_content_slider_section',
-		'priority' => 2,
-	)));
+	$wp_customize->add_control(
+		new Zillah_Category_Control(
+			$wp_customize, 'zillah_home_slider_category', array(
+				'label'    => 'Category',
+				'section'  => 'zillah_featured_content_slider_section',
+				'priority' => 2,
+			)
+		)
+	);
 
 	/* Colors */
 	require_once( 'class/class-zillah-palette.php' );
-	$wp_customize->add_setting( 'zillah_palette_picker',array(
-		'sanitize_callback' => 'zillah_sanitize_palette',
-	) );
+	$wp_customize->add_setting(
+		'zillah_palette_picker',array(
+			'sanitize_callback' => 'zillah_sanitize_palette',
+		)
+	);
 
-	$wp_customize->add_control( new Zillah_Palette( $wp_customize, 'zillah_palette_picker', array(
-		'label'   => esc_html__( 'Change the color scheme','zillah' ),
-		'section' => 'colors',
-		'priority' => 1,
-	) ) );
+	$wp_customize->add_control(
+		new Zillah_Palette(
+			$wp_customize, 'zillah_palette_picker', array(
+				'label'   => esc_html__( 'Change the color scheme','zillah' ),
+				'section' => 'colors',
+				'priority' => 1,
+			)
+		)
+	);
 
 	/* Google fonts  */
-	$wp_customize->add_setting('zillah_google_fonts_one', array(
-		'default' => 0,
-		'sanitize_callback' => 'sanitize_text_field',
-	));
+	$wp_customize->add_setting(
+		'zillah_google_fonts_one', array(
+			'default' => 0,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
 
-	$wp_customize->add_control( new Zillah_Google_Fonts_Control( $wp_customize, 'zillah_google_fonts_one', array(
-		'label'    => 'Select first font family ( content )',
-		'section'  => 'zillah_home_theme_option_section',
-		'priority' => 4,
-		'ti_google_fonts' => array(
-			array(
-				'font_family' => 'Merriweather',
-				'type' => 'serif',
-				'subset' => '400',
-			),
-			array(
-				'font_family' => 'Open Sans',
-				'type' => 'sans-serif',
-				'subset' => '400',
-			),
-			array(
-				'font_family' => 'Josefin Slab',
-				'type' => 'serif',
-				'subset' => '400',
-			),
-			array(
-				'font_family' => 'Ubuntu',
-				'type' => 'sans-serif',
-				'subset' => '400',
-			),
-			array(
-				'font_family' => 'Vollkorn',
-				'type' => 'serif',
-				'subset' => '400',
-			),
-		),
-	)));
+	$wp_customize->add_control(
+		new Zillah_Google_Fonts_Control(
+			$wp_customize, 'zillah_google_fonts_one', array(
+				'label'    => 'Select first font family ( content )',
+				'section'  => 'zillah_home_theme_option_section',
+				'priority' => 4,
+				'ti_google_fonts' => array(
+					array(
+						'font_family' => 'Merriweather',
+						'type' => 'serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family' => 'Open Sans',
+						'type' => 'sans-serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family' => 'Josefin Slab',
+						'type' => 'serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family' => 'Ubuntu',
+						'type' => 'sans-serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family' => 'Vollkorn',
+						'type' => 'serif',
+						'subset' => '400',
+					),
+				),
+			)
+		)
+	);
 
-	$wp_customize->add_setting('zillah_google_fonts_two', array(
-		'default' => 0,
-		'sanitize_callback' => 'sanitize_text_field',
-	));
+	$wp_customize->add_setting(
+		'zillah_google_fonts_two', array(
+			'default' => 0,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
 
-	$wp_customize->add_control( new Zillah_Google_Fonts_Control( $wp_customize, 'zillah_google_fonts_two', array(
-		'label'    => 'Select second font family ( headings )',
-		'section'  => 'zillah_home_theme_option_section',
-		'priority' => 5,
-		'ti_google_fonts' => array(
-			array(
-				'font_family' => 'Cabin',
-				'type' => 'sans-serif',
-				'subset' => '400',
-			),
-			array(
-				'font_family' => 'Lato',
-				'type' => 'sans-serif',
-				'subset' => '400',
-			),
-			array(
-				'font_family' => 'Arvo',
-				'type' => 'serif',
-				'subset' => '400',
-			),
-			array(
-				'font_family' => 'Open Sans',
-				'type' => 'sans-serif',
-				'subset' => '400',
-			),
-			array(
-				'font_family' => 'Ubuntu',
-				'type' => 'sans-serif',
-				'subset' => '400',
-			),
-		),
-	)));
+	$wp_customize->add_control(
+		new Zillah_Google_Fonts_Control(
+			$wp_customize, 'zillah_google_fonts_two', array(
+				'label'    => 'Select second font family ( headings )',
+				'section'  => 'zillah_home_theme_option_section',
+				'priority' => 5,
+				'ti_google_fonts' => array(
+					array(
+						'font_family' => 'Cabin',
+						'type' => 'sans-serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family' => 'Lato',
+						'type' => 'sans-serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family' => 'Arvo',
+						'type' => 'serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family' => 'Open Sans',
+						'type' => 'sans-serif',
+						'subset' => '400',
+					),
+					array(
+						'font_family' => 'Ubuntu',
+						'type' => 'sans-serif',
+						'subset' => '400',
+					),
+				),
+			)
+		)
+	);
 
 	/* Font size */
-	$wp_customize->add_setting('zillah_select_box_font_size', array(
-		'default' => '16px',
-		'sanitize_callback' => 'sanitize_text_field',
-	));
+	$wp_customize->add_setting(
+		'zillah_select_box_font_size', array(
+			'default' => '16px',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
 
-	$wp_customize->add_control( 'zillah_select_box_font_size', array(
-		'label'   => 'Select Font Size:',
-		'section' => 'zillah_home_theme_option_section',
-		'priority' => 6,
-		'type'    => 'select',
-		'choices'    => array(
-			'14px' => 'Small',
-			'16px' => 'Medium',
-			'18px' => 'Large',
-		),
-	));
+	$wp_customize->add_control(
+		'zillah_select_box_font_size', array(
+			'label'   => 'Select Font Size:',
+			'section' => 'zillah_home_theme_option_section',
+			'priority' => 6,
+			'type'    => 'select',
+			'choices'    => array(
+				'14px' => 'Small',
+				'16px' => 'Medium',
+				'18px' => 'Large',
+			),
+		)
+	);
 
 	if ( ! $custom_logo ) {
 
-		$wp_customize->add_setting( 'zillah_logo_old', array(
-			'sanitize_callback' => 'esc_url',
-		));
+		$wp_customize->add_setting(
+			'zillah_logo_old', array(
+				'sanitize_callback' => 'esc_url',
+			)
+		);
 
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zillah_logo_old', array(
-			'label'    => __( 'Logo', 'zillah' ),
-			'section'  => 'title_tagline',
-			'settings' => 'zillah_logo_old',
-		) ) );
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize, 'zillah_logo_old', array(
+					'label'    => __( 'Logo', 'zillah' ),
+					'section'  => 'title_tagline',
+					'settings' => 'zillah_logo_old',
+				)
+			)
+		);
 
 	}
 
@@ -334,7 +400,7 @@ add_action( 'customize_preview_init', 'zillah_customize_preview_js' );
 function zillah_sanitize_palette( $input ) {
 	if ( ! empty( $input ) ) {
 		$json = json_decode( $input, true );
-		$palette_name = array( 'p1','p2','p3' );
+		$palette_name = array( 'p1', 'p2', 'p3' );
 		$red = '';
 		$green = '';
 		$blue = '';

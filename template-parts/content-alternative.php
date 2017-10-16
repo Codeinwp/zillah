@@ -45,10 +45,12 @@ $post_format = get_post_format();
 
 					echo zillah_read_more_link_alt();
 
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
-						'after'  => '</div>',
-					) );
+					wp_link_pages(
+						array(
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
+							'after'  => '</div>',
+						)
+					);
 				?>
 				<?php zillah_hook_entry_bottom(); ?>
 			</div>

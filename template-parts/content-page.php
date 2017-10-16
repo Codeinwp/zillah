@@ -18,10 +18,12 @@
 			<?php
 				the_content();
 
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
-					'after'  => '</div>',
-				) );
+				wp_link_pages(
+					array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
+						'after'  => '</div>',
+					)
+				);
 			?>
 			<?php zillah_hook_entry_bottom(); ?>
 		</div><!-- .entry-content -->

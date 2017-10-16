@@ -29,48 +29,50 @@ define( 'THA_HOOKS_VERSION', '1.0-draft' );
  *
  * Example:
  * <code>
- * 		// Declare support for all hook types
- * 		add_theme_support( 'tha_hooks', array( 'all' ) );
+ *      // Declare support for all hook types
+ *      add_theme_support( 'tha_hooks', array( 'all' ) );
  *
- * 		// Declare support for certain hook types only
- * 		add_theme_support( 'tha_hooks', array( 'header', 'content', 'footer' ) );
+ *      // Declare support for certain hook types only
+ *      add_theme_support( 'tha_hooks', array( 'header', 'content', 'footer' ) );
  * </code>
  */
-add_theme_support( 'tha_hooks', array(
+add_theme_support(
+	'tha_hooks', array(
 
-	/**
-	 * As a Theme developer, use the 'all' parameter, to declare support for all
-	 * hook types.
-	 * Please make sure you then actually reference all the hooks in this file,
-	 * Plugin developers depend on it!
-	 */
-	'all',
+		/**
+		 * As a Theme developer, use the 'all' parameter, to declare support for all
+		 * hook types.
+		 * Please make sure you then actually reference all the hooks in this file,
+		 * Plugin developers depend on it!
+		 */
+		'all',
 
-	/**
-	 * Themes can also choose to only support certain hook types.
-	 * Please make sure you then actually reference all the hooks in this type
-	 * family.
-	 *
-	 * When the 'all' parameter was set, specific hook types do not need to be
-	 * added explicitly.
-	 */
-	'html',
-	'body',
-	'head',
-	'header',
-	'content',
-	'entry',
-	'comments',
-	'sidebars',
-	'sidebar',
-	'footer',
+		/**
+		 * Themes can also choose to only support certain hook types.
+		 * Please make sure you then actually reference all the hooks in this type
+		 * family.
+		 *
+		 * When the 'all' parameter was set, specific hook types do not need to be
+		 * added explicitly.
+		 */
+		'html',
+		'body',
+		'head',
+		'header',
+		'content',
+		'entry',
+		'comments',
+		'sidebars',
+		'sidebar',
+		'footer',
 
 	/**
 	 * If/when WordPress Core implements similar methodology, Themes and Plugins
 	 * will be able to check whether the version of THA supplied by the theme
 	 * supports Core hooks.
 	 */
-) );
+	)
+);
 
 /**
  * Determines, whether the specific hook type is actually supported.
@@ -80,8 +82,8 @@ add_theme_support( 'tha_hooks', array(
  *
  * Example:
  * <code>
- * 		if ( current_theme_supports( 'tha_hooks', 'header' ) )
- * 	  		add_action( 'tha_head_top', 'prefix_header_top' );
+ *      if ( current_theme_supports( 'tha_hooks', 'header' ) )
+ *          add_action( 'tha_head_top', 'prefix_header_top' );
  * </code>
  *
  * @param bool  $bool true.

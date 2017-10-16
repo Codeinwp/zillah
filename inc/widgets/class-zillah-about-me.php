@@ -33,9 +33,9 @@ class Zillah_About_Me extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		$title 		= apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-		$image_url 	= isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : '';
-		$text 		= apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
+		$title      = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+		$image_url  = isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : '';
+		$text       = apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
 		echo $args['before_widget'];
 
 		if ( ! empty( $title ) ) {
@@ -49,7 +49,8 @@ class Zillah_About_Me extends WP_Widget {
 			<?php
 		}
 
-		if ( ! empty( $text ) ) { ?>
+		if ( ! empty( $text ) ) {
+		?>
 			<div class="textwidget">
 				<?php echo wp_kses_post( $text ); ?>
 			</div>
@@ -69,12 +70,12 @@ class Zillah_About_Me extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['title'] 		= strip_tags( $new_instance['title'] );
-		$instance['image_url'] 	= esc_url_raw( $new_instance['image_url'] );
+		$instance['title']      = strip_tags( $new_instance['title'] );
+		$instance['image_url']  = esc_url_raw( $new_instance['image_url'] );
 		if ( current_user_can( 'unfiltered_html' ) ) {
 			$instance['text'] = $new_instance['text'];
 		} else {
-		    $instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) ); // wp_filter_post_kses() expects slashed
+			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) ); // wp_filter_post_kses() expects slashed
 		}
 		return $instance;
 	}
@@ -85,13 +86,15 @@ class Zillah_About_Me extends WP_Widget {
 	 * @param array $instance The widget instance.
 	 */
 	public function form( $instance ) {
-		$instance 	= wp_parse_args( (array) $instance, array(
-			'title' => '',
-			'text' => '',
-			'image_url' => '',
-		) );
-		$title 		= strip_tags( $instance['title'] );
-		$text 		= esc_textarea( $instance['text'] );
+		$instance   = wp_parse_args(
+			(array) $instance, array(
+				'title' => '',
+				'text' => '',
+				'image_url' => '',
+			)
+		);
+		$title      = strip_tags( $instance['title'] );
+		$text       = esc_textarea( $instance['text'] );
 		$image_url  = esc_url( $instance['image_url'] );
 		?>
 		<p>

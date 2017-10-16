@@ -36,36 +36,36 @@ function zillah_slider_to_posts() {
 
 	$zillah_categ = get_theme_mod( 'zillah_home_slider_category' );
 	if ( ! empty( $zillah_categ ) ) {
-	    $args = array(
+		$args = array(
 			'posts_per_page'        => 6,
 			'cat'                   => $zillah_categ,
-	        'post_type' 		    => 'post',
-	        'post_status' 		    => 'publish',
-	        'ignore_sticky_posts'   => 1,
-	    );
+			'post_type'             => 'post',
+			'post_status'           => 'publish',
+			'ignore_sticky_posts'   => 1,
+		);
 
-	    $the_query = new WP_Query( $args );
+		$the_query = new WP_Query( $args );
 
-	    if ( $the_query->have_posts() ) { ?>
+		if ( $the_query->have_posts() ) { ?>
 
-	        <?php
-	        /* Start the Loop */
-	        while ( $the_query->have_posts() ) {
-	            $the_query->the_post();
+			<?php
+			/* Start the Loop */
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
 
-	            /*
+				/*
 	            * Include the Post-Format-specific template for the content.
 	            * If you want to override this in a child theme, then include a file
 	            * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 	            */
-	            get_template_part( 'template-parts/content', get_post_format() );
-	        }
-	        the_posts_navigation();
-	    } else {
-	        get_template_part( 'template-parts/content', 'none' );
-	    }
-	    /* Restore original Post Data */
-	    wp_reset_postdata();
+				get_template_part( 'template-parts/content', get_post_format() );
+			}
+			the_posts_navigation();
+		} else {
+			get_template_part( 'template-parts/content', 'none' );
+		}
+		/* Restore original Post Data */
+		wp_reset_postdata();
 	}
 	die();
 }

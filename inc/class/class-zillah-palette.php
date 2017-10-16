@@ -49,7 +49,8 @@ class Zillah_Palette extends WP_Customize_Control {
 				<span class="customize-control-title"><?php echo $this->label; ?></span>
 			</label>
 			<?php
-		} ?>
+		}
+		?>
 
 		<div class="zillah_palette_selected">
 			<div class="zillah_palette_input">
@@ -70,7 +71,8 @@ class Zillah_Palette extends WP_Customize_Control {
 		<ul class="zillah_palette_picker">
 			<li class="zillah_pallete_default">
 				<?php
-				esc_html_e( 'Default','zillah' ); ?>
+				esc_html_e( 'Default','zillah' );
+				?>
 			</li>
 			<?php
 			foreach ( $zillah_pallete as $palette ) {
@@ -81,7 +83,8 @@ class Zillah_Palette extends WP_Customize_Control {
 				echo '<span style="background-color:' . $palette['color4'] . '"></span>';
 				echo '<span style="background-color:' . $palette['color5'] . '"></span>';
 				echo '</li>';
-			} ?>
+			}
+			?>
 		</ul>
 		<input class='zillah_palette_colector' type='hidden' value='' <?php $this->link(); ?> />
 		<?php

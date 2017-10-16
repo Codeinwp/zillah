@@ -36,20 +36,26 @@
 			<?php zillah_hook_entry_top(); ?>
 			<?php
 
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zillah' ), array(
-					'span' => array(
-						'class' => array(),
+			the_content(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. */
+						 __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zillah' ), array(
+							 'span' => array(
+								 'class' => array(),
+							 ),
+						 )
 					),
-				) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				)
+			);
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
+					'after'  => '</div>',
+				)
+			);
 
 			?>
 			<?php zillah_hook_entry_bottom(); ?>
