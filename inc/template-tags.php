@@ -143,7 +143,7 @@ if ( ! function_exists( 'zillah_posted_date' ) ) :
 			esc_html__( 'Posted:', 'zillah' )
 		);
 
-		$posted_on = sprintf( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
