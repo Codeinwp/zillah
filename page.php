@@ -32,7 +32,8 @@ get_header(); ?>
 					<?php zillah_hook_page_top(); ?>
 
 					<?php
-					while ( have_posts() ) : the_post();
+					while ( have_posts() ) :
+						the_post();
 
 						get_template_part( 'template-parts/content', 'page' );
 

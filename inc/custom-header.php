@@ -21,12 +21,16 @@
  * @uses zillah_header_style()
  */
 function zillah_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'zillah_custom_header_args', array(
-		'default-image'          => '',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
-	) ) );
+	add_theme_support(
+		'custom-header', apply_filters(
+			'zillah_custom_header_args', array(
+				'default-image'          => '',
+				'width'                  => 1000,
+				'height'                 => 250,
+				'flex-height'            => true,
+			)
+		)
+	);
 }
 add_action( 'after_setup_theme', 'zillah_custom_header_setup' );
 

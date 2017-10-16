@@ -3,6 +3,7 @@
   "nicename": "Zillah",
   "version": "1.0.15",
   "description": "Zillah theme",
+  "category": "themes",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codeinwp/zillah.git"

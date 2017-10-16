@@ -47,51 +47,63 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		add_image_size( 'zillah-slider-thumbnail', 900, 515, true );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary'   => esc_html__( 'Primary', 'zillah' ),
-			'social'    => esc_html__( 'Social Links Menu', 'zillah' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary'   => esc_html__( 'Primary', 'zillah' ),
+				'social'    => esc_html__( 'Social Links Menu', 'zillah' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		/*
 		 * Enable support for Post Formats.
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-			'gallery',
-			'status',
-			'audio',
-			'chat',
-		) );
+		add_theme_support(
+			'post-formats', array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'gallery',
+				'status',
+				'audio',
+				'chat',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'zillah_custom_background_args', array(
-			'default-color' => 'f6f6f6',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background', apply_filters(
+				'zillah_custom_background_args', array(
+					'default-color' => 'f6f6f6',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Add theme support for custom logo
-		add_theme_support( 'custom-logo', array(
-			'height' => 290,
-			'width' => 630,
-			'flex-width' => true,
-		) );
+		add_theme_support(
+			'custom-logo', array(
+				'height' => 290,
+				'width' => 630,
+				'flex-width' => true,
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'zillah_setup' );
@@ -114,27 +126,31 @@ add_action( 'after_setup_theme', 'zillah_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function zillah_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'zillah' ),
-		'id'            => 'zillah-sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'zillah' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'zillah' ),
+			'id'            => 'zillah-sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'zillah' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebars( 3, array(
-		/* translators: d: Sidebar number */
-		'name'          => esc_html__( 'Footer Widget Area %d', 'zillah' ),
-		'id'            => 'zillah-footer-widget-area',
-		'class'         => 'col-sm-4',
-		'description'   => esc_html__( 'Add widgets here.', 'zillah' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebars(
+		3, array(
+			/* translators: d: Sidebar number */
+			'name'          => esc_html__( 'Footer Widget Area %d', 'zillah' ),
+			'id'            => 'zillah-footer-widget-area',
+			'class'         => 'col-sm-4',
+			'description'   => esc_html__( 'Add widgets here.', 'zillah' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
 	/*
 	 * Custom widgets
@@ -221,10 +237,12 @@ function zillah_scripts() {
 
 	wp_enqueue_script( 'zillah-functions-js', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20151216', true );
 
-	wp_localize_script( 'zillah-functions-js', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'zillah' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'zillah' ) . '</span>',
-	) );
+	wp_localize_script(
+		'zillah-functions-js', 'screenReaderText', array(
+			'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'zillah' ) . '</span>',
+			'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'zillah' ) . '</span>',
+		)
+	);
 
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20130115', true );
 
@@ -240,9 +258,11 @@ function zillah_scripts() {
 
 		wp_enqueue_script( 'zillah_ajax_slider_posts',  get_template_directory_uri() . '/js/ajax-slider-posts.js', array( 'jquery' ), '1.0', true );
 
-		wp_localize_script( 'zillah_ajax_slider_posts', 'requestpost', array(
-			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-		) );
+		wp_localize_script(
+			'zillah_ajax_slider_posts', 'requestpost', array(
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			)
+		);
 
 	}
 
@@ -380,7 +400,8 @@ function zillah_brand() {
 	}
 
 		$description = get_bloginfo( 'description', 'display' );
-	if ( ( $description && display_header_text() ) || is_customize_preview() ) : ?>
+	if ( ( $description && display_header_text() ) || is_customize_preview() ) :
+	?>
 			<p class="site-description<?php echo ! display_header_text() && is_customize_preview() ? ' zillah-only-customizer' : ''; ?>"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 		endif;
@@ -438,8 +459,8 @@ function zillah_slider() {
 				$index++;
 				?>
 
-				<?php if ( $index % 2 === 1 ) :  ?>
-					<div class="item<?php echo $index === 1 ? ' active' : '' ?>">
+				<?php if ( $index % 2 === 1 ) : ?>
+					<div class="item<?php echo $index === 1 ? ' active' : ''; ?>">
 				<?php endif; ?>
 
 				<div class="item-inner-half">
@@ -453,7 +474,7 @@ function zillah_slider() {
 					</div>
 				</div>
 
-				<?php if ( $index % 2 === 0 ) :  ?>
+				<?php if ( $index % 2 === 0 ) : ?>
 					</div>
 				<?php endif; ?>
 

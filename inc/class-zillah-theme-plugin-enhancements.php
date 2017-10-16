@@ -89,7 +89,8 @@ class Zillah_Theme_Plugin_Enhancements {
 				'message' => sprintf(
 					/* translators:  'Jetpack plugin' */
 					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features, including: ', 'zillah' ),
-				'<strong>' . esc_html__( 'Jetpack plugin', 'zillah' ) . '</strong>' ),
+					'<strong>' . esc_html__( 'Jetpack plugin', 'zillah' ) . '</strong>'
+				),
 				'modules' => rtrim( $dependency_list, ', ' ) . '.',
 			),
 			array(
@@ -98,7 +99,8 @@ class Zillah_Theme_Plugin_Enhancements {
 				'message' => sprintf(
 					/* translators:  'Simple Contact Form Plugin - PirateForms plugin' */
 					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features.', 'zillah' ),
-				'<strong>' . esc_html__( 'Simple Contact Form Plugin - PirateForms plugin', 'zillah' ) . '</strong>' ),
+					'<strong>' . esc_html__( 'Simple Contact Form Plugin - PirateForms plugin', 'zillah' ) . '</strong>'
+				),
 			),
 		);
 
@@ -384,9 +386,11 @@ class Zillah_Theme_Plugin_Enhancements {
 		 */
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
-		$plugin_information = plugins_api( 'plugin_information', array(
-			'slug' => $slug,
-		) );
+		$plugin_information = plugins_api(
+			'plugin_information', array(
+				'slug' => $slug,
+			)
+		);
 
 		if ( is_wp_error( $plugin_information ) ) {
 			return false;
