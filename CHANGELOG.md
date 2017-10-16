@@ -1,4 +1,9 @@
 
+### 1.1.3 - 16/10/2017
+**Changes:** 
+- Removed Posted date when updated setting is active
+- Fix notice: too few arguments to sprintf
+
 ### 1.1.2 - 30/03/2017
 **Changes:** 
 - Added comparison mechanism for demo content to allow safer updates
