@@ -95,7 +95,7 @@ class Zillah_Theme_Plugin_Enhancements {
 			),
 			array(
 				'slug'    => 'pirate-forms',
-				'name'    => 'Free & Simple Contact Form Plugin - PirateForms',
+				'name'    => 'Free & Simple Contact Form Plugin - Pirateforms',
 				'message' => sprintf(
 					/* translators:  'Simple Contact Form Plugin - PirateForms plugin' */
 					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features.', 'zillah' ),
