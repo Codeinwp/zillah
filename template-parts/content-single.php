@@ -71,8 +71,8 @@
 </article><!-- #post-## -->
 
 <?php
-	$author_first_name = get_the_author_meta( 'first_name' );
-	$author_last_name = get_the_author_meta( 'last_name' );
+	$author_first_name  = get_the_author_meta( 'first_name' );
+	$author_last_name   = get_the_author_meta( 'last_name' );
 	$author_description = wp_kses_post( nl2br( get_the_author_meta( 'description' ) ) );
 
 if ( ! empty( $author_first_name ) || ! empty( $author_last_name ) || ! empty( $author_description ) ) {

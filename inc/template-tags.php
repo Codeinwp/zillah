@@ -118,7 +118,7 @@ function zillah_category_transient_flusher() {
 	delete_transient( 'zillah_categories' );
 }
 add_action( 'edit_category', 'zillah_category_transient_flusher' );
-add_action( 'save_post',     'zillah_category_transient_flusher' );
+add_action( 'save_post', 'zillah_category_transient_flusher' );
 
 
 
@@ -128,7 +128,7 @@ if ( ! function_exists( 'zillah_posted_date' ) ) :
 	 */
 	function zillah_posted_date() {
 		$show_updated = get_theme_mod( 'zillah_show_updated', false );
-		$time_string = '<time class="entry-date published updated" datetime="%1$s" itemprop="dateModified">%2$s</time><meta itemprop="datePublished" content="%2$s">';
+		$time_string  = '<time class="entry-date published updated" datetime="%1$s" itemprop="dateModified">%2$s</time><meta itemprop="datePublished" content="%2$s">';
 
 		if ( ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time><meta itemprop="datePublished" content="%4$s">';

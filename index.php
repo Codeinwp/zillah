@@ -12,7 +12,7 @@
  * @package zillah
  */
 
-$zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
+$zillah_sidebar_show       = get_theme_mod( 'zillah_sidebar_show', false );
 $zillah_alternative_layout = get_theme_mod( 'zillah_alt_layout', false );
 
 get_header(); ?>
@@ -47,7 +47,7 @@ get_header(); ?>
 					 */
 
 					$alternative = $zillah_alternative_layout == false ? $zillah_alternative_layout : '-alternative';
-					get_template_part( 'template-parts/content' . $alternative , get_post_format() );
+					get_template_part( 'template-parts/content' . $alternative, get_post_format() );
 
 				endwhile;
 

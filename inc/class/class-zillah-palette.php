@@ -15,32 +15,32 @@ class Zillah_Palette extends WP_Customize_Control {
 	 */
 	public function render_content() {
 
-		$values = $this->value();
-		$json = json_decode( $values );
+		$values         = $this->value();
+		$json           = json_decode( $values );
 		$zillah_pallete = array(
 			array(
 				'palette_name' => 'p1',
-				'color1' => '#be624d',
-				'color2' => '#f5876e',
-				'color3' => '#be624d',
-				'color4' => '#f6f6f6',
-				'color5' => '#6f6e6b',
+				'color1'       => '#be624d',
+				'color2'       => '#f5876e',
+				'color3'       => '#be624d',
+				'color4'       => '#f6f6f6',
+				'color5'       => '#6f6e6b',
 			),
 			array(
 				'palette_name' => 'p1',
-				'color1' => '#b0606d',
-				'color2' => '#f59f4c',
-				'color3' => '#ffc154',
-				'color4' => '#fafafa',
-				'color5' => '#6f6e6b',
+				'color1'       => '#b0606d',
+				'color2'       => '#f59f4c',
+				'color3'       => '#ffc154',
+				'color4'       => '#fafafa',
+				'color5'       => '#6f6e6b',
 			),
 			array(
 				'palette_name' => 'p1',
-				'color1' => '#333331',
-				'color2' => '#c2a26f',
-				'color3' => '#E2C9A1',
-				'color4' => '#f6f6f6',
-				'color5' => '#6f6e6b',
+				'color1'       => '#333331',
+				'color2'       => '#c2a26f',
+				'color3'       => '#E2C9A1',
+				'color4'       => '#f6f6f6',
+				'color5'       => '#6f6e6b',
 			),
 		);
 
@@ -62,7 +62,7 @@ class Zillah_Palette extends WP_Customize_Control {
 						}
 					}
 				} else {
-					esc_html_e( 'Default','zillah' );
+					esc_html_e( 'Default', 'zillah' );
 				}
 				?>
 			</div>
@@ -71,7 +71,7 @@ class Zillah_Palette extends WP_Customize_Control {
 		<ul class="zillah_palette_picker">
 			<li class="zillah_pallete_default">
 				<?php
-				esc_html_e( 'Default','zillah' );
+				esc_html_e( 'Default', 'zillah' );
 				?>
 			</li>
 			<?php

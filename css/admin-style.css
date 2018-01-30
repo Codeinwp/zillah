@@ -76,12 +76,12 @@
 /****** Google fonts Control *******/
 /***********************************/
 .ti-google-fonts-wrap {
-    background: rgba(255, 255, 255, 0.75);
-    padding: 10px;
-    border: 1px solid #ddd;
-    max-height: 140px;
-    overflow-y: auto;
-    overflow-x: auto;
+	background: rgba(255, 255, 255, 0.75);
+	padding: 10px;
+	border: 1px solid #ddd;
+	max-height: 140px;
+	overflow-y: auto;
+	overflow-x: auto;
 }
 
 .ti-google-fonts-wrap label {
@@ -90,17 +90,16 @@
 	clear: left;
 	font-size: 16px;
 	line-height: 28px;
-    overflow: hidden;
-    position: relative;
+	overflow: hidden;
+	position: relative;
 }
 
 .ti-google-fonts-wrap label input {
-    position: absolute;
-    left: -9999px;
+	position: absolute;
+	left: -9999px;
 }
 
 .ti-google-fonts-wrap label:hover,
 .ti-google-fonts-wrap label.ti-google-fonts-active {
-    color: #0073aa;
+	color: #0073aa;
 }
-
