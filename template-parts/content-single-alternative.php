@@ -33,18 +33,18 @@
 	<?php zillah_hook_entry_before(); ?>
 	<div class="entry-content">
 		<div class="content-inner-wrap">
-			<?php zillah_hook_entry_top(); ?>
 			<?php
+			zillah_hook_entry_top();
 
 			the_content(
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. */
-						 __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zillah' ), array(
-							 'span' => array(
-								 'class' => array(),
-							 ),
-						 )
+						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zillah' ), array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
 					),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				)
@@ -57,8 +57,8 @@
 				)
 			);
 
+			zillah_hook_entry_bottom();
 			?>
-			<?php zillah_hook_entry_bottom(); ?>
 		</div>
 	</div><!-- .entry-content -->
 	<?php zillah_hook_entry_after(); ?>
