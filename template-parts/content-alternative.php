@@ -42,11 +42,9 @@ $post_format = get_post_format();
 			<div class="content-inner-wrap">
 				<?php zillah_hook_entry_top(); ?>
 				<?php
-
-					echo zillah_read_more_link_alt();
-
+				echo zillah_read_more_link_alt();
 					wp_link_pages(
-						array(
+                        array(
 							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
 							'after'  => '</div>',
 						)

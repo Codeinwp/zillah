@@ -37,11 +37,11 @@ function zillah_slider_to_posts() {
 	$zillah_categ = get_theme_mod( 'zillah_home_slider_category' );
 	if ( ! empty( $zillah_categ ) ) {
 		$args = array(
-			'posts_per_page'        => 6,
-			'cat'                   => $zillah_categ,
-			'post_type'             => 'post',
-			'post_status'           => 'publish',
-			'ignore_sticky_posts'   => 1,
+			'posts_per_page'      => 6,
+			'cat'                 => $zillah_categ,
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'ignore_sticky_posts' => 1,
 		);
 
 		$the_query = new WP_Query( $args );

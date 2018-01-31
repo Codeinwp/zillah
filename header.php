@@ -40,8 +40,8 @@
 						echo wp_nav_menu(
 							array(
 								'theme_location' => 'social',
-								'fallback_cb' => false,
-								'echo' => false,
+								'fallback_cb'    => false,
+								'echo'           => false,
 							)
 						) !== false ? '' : ' no-social-menu';
 						?>
@@ -50,13 +50,13 @@
 							<?php
 								wp_nav_menu(
 									array(
-										'theme_location' => 'social',
-										'menu_id' => 'social-icons-menu',
-										'menu_class' => 'social-navigation',
-										'link_before' => '<span class="screen-reader-text">',
-										'link_after' => '</span>',
+										'theme_location'  => 'social',
+										'menu_id'         => 'social-icons-menu',
+										'menu_class'      => 'social-navigation',
+										'link_before'     => '<span class="screen-reader-text">',
+										'link_after'      => '</span>',
 										'container_class' => 'header-social-icons',
-										'fallback_cb' => false,
+										'fallback_cb'     => false,
 									)
 								);
 							?>
