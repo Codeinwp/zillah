@@ -220,7 +220,7 @@ function zillah_customize_register( $wp_customize ) {
 				'label'           => 'Select first font family ( content )',
 				'section'         => 'zillah_home_theme_option_section',
 				'priority'        => 4,
-				'ti_google_fonts' => array(
+				'ti_google_fonts' => apply_filters( 'zillah_filter_body_fonts', array(
 					array(
 						'font_family' => 'Merriweather',
 						'type'        => 'serif',
@@ -246,8 +246,8 @@ function zillah_customize_register( $wp_customize ) {
 						'type'        => 'serif',
 						'subset'      => '400',
 					),
-					apply_filters( 'zillah_extend_fonts_one', false ),
-				),
+
+				) ),
 			)
 		)
 	);
