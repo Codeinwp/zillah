@@ -1,4 +1,10 @@
 
+### 1.1.4 - 01/02/2018
+**Changes:** 
+- Fixed non-dismissible notice for Pirate Forms installation
+- Upgraded grunt and fixed all the errors
+- Added a filter for the enqueued Google fonts
+
 ### 1.1.3 - 16/10/2017
 **Changes:** 
 - Removed Posted date when updated setting is active
