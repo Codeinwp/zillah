@@ -82,7 +82,7 @@
 				</div>
 			</div>
 		</div><!-- .site-info -->
-		
+
 		<?php zillah_hook_footer_bottom(); ?>
 	</footer><!-- #colophon -->
 	<?php zillah_hook_footer_after(); ?>

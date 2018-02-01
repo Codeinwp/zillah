@@ -178,21 +178,21 @@ function zillah_fonts_url() {
 	$fonts_url = '';
 
 	/*
-	 Translators: If there are characters in your language that are not
+	 * Translators: If there are characters in your language that are not
 	 * supported by Bitter, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
 	$bitter = _x( 'on', 'Cabin font: on or off', 'zillah' );
 
 	/*
-	 Translators: If there are characters in your language that are not
+	 * Translators: If there are characters in your language that are not
 	 * supported by Bitter, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
 	$lato = _x( 'on', 'Lato font: on or off', 'zillah' );
 
 	/*
-	 Translators: If there are characters in your language that are not
+	 * Translators: If there are characters in your language that are not
 	 * supported by Bitter, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
