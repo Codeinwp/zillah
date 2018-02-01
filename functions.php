@@ -49,8 +49,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary'   => esc_html__( 'Primary', 'zillah' ),
-				'social'    => esc_html__( 'Social Links Menu', 'zillah' ),
+				'primary' => esc_html__( 'Primary', 'zillah' ),
+				'social'  => esc_html__( 'Social Links Menu', 'zillah' ),
 			)
 		);
 
@@ -99,8 +99,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		// Add theme support for custom logo
 		add_theme_support(
 			'custom-logo', array(
-				'height' => 290,
-				'width' => 630,
+				'height'     => 290,
+				'width'      => 630,
 				'flex-width' => true,
 			)
 		);
@@ -178,21 +178,21 @@ function zillah_fonts_url() {
 	$fonts_url = '';
 
 	/*
-	 Translators: If there are characters in your language that are not
+	 * Translators: If there are characters in your language that are not
 	 * supported by Bitter, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
 	$bitter = _x( 'on', 'Cabin font: on or off', 'zillah' );
 
 	/*
-	 Translators: If there are characters in your language that are not
+	 * Translators: If there are characters in your language that are not
 	 * supported by Bitter, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
 	$lato = _x( 'on', 'Lato font: on or off', 'zillah' );
 
 	/*
-	 Translators: If there are characters in your language that are not
+	 * Translators: If there are characters in your language that are not
 	 * supported by Bitter, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
@@ -217,7 +217,7 @@ function zillah_fonts_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		$fonts_url  = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
 	return $fonts_url;
@@ -256,7 +256,7 @@ function zillah_scripts() {
 
 	if ( is_front_page() ) {
 
-		wp_enqueue_script( 'zillah_ajax_slider_posts',  get_template_directory_uri() . '/js/ajax-slider-posts.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'zillah_ajax_slider_posts', get_template_directory_uri() . '/js/ajax-slider-posts.js', array( 'jquery' ), '1.0', true );
 
 		wp_localize_script(
 			'zillah_ajax_slider_posts', 'requestpost', array(
@@ -276,7 +276,7 @@ add_action( 'wp_enqueue_scripts', 'zillah_scripts' );
 function zillah_customizer_script() {
 	wp_enqueue_style( 'zillah-font-awesome-admin', get_template_directory_uri() . '/css/font-awesome.min.css', array(), 'v4.5.0', false );
 	wp_enqueue_script( 'zillah-customizer-script', get_template_directory_uri() . '/js/zillah-customizer.js', array( 'jquery' ), '1.0.1', true );
-	wp_enqueue_style( 'zillah-admin-stylesheet', get_template_directory_uri() . '/css/admin-style.css','1.0.0' );
+	wp_enqueue_style( 'zillah-admin-stylesheet', get_template_directory_uri() . '/css/admin-style.css', '1.0.0' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'zillah_customizer_script' );
 
@@ -356,7 +356,7 @@ require get_template_directory() . '/inc/class-zillah-theme-plugin-enhancements.
  */
 function zillah_inline_style() {
 	$header_image = get_header_image();
-	$custom_css = '';
+	$custom_css   = '';
 	if ( ! empty( $header_image ) ) {
 		$custom_css .= '
 				.header-inner-site-branding {
@@ -377,7 +377,7 @@ function zillah_brand() {
 
 	echo '<div class="header-logo-wrap">';
 
-		$zillah_tagline_hide  = get_theme_mod( 'zillah_tagline_show', false );
+		$zillah_tagline_hide = get_theme_mod( 'zillah_tagline_show', false );
 
 	if ( function_exists( 'the_custom_logo' ) ) {
 		the_custom_logo();
@@ -389,7 +389,7 @@ function zillah_brand() {
 	}
 
 	if ( ( ! $zillah_tagline_hide && display_header_text() ) || is_customize_preview() ) {
-		echo '<div class="header-title-wrap' . ( ($zillah_tagline_hide || ! display_header_text() ) && is_customize_preview() ? ' zillah-only-customizer' : '' ) . '">';
+		echo '<div class="header-title-wrap' . ( ( $zillah_tagline_hide || ! display_header_text() ) && is_customize_preview() ? ' zillah-only-customizer' : '' ) . '">';
 		if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
@@ -417,18 +417,18 @@ function zillah_brand() {
  */
 function zillah_slider() {
 
-	$zillah_home_slider_show  = get_theme_mod( 'zillah_home_slider_show', false );
+	$zillah_home_slider_show = get_theme_mod( 'zillah_home_slider_show', false );
 
 	if ( ! is_paged() && is_front_page() && ( $zillah_home_slider_show === true || $zillah_home_slider_show === false && is_customize_preview() ) ) :
 
 		$zillah_home_slider_category = get_theme_mod( 'zillah_home_slider_category', 0 );
 
 		$args = array(
-			'posts_per_page'        => 6,
-			'post_type'             => 'post',
-			'ignore_sticky_posts'   => 'true',
-			'cat'                   => $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
-			'meta_query'            => array(
+			'posts_per_page'      => 6,
+			'post_type'           => 'post',
+			'ignore_sticky_posts' => 'true',
+			'cat'                 => $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
+			'meta_query'          => array(
 				array(
 					'key' => '_thumbnail_id',
 				),
@@ -509,10 +509,10 @@ function zillah_slider() {
 function zillah_exclude_single_posts_home( $query ) {
 
 	if ( $query->is_home() && $query->is_main_query() ) {
-		$zillah_home_slider_show  = get_theme_mod( 'zillah_home_slider_show', false );
+		$zillah_home_slider_show = get_theme_mod( 'zillah_home_slider_show', false );
 		if ( $zillah_home_slider_show ) {
 			$zillah_home_slider_category = get_theme_mod( 'zillah_home_slider_category', 0 );
-			$args = array(
+			$args                        = array(
 				'posts_per_page' => 6,
 				'post_type'      => 'post',
 				'category'       => $zillah_home_slider_category !== 0 ? $zillah_home_slider_category : '',
@@ -522,8 +522,8 @@ function zillah_exclude_single_posts_home( $query ) {
 					),
 				),
 			);
-			$slider_posts = get_posts( $args );
-			$array_post = array();
+			$slider_posts                = get_posts( $args );
+			$array_post                  = array();
 			if ( ! empty( $slider_posts ) ) {
 				foreach ( $slider_posts as $post ) {
 					if ( ! empty( $post->ID ) ) {
@@ -539,7 +539,7 @@ function zillah_exclude_single_posts_home( $query ) {
 add_action( 'pre_get_posts', 'zillah_exclude_single_posts_home' );
 
 
-add_action( 'wp_head','zillah_php_style' );
+add_action( 'wp_head', 'zillah_php_style' );
 
 /**
  * Custom color palette
@@ -549,14 +549,14 @@ function zillah_php_style() {
 	if ( ! empty( $zillah_palette_picker ) ) {
 
 		$zillah_picker = json_decode( $zillah_palette_picker );
-		$zillah_c1 = $zillah_picker->color1;
-		$zillah_c2 = $zillah_picker->color2;
-		$zillah_c3 = $zillah_picker->color3;
-		$zillah_c5 = $zillah_picker->color5;
+		$zillah_c1     = $zillah_picker->color1;
+		$zillah_c2     = $zillah_picker->color2;
+		$zillah_c3     = $zillah_picker->color3;
+		$zillah_c5     = $zillah_picker->color5;
 
 	}
 
-	$header_text_color = get_theme_mod( 'header_textcolor','7fcaad' );
+	$header_text_color     = get_theme_mod( 'header_textcolor', '7fcaad' );
 	$zillah_first_font_one = get_theme_mod( 'zillah_google_fonts_one' );
 	$zillah_first_font_two = get_theme_mod( 'zillah_google_fonts_two' );
 
@@ -832,7 +832,7 @@ function zillah_post_thumbnail() {
 		echo '</a>';
 		echo '</div>';
 	} else {
-		$post_image_link = zillah_catch_that_image();
+		$post_image_link           = zillah_catch_that_image();
 		$zillah_image_as_thumbnail = get_theme_mod( 'zillah_image_as_thumbnail', false );
 		if ( $post_image_link && $zillah_image_as_thumbnail ) {
 			echo '<div class="post-thumbnail-wrap">';
@@ -884,9 +884,9 @@ function zillah_catch_that_image() {
  * Get first embed media
  */
 function zillah_get_first_embed_media( $post_id ) {
-	$post = get_post( $post_id );
+	$post    = get_post( $post_id );
 	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
-	$embeds = get_media_embedded_in_content( $content );
+	$embeds  = get_media_embedded_in_content( $content );
 	if ( ! empty( $embeds ) ) {
 		// check what is the first embed containg video tag, youtube or vimeo
 		foreach ( $embeds as $embed ) {
@@ -924,7 +924,7 @@ function zillah_post_gallery() {
 							$i = 0;
 			foreach ( $ids as $id ) :
 				$thumb = wp_get_attachment_image_src( $id, 'zillah-slider-thumbnail' );
-				$url = $thumb['0'];
+				$url   = $thumb['0'];
 				$i ++;
 				if ( $i > 6 ) {
 					break;

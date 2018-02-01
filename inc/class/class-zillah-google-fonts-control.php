@@ -35,7 +35,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 */
 		public function __construct( $manager, $id, $args = array() ) {
 			parent::__construct( $manager, $id, $args );
-			$this->options = $args;
+			$this->options    = $args;
 			$this->control_id = $id;
 		}
 
@@ -43,13 +43,13 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Create the control
 		 */
 		public function render_content() {
-			$options = $this->options;
+			$options    = $this->options;
 			$control_id = $this->control_id;
 
 			$ti_google_fonts = '';
 			if ( ! empty( $options['ti_google_fonts'] ) ) {
 				foreach ( $options['ti_google_fonts'] as $zilla_font ) {
-					$ti_input_value = implode( '|', $zilla_font );
+					$ti_input_value   = implode( '|', $zilla_font );
 					$ti_google_fonts .= '<label class="ti-google-font-label" style="font-family:\'' . esc_attr( $zilla_font['font_family'] ) . '\',' . esc_attr( $zilla_font['type'] ) . '"><input type="radio" name="' . esc_attr( $control_id ) . '" value="' . esc_attr( $ti_input_value ) . '">' . esc_html( $zilla_font['font_family'] ) . '</label>';
 				}
 

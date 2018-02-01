@@ -95,7 +95,7 @@ class Zillah_Theme_Plugin_Enhancements {
 			),
 			array(
 				'slug'    => 'pirate-forms',
-				'name'    => 'Free & Simple Contact Form Plugin - PirateForms',
+				'name'    => 'Free & Simple Contact Form Plugin - Pirateforms',
 				'message' => sprintf(
 					/* translators:  'Simple Contact Form Plugin - PirateForms plugin' */
 					esc_html__( 'The %1$s is recommended to use some of this theme&rsquo;s features.', 'zillah' ),
@@ -122,81 +122,81 @@ class Zillah_Theme_Plugin_Enhancements {
 
 		if ( current_theme_supports( 'site-logo' ) ) :
 			$dependencies['logo'] = array(
-				'name' => __( 'Site Logo', 'zillah' ),
-				'slug' => 'site-logo',
-				'url'  => '',
+				'name'   => __( 'Site Logo', 'zillah' ),
+				'slug'   => 'site-logo',
+				'url'    => '',
 				'module' => 'none',
 			);
 		endif;
 
 		if ( current_theme_supports( 'featured-content' ) ) :
 			$dependencies['featured-content'] = array(
-				'name' => __( 'Featured Content', 'zillah' ),
-				'slug' => 'featured-content',
-				'url'  => '',
+				'name'   => __( 'Featured Content', 'zillah' ),
+				'slug'   => 'featured-content',
+				'url'    => '',
 				'module' => 'none',
 			);
 		endif;
 
 		if ( current_theme_supports( 'jetpack-social-menu' ) ) :
 			$dependencies['social-menu'] = array(
-				'name' => __( 'Social Menu', 'zillah' ),
-				'slug' => 'jetpack-social-menu',
-				'url'  => '',
+				'name'   => __( 'Social Menu', 'zillah' ),
+				'slug'   => 'jetpack-social-menu',
+				'url'    => '',
 				'module' => 'none',
 			);
 		endif;
 
 		if ( current_theme_supports( 'nova_menu_item' ) ) :
 			$dependencies['menus'] = array(
-				'name' => __( 'Menus', 'zillah' ),
-				'slug' => 'nova_menu_item',
-				'url'  => '',
+				'name'   => __( 'Menus', 'zillah' ),
+				'slug'   => 'nova_menu_item',
+				'url'    => '',
 				'module' => 'custom-content-types',
 			);
 		endif;
 
 		if ( current_theme_supports( 'jetpack-comic' ) ) :
 			$dependencies['comics'] = array(
-				'name' => __( 'Comics', 'zillah' ),
-				'slug' => 'jetpack-comic',
-				'url'  => '',
+				'name'   => __( 'Comics', 'zillah' ),
+				'slug'   => 'jetpack-comic',
+				'url'    => '',
 				'module' => 'custom-content-types',
 			);
 		endif;
 
 		if ( current_theme_supports( 'jetpack-testimonial' ) ) :
 			$dependencies['testimonials'] = array(
-				'name' => __( 'Testimonials', 'zillah' ),
-				'slug' => 'jetpack-testimonial',
-				'url'  => '',
+				'name'   => __( 'Testimonials', 'zillah' ),
+				'slug'   => 'jetpack-testimonial',
+				'url'    => '',
 				'module' => 'custom-content-types',
 			);
 		endif;
 
 		if ( current_theme_supports( 'jetpack-portfolio' ) ) :
 			$dependencies['portfolios'] = array(
-				'name' => __( 'Portfolios', 'zillah' ),
-				'slug' => 'jetpack-portfolio',
-				'url'  => '',
+				'name'   => __( 'Portfolios', 'zillah' ),
+				'slug'   => 'jetpack-portfolio',
+				'url'    => '',
 				'module' => 'custom-content-types',
 			);
 		endif;
 
 		if ( current_theme_supports( 'jetpack-related-posts' ) ) :
 			$dependencies['related-posts'] = array(
-				'name' => __( 'Related Posts', 'zillah' ),
-				'slug' => 'jetpack-related-posts',
-				'url'  => '',
+				'name'   => __( 'Related Posts', 'zillah' ),
+				'slug'   => 'jetpack-related-posts',
+				'url'    => '',
 				'module' => 'none',
 			);
 		endif;
 
 		if ( current_theme_supports( 'social-links' ) ) :
 			$dependencies['social-links'] = array(
-				'name' => __( 'Social Links', 'zillah' ),
-				'slug' => 'social-links',
-				'url'  => '',
+				'name'   => __( 'Social Links', 'zillah' ),
+				'slug'   => 'social-links',
+				'url'    => '',
 				'module' => 'none',
 			);
 		endif;
@@ -238,11 +238,11 @@ class Zillah_Theme_Plugin_Enhancements {
 				} // End if().
 				else {
 					$this->plugins[ $key ]['status'] = 'to-activate';
-					$this->display_notice = true;
+					$this->display_notice            = true;
 				}
 			} else {
 				$this->plugins[ $key ]['status'] = 'to-install';
-				$this->display_notice = true;
+				$this->display_notice            = true;
 			}
 		}
 	}
@@ -257,7 +257,7 @@ class Zillah_Theme_Plugin_Enhancements {
 			if ( class_exists( 'Jetpack' ) && ! Jetpack::is_module_active( $module ) ) :
 				// Add this feature to our array.
 				$this->unactivated_modules[ $module ][] = $feature;
-				$this->display_notice = true;
+				$this->display_notice                   = true;
 			endif;
 		endforeach;
 
@@ -283,7 +283,7 @@ class Zillah_Theme_Plugin_Enhancements {
 			// Activation message.
 			if ( 'to-activate' === $plugin['status'] ) {
 				$activate_url = $this->plugin_activate_url( $plugin['slug'] );
-				$notice .= sprintf(
+				$notice      .= sprintf(
 					/* translators: 1: plugin name 2: activation link */
 					esc_html__( ' Please activate %1$s. %2$s', 'zillah' ),
 					esc_html( $plugin['name'] ),
@@ -294,7 +294,7 @@ class Zillah_Theme_Plugin_Enhancements {
 			// Download message.
 			if ( 'to-install' === $plugin['status'] ) {
 				$install_url = $this->plugin_install_url( $plugin['slug'] );
-				$notice .= sprintf(
+				$notice     .= sprintf(
 					/* translators: 1: plugin name 2: install link */
 					esc_html__( ' Please install %1$s. %2$s', 'zillah' ),
 					esc_html( $plugin['name'] ),
@@ -313,12 +313,12 @@ class Zillah_Theme_Plugin_Enhancements {
 			}
 
 			if ( 2 === count( $featurelist ) ) {
-				$featurelist  = implode( ' or ', $featurelist );
+				$featurelist = implode( ' or ', $featurelist );
 			} elseif ( 1 < count( $featurelist ) ) {
 				$last_feature = array_pop( $featurelist );
 				$featurelist  = implode( ', ', $featurelist ) . ', or ' . $last_feature;
 			} else {
-				$featurelist  = implode( ', ', $featurelist );
+				$featurelist = implode( ', ', $featurelist );
 			}
 
 			$notice .= '<p>';

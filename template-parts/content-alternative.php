@@ -12,7 +12,8 @@ $zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 $post_format = get_post_format();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-alt entry-content-wrap' . ( $zillah_sidebar_show ? 'col-xs-12 col-md-6 blog-post-alt-sidebar' : 'col-xs-12 col-md-6 col-lg-4' ) ); ?>>
+<article
+		id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-alt entry-content-wrap' . ( $zillah_sidebar_show ? 'col-xs-12 col-md-6 blog-post-alt-sidebar' : 'col-xs-12 col-md-6 col-lg-4' ) ); ?>>
 	<div class="blog-post-alt-inner">
 
 		<?php if ( $post_format !== 'quote' ) : ?>
@@ -40,19 +41,17 @@ $post_format = get_post_format();
 		<?php zillah_hook_entry_before(); ?>
 		<div class="entry-content">
 			<div class="content-inner-wrap">
-				<?php zillah_hook_entry_top(); ?>
 				<?php
-
-					echo zillah_read_more_link_alt();
-
-					wp_link_pages(
-						array(
-							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
-							'after'  => '</div>',
-						)
-					);
+				zillah_hook_entry_top();
+				echo zillah_read_more_link_alt();
+				wp_link_pages(
+					array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zillah' ),
+						'after'  => '</div>',
+					)
+				);
+				zillah_hook_entry_bottom();
 				?>
-				<?php zillah_hook_entry_bottom(); ?>
 			</div>
 		</div><!-- .entry-content -->
 		<?php zillah_hook_entry_after(); ?>

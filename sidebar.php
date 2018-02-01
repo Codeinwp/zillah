@@ -7,7 +7,7 @@
  * @package zillah
  */
 
-$zillah_sidebar_show        = get_theme_mod( 'zillah_sidebar_show', false );
+$zillah_sidebar_show = get_theme_mod( 'zillah_sidebar_show', false );
 
 if ( ! is_active_sidebar( 'zillah-sidebar-1' ) ) {
 	return;

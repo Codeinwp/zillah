@@ -14,12 +14,12 @@ class Zillah_About_Me extends WP_Widget {
 	 * Zillah_About_Me constructor.
 	 */
 	public function __construct() {
-		$widget_ops = array(
-			'classname' => 'Zillah_About_Me',
+		$widget_ops  = array(
+			'classname'   => 'Zillah_About_Me',
 			'description' => __( 'About me widget.', 'zillah' ),
 		);
 		$control_ops = array(
-			'width' => 400,
+			'width'  => 400,
 			'height' => 350,
 		);
 		parent::__construct( 'Zillah_About_Me', __( 'Zillah: About me', 'zillah' ), $widget_ops, $control_ops );
@@ -33,9 +33,9 @@ class Zillah_About_Me extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		$title      = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-		$image_url  = isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : '';
-		$text       = apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
+		$title     = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+		$image_url = isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : '';
+		$text      = apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
 		echo $args['before_widget'];
 
 		if ( ! empty( $title ) ) {
@@ -69,9 +69,9 @@ class Zillah_About_Me extends WP_Widget {
 	 * @return mixed
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$instance['title']      = strip_tags( $new_instance['title'] );
-		$instance['image_url']  = esc_url_raw( $new_instance['image_url'] );
+		$instance              = $old_instance;
+		$instance['title']     = strip_tags( $new_instance['title'] );
+		$instance['image_url'] = esc_url_raw( $new_instance['image_url'] );
 		if ( current_user_can( 'unfiltered_html' ) ) {
 			$instance['text'] = $new_instance['text'];
 		} else {
@@ -86,16 +86,16 @@ class Zillah_About_Me extends WP_Widget {
 	 * @param array $instance The widget instance.
 	 */
 	public function form( $instance ) {
-		$instance   = wp_parse_args(
+		$instance  = wp_parse_args(
 			(array) $instance, array(
-				'title' => '',
-				'text' => '',
+				'title'     => '',
+				'text'      => '',
 				'image_url' => '',
 			)
 		);
-		$title      = strip_tags( $instance['title'] );
-		$text       = esc_textarea( $instance['text'] );
-		$image_url  = esc_url( $instance['image_url'] );
+		$title     = strip_tags( $instance['title'] );
+		$text      = esc_textarea( $instance['text'] );
+		$image_url = esc_url( $instance['image_url'] );
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'zillah' ); ?></label>
