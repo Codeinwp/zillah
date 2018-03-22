@@ -2616,7 +2616,7 @@ object {
 }
 
 .footer-inner {
-	display: none;
+	display: block;
 }
 
 /*--------------------------------------------------------------
@@ -3583,5 +3583,9 @@ div.sharedaddy h3.sd-title:before {
 	.container {
 		padding-right: 0;
 		padding-left: 0;
+	}
+	.footer-inner {
+   		 display: block;
+    		 padding: 20px;
 	}
 }
