@@ -84,6 +84,15 @@ class Zillah_Theme_Plugin_Enhancements {
 		// Define our Jetpack plugin as a required plugin.
 		$this->plugins = array(
 			array(
+				'slug'    => 'themeisle-companion',
+				'name'    => 'Orbit Fox',
+				'message' => sprintf(
+					/* translators:  'Orbit Fox plugin' */
+					esc_html__( 'The %1$s is recommended to get built-in analytics, place sharing icons, get notified when your site is down, re-design pages with modern templates, add new Elementor and Beaver Builder widgets.', 'zillah' ),
+					'<strong>' . esc_html__( 'Orbit Fox plugin', 'zillah' ) . '</strong>'
+				),
+			),
+			array(
 				'slug'    => 'jetpack',
 				'name'    => 'Jetpack by WordPress.com',
 				'message' => sprintf(
