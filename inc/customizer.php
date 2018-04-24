@@ -220,34 +220,36 @@ function zillah_customize_register( $wp_customize ) {
 				'label'           => 'Select first font family ( content )',
 				'section'         => 'zillah_home_theme_option_section',
 				'priority'        => 4,
-				'ti_google_fonts' => apply_filters( 'zillah_filter_body_fonts', array(
-					array(
-						'font_family' => 'Merriweather',
-						'type'        => 'serif',
-						'subset'      => '400',
-					),
-					array(
-						'font_family' => 'Open Sans',
-						'type'        => 'sans-serif',
-						'subset'      => '400',
-					),
-					array(
-						'font_family' => 'Josefin Slab',
-						'type'        => 'serif',
-						'subset'      => '400',
-					),
-					array(
-						'font_family' => 'Ubuntu',
-						'type'        => 'sans-serif',
-						'subset'      => '400',
-					),
-					array(
-						'font_family' => 'Vollkorn',
-						'type'        => 'serif',
-						'subset'      => '400',
-					),
+				'ti_google_fonts' => apply_filters(
+					'zillah_filter_body_fonts', array(
+						array(
+							'font_family' => 'Merriweather',
+							'type'        => 'serif',
+							'subset'      => '400',
+						),
+						array(
+							'font_family' => 'Open Sans',
+							'type'        => 'sans-serif',
+							'subset'      => '400',
+						),
+						array(
+							'font_family' => 'Josefin Slab',
+							'type'        => 'serif',
+							'subset'      => '400',
+						),
+						array(
+							'font_family' => 'Ubuntu',
+							'type'        => 'sans-serif',
+							'subset'      => '400',
+						),
+						array(
+							'font_family' => 'Vollkorn',
+							'type'        => 'serif',
+							'subset'      => '400',
+						),
 
-				) ),
+					)
+				),
 			)
 		)
 	);
