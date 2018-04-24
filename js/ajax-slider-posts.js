@@ -28,6 +28,8 @@
 					}
 				}
 			);
+
+			$('#post-request').hide();
 		}
 	}
 })( jQuery );
