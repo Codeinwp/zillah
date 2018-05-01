@@ -25,9 +25,10 @@ function zillah_custom_header_setup() {
 		'custom-header', apply_filters(
 			'zillah_custom_header_args', array(
 				'default-image' => '',
-				'width'         => 1000,
+				'width'         => 1600,
 				'height'        => 250,
 				'flex-height'   => true,
+				'flex-width'    => true,
 			)
 		)
 	);
