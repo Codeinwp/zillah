@@ -221,7 +221,6 @@
 
 
 
-/* scroll down sticky header */
 (function($,window) {
 
     var headerHeight,
@@ -230,40 +229,55 @@
         initTop             = 0,
         changeDirection     = false,
         lastDirectionDown   = false;
-    var $headerToHide       = $( '.header-inner-top' ),
-        $body               = $( 'body' );
+    var $headerToHide       = $( '.header-inner-top' );
 
-    if( window.innerWidth >= 992 ) {
+    /**
+     * Handle header resize.
+     */
+    $.zillah = {
+        initTop: 0,
 
-        $(document).ready(function () {
-            headerHeight    = $headerToHide.height();
-            isAdminBar      = $( '#wpadminbar' ).length > 0 ? true : false;
-            initTop         = isAdminBar && window.innerWidth > 768 ? 32 : 0;
-            $body.css( 'padding-top', headerHeight );
+        'init': function () {
+        	isAdminBar = $('#wpadminbar').length > 0;
+            this.setBodyPadding();
+            this.handleWindowResize();
+            if( window.innerWidth >= 992 ) {
+            	this.handleScroll();
+			}
+        },
 
-        });
-
-        $(window).resize(function () {
-            headerHeight    = $headerToHide.height();
-            initTop         = isAdminBar && window.innerWidth > 992 ? 32 : 0;
-			$body.css( 'padding-top', window.innerWidth > 992 ? headerHeight : 0 );
-        });
-
-        $(window).scroll(function () {
-            var thisScrollTop = $(this).scrollTop();
-            changeDirection = ( thisScrollTop > headerHeight && (thisScrollTop > lastScrollTop && lastDirectionDown === false) || (thisScrollTop < lastScrollTop && lastDirectionDown === true) ? true : false );
-            if (changeDirection === true) {
-                $headerToHide.toggleClass('hide-header');
-                lastDirectionDown = ( lastDirectionDown === false ? true : false );
+        'setBodyPadding': function () {
+            if (window.innerWidth >= 992) {
+                headerHeight = $( '.header-inner-top' ).height();
+                initTop = isAdminBar && window.innerWidth > 768 ? 32 : 0;
             }
-            $headerToHide.css( {
-                'top': $headerToHide.hasClass('hide-header') ? (-1) * headerHeight : initTop
-            } );
-            lastScrollTop = thisScrollTop;
-        });
+            $( 'body' ).css('padding-top', headerHeight);
+        },
 
-    } else {
-        $body.css( 'padding-top', '0' );
-    }
+        'handleWindowResize': function () {
+            $(window).resize(function () {
+                var headerHeight = $( '.header-inner-top' ).height();
+                initTop = isAdminBar && window.innerWidth > 992 ? 32 : 0;
+                $( 'body' ).css( 'padding-top', window.innerWidth > 992 ? headerHeight : 0 );
+            });
+        },
+
+		'handleScroll': function () {
+            $(window).scroll(function () {
+                var thisScrollTop = $(this).scrollTop();
+                changeDirection = ( thisScrollTop > headerHeight && (thisScrollTop > lastScrollTop && lastDirectionDown === false) || (thisScrollTop < lastScrollTop && lastDirectionDown === true) );
+                if (changeDirection === true) {
+                    $headerToHide.toggleClass('hide-header');
+                    lastDirectionDown = ( lastDirectionDown === false );
+                }
+                $headerToHide.css( {
+                    'top': $headerToHide.hasClass('hide-header') ? (-1) * headerHeight : initTop
+                } );
+                lastScrollTop = thisScrollTop;
+            });
+        }
+    };
+    $.zillah.init();
+
 
 } )(jQuery,window);
