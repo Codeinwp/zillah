@@ -3585,3 +3585,9 @@ div.sharedaddy h3.sd-title:before {
 		padding-left: 0;
 	}
 }
+
+@media (max-width: 991px) {
+	#post-request + article {
+		clear: both;
+	}
+}
