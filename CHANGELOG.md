@@ -1,4 +1,10 @@
 
+### 1.1.5 - 11/05/2018
+**Changes:** 
+- Compatibility with the OrbitFox plugin
+- Fixed problem with whitespace on mobile devices when using the Alternative Layout option
+- Updated size for header default image
+
 ### 1.1.4 - 01/02/2018
 **Changes:** 
 - Fixed non-dismissible notice for Pirate Forms installation
