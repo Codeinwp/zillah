@@ -1,4 +1,8 @@
 
+### 1.1.6 - 24/05/2018
+**Changes:** 
+- Fixed js error caused by priority issues
+
 ### 1.1.5 - 11/05/2018
 **Changes:** 
 - Compatibility with the OrbitFox plugin
