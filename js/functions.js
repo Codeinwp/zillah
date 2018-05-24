@@ -193,7 +193,9 @@
     $( document ).ready( function() {
 		$( window ).on( 'load.parallax-one', onResizeARIA );
 
-
+        /**
+		 * Carousel with gallery images displayed on the archive/blog page for Gallery post formats
+         */
 		$( '#carousel-post-gallery' ).carousel({
 			interval: 2000
 		});

@@ -235,7 +235,9 @@ function zillah_scripts() {
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), 'v4.5.0', false );
 
-	wp_enqueue_script( 'zillah-functions-js', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20151216', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20130116', true );
+
+	wp_enqueue_script( 'zillah-functions-js', get_template_directory_uri() . '/js/functions.js', array( 'bootstrap-js' ), '20151217', true );
 
 	wp_localize_script(
 		'zillah-functions-js', 'screenReaderText', array(
@@ -243,8 +245,6 @@ function zillah_scripts() {
 			'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'zillah' ) . '</span>',
 		)
 	);
-
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20130115', true );
 
 	wp_enqueue_script( 'zillah-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
