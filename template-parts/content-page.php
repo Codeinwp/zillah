@@ -24,24 +24,22 @@
 						'after'  => '</div>',
 					)
 				);
-			?>
-			<?php zillah_hook_entry_bottom(); ?>
+				zillah_hook_entry_bottom();
+				?>
 		</div><!-- .entry-content -->
 		<?php zillah_hook_entry_after(); ?>
-
 		<footer class="entry-footer">
-			<?php
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'zillah' ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
+		<?php
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', 'zillah' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				),
+				'<span class="edit-link">',
+				'</span>'
+			);
 			?>
 		</footer><!-- .entry-footer -->
-
 	</div>
 </article><!-- #post-## -->

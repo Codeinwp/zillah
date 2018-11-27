@@ -244,8 +244,7 @@ class Zillah_Theme_Plugin_Enhancements {
 				// the array containing the plugin enhancements.
 				if ( is_plugin_active( array_search( $plugin['name'], $installed_plugin_names ) ) ) {
 					unset( $this->plugins[ $key ] );
-				} // End if().
-				else {
+				} else {
 					$this->plugins[ $key ]['status'] = 'to-activate';
 					$this->display_notice            = true;
 				}

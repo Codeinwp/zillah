@@ -56,7 +56,7 @@
 					)
 				);
 
-			?>
+				?>
 			<?php zillah_hook_entry_bottom(); ?>
 		</div>
 	</div><!-- .entry-content -->

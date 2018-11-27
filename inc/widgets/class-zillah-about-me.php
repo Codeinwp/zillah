@@ -50,7 +50,7 @@ class Zillah_About_Me extends WP_Widget {
 		}
 
 		if ( ! empty( $text ) ) {
-		?>
+			?>
 			<div class="textwidget">
 				<?php echo wp_kses_post( $text ); ?>
 			</div>

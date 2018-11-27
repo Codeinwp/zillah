@@ -401,7 +401,7 @@ function zillah_brand() {
 
 		$description = get_bloginfo( 'description', 'display' );
 	if ( ( $description && display_header_text() ) || is_customize_preview() ) :
-	?>
+		?>
 			<p class="site-description<?php echo ! display_header_text() && is_customize_preview() ? ' zillah-only-customizer' : ''; ?>"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 		endif;
