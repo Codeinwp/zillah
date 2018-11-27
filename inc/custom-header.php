@@ -23,9 +23,9 @@
 function zillah_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
-        apply_filters(
+		apply_filters(
 			'zillah_custom_header_args',
-            array(
+			array(
 				'default-image' => '',
 				'width'         => 1600,
 				'height'        => 250,

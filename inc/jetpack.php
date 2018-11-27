@@ -17,7 +17,7 @@ function zillah_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
-        array(
+		array(
 			'container' => 'main',
 			'render'    => 'zillah_infinite_scroll_render',
 			'footer'    => 'page',
@@ -31,7 +31,7 @@ function zillah_jetpack_setup() {
 
 	add_theme_support(
 		'social-links',
-        array(
+		array(
 			'facebook',
 			'twitter',
 			'linkedin',

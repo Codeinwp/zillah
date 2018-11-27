@@ -396,7 +396,7 @@ class Zillah_Theme_Plugin_Enhancements {
 
 		$plugin_information = plugins_api(
 			'plugin_information',
-            array(
+			array(
 				'slug' => $slug,
 			)
 		);

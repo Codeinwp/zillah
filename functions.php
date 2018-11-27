@@ -60,7 +60,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 */
 		add_theme_support(
 			'html5',
-            array(
+			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -75,7 +75,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 */
 		add_theme_support(
 			'post-formats',
-            array(
+			array(
 				'aside',
 				'image',
 				'video',
@@ -92,7 +92,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		add_theme_support(
 			'custom-background', apply_filters(
 				'zillah_custom_background_args',
-                array(
+				array(
 					'default-color' => 'f6f6f6',
 					'default-image' => '',
 				)
@@ -102,7 +102,7 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		// Add theme support for custom logo
 		add_theme_support(
 			'custom-logo',
-            array(
+			array(
 				'height'     => 290,
 				'width'      => 630,
 				'flex-width' => true,
@@ -144,7 +144,7 @@ function zillah_widgets_init() {
 
 	register_sidebars(
 		3,
-        array(
+		array(
 			/* translators: d: Sidebar number */
 			'name'          => esc_html__( 'Footer Widget Area %d', 'zillah' ),
 			'id'            => 'zillah-footer-widget-area',
@@ -264,7 +264,8 @@ function zillah_scripts() {
 		wp_enqueue_script( 'zillah_ajax_slider_posts', get_template_directory_uri() . '/js/ajax-slider-posts.js', array( 'jquery' ), '1.0', true );
 
 		wp_localize_script(
-			'zillah_ajax_slider_posts', 'requestpost', array(
+			'zillah_ajax_slider_posts', 'requestpost',
+			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			)
 		);
