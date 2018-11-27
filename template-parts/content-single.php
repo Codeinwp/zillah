@@ -39,7 +39,8 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. */
-							__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zillah' ), array(
+							__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zillah' ),
+							array(
 								'span' => array(
 									'class' => array(),
 								),
@@ -56,7 +57,7 @@
 					)
 				);
 
-			?>
+				?>
 			<?php zillah_hook_entry_bottom(); ?>
 		</div>
 	</div><!-- .entry-content -->

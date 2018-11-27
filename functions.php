@@ -59,7 +59,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 * to output valid HTML5.
 		 */
 		add_theme_support(
-			'html5', array(
+			'html5',
+			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -73,7 +74,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
 		add_theme_support(
-			'post-formats', array(
+			'post-formats',
+			array(
 				'aside',
 				'image',
 				'video',
@@ -88,8 +90,10 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
-			'custom-background', apply_filters(
-				'zillah_custom_background_args', array(
+			'custom-background',
+			apply_filters(
+				'zillah_custom_background_args',
+				array(
 					'default-color' => 'f6f6f6',
 					'default-image' => '',
 				)
@@ -98,7 +102,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		// Add theme support for custom logo
 		add_theme_support(
-			'custom-logo', array(
+			'custom-logo',
+			array(
 				'height'     => 290,
 				'width'      => 630,
 				'flex-width' => true,
@@ -139,7 +144,8 @@ function zillah_widgets_init() {
 	);
 
 	register_sidebars(
-		3, array(
+		3,
+		array(
 			/* translators: d: Sidebar number */
 			'name'          => esc_html__( 'Footer Widget Area %d', 'zillah' ),
 			'id'            => 'zillah-footer-widget-area',
@@ -240,7 +246,9 @@ function zillah_scripts() {
 	wp_enqueue_script( 'zillah-functions-js', get_template_directory_uri() . '/js/functions.js', array( 'bootstrap-js' ), '20151217', true );
 
 	wp_localize_script(
-		'zillah-functions-js', 'screenReaderText', array(
+		'zillah-functions-js',
+		'screenReaderText',
+		array(
 			'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'zillah' ) . '</span>',
 			'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'zillah' ) . '</span>',
 		)
@@ -259,7 +267,9 @@ function zillah_scripts() {
 		wp_enqueue_script( 'zillah_ajax_slider_posts', get_template_directory_uri() . '/js/ajax-slider-posts.js', array( 'jquery' ), '1.0', true );
 
 		wp_localize_script(
-			'zillah_ajax_slider_posts', 'requestpost', array(
+			'zillah_ajax_slider_posts',
+			'requestpost',
+			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			)
 		);
@@ -401,7 +411,7 @@ function zillah_brand() {
 
 		$description = get_bloginfo( 'description', 'display' );
 	if ( ( $description && display_header_text() ) || is_customize_preview() ) :
-	?>
+		?>
 			<p class="site-description<?php echo ! display_header_text() && is_customize_preview() ? ' zillah-only-customizer' : ''; ?>"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 		endif;
@@ -970,3 +980,46 @@ function zillah_post_video() {
 	}
 
 }
+
+/**
+ * Add a dismissible notice about Neve in the dashboard
+ */
+function zillah_neve_notice() {
+	global $current_user;
+	$user_id        = $current_user->ID;
+	$ignored_notice = get_user_meta( $user_id, 'zillah_ignore_neve_notice' );
+	if ( ! empty( $ignored_notice ) ) {
+		return;
+	}
+	$dismiss_button =
+		sprintf(
+			/* translators: Install Neve link */
+			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
+			'?zillah_nag_ignore_neve=0'
+		);
+	$message = sprintf(
+		/* translators: Install Neve link */
+		esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'zillah' ),
+		sprintf(
+			/* translators: Install Neve link */
+			'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
+			esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
+			esc_html__( 'our newest theme', 'zillah' )
+		)
+	);
+	printf( '<div class="notice updated" style="position:relative; padding-right: 35px;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
+}
+add_action( 'admin_notices', 'zillah_neve_notice' );
+
+/**
+ * Update the zillah_ignore_neve_notice option to true, to dismiss the notice from the dashboard
+ */
+function zillah_nag_ignore_neve() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['zillah_nag_ignore_neve'] ) && '0' == $_GET['zillah_nag_ignore_neve'] ) {
+		add_user_meta( $user_id, 'zillah_ignore_neve_notice', 'true', true );
+	}
+}
+add_action( 'admin_init', 'zillah_nag_ignore_neve' );

@@ -50,7 +50,7 @@ class Zillah_About_Me extends WP_Widget {
 		}
 
 		if ( ! empty( $text ) ) {
-		?>
+			?>
 			<div class="textwidget">
 				<?php echo wp_kses_post( $text ); ?>
 			</div>
@@ -87,7 +87,8 @@ class Zillah_About_Me extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$instance  = wp_parse_args(
-			(array) $instance, array(
+			(array) $instance,
+			array(
 				'title'     => '',
 				'text'      => '',
 				'image_url' => '',

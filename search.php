@@ -33,7 +33,7 @@ get_header(); ?>
 					<?php zillah_hook_search_top(); ?>
 				<?php
 				if ( have_posts() ) :
-				?>
+					?>
 
 					<?php
 					/* Start the Loop */

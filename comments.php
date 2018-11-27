@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 
 	<?php
 	if ( have_comments() ) :
-	?>
+		?>
 		<h2 class="comments-title">
 			<?php
 			$comments_number = get_comments_number();
@@ -84,7 +84,7 @@ if ( post_password_required() ) {
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
-		<?php
+			<?php
 		endif; // Check for comment navigation.
 
 	endif; // Check for have_comments().
@@ -92,10 +92,10 @@ if ( post_password_required() ) {
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+		?>
 
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'zillah' ); ?></p>
-	<?php
+		<?php
 	endif;
 
 	comment_form();

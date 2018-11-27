@@ -59,7 +59,7 @@
 										'fallback_cb'     => false,
 									)
 								);
-							?>
+								?>
 
 							<nav id="site-navigation" class="main-navigation" role="navigation">
 								<?php
@@ -69,7 +69,7 @@
 											'menu_id' => 'primary-menu',
 										)
 									);
-								?>
+									?>
 							</nav><!-- #site-navigation -->
 
 							<div class="menu-toggle-button-wrap">
