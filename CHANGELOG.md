@@ -1,4 +1,8 @@
 
+ ### v1.1.8 - 2018-11-27 
+ **Changes:** 
+ * Added missing generate task
+ 
 ### 1.1.6 - 24/05/2018
 **Changes:** 
 - Fixed js error caused by priority issues
