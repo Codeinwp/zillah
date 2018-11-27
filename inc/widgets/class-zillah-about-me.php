@@ -88,7 +88,7 @@ class Zillah_About_Me extends WP_Widget {
 	public function form( $instance ) {
 		$instance  = wp_parse_args(
 			(array) $instance,
-            array(
+			array(
 				'title'     => '',
 				'text'      => '',
 				'image_url' => '',

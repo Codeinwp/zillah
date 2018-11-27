@@ -41,7 +41,7 @@
 					wp_kses(
 						/* translators: %s: Name of current post. */
 						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zillah' ),
-                        array(
+						array(
 							'span' => array(
 								'class' => array(),
 							),

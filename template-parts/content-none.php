@@ -32,7 +32,7 @@
 								),
 							)
 						),
-                        esc_url( admin_url( 'post-new.php' ) )
+						esc_url( admin_url( 'post-new.php' ) )
 					);
 				?>
 					</p>

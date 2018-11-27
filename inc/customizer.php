@@ -197,7 +197,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Zillah_Category_Control(
-			$wp_customize, 'zillah_home_slider_category',
+			$wp_customize,
+			'zillah_home_slider_category',
 			array(
 				'label'    => 'Category',
 				'section'  => 'zillah_featured_content_slider_section',
@@ -209,14 +210,16 @@ function zillah_customize_register( $wp_customize ) {
 	/* Colors */
 	require_once( 'class/class-zillah-palette.php' );
 	$wp_customize->add_setting(
-		'zillah_palette_picker', array(
+		'zillah_palette_picker',
+		array(
 			'sanitize_callback' => 'zillah_sanitize_palette',
 		)
 	);
 
 	$wp_customize->add_control(
 		new Zillah_Palette(
-			$wp_customize, 'zillah_palette_picker',
+			$wp_customize,
+			'zillah_palette_picker',
 			array(
 				'label'    => esc_html__( 'Change the color scheme', 'zillah' ),
 				'section'  => 'colors',
@@ -227,7 +230,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Google fonts  */
 	$wp_customize->add_setting(
-		'zillah_google_fonts_one', array(
+		'zillah_google_fonts_one',
+		array(
 			'default'           => 0,
 			'sanitize_callback' => 'sanitize_text_field',
 		)
@@ -235,7 +239,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Zillah_Google_Fonts_Control(
-			$wp_customize, 'zillah_google_fonts_one',
+			$wp_customize,
+			'zillah_google_fonts_one',
 			array(
 				'label'           => 'Select first font family ( content )',
 				'section'         => 'zillah_home_theme_option_section',

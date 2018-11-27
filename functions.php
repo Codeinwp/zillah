@@ -90,7 +90,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
-			'custom-background', apply_filters(
+			'custom-background',
+			apply_filters(
 				'zillah_custom_background_args',
 				array(
 					'default-color' => 'f6f6f6',
@@ -245,7 +246,9 @@ function zillah_scripts() {
 	wp_enqueue_script( 'zillah-functions-js', get_template_directory_uri() . '/js/functions.js', array( 'bootstrap-js' ), '20151217', true );
 
 	wp_localize_script(
-		'zillah-functions-js', 'screenReaderText', array(
+		'zillah-functions-js',
+		'screenReaderText',
+		array(
 			'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'zillah' ) . '</span>',
 			'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'zillah' ) . '</span>',
 		)
@@ -264,7 +267,8 @@ function zillah_scripts() {
 		wp_enqueue_script( 'zillah_ajax_slider_posts', get_template_directory_uri() . '/js/ajax-slider-posts.js', array( 'jquery' ), '1.0', true );
 
 		wp_localize_script(
-			'zillah_ajax_slider_posts', 'requestpost',
+			'zillah_ajax_slider_posts',
+			'requestpost',
 			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			)
