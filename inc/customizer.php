@@ -160,7 +160,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Featured Content Slider */
 	$wp_customize->add_section(
-		'zillah_featured_content_slider_section', array(
+		'zillah_featured_content_slider_section',
+        array(
 			'title'    => esc_html__( 'Featured content slider', 'zillah' ),
 			'priority' => 25,
 		)
@@ -168,7 +169,7 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting(
 		'zillah_home_slider_show',
-        (
+        array(
 			'default'           => 0,
 			'sanitize_callback' => 'zillah_sanitize_checkbox',
 			'transport'         => 'postMessage',
