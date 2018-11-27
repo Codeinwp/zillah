@@ -1,0 +1,8 @@
+#Check code of the theme
+check:
+  - 'phpcbf'
+  - 'makepot'
+  - 'travis'
+generate:
+  description: 'Generic task.'
+  tasks: []
