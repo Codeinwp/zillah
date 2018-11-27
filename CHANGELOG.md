@@ -1,4 +1,20 @@
 
+### 1.1.6 - 24/05/2018
+**Changes:** 
+- Fixed js error caused by priority issues
+
+### 1.1.5 - 11/05/2018
+**Changes:** 
+- Compatibility with the OrbitFox plugin
+- Fixed problem with whitespace on mobile devices when using the Alternative Layout option
+- Updated size for header default image
+
+### 1.1.4 - 01/02/2018
+**Changes:** 
+- Fixed non-dismissible notice for Pirate Forms installation
+- Upgraded grunt and fixed all the errors
+- Added a filter for the enqueued Google fonts
+
 ### 1.1.3 - 16/10/2017
 **Changes:** 
 - Removed Posted date when updated setting is active
