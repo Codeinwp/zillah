@@ -59,7 +59,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 * to output valid HTML5.
 		 */
 		add_theme_support(
-			'html5', array(
+			'html5',
+            array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -73,7 +74,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
 		add_theme_support(
-			'post-formats', array(
+			'post-formats',
+            array(
 				'aside',
 				'image',
 				'video',
@@ -89,7 +91,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background', apply_filters(
-				'zillah_custom_background_args', array(
+				'zillah_custom_background_args',
+                array(
 					'default-color' => 'f6f6f6',
 					'default-image' => '',
 				)
@@ -98,7 +101,8 @@ if ( ! function_exists( 'zillah_setup' ) ) :
 
 		// Add theme support for custom logo
 		add_theme_support(
-			'custom-logo', array(
+			'custom-logo',
+            array(
 				'height'     => 290,
 				'width'      => 630,
 				'flex-width' => true,
@@ -139,7 +143,8 @@ function zillah_widgets_init() {
 	);
 
 	register_sidebars(
-		3, array(
+		3,
+        array(
 			/* translators: d: Sidebar number */
 			'name'          => esc_html__( 'Footer Widget Area %d', 'zillah' ),
 			'id'            => 'zillah-footer-widget-area',

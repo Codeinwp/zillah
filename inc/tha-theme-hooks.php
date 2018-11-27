@@ -37,7 +37,8 @@ define( 'THA_HOOKS_VERSION', '1.0-draft' );
  * </code>
  */
 add_theme_support(
-	'tha_hooks', array(
+	'tha_hooks',
+    array(
 
 		/**
 		 * As a Theme developer, use the 'all' parameter, to declare support for all

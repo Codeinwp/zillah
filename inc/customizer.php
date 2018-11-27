@@ -31,7 +31,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Title tagline */
 	$wp_customize->add_setting(
-		'zillah_tagline_show', array(
+		'zillah_tagline_show',
+        array(
 			'default'           => 0,
 			'sanitize_callback' => 'zillah_sanitize_checkbox',
 			'transport'         => 'postMessage',
@@ -39,7 +40,8 @@ function zillah_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'zillah_tagline_show', array(
+		'zillah_tagline_show',
+        array(
 			'label'    => esc_html__( 'Hide Site Title', 'zillah' ),
 			'section'  => 'title_tagline',
 			'priority' => 50,
@@ -49,7 +51,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Advanced options */
 	$wp_customize->add_section(
-		'zillah_home_theme_option_section', array(
+		'zillah_home_theme_option_section',
+        array(
 			'title'    => esc_html__( 'Theme options', 'zillah' ),
 			'priority' => 20,
 		)
@@ -57,14 +60,16 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Alternative layout */
 	$wp_customize->add_setting(
-		'zillah_alt_layout', array(
+		'zillah_alt_layout',
+        array(
 			'default'           => false,
 			'sanitize_callback' => 'zillah_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
-		'zillah_alt_layout', array(
+		'zillah_alt_layout',
+        array(
 			'label'       => esc_html__( 'Alternative layout', 'zillah' ),
 			'description' => esc_html__( 'If you check this box, the alternative layout will be used on blog and single page.', 'zillah' ),
 			'section'     => 'zillah_home_theme_option_section',
@@ -75,7 +80,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Show sidebar */
 	$wp_customize->add_setting(
-		'zillah_sidebar_show', array(
+		'zillah_sidebar_show',
+        array(
 			'default'           => false,
 			'sanitize_callback' => 'zillah_sanitize_checkbox',
 			'transport'         => 'postMessage',
@@ -83,7 +89,8 @@ function zillah_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'zillah_sidebar_show', array(
+		'zillah_sidebar_show',
+        array(
 			'label'       => esc_html__( 'Show sidebar', 'zillah' ),
 			'description' => esc_html__( 'If you check this box, the sidebar will appear on homepage and archive page.', 'zillah' ),
 			'section'     => 'zillah_home_theme_option_section',
@@ -94,7 +101,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Show Tags */
 	$wp_customize->add_setting(
-		'zillah_tags_show', array(
+		'zillah_tags_show',
+        array(
 			'default'           => false,
 			'sanitize_callback' => 'zillah_sanitize_checkbox',
 			'transport'         => 'postMessage',
@@ -102,7 +110,8 @@ function zillah_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'zillah_tags_show', array(
+		'zillah_tags_show',
+        array(
 			'label'       => esc_html__( 'Show tags', 'zillah' ),
 			'description' => esc_html__( 'If you check this box, the tags will appear in posts.', 'zillah' ),
 			'section'     => 'zillah_home_theme_option_section',
@@ -113,14 +122,16 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Get image as featured */
 	$wp_customize->add_setting(
-		'zillah_image_as_thumbnail', array(
+		'zillah_image_as_thumbnail',
+        array(
 			'default'           => false,
 			'sanitize_callback' => 'zillah_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
-		'zillah_image_as_thumbnail', array(
+		'zillah_image_as_thumbnail',
+        array(
 			'label'    => esc_html__( 'Get 1st image in the post as featured.', 'zillah' ),
 			'section'  => 'zillah_home_theme_option_section',
 			'priority' => 2,
@@ -130,14 +141,16 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Show updated date */
 	$wp_customize->add_setting(
-		'zillah_show_updated', array(
+		'zillah_show_updated',
+        array(
 			'default'           => false,
 			'sanitize_callback' => 'zillah_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
-		'zillah_show_updated', array(
+		'zillah_show_updated',
+        array(
 			'label'    => esc_html__( 'Show updated date in post header.', 'zillah' ),
 			'section'  => 'zillah_home_theme_option_section',
 			'priority' => 3,
@@ -154,7 +167,8 @@ function zillah_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'zillah_home_slider_show', array(
+		'zillah_home_slider_show',
+        (
 			'default'           => 0,
 			'sanitize_callback' => 'zillah_sanitize_checkbox',
 			'transport'         => 'postMessage',
@@ -162,7 +176,8 @@ function zillah_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'zillah_home_slider_show', array(
+		'zillah_home_slider_show',
+        array(
 			'label'       => esc_html__( 'Show slider', 'zillah' ),
 			'description' => esc_html__( 'If you check this box, the slider area will appear on the homepage.', 'zillah' ),
 			'section'     => 'zillah_featured_content_slider_section',
@@ -172,7 +187,8 @@ function zillah_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'zillah_home_slider_category', array(
+		'zillah_home_slider_category',
+        array(
 			'default'           => 0,
 			'sanitize_callback' => 'zillah_sanitize_category_dropdown',
 		)
@@ -180,7 +196,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Zillah_Category_Control(
-			$wp_customize, 'zillah_home_slider_category', array(
+			$wp_customize, 'zillah_home_slider_category',
+            array(
 				'label'    => 'Category',
 				'section'  => 'zillah_featured_content_slider_section',
 				'priority' => 2,
@@ -198,7 +215,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Zillah_Palette(
-			$wp_customize, 'zillah_palette_picker', array(
+			$wp_customize, 'zillah_palette_picker',
+            array(
 				'label'    => esc_html__( 'Change the color scheme', 'zillah' ),
 				'section'  => 'colors',
 				'priority' => 1,
@@ -216,12 +234,14 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Zillah_Google_Fonts_Control(
-			$wp_customize, 'zillah_google_fonts_one', array(
+			$wp_customize, 'zillah_google_fonts_one',
+            array(
 				'label'           => 'Select first font family ( content )',
 				'section'         => 'zillah_home_theme_option_section',
 				'priority'        => 4,
 				'ti_google_fonts' => apply_filters(
-					'zillah_filter_body_fonts', array(
+					'zillah_filter_body_fonts',
+                    array(
 						array(
 							'font_family' => 'Merriweather',
 							'type'        => 'serif',
@@ -255,7 +275,8 @@ function zillah_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'zillah_google_fonts_two', array(
+		'zillah_google_fonts_two',
+        array(
 			'default'           => 0,
 			'sanitize_callback' => 'sanitize_text_field',
 		)
@@ -263,7 +284,8 @@ function zillah_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		new Zillah_Google_Fonts_Control(
-			$wp_customize, 'zillah_google_fonts_two', array(
+			$wp_customize, 'zillah_google_fonts_two',
+            array(
 				'label'           => 'Select second font family ( headings )',
 				'section'         => 'zillah_home_theme_option_section',
 				'priority'        => 5,
@@ -300,14 +322,16 @@ function zillah_customize_register( $wp_customize ) {
 
 	/* Font size */
 	$wp_customize->add_setting(
-		'zillah_select_box_font_size', array(
+		'zillah_select_box_font_size',
+        array(
 			'default'           => '16px',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 
 	$wp_customize->add_control(
-		'zillah_select_box_font_size', array(
+		'zillah_select_box_font_size',
+        array(
 			'label'    => 'Select Font Size:',
 			'section'  => 'zillah_home_theme_option_section',
 			'priority' => 6,
@@ -323,14 +347,16 @@ function zillah_customize_register( $wp_customize ) {
 	if ( ! $custom_logo ) {
 
 		$wp_customize->add_setting(
-			'zillah_logo_old', array(
+			'zillah_logo_old',
+            array(
 				'sanitize_callback' => 'esc_url',
 			)
 		);
 
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control(
-				$wp_customize, 'zillah_logo_old', array(
+				$wp_customize, 'zillah_logo_old',
+                array(
 					'label'    => __( 'Logo', 'zillah' ),
 					'section'  => 'title_tagline',
 					'settings' => 'zillah_logo_old',

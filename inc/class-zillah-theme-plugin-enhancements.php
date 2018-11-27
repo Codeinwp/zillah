@@ -395,7 +395,8 @@ class Zillah_Theme_Plugin_Enhancements {
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
 		$plugin_information = plugins_api(
-			'plugin_information', array(
+			'plugin_information',
+            array(
 				'slug' => $slug,
 			)
 		);
