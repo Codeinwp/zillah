@@ -54,3 +54,5 @@ before_script:
 
 script:
      grunt travis
+after_failure:
+    - cat logs/phpcs.log
