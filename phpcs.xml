@@ -13,6 +13,8 @@
         <exclude name="Squiz.PHP.CommentedOutCode.Found" />
 
         <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+        <exclude name="WordPress.PHP.StrictInArray.MissingTrueStrict" />
+        <exclude name="WordPress.PHP.StrictComparisons.LooseComparison" />
         <exclude name="WordPress.Files.FileName.UnderscoresNotAllowed" />
     </rule>
     <rule ref="WordPress-Docs">
