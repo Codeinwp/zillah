@@ -56,6 +56,12 @@ The exceptions to this license are as follows:
 Zillah includes support for Infinite Scroll in Jetpack.
 
 ## Changelog ##
+### 1.1.9 - 2019-08-06  ###
+
+* Updates for Travis
+* Prepare for retirement notice
+
+
 ### 1.1.8 - 2018-11-27  ###
 
 * Added missing generate task
